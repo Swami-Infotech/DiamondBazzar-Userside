@@ -1,0 +1,47 @@
+.navbar-collapse {
+    flex-basis: 60% !important;
+    flex-grow: 0 !important;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+}
+.dropdown-menu[data-bs-popper] {
+    top: 100%;
+    left: -35px !important;
+    margin-top: var(--bs-dropdown-spacer);
+}
+.slider{
+    background: url(../../../../assets/Img/Banner/banner1.jpg);
+}
+.slider2{
+    background-image: url(../../../../assets/Img/Banner/banner2.jpg);
+}
+.slider3{
+    background-image: url(../../../../assets/Img/Banner/banner3.jpg);
+}
+.carousel-cont{
+    padding-top: 185px;
+    padding-bottom: 250px;
+    padding-left: 50px;
+    padding-right: 400px;
+}
+.innar{
+    background: url(../../../../assets/Img/Banner/banner4.jpg);
+    background-repeat: no-repeat;
+    width: 52%;
+    margin: 0 auto;
+}
+.innars{
+    background: url(../../../../assets/Img/Banner/banner5.jpg);
+    background-repeat: no-repeat;
+    width: 52%;
+    margin: 0 auto;
+}
+.banner-cont{
+    padding-top: 58px;
+    padding-right: 165px;
+    padding-bottom: 62px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}

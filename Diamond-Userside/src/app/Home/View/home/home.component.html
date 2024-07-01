@@ -1,0 +1,114 @@
+<!-- navbar start -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../../../../assets/Img/logo/DimaondBazzarlogo.png" alt="DimaondBazzarlogo" width="100">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+
+            </ul>
+            <ul class="d-flex " role="search">
+                <li class="nav-item">
+                   
+                    <select class="form-select" (change)="ChangeLang($event)" id="">
+                        <option [selected]="Lang === 'en'" value="en">English</option>
+                        <option [selected]="Lang === 'hn'" value="hn">Hindi</option>
+                        <option [selected]="Lang === 'gu'" value="gu">Gujarati</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- navbar End -->
+<!-- banner start -->
+ <div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6">
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="slider">
+                            <div class="carousel-cont">
+                                <p>{{ getTranslation('BEST_COLLECTION') }}</p>
+                                <h2>{{ getTranslation('RANGE_OF_JEWELRY')}}</h2>
+                                <h5>{{ getTranslation ('NEW_PRICE: ₹18,900')}}</h5>
+                                <button class="btn">Shop Now</button>
+                           </div>
+                        </div>
+                     
+                    </div>
+                    <div class="carousel-item">
+                        <div class="slider2">
+                            <div class="carousel-cont">
+                                <p>Best Collecation</p>
+                                <h2>A Range Of jewelry</h2>
+                                <h5>New Price: ₹18,900</h5>
+                                <button class="btn">Shop Now</button>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                       <div class="slider3">
+                        <div class="carousel-cont">
+                            <p>Best Collecation</p>
+                            <h2>A Range Of jewelry</h2>
+                            <h5>New Price: ₹18,900</h5>
+                            <button class="btn">Shop Now</button>
+                       </div>
+                       </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="poster">
+                <div class="innar">
+                    <div class="banner-cont">
+                        <h2>Happy Ever After</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <button class="btn">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="poster">
+                <div class="innars">
+                    <div class="banner-cont">
+                        <h2>Wedding Gift</h2>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <button class="btn">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+ </div>
+
+
+
+<!-- banner end -->
