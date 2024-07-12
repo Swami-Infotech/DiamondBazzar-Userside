@@ -1,15 +1,11 @@
-.navbar-collapse {
-    flex-basis: 60% !important;
-    flex-grow: 0 !important;
-    align-items: center;
-}
-ul li{
-    list-style: none;
-}
-.dropdown-menu[data-bs-popper] {
-    top: 100%;
-    left: -35px !important;
-    margin-top: var(--bs-dropdown-spacer);
+
+.line i{
+    background-color: #FF8C00;
+    border-radius: 50%;
+    color: #fff;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
 }
 .slider{
     background: url(../../../../assets/Img/Banner/banner1.jpg);
@@ -45,3 +41,41 @@ ul li{
     padding-left: 30px;
     margin-bottom: 10px;
 }
+
+
+/* lab grown start */
+.lab{
+    margin: 70px 0;
+}
+.title{
+    position: relative;
+}
+.title::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 15%;
+    border: 2px solid #FF8C00;
+}
+.grown-banner .card{
+    border: 0;
+    box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.45);
+}
+.price h5{
+    color: #FF8C00;
+}
+.lab-product .card{
+    background-color: #FAFAFA;
+    box-shadow: none;
+}
+.natural{
+    margin: 70px 0;
+}
+/* lab grown end */
+
+
+
+
+

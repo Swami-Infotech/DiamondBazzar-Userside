@@ -1,0 +1,46 @@
+<!-- navbar start -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../../../../assets/Img/logo/DimaondBazzarlogo (1).png" alt="DimaondBazzarlogo" width="100">
+        </a>
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="background-color: #fff;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item pe-3" routerLinkActive="active">
+                    <a class="nav-link" aria-current="page" routerLink="/home">Home</a>
+                </li>
+                <li class="nav-item pe-3" routerLinkActive="active">
+                    <a class="nav-link" routerLink="/auction">Auction</a>
+                </li>
+                <li class="nav-item pe-3" routerLinkActive="active">
+                    <a class="nav-link" href="#">Demand</a>
+                </li>
+                <li class="nav-item pe-3" routerLinkActive="active">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+            <div class="icon">
+                <button class="btn">
+                    <i class="bi bi-bell-fill"></i>
+                </button>
+                <button class="btn">
+                    <i class="bi bi-heart-fill"></i>
+                </button>
+            </div>
+            <!-- <ul class="d-flex " role="search">
+                <li class="nav-item">
+                    <select class="form-select" (change)="ChangeLang($event)" id="">
+                        <option [selected]="Lang === 'en'" value="en">English</option>
+                        <option [selected]="Lang === 'hn'" value="hn">Hindi</option>
+                        <option [selected]="Lang === 'gu'" value="gu">Gujarati</option>
+                    </select>
+                </li>
+            </ul> -->
+        </div>
+    </div>
+</nav>
+<!-- navbar End -->

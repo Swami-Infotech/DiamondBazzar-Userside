@@ -1,0 +1,98 @@
+.login-card{
+    width: 35%;
+}
+.login-form{
+    padding: 20px 20px;
+}
+.login-btn{
+    background-color: #000;
+    width: 90%;
+    margin: 25px auto;
+    padding: 5px 0;
+    border-radius: 20px;
+
+}
+.login-btn .btn{
+    color: #fff;
+}
+.phone-form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.call-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #FF8C00;
+    font-size: 22px;
+}
+
+.input-container .form-control {
+    padding-left: 40px;
+}
+.login-cont h6{
+    color: #FF8C00;
+}
+.login-title h2{
+    color: #FF8C00;
+    font-weight: 700;
+}
+.login-svg img{
+    text-align: center;
+}
+.login-svg{
+    text-align: end;
+    margin: 15% 0;
+    display: block;
+}
+
+
+.login-img img{
+    width: 88vh;
+}
+.login-card {
+    position: absolute;
+    top: 50%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+}
+
+/* medai quary start */
+@media (max-width:769px) {
+    .login-svg img{
+        display: none;
+    }
+    .login-img img {
+        width: 98vw;
+        height: 78vw;
+        background: #000;
+        opacity: 50%;
+    }
+    .login-card {
+        width: 60%;
+    }
+}
+@media (max-width:426px) {
+    .login-svg {
+        text-align: end;
+        margin: 15% 0;
+        display: none;
+    }
+    .login-img img {
+        width: 98vw;
+        height: 100vh;
+        background: #000;
+        opacity: 50%;
+    }
+    .login-card {
+        width: 70%;
+    }
+}
+/* medai quary End */
