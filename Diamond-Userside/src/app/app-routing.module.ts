@@ -12,6 +12,7 @@ import { AuctionComponent } from './Auction/view/auction/auction.component';
 import { NavComponent } from './Nav/view/nav/nav.component';
 import { FooterComponent } from './footer/view/footer/footer.component';
 import { ProductComponent } from './Product details/view/product/product.component';
+import { ProductsComponent } from './products/view/products/products.component';
 
 const routes: Routes = [
   {
@@ -64,6 +65,10 @@ const routes: Routes = [
   {
     path:"auction",
     component:AuctionComponent
+  },
+  {
+    path:"products",
+    component:ProductsComponent
   },
   {
     path:"product",

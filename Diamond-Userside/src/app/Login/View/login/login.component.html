@@ -24,13 +24,11 @@
                              <label for="phoneNumber">Phone Number</label>
                              <div class="input-container">
                                  <i class="bi bi-telephone-fill call-icon"></i>
-                                 <input type="number" id="phoneNumber" class="form-control" placeholder="Phone Number">
+                                 <input type="text" id="phoneNumber" class="form-control" placeholder="Phone Number" [(ngModel)]="user.phoneNumber" name="phoneNumber" #phoneNumber="ngModel" required>
                              </div>
                          </form>
                          <div class="login-btn text-center">
-                            <a routerLink="/otp">
-                                <button class="btn">Continue</button>
-                            </a>
+                                <button class="btn" type="submit" (click)="OnLogin()">Continue</button>
                          </div>
                          <div class="login-cont text-center py-4">
                              <h5>By Continuing you are agreeing to our</h5>

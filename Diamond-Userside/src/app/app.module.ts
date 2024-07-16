@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './Home/View/home/home.component';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LoginComponent } from './Login/View/login/login.component';
@@ -17,11 +17,15 @@ import { AuctionComponent } from './Auction/view/auction/auction.component';
 import { NavComponent } from './Nav/view/nav/nav.component';
 import { FooterComponent } from './footer/view/footer/footer.component';
 import { ProductComponent } from './Product details/view/product/product.component';
+import { ProductsComponent } from './products/view/products/products.component';
+import { ToastrModule } from 'ngx-toastr';
+import { InterceptorTokenService } from './Common/interceptor-token.service';
+import { FormsModule } from '@angular/forms';
 
 
 
-export function HttpLoaderFactory(http:HttpClient){
-  return new TranslateHttpLoader(http)
+export function HttpLoaderFactory(HttpClient:HttpClient){
+  return new TranslateHttpLoader(HttpClient)
 }
 
 @NgModule({
@@ -37,12 +41,19 @@ export function HttpLoaderFactory(http:HttpClient){
     AuctionComponent,
     NavComponent,
     FooterComponent,
-    ProductComponent
+    ProductComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ToastrModule.forRoot({
+      timeOut:5000,
+      positionClass:'toast-top-right',
+      preventDuplicates:true
+    }),
     TranslateModule.forRoot(
       {
       loader:{
@@ -54,7 +65,9 @@ export function HttpLoaderFactory(http:HttpClient){
     }
     )
   ],
-  providers: [HttpClient],
+  providers: [HttpClient,{
+    provide:HTTP_INTERCEPTORS,useClass:InterceptorTokenService,multi:true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

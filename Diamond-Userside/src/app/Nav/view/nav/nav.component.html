@@ -31,15 +31,13 @@
                     <i class="bi bi-heart-fill"></i>
                 </button>
             </div>
-            <!-- <ul class="d-flex " role="search">
+            <ul class="d-flex" role="search">
                 <li class="nav-item">
-                    <select class="form-select" (change)="ChangeLang($event)" id="">
-                        <option [selected]="Lang === 'en'" value="en">English</option>
-                        <option [selected]="Lang === 'hn'" value="hn">Hindi</option>
-                        <option [selected]="Lang === 'gu'" value="gu">Gujarati</option>
-                    </select>
+                  <select class="form-select" (change)="onLanguageChange($event)" id="langSelect">
+                    <option *ngFor="let lang of getLanguages()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+                  </select>
                 </li>
-            </ul> -->
+              </ul>
         </div>
     </div>
 </nav>
