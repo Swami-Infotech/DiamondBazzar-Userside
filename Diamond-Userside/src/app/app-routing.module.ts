@@ -15,6 +15,7 @@ import { ProductComponent } from './Product details/view/product/product.compone
 import { ProductsComponent } from './products/view/products/products.component';
 import { wishlistComponent } from './Wishlist/View/wishlist/wishlist.component';
 import { CalculatorComponent } from './Calculator/view/calculator/calculator.component';
+import { DemandComponent } from './Demand/View/demand/demand.component';
 
 const routes: Routes = [
   {
@@ -83,6 +84,10 @@ const routes: Routes = [
   {
     path:"Calculator",
     component:CalculatorComponent
+  },
+  {
+    path:"Demand",
+    component:DemandComponent
   }
 ];
 

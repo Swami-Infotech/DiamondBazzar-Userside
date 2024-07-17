@@ -23,6 +23,7 @@ import { InterceptorTokenService } from './Common/interceptor-token.service';
 import { FormsModule } from '@angular/forms';
 import { wishlistComponent } from './Wishlist/View/wishlist/wishlist.component';
 import { CalculatorComponent } from './Calculator/view/calculator/calculator.component';
+import { DemandComponent } from './Demand/View/demand/demand.component';
 
 
 
@@ -46,7 +47,8 @@ export function HttpLoaderFactory(HttpClient:HttpClient){
     ProductComponent,
     ProductsComponent,
     wishlistComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    DemandComponent
   ],
   imports: [
     BrowserModule,
