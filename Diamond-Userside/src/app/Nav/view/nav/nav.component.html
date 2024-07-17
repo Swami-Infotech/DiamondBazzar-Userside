@@ -18,7 +18,7 @@
                     <a class="nav-link" routerLink="/auction">Auction</a>
                 </li>
                 <li class="nav-item pe-3" routerLinkActive="active">
-                    <a class="nav-link" href="#">Demand</a>
+                    <a class="nav-link" routerLink="/Demand">Demand</a>
                 </li>
                 <li class="nav-item pe-3" routerLinkActive="active">
                     <a class="nav-link" routerLink="/Calculator">Calculator</a>
@@ -71,10 +71,14 @@
 
                             <!-- myprofile start -->
                             <div class="profiles mx-2 mt-3 d-flex align-items-center justify-content-between">
-                                <div class="profile-iocn d-flex  align-items-center">
-                                    <i class="bi bi-person-fill"></i>
-                                    <h6 class="ms-3">My Profile</h6>
-                                </div>
+                               <a routerLink="/myprofile">
+                                <button class="btn p-0">
+                                    <div class="profile-iocn d-flex  align-items-center">
+                                        <i class="bi bi-person-fill"></i>
+                                        <h6 class="ms-3">My Profile</h6>
+                                    </div>
+                                </button>
+                               </a>
                                 <div class="right-arrow me-3">
                                     <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20">
                                 </div>
@@ -83,9 +87,11 @@
 
                             <!-- subscription start -->
                             <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
-                                <div class="profile-iocn d-flex  align-items-center">
-                                    <img src="../../../../assets/Img/slider/subscribe.png" alt="subscribe" width="40">
-                                    <h6 class="ms-3">Subscription</h6>
+                                <div class="profile-iocn">
+                                    <button class="btn d-flex flex-wrap align-items-center p-0" data-bs-toggle="modal" data-bs-target="#exampleModal1" type="button">
+                                        <img src="../../../../assets/Img/slider/subscribe.png" alt="subscribe" width="40">
+                                        <h6 class="ms-3">Subscription</h6>
+                                    </button>
                                 </div>
                                 <div class="right-arrow me-3">
                                     <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20">
@@ -190,3 +196,66 @@
     </div>
   </div>
 <!-- support modal end -->
+
+
+<!-- subscripion modal start -->
+ <section class="subss">
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title text-center fs-5" id="exampleModalLabel">Subscription</h1>
+              <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body background-container">
+                <div class="Premium">
+                    <div class="sub-img d-flex flex-wrap align-items-center justify-content-center">
+                        <img src="../../../../assets/Img/Calcu/fisrt.png" alt="" width="70">
+                        <h4>Premium</h4>
+                        <img src="../../../../assets/Img/Calcu/second.png" alt="" width="50">
+                    </div>
+                </div>
+                <div class="subscription">
+                    <div class="sub-img d-flex flex-wrap align-items-center justify-content-center">
+                        <img src="../../../../assets/Img/Calcu/third.png" alt="" width="70">
+                        <h4>subscription</h4>
+                        <img src="../../../../assets/Img/Calcu/four.png" alt="" width="50">
+                    </div>
+                </div>
+                <div class="subscri-price text-center">
+                    <h4>₹649</h4>
+                </div>
+                <div class="activation">
+                    <div class="card px-3 py-1">
+                        <div class="activ  d-flex flex-wrap align-items-center justify-content-between">
+                            <h4>Activation Date</h4>
+                            <h5>07/07/2024</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="expiry my-3">
+                    <div class="card px-3 py-1">
+                        <div class="exp d-flex flex-wrap align-items-center justify-content-between">
+                            <h4>Expiry Date</h4>
+                            <h5>07/08/2024</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment">
+                    <div class="card px-3 py-1">
+                        <div class="mod d-flex flex-wrap align-items-center justify-content-between">
+                            <h4>Payment Method</h4>
+                            <h5>Online</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
+ </section>
+<!-- subscripion modal end -->

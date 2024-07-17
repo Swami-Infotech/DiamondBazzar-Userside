@@ -1,0 +1,66 @@
+.title h3{
+    color: var(--primary-color);
+    text-align: center;
+}
+.title{
+    position: relative;
+}
+.title::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    width: 10%;
+    border: 1px solid #000;
+}
+.profile-title h3{
+    color: var(--primary-color);
+}
+.firstname input{
+    border: 1px solid var(--primary-color);
+}
+.lastname input{
+    border: 1px solid var(--primary-color);
+}
+.number input{
+    border: 1px solid var(--primary-color);
+}
+.email input{
+    border: 1px solid var(--primary-color);
+}
+.company-title h3{
+    color: var(--primary-color);
+}
+.company input{
+    border: 1px solid var(--primary-color);
+}
+.business input{
+    border: 1px solid var(--primary-color);
+}
+.bio input{
+    border: 1px solid var(--primary-color);
+}
+.logo input{
+    border: 1px solid var(--primary-color);
+}
+.office input{
+    border: 1px solid var(--primary-color);
+}
+.address input{
+    border: 1px solid var(--primary-color);
+}
+.profiless .card{
+    padding: 20px;
+    border: 0;
+    box-shadow: 1px 3px 8px 2px rgba(204, 204, 204, 0.85);
+    margin: 70px 0;
+}
+.sub-btn .btn{
+    background-color: #000;
+    padding: 10px 10%;
+    color: #fff;
+}
+.profile-user img{
+    border-radius: 50%;
+}

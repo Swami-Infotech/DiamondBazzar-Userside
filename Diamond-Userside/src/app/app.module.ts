@@ -24,6 +24,7 @@ import { FormsModule } from '@angular/forms';
 import { wishlistComponent } from './Wishlist/View/wishlist/wishlist.component';
 import { CalculatorComponent } from './Calculator/view/calculator/calculator.component';
 import { DemandComponent } from './Demand/View/demand/demand.component';
+import { MyprofileComponent } from './MyProfile/view/myprofile/myprofile.component';
 
 
 
@@ -48,7 +49,8 @@ export function HttpLoaderFactory(HttpClient:HttpClient){
     ProductsComponent,
     wishlistComponent,
     CalculatorComponent,
-    DemandComponent
+    DemandComponent,
+    MyprofileComponent
   ],
   imports: [
     BrowserModule,
