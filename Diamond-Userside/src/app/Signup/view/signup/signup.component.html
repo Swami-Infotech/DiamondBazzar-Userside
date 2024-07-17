@@ -24,26 +24,27 @@
                             <label for="firstname">First Name</label>
                             <div class="input-container mb-3">
                                 <i class="bi bi-person-fill call-icon"></i>
-                                 <input type="text" id="firstname" class="form-control" placeholder="enter First Name">
+                                 <input type="text" id="firstName" class="form-control" placeholder="enter First Name" [(ngModel)]="user.firstName" name="firstName" #firstName="ngModel" required>
                              </div>
                              <label for="lastname">Last Name</label>
                             <div class="input-container mb-3">
                                 <i class="bi bi-person-fill call-icon"></i>
-                                 <input type="text" id="lastname" class="form-control" placeholder="enter last Name">
+                                 <input type="text" id="lastName" class="form-control" placeholder="enter last Name" [(ngModel)]="user.lastName" name="lastName" #lastName="ngModel" required>
                              </div>
                              <label for="phoneNumber">Phone Number</label>
                              <div class="input-container mb-3">
                                 <i class="bi bi-telephone-fill call-icon"></i>
-                                 <input type="number" id="phoneNumber" class="form-control" placeholder="enter Phone number">
+                                 <input type="text
+                                 " id="phoneNumber" class="form-control" placeholder="enter Phone number" [(ngModel)]="user.phoneNumber" name="phoneNumber" #phoneNumber="ngModel" required>
                              </div>
                              <label for="email">Email</label>
                             <div class="input-container mb-3">
                                 <i class="bi bi-envelope-fill call-icon"></i>
-                                 <input type="email" id="email" class="form-control" placeholder="enter email">
+                                 <input type="email" id="email" class="form-control" placeholder="enter email" [(ngModel)]="user.email" name="email" #email="ngModel" required>
                              </div>
                          </form>
                          <div class="login-btn text-center">
-                             <button class="btn">SignUp</button>
+                             <button class="btn" type="submit" (click)="OnLogin()">SignUp</button>
                          </div>
                      </div>
                 </div>

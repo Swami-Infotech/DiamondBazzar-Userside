@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OtpService } from '../../service/otp.service';
 import { Router } from '@angular/router';
 import { Otp } from '../../model/VerifyOtp';
-import Swal from 'sweetalert2';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-otp',
@@ -15,7 +15,7 @@ export class OtpComponent implements OnInit {
   otp: string = '';
   correctOtp: string = '';
 
-  constructor(private service: OtpService, private router: Router) {}
+  constructor(private service: OtpService, private router: Router, private toastr: ToastrService) {}
 
   ngOnInit(): void {
     // Implement any initialization logic if needed
@@ -33,16 +33,7 @@ export class OtpComponent implements OnInit {
       if (!isNaN(numericOtpid)) {
         this.Otp.otpid = numericOtpid;
       } else {
-        Swal.fire({
-          icon: 'error',
-          title: 'Error!',
-          text: 'otpid is not valid',
-          confirmButtonText: 'OK',
-          customClass: {
-            confirmButton: 'btn btn-danger',
-          },
-          buttonsStyling: false,
-        });
+        this.toastr.error('otpid is not valid', 'Error!');
         console.error('otpid is not a valid number');
         return;
       }
@@ -55,22 +46,15 @@ export class OtpComponent implements OnInit {
         if (resp.status === true) {
           this.router.navigate(['/signup']);
           this.ngOnInit();
-          console.log('dewdew',resp);
+          console.log('dewdew', resp);
+          this.toastr.success(resp.message);
         } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error!',
-            text: resp.message,
-            confirmButtonText: 'OK',
-            customClass: {
-              confirmButton: 'btn btn-danger',
-            },
-            buttonsStyling: false,
-          });
+          this.toastr.error(resp.message, 'Error!');
         }
       },
       (error: any) => {
         console.error('Error fetching data:', error);
+        this.toastr.error(error.message);
       }
     );
   }
