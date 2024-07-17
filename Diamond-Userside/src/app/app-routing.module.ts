@@ -13,6 +13,8 @@ import { NavComponent } from './Nav/view/nav/nav.component';
 import { FooterComponent } from './footer/view/footer/footer.component';
 import { ProductComponent } from './Product details/view/product/product.component';
 import { ProductsComponent } from './products/view/products/products.component';
+import { wishlistComponent } from './Wishlist/View/wishlist/wishlist.component';
+import { CalculatorComponent } from './Calculator/view/calculator/calculator.component';
 
 const routes: Routes = [
   {
@@ -73,6 +75,14 @@ const routes: Routes = [
   {
     path:"product",
     component:ProductComponent
+  },
+  {
+    path:"Wishlist",
+    component:wishlistComponent
+  },
+  {
+    path:"Calculator",
+    component:CalculatorComponent
   }
 ];
 

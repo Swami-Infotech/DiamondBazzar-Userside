@@ -4,8 +4,9 @@
         <a class="navbar-brand" href="#">
             <img src="../../../../assets/Img/logo/DimaondBazzarlogo (1).png" alt="DimaondBazzarlogo" width="100">
         </a>
-        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
             <span class="navbar-toggler-icon" style="background-color: #fff;"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -20,24 +21,113 @@
                     <a class="nav-link" href="#">Demand</a>
                 </li>
                 <li class="nav-item pe-3" routerLinkActive="active">
-                    <a class="nav-link" href="#">Contact Us</a>
+                    <a class="nav-link" routerLink="/Calculator">Calculator</a>
                 </li>
             </ul>
-            <div class="icon">
-                <button class="btn">
-                    <i class="bi bi-bell-fill"></i>
-                </button>
-                <button class="btn">
-                    <i class="bi bi-heart-fill"></i>
-                </button>
+            <div class="icon d-flex flex-wrap align-items-center">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-bell-fill"></i>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <div class="noti-title px-3">
+                            <h6>Today</h6>
+                        </div>
+                        <div class="notification px-3">
+                            <div class="noti-iocn d-flex  align-item-center">
+                                <i class="bi bi-bell-fill"></i>
+                                <div class="noti-cont">
+                                    <p>Lorem ipsum dolor sit amet -pl adipisicing elit.</p>
+                                    <h6>10:20PM</h6>
+                                </div>
+                            </div>
+                            <div class="noti-iocn d-flex  align-item-center">
+                                <i class="bi bi-bell-fill"></i>
+                                <div class="noti-cont">
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                    <h6>10:20PM</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+                <a routerLink="/Wishlist">
+                    <button class="btn">
+                        <i class="bi bi-heart-fill"></i>
+                    </button>
+                </a>
+                <div class="profile">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-person-fill"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <div class="profile-title px-3">
+                                <div class="profile-img d-flex align-items-center">
+                                    <img src="../../../../assets/Img/slider/client.png" alt="client" width="50">
+                                    <h5 class="ms-3">Cristal Crizzal</h5>
+                                </div>
+                            </div>
+
+                            <!-- myprofile start -->
+                            <div class="profiles mx-2 mt-3 d-flex align-items-center justify-content-between">
+                                <div class="profile-iocn d-flex  align-items-center">
+                                    <i class="bi bi-person-fill"></i>
+                                    <h6 class="ms-3">My Profile</h6>
+                                </div>
+                                <div class="right-arrow me-3">
+                                    <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20">
+                                </div>
+                            </div>
+                            <!-- myprofile end -->
+
+                            <!-- subscription start -->
+                            <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
+                                <div class="profile-iocn d-flex  align-items-center">
+                                    <img src="../../../../assets/Img/slider/subscribe.png" alt="subscribe" width="40">
+                                    <h6 class="ms-3">Subscription</h6>
+                                </div>
+                                <div class="right-arrow me-3">
+                                    <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20">
+                                </div>
+                            </div>
+                            <!-- subscription end -->
+
+                            <!-- support start -->
+                            <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
+                                <div class="profile-iocn d-flex  align-items-center">
+                                    <img src="../../../../assets/Img/slider/customer-service.png" alt="customer-service" width="40">
+                                    <h6 class="ms-3">Support</h6>
+                                </div>
+                                <div class="right-arrow me-3">
+                                    <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20">
+                                </div>
+                            </div>
+                            <!-- support end -->
+
+                            <!-- logout start -->
+                            <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
+                                <div class="profile-iocn d-flex  align-items-center">
+                                    <img src="../../../../assets/Img/slider/logout.png" alt="customer-service" width="40">
+                                    <h6 class="ms-3">LogOut</h6>
+                                </div>
+                                <div class="right-arrow me-3">
+                                    <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20">
+                                </div>
+                            </div>
+                            <!-- logout end -->
+                        </ul>
+                    </div>
+                </div>
+                
             </div>
-            <ul class="d-flex" role="search">
+            <!-- <ul class="d-flex" role="search">
                 <li class="nav-item">
                   <select class="form-select" (change)="onLanguageChange($event)" id="langSelect">
                     <option *ngFor="let lang of getLanguages()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
                   </select>
                 </li>
-              </ul>
+              </ul> -->
         </div>
     </div>
 </nav>

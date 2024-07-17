@@ -1,0 +1,6 @@
+.Calculator form input{
+    border: 1px solid var(--primary-color);
+}
+.Calculator{
+    margin: 70px 0;
+}

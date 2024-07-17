@@ -21,6 +21,8 @@ import { ProductsComponent } from './products/view/products/products.component';
 import { ToastrModule } from 'ngx-toastr';
 import { InterceptorTokenService } from './Common/interceptor-token.service';
 import { FormsModule } from '@angular/forms';
+import { wishlistComponent } from './Wishlist/View/wishlist/wishlist.component';
+import { CalculatorComponent } from './Calculator/view/calculator/calculator.component';
 
 
 
@@ -42,7 +44,9 @@ export function HttpLoaderFactory(HttpClient:HttpClient){
     NavComponent,
     FooterComponent,
     ProductComponent,
-    ProductsComponent
+    ProductsComponent,
+    wishlistComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,

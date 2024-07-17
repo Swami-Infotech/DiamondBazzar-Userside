@@ -8,3 +8,8 @@ h1,h2,h3,h4,h5,h6,p{
     font-family: "Calistoga", serif;
     font-weight: 100,200,300,400,500,600,700;
 }
+
+:root{
+    --primary-color:#FF8C00;
+    --secondary-color:#000
+}

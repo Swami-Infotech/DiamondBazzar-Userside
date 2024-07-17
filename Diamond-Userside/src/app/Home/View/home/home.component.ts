@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
     translate.use(browserLang?.match(/en|fr/) ? browserLang : 'en');
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
   getLanguages(): string[] {
