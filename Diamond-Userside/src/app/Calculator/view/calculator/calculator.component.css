@@ -4,3 +4,7 @@
 .Calculator{
     margin: 70px 0;
 }
+.payment-date .card{
+    background-color: aliceblue;
+    padding: 5px 15px;
+}
