@@ -25,8 +25,12 @@ export class LoginComponent implements OnInit {
           alert('Requested phone number does not exist. Please sign up.');
         } else{
           // sessionStorage.setItem('token',"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlZjFkYzIwOS02ZGEwLTQyMDYtODFiNi1mNzQ5NjE2ZDYwMmYiLCJVc2VySUQiOiIxIiwiZXhwIjoxNzUyNjU2MjQ4LCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo3MDUxIiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdDo0MjAwIn0.apHnQOyot6BoAUnjzk2wv5bHbxbMCkqG9xJZkF-ViTs");
-          console.log("logindata>>",resp);
+          console.log("logindata>>",resp.data.otp);
           this.route.navigate(['/otp']);
+          sessionStorage.setItem('id',resp.data.otp)
+          sessionStorage.setItem('authID',resp.data.authOTPID)
+
+
         }
     })
   }

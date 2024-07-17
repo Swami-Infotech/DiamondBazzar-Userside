@@ -20,15 +20,20 @@
                          <h2>Verify Otp</h2>
                      </div>
                      <div class="login-form">
-                         <form action="">
-                             <label for="phoneNumber">Otp Verify</label>
-                             <div class="input-container">
-                                 <input type="number" id="phoneNumber" class="form-control" placeholder="enter otp">
-                             </div>
-                         </form>
-                         <div class="login-btn text-center">
-                             <button class="btn">Verify</button>
-                         </div>
+                        <form #ForgetForm="ngForm" name="ForgetForm">
+                            <label for="phoneNumber">Otp Verify</label>
+                            <div class="input-container">
+                                <input type="text
+                                " id="phoneNumber" class="form-control" placeholder="enter otp"
+                                [(ngModel)]="Otp.otp" #otp="ngModel" name="otp" required>
+                            </div>
+                            <!-- <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+                            <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div> -->
+                        </form>
+                        <div class="login-btn text-center">
+                            <button class="btn" [disabled]="!ForgetForm.form.valid" (click)="OnOtp()">Verify</button>
+                        </div>
+                        
                          <div class="login-cont text-center py-4">
                              <h5>Enter the OTP that you have received</h5>
                              <h6>on you WhatsApp</h6>
