@@ -95,9 +95,12 @@
 
                             <!-- support start -->
                             <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
-                                <div class="profile-iocn d-flex  align-items-center">
-                                    <img src="../../../../assets/Img/slider/customer-service.png" alt="customer-service" width="40">
-                                    <h6 class="ms-3">Support</h6>
+                                <div class="profile-iocn">
+                                    <button class="btn d-flex flex-wrap  align-items-center p-0" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button">    
+                                        <img src="../../../../assets/Img/slider/customer-service.png" alt="customer-service" width="40">
+                                        <h6 class="ms-3">Support</h6>
+                                    </button>
+                                  
                                 </div>
                                 <div class="right-arrow me-3">
                                     <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20">
@@ -132,3 +135,58 @@
     </div>
 </nav>
 <!-- navbar End -->
+
+
+
+
+<!-- support modal start -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title text-center fs-5" id="exampleModalLabel">Support</h1>
+          <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="">
+                <div class="mb-3 type">
+                    <div class="input-container">
+                        <img src="../../../../assets/Img/Calcu/select.png" alt="select.png" class="call-icon" width="20">
+                        <select name="" id="" class="form-select">
+                            <option value="">Select Type</option>
+                        </select>
+                    </div>
+                </div>
+                 <div class="mb-3">
+                    <div class="input-container">
+                          <img src="../../../../assets/Img/Calcu/title.png" alt="title.png" width="20" class="call-icon">
+                         <input type="text" id="phoneNumber" class="form-control" placeholder="Phone Number">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="input-container">
+                        <img src="../../../../assets/Img/Calcu/text-file.png" alt="text-file.png" width="20" class="call-icon">
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description"></textarea>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="input-container">
+                        <img src="../../../../assets/Img/Calcu/attach.png" alt="attach.png" width="20" class="call-icon">
+                        <input type="file" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="sub-btn text-center">
+                        <button type="button" class="btn bg-dark text-white rounded-5" data-bs-dismiss="modal">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
+<!-- support modal end -->

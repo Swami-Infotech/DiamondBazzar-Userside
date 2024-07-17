@@ -107,6 +107,39 @@ ul li a{
 }
 
 
+.modal-header{
+    background: linear-gradient(90deg, rgba(255, 140, 0, 1) 14%, rgba(153, 84, 0, 1) 59%);
+    color: #fff;
+    text-align: center;
+}
+
+.input-container {
+    position: relative;
+    width: 100%;
+}
+
+.call-icon {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    color: #FF8C00;
+    font-size: 22px;
+}
+
+.input-container .form-control {
+    padding-left: 40px;
+    border:1px solid #FF8C00;
+}
+.input-container .form-select{
+    padding-left: 40px;
+    border:1px solid #FF8C00;
+}
+.sub-btn .btn{
+    padding: 2% 15%;
+}
+
+
 
 /* medai query start */
 @media  (max-width: 768px) {
