@@ -16,6 +16,8 @@ import { ProductsComponent } from './products/view/products/products.component';
 import { wishlistComponent } from './Wishlist/View/wishlist/wishlist.component';
 import { CalculatorComponent } from './Calculator/view/calculator/calculator.component';
 import { DemandComponent } from './Demand/View/demand/demand.component';
+import { MyprofileComponent } from './MyProfile/view/myprofile/myprofile.component';
+import { PolishpostComponent } from './Polishpost/view/polishpost/polishpost.component';
 
 const routes: Routes = [
   {
@@ -88,6 +90,14 @@ const routes: Routes = [
   {
     path:"Demand",
     component:DemandComponent
+  },
+  {
+    path:"myprofile",
+    component:MyprofileComponent
+  },
+  {
+    path:"polishpost",
+    component:PolishpostComponent
   }
 ];
 

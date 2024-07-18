@@ -1,1 +1,111 @@
 <app-nav></app-nav>
+<section class="demand-tab">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul class="nav nav-pills my-5 sticky-top sticky-top-glass" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-rough-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-rough" type="button" role="tab" aria-controls="pills-rough"
+                            aria-selected="true">Natural</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-polish-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-polish" type="button" role="tab" aria-controls="pills-polish"
+                            aria-selected="false">Lab Grown</button>
+                    </li>
+                </ul>
+            
+                <div class="tab-content" id="pills-tabContent">
+
+                    <!-- naturla tab start -->
+                    <div class="tab-pane fade show active" id="pills-rough" role="tabpanel"
+                        aria-labelledby="pills-rough-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let product of demands">
+                                <div class="lab-product">
+                                  <div class="card">
+                                    <div class="pro-img">
+                                      <a routerLink="/product">
+                                        <img [src]="product.imageUrl" [alt]="product.name" class="card-img-top">
+                                      </a>
+                                    </div>
+                                    <div class="product-details px-4 py-3">
+                                      <div class="price d-flex flex-wrap align-items-center justify-content-between">
+                                        <h4>{{ product.name }}</h4>
+                                        <h5>{{ product.category }}</h5>
+                                      </div>
+                                      <div class="pieace d-flex flex-wrap align-items-center justify-content-between">
+                                        <h6>Piece</h6>
+                                        <p>{{ product.piece }}</p>
+                                      </div>
+                                      <div class="size d-flex flex-wrap align-items-center justify-content-between">
+                                        <h6>Size</h6>
+                                        <p>{{ product.size }}</p>
+                                      </div>
+                                      <div class="weigth d-flex flex-wrap align-items-center justify-content-between">
+                                        <h6>Clarity</h6>
+                                        <p>{{ product.clarity }}</p>
+                                      </div>
+                                      <div class="color d-flex flex-wrap align-items-center justify-content-between">
+                                        <h6>Color</h6>
+                                        <p>{{ product.color }}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <!-- natural tab end -->
+            
+            
+                     <!-- lab grown tab start -->
+                    <div class="tab-pane fade show" id="pills-polish" role="tabpanel" aria-labelledby="pills-polish-tab"
+                        tabindex="0">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let product of demands">
+                                <div class="lab-product">
+                                  <div class="card">
+                                    <div class="pro-img">
+                                      <a routerLink="/product">
+                                        <img [src]="product.imageUrl" [alt]="product.name" class="card-img-top">
+                                      </a>
+                                    </div>
+                                    <div class="product-details px-4 py-3">
+                                      <div class="price d-flex flex-wrap align-items-center justify-content-between">
+                                        <h4>{{ product.name }}</h4>
+                                        <h5>{{ product.category }}</h5>
+                                      </div>
+                                      <div class="pieace d-flex flex-wrap align-items-center justify-content-between">
+                                        <h6>Piece</h6>
+                                        <p>{{ product.piece }}</p>
+                                      </div>
+                                      <div class="size d-flex flex-wrap align-items-center justify-content-between">
+                                        <h6>Size</h6>
+                                        <p>{{ product.size }}</p>
+                                      </div>
+                                      <div class="weigth d-flex flex-wrap align-items-center justify-content-between">
+                                        <h6>Clarity</h6>
+                                        <p>{{ product.clarity }}</p>
+                                      </div>
+                                      <div class="color d-flex flex-wrap align-items-center justify-content-between">
+                                        <h6>Color</h6>
+                                        <p>{{ product.color }}</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                        </div>
+                           
+                    </div>
+                <!-- lab grown tab end -->
+            
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>
