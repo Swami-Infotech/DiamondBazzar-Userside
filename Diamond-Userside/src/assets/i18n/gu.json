@@ -1,6 +1,15 @@
 {
- "Home":{
-    "LINE":"ngx-translate સાથે હેલો કોણીય!",
-    "RATE":"રેટ: ₹૮૩.૩૦ "
- }   
+  "Home": {
+    "LINE": "ngx-translate સાથે હેલો કોણીય!",
+    "RATE": "ભાવ: ₹૮૩.૩૦ ",
+    "Lab Grown": "લેબ ગ્રોન",
+    "Polish": "પોલિશ",
+    "See all": "બધા જુઓ",
+    "Piece": "ભાવ",
+    "Size": "કદ",
+    "gr": "ગ્રામ",
+    "Weight": "વજન",
+    "Color": "રંગ",
+    "Rough":"રફ"
+  }
 }
