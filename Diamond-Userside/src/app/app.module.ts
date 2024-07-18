@@ -26,8 +26,6 @@ import { CalculatorComponent } from './Calculator/view/calculator/calculator.com
 import { DemandComponent } from './Demand/View/demand/demand.component';
 import { MyprofileComponent } from './MyProfile/view/myprofile/myprofile.component';
 import { PolishpostComponent } from './Polishpost/view/polishpost/polishpost.component';
-import { DragDropModule } from '@angular/cdk/drag-drop';
-import { SwiperModule } from 'swiper/angular';
 
 
 
@@ -60,8 +58,6 @@ export function HttpLoaderFactory(HttpClient:HttpClient){
     BrowserModule,
     FormsModule,
     AppRoutingModule,
-    DragDropModule,
-    SwiperModule,
     HttpClientModule,
     ToastrModule.forRoot({
       timeOut:5000,

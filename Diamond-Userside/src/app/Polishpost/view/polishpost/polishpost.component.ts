@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Shap, Size, TextSize } from '../../modal/polishpost';
-import { CdkDragStart } from '@angular/cdk/drag-drop';
-import { SwiperOptions } from 'swiper';
 
 
 @Component({
