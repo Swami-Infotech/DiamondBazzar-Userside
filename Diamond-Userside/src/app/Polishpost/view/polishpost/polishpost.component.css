@@ -7,7 +7,7 @@
   top: 39%;
   left: 333px;
   width: 589px;
-  border: 1px solid #FF8C00;
+  border: 1px solid black;
   transform: translate(-50%, -50%);
 
 }
@@ -16,8 +16,8 @@
   position: absolute;
   top: 39%;
   right: -254px;
-  width: 589px;
-  border: 1px solid #FF8C00;
+  width: 577px;
+  border: 1px solid black;
   transform: translate(-50%, -50%);
 }
 
@@ -87,9 +87,13 @@
 
 .chip .card {
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 25px;
   padding: 10px;
+  width: 73px;
+  height: 37px;
+  border-color:#FF8C00;
   transition: transform 0.3s ease;
+  
 }
 
 .chip .card:hover {
@@ -97,8 +101,8 @@
 }
 
 .chip.active .card {
-  border-color: #007bff;
-  background-color: #007bff;
+  /* border-color: #007bff; */
+  background: linear-gradient(90deg, rgba(255,140,0,1) 14%, rgba(153,84,0,1) 59%);
   color: white;
 }
 
