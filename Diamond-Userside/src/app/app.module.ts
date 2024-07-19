@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {  ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +27,8 @@ import { CalculatorComponent } from './Calculator/view/calculator/calculator.com
 import { DemandComponent } from './Demand/View/demand/demand.component';
 import { MyprofileComponent } from './MyProfile/view/myprofile/myprofile.component';
 import { PolishpostComponent } from './Polishpost/view/polishpost/polishpost.component';
+import { Polishpost1Component } from './polishpost1/view/polishpost1/polishpost1.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 
@@ -52,13 +55,16 @@ export function HttpLoaderFactory(HttpClient:HttpClient){
     CalculatorComponent,
     DemandComponent,
     MyprofileComponent,
-    PolishpostComponent
+    PolishpostComponent,
+    Polishpost1Component
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
+    CarouselModule,
     ToastrModule.forRoot({
       timeOut:5000,
       positionClass:'toast-top-right',

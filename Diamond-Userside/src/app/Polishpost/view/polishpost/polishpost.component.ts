@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Shap, Size, TextSize } from '../../modal/polishpost';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 
 @Component({
@@ -46,68 +47,154 @@ export class PolishpostComponent implements OnInit {
 
   numbers:Size [] = [
     {
-      Number: -2
+      Number: -2,
+       color:'E',
+       cla:'FL',
+        Colors:'Red',
+        facny:'Faint'
+
     },
     {
-      Number: +2
+      Number: +2,
+       color:'E',
+       cla:'IF',
+        Colors:'White',
+         facny:'Light'
     },
     {
-      Number: +6.5
+      Number: +6.5,
+       color:'E',
+       cla:'VVS1',
+        Colors:'Maroon',
+         facny:'Light'
     },
     {
-      Number: +11
+      Number: +11,
+       color:'E',
+       cla:'+11',
+        Colors:'SkyBlue',
+         facny:'Light'
     },
     {
-      Number: +11
+      Number: +11,
+       color:'E',
+       cla:'+11',
+        Colors:'Orange',
+         facny:'Light'
     },
     {
-      Number: +11
+      Number: +11,
+       color:'E',
+       cla:'+11',
+        Colors:'Pink',
+         facny:'Light'
     },
     {
-      Number: +11
+      Number: +11,
+       color:'E',
+       cla:'+11',
+        Colors:'Naviblue',
+         facny:'Light'
     },
     {
-      Number: +11
+      Number: +11,
+       color:'E',
+       cla:'+11',
+        Colors:'Gray',
+         facny:'Light'
     },
     {
-      Number: +11
+      Number: +11,
+       color:'E',
+       cla:'+11',
+        Colors:'Green',
+         facny:'Light'
     },
     {
-      Number: +11
+      Number: +11,
+       color:'E',
+       cla:'+11',
+        Colors:'OffWhite',
+         facny:'Light'
     },
     {
-      Number: +11
+      Number: +11,
+       color:'E',
+       cla:'+11',
+        Colors:'black',
+         facny:'Light'
     },
     {
-      Number: +11
+      Number: +11,
+       color:'E',
+       cla:'+11',
+        Colors:'black',
+         facny:'Light'
     },
     {
-      Number: +11
+      Number: +11,
+       color:'E',
+       cla:'+11',
+        Colors:'black',
+         facny:'Light'
     },
     {
-      Number: +11
+      Number: +11,
+       color:'E',
+       cla:'+11',
+        Colors:'black',
+         facny:'Faint'
     }
   ]
 
   textsizes:TextSize[] = [
     {
-      name: '7GR'
+      name: '7GR',
+      Colors:'Offgreen'
     },
     {
-      name :'8GR'
+      name :'8GR',
+      Colors:'Black'
     },
     {
-      name :'2-3CT'
+      name :'2-3CT',
+      Colors:'Blue'
     },
     {
-      name :'4-8CT'
+      name :'4-8CT',
+      Colors:'Brown'
     },
     {
-      name :'5-6'
+      name :'5-6',
+      Colors:'Yellow'
     }
   ]
 
-
+  customOptions: OwlOptions = {
+    loop: true,
+    autoplay:true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 600,
+    navText: ['&#8249', '&#8250;'],
+    responsive: {
+      0: {
+        items: 2
+      },
+      400: {
+        items: 3
+      },
+      760: {
+        items: 5
+      },
+      1000: {
+        items: 6
+      }
+    },
+    nav: false
+  }
   
 
 }

@@ -18,6 +18,7 @@ import { CalculatorComponent } from './Calculator/view/calculator/calculator.com
 import { DemandComponent } from './Demand/View/demand/demand.component';
 import { MyprofileComponent } from './MyProfile/view/myprofile/myprofile.component';
 import { PolishpostComponent } from './Polishpost/view/polishpost/polishpost.component';
+import { Polishpost1Component } from './polishpost1/view/polishpost1/polishpost1.component';
 
 const routes: Routes = [
   {
@@ -98,6 +99,10 @@ const routes: Routes = [
   {
     path:"polishpost",
     component:PolishpostComponent
+  },
+  {
+    path:"polishpost1",
+    component:Polishpost1Component
   }
 ];
 

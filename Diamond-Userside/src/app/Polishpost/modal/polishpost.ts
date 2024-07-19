@@ -4,8 +4,13 @@ export class Shap{
 }
 export class Size{
     Number!:number;
+    color!:string;
+    cla!:string;
+    Colors!:string;
+    facny!:string
 }
 
 export class TextSize{
-    name!:string
+    name!:string;
+    Colors!:string
 }

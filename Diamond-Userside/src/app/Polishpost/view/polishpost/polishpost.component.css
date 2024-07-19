@@ -28,7 +28,7 @@
 
 .nav-item .nav-link{
     background-color: #fff;
-    box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 8px -1px rgba(247, 243, 243, 0.95);
     margin: 30px 30px;
     padding: 10px 20px;
     color: var(--primary-color);
@@ -40,13 +40,38 @@
     color: #fff;
     background: linear-gradient(90deg, rgba(255,140,0,1) 14%, rgba(153,84,0,1) 59%);
   }
+  .nav-pills .nav-link{
+    background-color: #e7e1d95f;
+  }
   .db-shap .card{
     border: 0;
-    box-shadow: 0px 0px 7px 0px rgba(223, 222, 222, 0.75);
+    box-shadow: 0px 0px 7px 0px #fff;
   }
   .bar .card{
     border: 0;
     box-shadow: 0px 0px 7px 0px rgba(223, 222, 222, 0.75);
   }
 
- 
+.sub-btn .btn{
+    background-color: #FF8C00;
+    padding: 3px 3%;
+    color: #fff;
+}
+.sub-btn{
+    text-align: end;
+}
+.sticky-top-glass {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
+    border-radius: 10px; 
+    z-index: 1; 
+    padding: 10px 20px; 
+  }
+
+  .db-shap{
+    
+  }
