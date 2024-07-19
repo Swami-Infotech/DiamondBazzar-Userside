@@ -1,0 +1,78 @@
+.process-img2{
+    position: relative;
+}
+.process-img2::after{
+    content: '';
+    position: absolute;
+    top: 39%;
+    left: 333px;
+    width: 589px;
+    border: 1px solid #FF8C00;
+    transform: translate(-50%, -50%);
+
+}
+.process-img2::before{
+    content: '';
+    position: absolute;
+    top: 39%;
+    right: -254px;
+    width: 589px;
+    border: 1px solid #FF8C00;
+    transform: translate(-50%, -50%);
+}
+.polish-post .card{
+    border: 0;
+    box-shadow: 0px 0px 7px 0px rgba(223, 222, 222, 0.75);
+    margin: 70px 0;
+    padding-bottom: 15%;
+  }
+
+.natts-btn .btn.active{
+    background: linear-gradient(90deg, rgba(255,140,0,1) 14%, rgba(153,84,0,1) 59%);
+    color: #fff;
+    padding: 6px 15%;
+    border-radius: 15px;
+}
+.natts-btn .btn{
+    border: 1px solid #FF8C00;
+    color: #FF8C00;
+    padding: 6px 15%;
+    border-radius: 15px;
+}
+.natts-btn{
+    text-align: center;
+}
+.dropdown-menu.show {
+    width: 100%;
+}
+.cut-btn .btn.active{
+    background: linear-gradient(90deg, rgba(255,140,0,1) 14%, rgba(153,84,0,1) 59%);
+    color: #fff;
+    padding: 6px 10%;
+    border-radius: 15px;
+}
+.cut-btn .btn{
+    border: 1px solid #FF8C00;
+    color: #FF8C00;
+    padding: 6px 15%;
+    border-radius: 15px;
+    padding: 6px 10%;
+}
+.fluo-btn .btn.active{
+    background: linear-gradient(90deg, rgba(255,140,0,1) 14%, rgba(153,84,0,1) 59%);
+    color: #fff;
+    padding: 6px 5%;
+    border-radius: 15px;
+}
+.fluo-btn .btn{
+    border: 1px solid #FF8C00;
+    color: #FF8C00;
+    padding: 6px 15%;
+    border-radius: 15px;
+    padding: 6px 5%;
+}
+.next-btn .btn{
+    background-color: #FF8C00;
+    color: #fff;
+    padding: 5px 5%;
+}

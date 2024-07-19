@@ -8,6 +8,7 @@ export class Size{
     cla!:string;
     Colors!:string;
     facny!:string
+    isActive!:boolean 
 }
 
 export class TextSize{

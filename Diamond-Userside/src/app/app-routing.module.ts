@@ -19,6 +19,7 @@ import { DemandComponent } from './Demand/View/demand/demand.component';
 import { MyprofileComponent } from './MyProfile/view/myprofile/myprofile.component';
 import { PolishpostComponent } from './Polishpost/view/polishpost/polishpost.component';
 import { Polishpost1Component } from './polishpost1/view/polishpost1/polishpost1.component';
+import { Polishpost2Component } from './Polishpost2/view/polishpost2/polishpost2.component';
 
 const routes: Routes = [
   {
@@ -103,6 +104,10 @@ const routes: Routes = [
   {
     path:"polishpost1",
     component:Polishpost1Component
+  },
+  {
+    path:"Polishpost2",
+    component:Polishpost2Component
   }
 ];
 

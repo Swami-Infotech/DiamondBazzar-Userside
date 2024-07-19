@@ -28,6 +28,7 @@ import { DemandComponent } from './Demand/View/demand/demand.component';
 import { MyprofileComponent } from './MyProfile/view/myprofile/myprofile.component';
 import { PolishpostComponent } from './Polishpost/view/polishpost/polishpost.component';
 import { Polishpost1Component } from './polishpost1/view/polishpost1/polishpost1.component';
+import { Polishpost2Component } from './Polishpost2/view/polishpost2/polishpost2.component';
 
 
 
@@ -55,7 +56,8 @@ export function HttpLoaderFactory(HttpClient:HttpClient){
     DemandComponent,
     MyprofileComponent,
     PolishpostComponent,
-    Polishpost1Component
+    Polishpost1Component,
+    Polishpost2Component
   ],
   imports: [
     BrowserModule,
