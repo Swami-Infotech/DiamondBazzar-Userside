@@ -29,6 +29,7 @@ import { MyprofileComponent } from './MyProfile/view/myprofile/myprofile.compone
 import { PolishpostComponent } from './Polishpost/view/polishpost/polishpost.component';
 import { Polishpost1Component } from './polishpost1/view/polishpost1/polishpost1.component';
 import { Polishpost2Component } from './Polishpost2/view/polishpost2/polishpost2.component';
+import { RoughPostComponent } from './Roughpost/view/rough-post/rough-post.component';
 
 
 
@@ -57,7 +58,8 @@ export function HttpLoaderFactory(HttpClient:HttpClient){
     MyprofileComponent,
     PolishpostComponent,
     Polishpost1Component,
-    Polishpost2Component
+    Polishpost2Component,
+    RoughPostComponent
   ],
   imports: [
     BrowserModule,
