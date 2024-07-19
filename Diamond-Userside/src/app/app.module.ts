@@ -28,7 +28,6 @@ import { DemandComponent } from './Demand/View/demand/demand.component';
 import { MyprofileComponent } from './MyProfile/view/myprofile/myprofile.component';
 import { PolishpostComponent } from './Polishpost/view/polishpost/polishpost.component';
 import { Polishpost1Component } from './polishpost1/view/polishpost1/polishpost1.component';
-import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 
@@ -64,7 +63,6 @@ export function HttpLoaderFactory(HttpClient:HttpClient){
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    CarouselModule,
     ToastrModule.forRoot({
       timeOut:5000,
       positionClass:'toast-top-right',
