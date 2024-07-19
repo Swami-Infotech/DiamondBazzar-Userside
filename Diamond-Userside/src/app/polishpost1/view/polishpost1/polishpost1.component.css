@@ -24,7 +24,7 @@
     border: 0;
     box-shadow: 0px 0px 7px 0px rgba(223, 222, 222, 0.75);
     margin: 70px 0;
-    padding-bottom: 15%;
+    padding-bottom: 4%;
   }
 
 .natts-btn .btn.active{
@@ -75,4 +75,21 @@
     background-color: #FF8C00;
     color: #fff;
     padding: 5px 5%;
+}
+.prev-btn .btn{
+    background-color: #FF8C00;
+    color: #fff;
+    padding: 5px 5%;
+}
+.length .form-control{
+    border: 0;
+    background-color: #f1f0f0a4;
+}
+.length .form-label{
+    font-family: var(--theme-font);
+}
+.accordion-button:not(.collapsed){
+    color: #000 !important;
+    background-color: #fff !important;
+
 }

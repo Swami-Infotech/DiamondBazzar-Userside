@@ -9,7 +9,7 @@
                         <img src="../../../../assets/Img/profile/1.png" alt="">
                     </div>
                     <div class="process-img2">
-                        <img src="../../../../assets/Img//profile/21.png" alt="">
+                        <img src="../../../../assets/Img/profile/21.png" alt="">
                     </div>
                     <div class="process-img3">
                         <img src="../../../../assets/Img/profile/3.png" alt="">
@@ -68,17 +68,95 @@
                                 </div>
                             </div>
                             <div class="col-lg-12">
-                                
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                         Special Requirements
+                                        </button>
+                                      </h2>
+                                      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                <div class="col-lg-6">
+                                                    <div class="cut-select">
+                                                        <div class="title">
+                                                            <h6>cut</h6>
+                                                        </div>
+                                                        <div class="cut-btn">
+                                                            <button class="btn" [class.active]="selectedButton === '3EX'" (click)="selectButton('3EX')">3EX</button>
+                                                            <button class="btn mx-3" [class.active]="selectedButton === 'EX-'" (click)="selectButton('EX-')">EX-</button>
+                                                            <button class="btn" [class.active]="selectedButton === 'VG+'" (click)="selectButton('VG+')">VG+</button>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div class="fluo-select">
+                                                        <div class="title">
+                                                            <h6>Fluorescence</h6>
+                                                        </div>
+                                                        <div class="fluo-btn">
+                                                            <button class="btn" [class.active]="selectedButtons === 'Medium'" (click)="selectButtons('Medium')">Medium</button>
+                                                            <button class="btn mx-3" [class.active]="selectedButtons === 'Strong'" (click)="selectButtons('Strong')">Strong</button>
+                                                            <button class="btn" [class.active]="selectedButtons === 'Very Strong'" (click)="selectButtons('Very Strong')">Very Strong</button>
+                                                            <button class="btn mx-3" [class.active]="selectedButtons === 'None'" (click)="selectButtons('None')">None</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <form action="" class="my-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="length">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Length(MM)</label>
+                                                                    <input type="text" class="form-control" placeholder="From">
+                                                                </div>
+                                                            </div>
+                                                          
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="length">
+                                                                <label for="" class="form-label"></label>
+                                                                <input type="text" class="form-control mt-2" placeholder="To">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="length">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Length(MM)</label>
+                                                                    <input type="text" class="form-control" placeholder="From">
+                                                                </div>
+                                                            </div>
+                                                          
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="length">
+                                                                <label for="" class="form-label"></label>
+                                                                <input type="text" class="form-control mt-2" placeholder="To">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="prev-btn">
-                                    <button class="btn">Prev</button>
+                                <div class="prev-btn mt-4">
+                                    <button class="btn">
+                                        <i class="bi bi-arrow-left"></i>Prev</button>
                                 </div>
                             </div>
                             <div class="col-lg-6">
-                                <div class="next-btn text-end">
+                                <div class="next-btn text-end mt-4">
                                     <a routerLink="/Polishpost2">
-                                    <button class="btn">Next</button>
+                                    <button class="btn">Next
+                                        <i class="bi bi-arrow-right"></i>
+                                    </button>
+
                                 </a>
                                 </div>
                             </div>

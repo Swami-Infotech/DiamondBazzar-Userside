@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class Polishpost1Component {
 
+  selectedButton: string | null = null;
+  selectedButtons: string | null = null;
+
+
+  selectButton(button: string) {
+      this.selectedButton = button;
+  }
+
+  selectButtons(buttons: string){
+    this.selectedButtons = buttons
+  }
 }
