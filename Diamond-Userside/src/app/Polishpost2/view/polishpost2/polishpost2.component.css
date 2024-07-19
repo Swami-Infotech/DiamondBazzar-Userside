@@ -16,7 +16,21 @@
     position: absolute;
     top: 39%;
     right: -254px;
+     
     width: 589px;
     border: 1px solid #FF8C00;
     transform: translate(-50%, -50%);
+}
+.next-btn .btn{
+    background-color: #FF8C00;
+    color: #fff;
+    padding: 5px 5%;
+}
+.prev-btn .btn{
+    background-color: #FF8C00;
+    color: #fff;
+    padding: 5px 5%;
+}
+.polishform .form-control{
+    border-color: #FF8C00;
 }
