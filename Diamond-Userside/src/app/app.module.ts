@@ -31,6 +31,7 @@ import { Polishpost1Component } from './Polish/polishpost1/view/polishpost1/poli
 import { Polishpost2Component } from './Polish/Polishpost2/view/polishpost2/polishpost2.component';
 import { RoughPostComponent } from './Rough/Roughpost/view/rough-post/rough-post.component';
 import { RoughPostPreviewComponent } from './Rough/RoughPostPreview/rough-post-preview/rough-post-preview.component';
+import { DemandPostPreviewComponent } from './DemandPost/DemandPostPreview/demand-post-preview/demand-post-preview.component';
 
 
 
@@ -61,7 +62,8 @@ export function HttpLoaderFactory(HttpClient:HttpClient){
     Polishpost1Component,
     Polishpost2Component,
     RoughPostComponent,
-    RoughPostPreviewComponent
+    RoughPostPreviewComponent,
+    DemandPostPreviewComponent
   ],
   imports: [
     BrowserModule,
