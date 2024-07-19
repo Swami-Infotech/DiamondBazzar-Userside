@@ -18,7 +18,40 @@ export class RoughPostComponent implements OnInit {
       Name:'4-P Nakh'
     },
     {
-      Name:''
+      Name:'Choki Craf'
+    },
+    {
+      Name:'Fancy Craf'
+    },
+    {
+      Name:'Longs'
+    },
+    {
+      Name:'Makeable'
+    },
+    {
+      Name:'Outside'
+    },
+    {
+      Name:'palsa'
+    },
+    {
+      Name:'Palsa Craf'
+    },
+    {
+      Name:'Round Craf'
+    },
+    {
+      Name:'Selection'
+    },
+    {
+      Name:'Sid'
+    },
+    {
+      Name:'Soyebai'
+    },
+    {
+      Name:'Other'
     }
   ]
 

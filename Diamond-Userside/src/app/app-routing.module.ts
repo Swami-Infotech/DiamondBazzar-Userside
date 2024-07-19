@@ -17,10 +17,10 @@ import { wishlistComponent } from './Wishlist/View/wishlist/wishlist.component';
 import { CalculatorComponent } from './Calculator/view/calculator/calculator.component';
 import { DemandComponent } from './Demand/View/demand/demand.component';
 import { MyprofileComponent } from './MyProfile/view/myprofile/myprofile.component';
-import { PolishpostComponent } from './Polishpost/view/polishpost/polishpost.component';
-import { Polishpost1Component } from './polishpost1/view/polishpost1/polishpost1.component';
-import { Polishpost2Component } from './Polishpost2/view/polishpost2/polishpost2.component';
-import { RoughPostComponent } from './Roughpost/view/rough-post/rough-post.component';
+import { PolishpostComponent } from './Polish/Polishpost/view/polishpost/polishpost.component';
+import { Polishpost1Component } from './Polish/polishpost1/view/polishpost1/polishpost1.component';
+import { Polishpost2Component } from './Polish/Polishpost2/view/polishpost2/polishpost2.component';
+import { RoughPostComponent } from './Rough/Roughpost/view/rough-post/rough-post.component';
 
 const routes: Routes = [
   {
