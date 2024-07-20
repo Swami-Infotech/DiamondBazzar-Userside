@@ -1,4 +1,5 @@
 export class Color{
     Name!:string;
-    isActive!:boolean
+    isActive!:boolean;
+    facny!:string
 }

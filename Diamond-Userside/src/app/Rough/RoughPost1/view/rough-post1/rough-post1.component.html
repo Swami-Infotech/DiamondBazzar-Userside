@@ -30,7 +30,7 @@
 
                         <div class="col-lg-12">
                             <div class="shap-title">
-                               <h6>Size*</h6>
+                               <h6>Color*</h6>
                            </div>
 
 
@@ -40,10 +40,10 @@
                            class="nav nav-pills sticky-top sticky-top-glass"
                            id="pills-tab" role="tablist">
                            <li class="nav-item" role="presentation">
-                               <button class="nav-link active" id="pills-General-tab"
+                               <button class="nav-link active" id="pills-g-tab"
                                    data-bs-toggle="pill"
-                                   data-bs-target="#pills-General" type="button"
-                                   role="tab" aria-controls="pills-General"
+                                   data-bs-target="#pills-g" type="button"
+                                   role="tab" aria-controls="pills-g"
                                    aria-selected="true">General</button>
                            </li>
                            <li class="nav-item" role="presentation">
@@ -52,7 +52,7 @@
                                    data-bs-target="#pills-Pointer"
                                    type="button" role="tab"
                                    aria-controls="pills-Pointer"
-                                   aria-selected="false">Pointer</button>
+                                   aria-selected="false">Fancy</button>
                            </li>
                        </ul>
                            <!-- size button end -->
@@ -65,17 +65,51 @@
                                    role="tabpanel"
                                    aria-labelledby="pills-Pointer-tab" tabindex="0">
                                    <div class="rough-gen">
-                                       <form action="">
-                                           <input type="text" placeholder="Enter Pointer Size" class="form-control">
-                                       </form>
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="shap-title">
+                                                    <h6>Fancy Intensity*</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="db-shap my-4">
+                                            <div class="rough-gen">
+                                                <div class="chip-list-container" (wheel)="onScroll($event)">
+                                                    <div class="chip" *ngFor="let size of types" [class.active]="size.isActive"
+                                                        (click)="selectChip(size)">
+                                                        <div class="card py-2">
+                                                            <div class="db-img text-center">
+                                                                <div class="shap-name">
+                                                                    <h6>{{size.facny}}</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="rough-gen">
+                                                <div class="chip-list-container" (wheel)="onScroll($event)">
+                                                    <div class="chip" *ngFor="let size of types" [class.active]="size.isActive"
+                                                        (click)="selectChip(size)">
+                                                        <div class="card py-2">
+                                                            <div class="db-img text-center">
+                                                                <div class="shap-name">
+                                                                    <h6>{{size.Name}}</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                    </div>
                                </div>
                                <!-- Pointer d tab end -->
 
                                    <!--General d tab start -->
-                                   <div class="tab-pane fade show active" id="pills-General"
+                                   <div class="tab-pane fade show active" id="pills-g"
                                    role="tabpanel"
-                                   aria-labelledby="pills-General-tab" tabindex="0">
+                                   aria-labelledby="pills-g-tab" tabindex="0">
                                    <div class="rough-gen">
                                        <div class="chip-list-container" (wheel)="onScroll($event)">
                                            <div class="chip" *ngFor="let size of types" [class.active]="size.isActive"
@@ -95,6 +129,86 @@
    
                            </div>
                            <!-- size tab end-->
+                       </div>
+
+                       <!-- ntts button start -->
+                        <div class="nats my-3">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="title">
+                                        <h6>Natts*</h6>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="natts-btn">
+                                        <button class="btn" [class.active]="selectedButtons === 'YES'" (click)="selectButtons('YES')"> YES </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="natts-btn">
+                                        <button class="btn" [class.active]="selectedButtons === 'NO'" (click)="selectButtons('NO')">NO</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                       <!-- ntts button end -->
+
+
+                       <!-- accordion start -->
+                       <div class="accordion" id="accordionExample">
+                        <div class="accordion-item my-5">
+                          <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Add More Information?
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                              <form action="">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Terms</label>
+                                            <input type="text" class="form-control" placeholder="Enter terms">
+                                        </div>
+                                    </div>  
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Remarks</label>
+                                        <input type="text" class="form-control" placeholder="Enter Remarks">
+                                        </div>
+                                    </div>  
+                                    <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Location</label>
+                                            <input type="text" class="form-control" placeholder="Enter location">
+                                        </div>
+                                    </div>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                       <!-- accordion end -->
+
+                       <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="prev-btn my-4">
+                                <button class="btn">
+                                    <i class="bi bi-arrow-left"></i>Prev</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-12">
+                            <div class="next-btn text-end my-4">
+                                <a routerLink="/RoughPerview">
+                                <button class="btn">Next
+                                    <i class="bi bi-arrow-right"></i>
+                                </button>
+
+                            </a>
+                            </div>
+                        </div>
                        </div>
                      </div>
                     <!-- rough from end -->

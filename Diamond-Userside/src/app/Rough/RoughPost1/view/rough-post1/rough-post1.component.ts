@@ -19,97 +19,126 @@ export class RoughPost1Component {
     selectedChip.isActive = true;
 }
 
+selectedButtons: string | null = null;
+
+selectButtons(buttons: string){
+this.selectedButtons = buttons
+}
+
 types:Color[] = [
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   }, 
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },{
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
   {
     Name:'black',
-    isActive:false
+    isActive:false,
+     facny:'Faint',
   },
 
 ]
