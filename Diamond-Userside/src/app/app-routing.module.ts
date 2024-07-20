@@ -22,6 +22,7 @@ import { Polishpost1Component } from './Polish/polishpost1/view/polishpost1/poli
 import { Polishpost2Component } from './Polish/Polishpost2/view/polishpost2/polishpost2.component';
 import { RoughPostComponent } from './Rough/Roughpost/view/rough-post/rough-post.component';
 import { RoughPost1Component } from './Rough/RoughPost1/view/rough-post1/rough-post1.component';
+import { DemandPostPreview2Component } from './DemandPost/DemandPostPreview2/view/demand-post-preview2/demand-post-preview2.component';
 
 const routes: Routes = [
   {
@@ -118,6 +119,9 @@ const routes: Routes = [
   {
     path:"RoughPost1",
     component:RoughPost1Component
+  },  {
+    path:"DemandPostPreview2",
+    component:DemandPostPreview2Component
   }
 ];
 

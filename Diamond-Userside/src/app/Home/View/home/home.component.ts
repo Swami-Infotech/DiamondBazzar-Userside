@@ -7,15 +7,16 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  Lang:string = '';
+  Lang: string = '';
 
-  constructor(public translate: TranslateService){
-    this.translate.addLangs(['en', 'gu']); // Add your supported languages here
+  constructor(public translate: TranslateService) {
+    this.translate.addLangs(['en', 'gu']);
     this.translate.setDefaultLang('en');
 
     const browserLang = translate.getBrowserLang();
-    translate.use(browserLang?.match(/en|fr/) ? browserLang : 'en');
+    translate.use(browserLang?.match(/en|gu/) ? browserLang : 'en');
   }
+
   ngOnInit(): void {
   }
 
@@ -31,5 +32,4 @@ export class HomeComponent implements OnInit {
       this.translate.use(selectedLang);
     }
   }
-
 }
