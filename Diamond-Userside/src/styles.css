@@ -14,3 +14,7 @@ h1,h2,h3,h4,h5,h6,p{
     --secondary-color:#000;
     --theme-font:"Calistoga", serif
 }
+
+.form-control:focus{
+    border:1px solid #FF8C00;
+}

@@ -5,36 +5,135 @@
             <div class="col-lg-12 col-md-12 col-sm-12">
                 <div class="card px-3">
                     <!-- progerss bar start -->
-                    <div
-                    class="profile-process my-5 d-flex align-items-center justify-content-between">
-                    <div class="process-img">
-                        <img src="../../../../assets/Img/profile/1.png" alt>
-                    </div>
-                    <div class="process-img2">
-                        <img src="../../../../assets/Img/profile/2.png" alt>
-                    </div>
-                    <div class="process-img3">
-                        <img src="../../../../assets/Img/profile/3.png" alt>
-                    </div>
+                    <div class="profile-process my-5 d-flex align-items-center justify-content-between">
+                        <div class="process-img">
+                            <img src="../../../../assets/Img/profile/1.png" alt>
+                        </div>
+                        <div class="process-img2">
+                            <img src="../../../../assets/Img/profile/2.png" alt>
+                        </div>
+                        <div class="process-img3">
+                            <img src="../../../../assets/Img/profile/3.png" alt>
+                        </div>
                     </div>
                     <!-- progress bar end -->
 
                     <!-- rough post form start -->
-                     <form action="">
+                    <form action="">
                         <div class="mb-3 rough-select">
                             <select name="" id="" class="form-select">
                                 <option value="">Select</option>
                             </select>
                         </div>
-                     </form>
+                    </form>
 
-                     <div class="rough-type">
-                        <div class="col">
-                            <div class="card">
-                                
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="title my-4">
+                                <h5>Rough Type*</h5>
                             </div>
                         </div>
-                     </div>
+                        <div class="chip-list-container" (wheel)="onScroll($event)">
+                            <div class="chip" *ngFor="let size of types" [class.active]="size.isActive"
+                                (click)="selectChip(size)">
+                                <div class="card py-2">
+                                    <div class="db-img text-center">
+                                        <div class="shap-name">
+                                            <h6>{{size.Name}}</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="roughs-form">
+                        <form action="">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Piece*</label>
+                                         <input type="text" class="form-control" placeholder="Enter Piece">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mb-3">
+                                        <label for="" class="form-label">Weight*</label>
+                                         <input type="text" class="form-control" placeholder="Enter weight">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                     <div class="shap-title">
+                                        <h6>Size*</h6>
+                                    </div>
+
+
+
+                                    <!-- size button start -->
+                                    <ul
+                                    class="nav nav-pills sticky-top sticky-top-glass"
+                                    id="pills-tab" role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active" id="pills-General-tab"
+                                            data-bs-toggle="pill"
+                                            data-bs-target="#pills-General" type="button"
+                                            role="tab" aria-controls="pills-General"
+                                            aria-selected="true">General</button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link" id="pills-Pointer-tab"
+                                            data-bs-toggle="pill"
+                                            data-bs-target="#pills-Pointer"
+                                            type="button" role="tab"
+                                            aria-controls="pills-Pointer"
+                                            aria-selected="false">Pointer</button>
+                                    </li>
+                                </ul>
+                                    <!-- size button end -->
+
+                                    <!-- size tab start -->
+                                    <div class="tab-content" id="pills-tabContent">
+
+                                        <!--pointer d tab start -->
+                                        <div class="tab-pane fade active" id="pills-Pointer"
+                                            role="tabpanel"
+                                            aria-labelledby="pills-Pointer-tab" tabindex="0">
+                                            <div class="rough-gen">
+                                                <form action="">
+                                                    <input type="text" placeholder="Enter Pointer Size" class="form-control">
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <!-- Pointer d tab end -->
+
+                                            <!--General d tab start -->
+                                            <div class="tab-pane fade show active" id="pills-General"
+                                            role="tabpanel"
+                                            aria-labelledby="pills-General-tab" tabindex="0">
+                                            <div class="rough-gen">
+                                                <div class="chip-list-container" (wheel)="onScroll($event)">
+                                                    <div class="chip" *ngFor="let size of types" [class.active]="size.isActive"
+                                                        (click)="selectChip(size)">
+                                                        <div class="card py-2">
+                                                            <div class="db-img text-center">
+                                                                <div class="shap-name">
+                                                                    <h6>{{size.value}}</h6>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- General tab end -->
+            
+                                    </div>
+                                    <!-- size tab end-->
+                                </div>
+                            </div>
+                            
+                        </form>
+                    </div>
                     <!-- rough post form end -->
                 </div>
             </div>

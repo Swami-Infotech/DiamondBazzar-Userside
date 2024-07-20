@@ -1,3 +1,5 @@
 export class Rough{
-    Name!:string
+    Name!:string;
+    isActive!:boolean;
+    value!:string
 }

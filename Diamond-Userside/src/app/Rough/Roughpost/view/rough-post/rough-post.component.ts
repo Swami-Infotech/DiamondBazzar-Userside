@@ -13,46 +13,201 @@ export class RoughPostComponent implements OnInit {
   }
 
 
+
+
+
   types:Rough[] = [
     {
-      Name:'4-P Nakh'
+      Name:'4-P Nakh',
+      isActive: false,
+      value:'2-3'
     },
     {
-      Name:'Choki Craf'
+      Name:'Choki Craf',
+      isActive: false,
+      value:'3-4'
     },
     {
-      Name:'Fancy Craf'
+      Name:'Fancy Craf',
+      isActive: false,
+      value:'4-5'
     },
     {
-      Name:'Longs'
+      Name:'Longs',
+      isActive: false,
+      value:'2-3'
     },
     {
-      Name:'Makeable'
+      Name:'Makeable',
+      isActive: false,
+      value:'6-7'
     },
     {
-      Name:'Outside'
+      Name:'Outside',
+      isActive: false,
+      value:'7-9'
     },
     {
-      Name:'palsa'
+      Name:'palsa',
+      isActive: false,
+      value:'9-11'
     },
     {
-      Name:'Palsa Craf'
+      Name:'Palsa Craf',
+      isActive: false,
+      value:'+11'
     },
     {
-      Name:'Round Craf'
+      Name:'Round Craf',
+      isActive: false,
+      value:'2GR'
     },
     {
-      Name:'Selection'
+      Name:'Selection',
+      isActive: false,
+      value:'3GR'
     },
     {
-      Name:'Sid'
+      Name:'Sid',
+      isActive: false,
+      value:'4GR'
     },
     {
-      Name:'Soyebai'
+      Name:'Soyebai',
+      isActive: false,
+      value:'5GR'
     },
     {
-      Name:'Other'
-    }
+      Name:'Other',
+      isActive: false,
+      value:'6GR'
+    },
+    {
+      Name:'4-P Nakh',
+      isActive: false,
+      value:'7GR'
+    },
+    {
+      Name:'Choki Craf',
+      isActive: false,
+      value:'8GR'
+    },
+    {
+      Name:'Fancy Craf',
+      isActive: false,
+      value:'2-3CT'
+    },
+    {
+      Name:'Longs',
+      isActive: false,
+      value:'4-8CT'
+    },
+    {
+      Name:'Makeable',
+      isActive: false,
+      value:'5-6'
+    },
+        {
+      Name:'4-P Nakh',
+      isActive: false,
+      value:'2-3'
+    },
+    {
+      Name:'Choki Craf',
+      isActive: false,
+      value:'3-4'
+    },
+    {
+      Name:'Fancy Craf',
+      isActive: false,
+      value:'4-5'
+    },
+    {
+      Name:'Longs',
+      isActive: false,
+      value:'2-3'
+    },
+    {
+      Name:'Makeable',
+      isActive: false,
+      value:'6-7'
+    },
+    {
+      Name:'Outside',
+      isActive: false,
+      value:'7-9'
+    },
+    {
+      Name:'palsa',
+      isActive: false,
+      value:'9-11'
+    },
+    {
+      Name:'Palsa Craf',
+      isActive: false,
+      value:'+11'
+    },
+    {
+      Name:'Round Craf',
+      isActive: false,
+      value:'2GR'
+    },
+    {
+      Name:'Selection',
+      isActive: false,
+      value:'3GR'
+    },
+    {
+      Name:'Sid',
+      isActive: false,
+      value:'4GR'
+    },
+    {
+      Name:'Soyebai',
+      isActive: false,
+      value:'5GR'
+    },
+    {
+      Name:'Other',
+      isActive: false,
+      value:'6GR'
+    },
+    {
+      Name:'4-P Nakh',
+      isActive: false,
+      value:'7GR'
+    },
+    {
+      Name:'Choki Craf',
+      isActive: false,
+      value:'8GR'
+    },
+    {
+      Name:'Fancy Craf',
+      isActive: false,
+      value:'2-3CT'
+    },
+    {
+      Name:'Longs',
+      isActive: false,
+      value:'4-8CT'
+    },
+    {
+      Name:'Makeable',
+      isActive: false,
+      value:'5-6'
+    },
   ]
+
+  onScroll(event: WheelEvent) {
+    const container = event.currentTarget as HTMLElement;
+    container.scrollLeft += event.deltaY;
+    event.preventDefault(); // Prevent the default vertical scroll
+  }
+
+  selectChip(selectedChip: any) {
+    this.types.forEach(chip => chip.isActive = false);
+    selectedChip.isActive = true;
+}
 
 }
