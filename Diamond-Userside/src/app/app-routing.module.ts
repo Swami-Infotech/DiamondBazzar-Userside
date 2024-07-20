@@ -126,7 +126,7 @@ const routes: Routes = [
     component:RoughPostPreviewComponent
   },
   {
-    path:"DemandPostPreview",
+    path:"DemandPostPreview2",
     component:DemandPostPreview2Component
   }
 ];
