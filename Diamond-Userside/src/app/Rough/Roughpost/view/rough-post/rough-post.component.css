@@ -107,3 +107,10 @@
   .nav-pills .nav-link{
     background-color: #e7e1d95f;
   }
+  .next-btn .btn{
+    background-color: #FF8C00;
+    color: #fff;
+  }
+  .next-btn{
+    text-align: end;
+  }

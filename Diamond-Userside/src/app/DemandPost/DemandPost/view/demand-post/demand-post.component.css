@@ -16,19 +16,12 @@
     position: absolute;
     top: 39%;
     right: -254px;
-    width: 589px;
-    border: 1px solid #FF8C00;
+    width: 577px;
+    border: 1px solid black;
     transform: translate(-50%, -50%);
-}
-.rough .card{
-    margin: 70px 0;
-    border: 0;
-    box-shadow: 0px 0px 10px 0px rgba(212, 212, 212, 0.75);
-}
-.rough-price .form-control{
-    border: 2px solid var(--primary-color);
-}
-.nav{
+  }
+  
+  .nav{
     align-items: center !important;
     justify-content: center !important;
   }
@@ -50,6 +43,35 @@
   .nav-pills .nav-link{
     background-color: #e7e1d95f;
   }
+  .db-shap .card{
+    border: 0;
+    box-shadow: 0px 0px 7px 0px #fff;
+  }
+  .bar .card{
+    border: 0;
+    box-shadow: 0px 0px 7px 0px rgba(223, 222, 222, 0.75);
+  }
+  
+  .sub-btn .btn{
+    background-color: #FF8C00;
+    padding: 3px 3%;
+    color: #fff;
+  }
+  .sub-btn{
+    text-align: end;
+  }
+  .sticky-top-glass {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(10px);
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
+    border-radius: 10px; 
+    z-index: 1; 
+    padding: 10px 20px; 
+  }
+  
   .chip-list-container {
     display: flex;
     overflow-x: auto;
@@ -67,11 +89,10 @@
     border: 1px solid #ddd;
     border-radius: 25px;
     padding: 10px;
-    width: 111px;
+    width: 73px;
     height: 37px;
     border-color:#FF8C00;
     transition: transform 0.3s ease;
-    margin: 0;
     
   }
   
@@ -80,6 +101,7 @@
   }
   
   .chip.active .card {
+    /* border-color: #007bff; */
     background: linear-gradient(90deg, rgba(255,140,0,1) 14%, rgba(153,84,0,1) 59%);
     color: white;
   }
@@ -88,37 +110,13 @@
     /* height: 8px; */
     width: 0 !important;
   }
-  .natts-btn .btn.active{
-    background: linear-gradient(90deg, rgba(255,140,0,1) 14%, rgba(153,84,0,1) 59%);
-    color: #fff;
-    padding: 6px 15%;
-    border-radius: 15px;
-}
-.natts-btn .btn{
-    border: 1px solid #FF8C00;
-    color: #FF8C00;
-    padding: 6px 15%;
-    border-radius: 15px;
-}
-.natts-btn{
-    text-align: center;
-}
-.next-btn .btn{
-  background-color: #FF8C00;
-  color: #fff;
-  padding: 5px 5%;
-}
-.prev-btn .btn{
-  background-color: #FF8C00;
-  color: #fff;
-  padding: 5px 5%;
-}
-.accordion-body .form-control{
-  border: 2px solid var(--primary-color);
-}
-.accordion-header{
-  border: 0 !important;
-}
-.accordion-button:focus{
-  border: 0 !important;
-}
+  
+  .chip-list-container::-webkit-scrollbar-thumb {
+    /* background: #ccc; */
+    /* border-radius: 4px; */
+    width: 0 !important;
+  }
+  
+  .chip-list-container::-webkit-scrollbar-thumb:hover {
+    /* background: #999; */
+  }

@@ -24,6 +24,7 @@ import { RoughPostComponent } from './Rough/Roughpost/view/rough-post/rough-post
 import { RoughPost1Component } from './Rough/RoughPost1/view/rough-post1/rough-post1.component';
 import { RoughPostPreviewComponent } from './Rough/RoughPostPreview/rough-post-preview/rough-post-preview.component';
 import { DemandPostPreview2Component } from './DemandPost/DemandPostPreview2/view/demand-post-preview2/demand-post-preview2.component';
+import { DemandPostComponent } from './DemandPost/DemandPost/view/demand-post/demand-post.component';
 
 const routes: Routes = [
   {
@@ -128,6 +129,10 @@ const routes: Routes = [
   {
     path:"DemandPostPreview2",
     component:DemandPostPreview2Component
+  },
+  {
+    path:"DemandPost",
+    component:DemandPostComponent
   }
 ];
 

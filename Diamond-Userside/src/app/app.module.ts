@@ -33,6 +33,7 @@ import { RoughPostComponent } from './Rough/Roughpost/view/rough-post/rough-post
 import { RoughPost1Component } from './Rough/RoughPost1/view/rough-post1/rough-post1.component';
 import { RoughPostPreviewComponent } from './Rough/RoughPostPreview/rough-post-preview/rough-post-preview.component';
 import { DemandPostPreview2Component } from './DemandPost/DemandPostPreview2/view/demand-post-preview2/demand-post-preview2.component';
+import { DemandPostComponent } from './DemandPost/DemandPost/view/demand-post/demand-post.component';
 
 
 
@@ -65,7 +66,8 @@ export function HttpLoaderFactory(HttpClient:HttpClient){
     RoughPostComponent,
     RoughPost1Component,
     RoughPostPreviewComponent,
-    DemandPostPreview2Component
+    DemandPostPreview2Component,
+    DemandPostComponent
   ],
   imports: [
     BrowserModule,
