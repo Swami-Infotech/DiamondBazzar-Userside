@@ -10,6 +10,21 @@
     "gr": "gr",
     "Weight": "Weight",
     "Color": "Color",
-    "Rough":"Rough"
+    "Rough":"Rough",
+    "Natural":"Natural"
+  },
+  "Nav": {
+    "Home": "Home",
+    "RATE": "rate:₹ 83.30",
+    "Lab Grown": "Lab Grown",
+    "Polish": "Polish",
+    "See all": "See all",
+    "Piece": "Piece",
+    "Size": "Size",
+    "gr": "gr",
+    "Weight": "Weight",
+    "Color": "Color",
+    "Rough":"Rough",
+    "Natural":"Natural"
   }
 }
