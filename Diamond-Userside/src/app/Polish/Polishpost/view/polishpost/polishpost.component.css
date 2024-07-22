@@ -120,3 +120,103 @@
 .chip-list-container::-webkit-scrollbar-thumb:hover {
   /* background: #999; */
 }
+
+@media (max-width:1025px) {
+  .profile-back img {
+      height: 103vh;
+      width: 100%;
+      position: relative;
+  }
+  .process-img2::before {
+      content: '';
+      position: absolute;
+      top: 39%;
+      right: -104px;
+      width: 284px;
+      border: 1px solid #FF8C00;
+      transform: translate(-50%, -50%);
+  }
+  .process-img2::after {
+      content: '';
+      position: absolute;
+      top: 39%;
+      left: 180px;
+      width: 284px;
+      border: 1px solid #FF8C00;
+      transform: translate(-50%, -50%);
+  }
+  
+  
+}
+
+@media (max-width:769px) {
+  .process-img2::after {
+      content: '';
+      position: absolute;
+      top: 39%;
+      left: 94px;
+      width: 111px;
+      border: 1px solid #FF8C00;
+      transform: translate(-50%, -50%);
+  }
+  .process-img2::before {
+    content: '';
+    position: absolute;
+    top: 39%;
+    right: -19px;
+    width: 115px;
+    border: 1px solid #FF8C00;
+    transform: translate(-50%, -50%);
+  }
+  .profile-back img {
+      height: 30vh;
+      width: 100%;
+      position: relative;
+  }
+  .profile-img {
+      position: absolute;
+      top: 11%;
+      left: 53%;
+      transform: translate(-50%, -50%);
+  }
+  .card {
+      padding: 0 0px 0 0;
+  }
+  
+  
+}
+
+@media (max-width:376px) {
+  /* .profile-back img {
+      height: 20vh;
+      width: 100%;
+      position: relative;
+  } */
+  /* .profile-img {
+      position: absolute;
+      top: 7%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+  } */
+  .card{
+      padding: 0 0px 0 0;
+  }
+  .process-img2::before {
+      content: '';
+      position: absolute;
+      top: 39%;
+      left: -56px;
+      width: 110px;
+      border: 1px solid #FF8C00;
+      transform: translate(-50%, -50%);
+  }
+  .process-img2::after {
+      content: '';
+      position: absolute;
+      top: 39%;
+      left: 97px;
+      width: 116px;
+      border: 1px solid #FF8C00;
+      transform: translate(-50%, -50%);
+  }
+}

@@ -22,7 +22,7 @@
 
                     <div class="polish-tab">
                         <ul
-                            class="nav nav-pills my-5 sticky-top sticky-top-glass"
+                            class="nav nav-pills my-5"
                             id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active"
@@ -65,7 +65,7 @@
                                 </div>
                                 <div class="db-shap my-4">
                                     <div class="row">
-                                        <div class="col"
+                                        <!-- <div class="col"
                                             *ngFor="let shap of shaps">
                                             <div class="card py-4">
                                                 <div class="db-img text-center">
@@ -77,10 +77,27 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div> -->
+
+                                        <div class="chip-list-container"
+                                        (wheel)="onScroll($event)">
+                                        <div class="chip"
+                                            *ngFor="let shap of shaps"
+                                            [class.active]="shap.isActive"
+                                            (click)="selectChip(shap)">
+                                            <div class="db-img text-center">
+                                                <img [src]="shap.imageUrl"
+                                                    [alt]="shap.Name"
+                                                    class="w-50">
+                                                <div class="shap-name mt-5">
+                                                    <h6>{{shap.Name}}</h6>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
+                                    </div>
                                 </div>
-                                <div class="db-shap">
+                                <!-- <div class="db-shap">
                                     <div class="row">
                                         <div class="col"
                                             *ngFor="let shap of shaps">
@@ -96,7 +113,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                             <!-- natural tab end -->
 
@@ -116,7 +133,7 @@
                             </div>
                         </div>
                         <ul
-                            class="nav nav-pills sticky-top sticky-top-glass"
+                            class="nav nav-pills"
                             id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active"
@@ -190,7 +207,7 @@
                             </div>
                         </div>
                         <ul
-                            class="nav nav-pills sticky-top sticky-top-glass"
+                            class="nav nav-pills"
                             id="pills-tab" role="tablist">
                             <li class="nav-item" role="presentation">
                                 <button class="nav-link active" id="pills-d-tab"
