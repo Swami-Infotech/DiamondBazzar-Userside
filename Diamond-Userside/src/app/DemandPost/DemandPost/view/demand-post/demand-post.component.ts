@@ -11,27 +11,63 @@ export class DemandPostComponent {
   shaps:Shap[] = [
     {
       Name: 'Round',
-      imageUrl: '../../../../assets/Img/polish/jewel.png'
+      imageUrl: '../../../../assets/Img/polish/jewel.png',
+      isActive:false
     },
     {
       Name: 'Pear',
-      imageUrl: '../../../../assets/Img/polish/pear.png'
+      imageUrl: '../../../../assets/Img/polish/pear.png',
+      isActive:false
     },
     {
       Name: 'Ovel',
-      imageUrl: '../../../../assets/Img/polish/Ovel.png'
+      imageUrl: '../../../../assets/Img/polish/Ovel.png',
+      isActive:false
     },
     {
       Name: 'Marquies',
-      imageUrl: '../../../../assets/Img/polish/marquies.png'
+      imageUrl: '../../../../assets/Img/polish/marquies.png',
+      isActive:false
     },
     {
       Name: 'Round',
-      imageUrl: '../../../../assets/Img/polish/jewel.png'
+      imageUrl: '../../../../assets/Img/polish/jewel.png',
+      isActive:false
     },
     {
       Name: 'Pear',
-      imageUrl: '../../../../assets/Img/polish/pear.png'
+      imageUrl: '../../../../assets/Img/polish/pear.png',
+      isActive:false
+    },
+    {
+      Name: 'Round',
+      imageUrl: '../../../../assets/Img/polish/jewel.png',
+      isActive:false
+    },
+    {
+      Name: 'Pear',
+      imageUrl: '../../../../assets/Img/polish/pear.png',
+      isActive:false
+    },
+    {
+      Name: 'Ovel',
+      imageUrl: '../../../../assets/Img/polish/Ovel.png',
+      isActive:false
+    },
+    {
+      Name: 'Marquies',
+      imageUrl: '../../../../assets/Img/polish/marquies.png',
+      isActive:false
+    },
+    {
+      Name: 'Round',
+      imageUrl: '../../../../assets/Img/polish/jewel.png',
+      isActive:false
+    },
+    {
+      Name: 'Pear',
+      imageUrl: '../../../../assets/Img/polish/pear.png',
+      isActive:false
     },
     
   ]

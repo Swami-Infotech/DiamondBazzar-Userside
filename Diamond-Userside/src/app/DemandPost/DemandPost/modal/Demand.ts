@@ -1,6 +1,7 @@
 export class Shap{
     imageUrl!:string;
-    Name!:string
+    Name!:string;
+    isActive!:boolean
 }
 export class Size{
     Number!:number;
