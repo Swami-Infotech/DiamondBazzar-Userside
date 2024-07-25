@@ -21,7 +21,7 @@ export class DemandComponent implements OnInit {
       size: 1,
       clarity: 'VVS2',
       color: 'F',
-      imageUrl: '../../../../assets/Img/Calcu/polsi.png'
+      imageUrl: '../../../../../assets/Img/Calcu/polsi.png'
     },
     {
       name: 'Princess',
@@ -30,7 +30,7 @@ export class DemandComponent implements OnInit {
       size: 1,
       clarity: 'VVS2',
       color: 'F',
-      imageUrl: '../../../../assets/Img/Calcu/polsi.png'
+     imageUrl: '../../../../../../assets/Img/Calcu/polsi.png'
     },
     {
       name: 'Princess',
@@ -39,7 +39,7 @@ export class DemandComponent implements OnInit {
       size: 1,
       clarity: 'VVS2',
       color: 'F',
-      imageUrl: '../../../../assets/Img/Calcu/polsi.png'
+    imageUrl: '../../../../../assets/Img/Calcu/polsi.png'
     },
     {
       name: 'Princess',
@@ -48,7 +48,7 @@ export class DemandComponent implements OnInit {
       size: 1,
       clarity: 'VVS2',
       color: 'F',
-      imageUrl: '../../../../assets/Img/Calcu/polsi.png'
+    imageUrl: '../../../../../assets/Img/Calcu/polsi.png'
     },
     {
       name: 'Princess',
@@ -57,7 +57,7 @@ export class DemandComponent implements OnInit {
       size: 1,
       clarity: 'VVS2',
       color: 'F',
-      imageUrl: '../../../../assets/Img/Calcu/polsi.png'
+    imageUrl: '../../../../../assets/Img/Calcu/polsi.png'
     },
     {
       name: 'Princess',
@@ -66,7 +66,7 @@ export class DemandComponent implements OnInit {
       size: 1,
       clarity: 'VVS2',
       color: 'F',
-      imageUrl: '../../../../assets/Img/Calcu/polsi.png'
+    imageUrl: '../../../../../assets/Img/Calcu/polsi.png'
     },
     {
       name: 'Princess',
@@ -75,7 +75,7 @@ export class DemandComponent implements OnInit {
       size: 1,
       clarity: 'VVS2',
       color: 'F',
-      imageUrl: '../../../../assets/Img/Calcu/polsi.png'
+    imageUrl: '../../../../../assets/Img/Calcu/polsi.png'
     },
     {
       name: 'Princess',
@@ -84,7 +84,7 @@ export class DemandComponent implements OnInit {
       size: 1,
       clarity: 'VVS2',
       color: 'F',
-      imageUrl: '../../../../assets/Img/Calcu/polsi.png'
+    imageUrl: '../../../../../assets/Img/Calcu/polsi.png'
     }
   ]
   ngOnInit(): void {
