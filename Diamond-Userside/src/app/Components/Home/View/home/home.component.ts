@@ -13,15 +13,15 @@ import { FooterComponent } from '../../../Footer/View/footer/footer.component';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  // constructor(public translate: TranslateService) {}
+  constructor(public translate: TranslateService) {}
 
-  // getLanguages(): string[] {
-  //   return ['en', 'gu'];
-  // }
+  getLanguages(): string[] {
+    return ['en', 'gu'];
+  }
 
-  // onLanguageChange(event: Event) {
-  //   const target = event.target as HTMLSelectElement;
-  //   const lang = target.value;
-  //   this.translate.use(lang);
-  // }
+  onLanguageChange(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    const lang = target.value;
+    this.translate.use(lang);
+  }
 }
