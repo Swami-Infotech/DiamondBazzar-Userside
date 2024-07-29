@@ -11,6 +11,10 @@
     "Weight": "Weight",
     "Color": "Color",
     "Rough":"Rough",
-    "Natural":"Natural"
+    "Natural":"Natural",
+    "Home":"Home",
+    "Auction":"Auction",
+    "Demand":"Demand",
+    "Calculator":"Calculator"
   }
 }

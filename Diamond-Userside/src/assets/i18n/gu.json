@@ -11,6 +11,10 @@
     "Weight": "વજન",
     "Color": "રંગ",
     "Rough":"રફ",
-       "Natural":"કુદરતી"
+    "Natural":"કુદરતી",
+    "Home":"હોમ ",
+    "Auction":"હરાજી",
+    "Demand":"માંગ",
+    "Calculator":"કેલ્ક્યુલેટર"
   }
 }

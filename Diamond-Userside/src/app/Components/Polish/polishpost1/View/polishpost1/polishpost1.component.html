@@ -1,1 +1,165 @@
-<p>polishpost1 works!</p>
+<app-nav></app-nav>
+<section class="polish-post">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="card px-3">
+                <div class="profile-process my-5 d-flex align-items-center justify-content-between">
+                    <div class="process-img">
+                        <img src="../../../../assets/Img/profile/1.png" alt="">
+                    </div>
+                    <div class="process-img2">
+                        <img src="../../../../assets/Img/profile/21.png" alt="">
+                    </div>
+                    <div class="process-img3">
+                        <img src="../../../../assets/Img/profile/3.png" alt="">
+                    </div>
+                </div>
+                <div class="polishform">
+                    <form action="">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Piece*</label>
+                                    <input type="text" class="form-control" placeholder="Enter Piece">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Weigth*</label>
+                                    <input type="text" class="form-control" placeholder="Enter weight">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Price per Carat*</label>
+                                    <div class="carat-input d-flex  align-items-center">
+                                        <input type="text" class="form-control" placeholder="₹" style="width: 70px; margin-right: 5px;">
+                                        <input type="text" class="form-control" placeholder="Enter weight" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Natts</label>
+                                    <div class="natts-btn">
+                                        <button class="btn me-5 active">YES</button>
+                                        <button class="btn">NO</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Terms</label>
+                                    <input type="text" class="form-control" placeholder="Enter terms">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Remarks</label>
+                                    <input type="text" class="form-control" placeholder="Enter Remarks">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="mb-3">
+                                    <label for="" class="form-label">Location</label>
+                                    <input type="text" class="form-control" placeholder="Enter location">
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-6">
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                      <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                         Special Requirements
+                                        </button>
+                                      </h2>
+                                      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <div class="cut-select">
+                                                        <div class="title">
+                                                            <h6>cut</h6>
+                                                        </div>
+                                                        <div class="cut-btn">
+                                                            <button class="btn" [class.active]="selectedButton === '3EX'" (click)="selectButton('3EX')">3EX</button>
+                                                            <button class="btn mx-3" [class.active]="selectedButton === 'EX-'" (click)="selectButton('EX-')">EX-</button>
+                                                            <button class="btn" [class.active]="selectedButton === 'VG+'" (click)="selectButton('VG+')">VG+</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                                    <div class="fluo-select">
+                                                        <div class="title">
+                                                            <h6>Fluorescence</h6>
+                                                        </div>
+                                                        <div class="fluo-btn">
+                                                            <button class="btn" [class.active]="selectedButtons === 'Medium'" (click)="selectButtons('Medium')">Medium</button>
+                                                            <button class="btn mx-3" [class.active]="selectedButtons === 'Strong'" (click)="selectButtons('Strong')">Strong</button>
+                                                            <button class="btn" [class.active]="selectedButtons === 'Very Strong'" (click)="selectButtons('Very Strong')">Very Strong</button>
+                                                            <button class="btn mx-3" [class.active]="selectedButtons === 'None'" (click)="selectButtons('None')">None</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <form action="" class="my-3">
+                                                    <div class="row">
+                                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                            <div class="length">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Length(MM)</label>
+                                                                    <input type="text" class="form-control" placeholder="From">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                            <div class="length">
+                                                                <label for="" class="form-label"></label>
+                                                                <input type="text" class="form-control mt-2" placeholder="To">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                            <div class="length">
+                                                                <div class="mb-3">
+                                                                    <label for="" class="form-label">Length(MM)</label>
+                                                                    <input type="text" class="form-control" placeholder="From">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6 col-md-6 col-sm-12">
+                                                            <div class="length">
+                                                                <label for="" class="form-label"></label>
+                                                                <input type="text" class="form-control mt-2" placeholder="To">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="prev-btn mt-4">
+                                    <button class="btn">
+                                        <i class="bi bi-arrow-left"></i>Prev</button>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="next-btn text-end mt-4">
+                                    <a routerLink="/PolishPostSecond" routerLinkActive="activebutton">
+                                    <button class="btn">Next
+                                        <i class="bi bi-arrow-right"></i>
+                                    </button>
+                                </a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

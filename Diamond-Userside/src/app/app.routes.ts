@@ -113,7 +113,7 @@ export const routes: Routes =  [
     component:Polishpost1Component
   },
   {
-    path:"Polishpost2",
+    path:"PolishPostSecond",
     component:Polishpost2Component
   },
   {
