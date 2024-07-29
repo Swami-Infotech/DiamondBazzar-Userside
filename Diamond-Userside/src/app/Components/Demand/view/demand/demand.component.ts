@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { NavComponent } from '../../../Nav/view/nav/nav.component';
 import { FooterComponent } from '../../../Footer/View/footer/footer.component';
 import { Demand } from '../../Modal/Demand';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-demand',
   standalone: true,
-  imports: [CommonModule, FormsModule,NavComponent,FooterComponent],
+  imports: [CommonModule, FormsModule,NavComponent,FooterComponent,TranslateModule],
   templateUrl: './demand.component.html',
   styleUrl: './demand.component.css'
 })
