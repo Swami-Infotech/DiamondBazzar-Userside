@@ -1,0 +1,48 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12">
+             <div class="login-img">
+                <!-- <img src="/assets/Img/login/banner.png" alt=""> -->
+  <img src="../../../../../assets/Img/login/banner.png" alt="login">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+            <div class="login-svg">
+                <img src="../../../../assets/Img/login/img.png" alt="">
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="login-card" >
+                <div class="card">
+                     <div class="login-logo text-center pt-4">
+                         <!-- <img src="../../../../assets/Img/logo/DimaondBazzarlogo.png" alt="" width="80"> -->
+                         <img src="../../../../assets/Img/logo/DimaondBazzarlogo.png" alt="" width="80">
+                     </div>
+                     <div class="login-title text-center py-4">
+                         <h2>Login</h2>
+                     </div>
+                     <div class="login-form">
+                         <form action="">
+                             <label for="phoneNumber">Phone Number</label>
+                             <div class="input-container">
+                                 <i class="bi bi-telephone-fill call-icon"></i>
+                                 <!-- <input type="text" id="phoneNumber" class="form-control" placeholder="Phone Number"  required> -->
+
+                                 <input type="text" id="phoneNumber" class="form-control" placeholder="Phone Number" [(ngModel)]="user.phoneNumber" name="phoneNumber" #phoneNumber="ngModel" required>
+                             </div>
+                         </form>
+                         <div class="login-btn text-center">
+                                <button class="btn" type="submit" (click)="OnLogin()">Continue</button>
+                                <!-- <button class="btn" type="submit">Continue</button> -->
+                         </div>
+                         <div class="login-cont text-center py-4">
+                             <h5>By Continuing you are agreeing to our</h5>
+                             <h6>Terms and Conditions</h6>
+                         </div>
+                     </div>
+                </div>
+             </div>
+        </div>
+       
+    </div>
+</div>

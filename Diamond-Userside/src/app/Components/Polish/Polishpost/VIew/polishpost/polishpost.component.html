@@ -1,0 +1,463 @@
+
+<app-nav></app-nav>
+<section class="bar">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-6">
+                <div class="card px-3 my-4">
+                    <div
+                        class="profile-process my-5 d-flex align-items-center justify-content-between">
+                        <div class="process-img">
+                            <img src="../../../../assets/Img/profile/1.png" alt>
+                        </div>
+                        <div class="process-img2">
+                            <img src="../../../../assets/Img/profile/2.png" alt>
+                        </div>
+                        <div class="process-img3">
+                            <img src="../../../../assets/Img/profile/3.png" alt>
+                        </div>
+                    </div>
+
+                    <!-- shap tab start -->
+
+                    <div class="polish-tab">
+                        <ul
+                            class="nav nav-pills my-5"
+                            id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active"
+                                    id="pills-rough-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-rough" type="button"
+                                    role="tab" aria-controls="pills-rough"
+                                    aria-selected="true">Loose
+                                    <br><span>Diamonds(LD)</span></button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-polish-tab"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#pills-polish" type="button"
+                                    role="tab" aria-controls="pills-polish"
+                                    aria-selected="false">Single Non
+                                    <br><span>Certified(SNC)</span></button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-polish-tab"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#pills-polish" type="button"
+                                    role="tab" aria-controls="pills-polish"
+                                    aria-selected="false">Single
+                                    Certified(SC)</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="pills-tabContent">
+
+                            <!-- naturla tab start -->
+                            <div class="tab-pane fade show active"
+                                id="pills-rough" role="tabpanel"
+                                aria-labelledby="pills-rough-tab" tabindex="0">
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="shap-title">
+                                            <h6>Shape*</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="db-shap my-4">
+                                    <div class="row">
+
+                                        <div class="chip-list-container"
+                                        (wheel)="onScroll($event)">
+                                        <div class="chip"
+                                            *ngFor="let shap of shaps"
+                                            [class.active]="shap.isActive"
+                                            (click)="selectChip(shap)">
+                                            <div class="db-img text-center">
+                                                <img [src]="shap.imageUrl"
+                                                    [alt]="shap.Name"
+                                                    class="w-50">
+                                                <div class="shap-name mt-5">
+                                                    <h6>{{shap.Name}}</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="db-shap">
+                                    <div class="row">
+                                        <div class="col"
+                                            *ngFor="let shap of shaps">
+                                            <div class="card py-4">
+                                                <div class="db-img text-center">
+                                                    <img [src]="shap.imageUrl"
+                                                        [alt]="shap.Name"
+                                                        class="w-50">
+                                                    <div class="shap-name mt-5">
+                                                        <h6>{{shap.Name}}</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+                            </div>
+                            <!-- natural tab end -->
+
+                        </div>
+                    </div>
+
+                    <!-- shap tab end -->
+
+                    <!-- size tab start -->
+
+                    <div class="polish-size my-5">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="shap-title">
+                                    <h6>Size*</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <ul
+                            class="nav nav-pills"
+                            id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active"
+                                    id="pills-Generals-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-Generals"
+                                    type="button" role="tab"
+                                    aria-controls="pills-Generals"
+                                    aria-selected="true">General</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-Sieves-tab"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#pills-Sieves" type="button"
+                                    role="tab" aria-controls="pills-Sieves"
+                                    aria-selected="false">Sieves</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-Pointer-tab"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#pills-Pointer"
+                                    type="button" role="tab"
+                                    aria-controls="pills-Pointer"
+                                    aria-selected="false">Pointer</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="pills-tabContent">
+
+                            <!-- General tab start -->
+                            <div class="tab-pane fade show active"
+                                id="pills-Generals" role="tabpanel"
+                                aria-labelledby="pills-Generals-tab"
+                                tabindex="0">
+                                <div class="db-shap my-3">
+                                    <div class="row">
+                                        <div class="chip-list-container"
+                                            (wheel)="onScroll($event)">
+                                            <div class="chip"
+                                                *ngFor="let size of numbers"
+                                                [class.active]="size.isActive"
+                                                (click)="selectChip(size)">
+                                                <div class="card py-2">
+                                                    <div
+                                                        class="db-img text-center">
+                                                        <div class="shap-name">
+                                                            <h6>{{size.Number}}</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- natural tab end -->
+
+                        </div>
+                    </div>
+
+                    <!-- size tab end -->
+
+                    <!-- color tab start -->
+                    <div class="polish-color">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="row">
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="shap-title">
+                                        <h6>Color*</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul
+                            class="nav nav-pills"
+                            id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-d-tab"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#pills-d" type="button"
+                                    role="tab" aria-controls="pills-d"
+                                    aria-selected="true">D To Z</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-General-tab"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#pills-General"
+                                    type="button" role="tab"
+                                    aria-controls="pills-General"
+                                    aria-selected="false">General</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-Fancy-tab"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#pills-Fancy" type="button"
+                                    role="tab" aria-controls="pills-Fancy"
+                                    aria-selected="false">Fancy</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-Treated-tab"
+                                    data-bs-toggle="pill"
+                                    data-bs-target="#pills-Treated"
+                                    type="button" role="tab"
+                                    aria-controls="pills-Treated"
+                                    aria-selected="false">Treated</button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="pills-tabContent">
+
+                            <!--Color d tab start -->
+                            <div class="tab-pane fade show active" id="pills-d"
+                                role="tabpanel"
+                                aria-labelledby="pills-d-tab" tabindex="0">
+                                <div class="db-shap my-4">
+                                    <div class="row">
+                                        <div class="chip-list-container"
+                                        (wheel)="onScroll($event)">
+                                        <div class="chip"
+                                        *ngFor="let size of numbers"
+                                            [class.active]="size.isActive"
+                                            (click)="selectChip(size)">
+                                            <div class="card py-2">
+                                                <div
+                                                    class="db-img text-center">
+                                                    <div class="shap-name">
+                                                        <h6>{{size.color}}</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        </div>
+                                        <!-- <div class="col"
+                                            *ngFor="let size of numbers">
+                                            <div class="card py-2">
+                                                <div class="db-img text-center">
+                                                    <div class="shap-name">
+                                                        <h6
+                                                            class="active">{{size.color}}</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="col"
+                                            *ngFor="let size of textsizes">
+                                            <div class="card py-2">
+                                                <div class="db-img text-center">
+                                                    <div class="shap-name">
+                                                        <h6>{{size.name}}</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">
+                                        <div class="shap-title">
+                                            <h6>Clarity*</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="db-shap my-4">
+                                    <div class="row">
+                                        <!-- <div class="col"
+                                            *ngFor="let size of numbers">
+                                            <div class="card py-2">
+                                                <div class="db-img text-center">
+                                                    <div class="shap-name">
+                                                        <h6
+                                                            class="active">{{size.cla}}</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        <div class="chip-list-container"
+                                        (wheel)="onScroll($event)">
+                                        <div class="chip"
+                                        *ngFor="let size of numbers"
+                                            [class.active]="size.isActive"
+                                            (click)="selectChip(size)">
+                                            <div class="card py-2">
+                                                <div
+                                                    class="db-img text-center">
+                                                    <div class="shap-name">
+                                                        <h6>{{size.cla}}</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        <!-- <div class="col"
+                                            *ngFor="let size of textsizes">
+                                            <div class="card py-2">
+                                                <div class="db-img text-center">
+                                                    <div class="shap-name">
+                                                        <h6>{{size.name}}</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div> -->
+                                        
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- color d tab end -->
+
+                            <!-- fancy color tab start -->
+
+                            <div class="tab-pane fade show" id="pills-Fancy"
+                                role="tabpanel"
+                                aria-labelledby="pills-Fancy-tab" tabindex="0">
+                                <div class="db-shap my-4">
+
+                                    <div class="color-tab">
+                                        <div class="row">
+                                            <div class="col"
+                                                *ngFor="let size of numbers">
+                                                <div class="card py-2 px-3">
+                                                    <div
+                                                        class="db-img text-center">
+                                                        <div class="shap-name">
+                                                            <h6
+                                                                class="active">{{size.Colors}}</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col"
+                                                *ngFor="let size of textsizes">
+                                                <div class="card py-2 px-3">
+                                                    <div
+                                                        class="db-img text-center">
+                                                        <div class="shap-name">
+                                                            <h6>{{size.Colors}}</h6>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="fancy my-4">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="shap-title">
+                                                    <h6>Fancy Intensity*</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="db-shap my-4">
+                                            <div class="row">
+                                                <div class="col"
+                                                    *ngFor="let size of numbers">
+                                                    <div class="card py-2">
+                                                        <div
+                                                            class="db-img text-center">
+                                                            <div
+                                                                class="shap-name">
+                                                                <h6
+                                                                    class="active">{{size.facny}}</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col"
+                                                    *ngFor="let size of textsizes">
+                                                    <div class="card py-2">
+                                                        <div
+                                                            class="db-img text-center">
+                                                            <div
+                                                                class="shap-name">
+                                                                <h6>{{size.name}}</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="calrity my-4">
+                                        <div class="row">
+                                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                                <div class="shap-title">
+                                                    <h6>Clarity*</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="db-shap my-4">
+                                            <div class="row">
+                                                <div class="col"
+                                                    *ngFor="let size of numbers">
+                                                    <div class="card py-2">
+                                                        <div
+                                                            class="db-img text-center">
+                                                            <div
+                                                                class="shap-name">
+                                                                <h6
+                                                                    class="active">{{size.cla}}</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col"
+                                                    *ngFor="let size of textsizes">
+                                                    <div class="card py-2">
+                                                        <div
+                                                            class="db-img text-center">
+                                                            <div
+                                                                class="shap-name">
+                                                                <h6>{{size.name}}</h6>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <!-- fancy color tab end -->
+
+                        </div>
+                    </div>
+                    <!-- color tab end -->
+
+                    <div class="sub-btn my-4">
+                        <a routerLink="/polishpost1"  routerLinkActive="activebutton"S>
+                            <button class="btn">Next</button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

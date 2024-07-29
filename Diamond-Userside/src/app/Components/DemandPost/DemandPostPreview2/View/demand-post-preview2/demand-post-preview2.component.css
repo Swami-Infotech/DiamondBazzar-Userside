@@ -1,0 +1,105 @@
+.process-img2{
+    position: relative;
+}
+.process-img2::after{
+    content: '';
+    position: absolute;
+    top: 39%;
+    left: 321px;
+    width: 579px;
+    border: 1px solid #FF8C00;
+    transform: translate(-50%, -50%);
+
+}
+.process-img2::before{
+    content: '';
+    position: absolute;
+    top: 39%;
+    right: -254px;
+     
+    width: 589px;
+    border: 1px solid #FF8C00;
+    transform: translate(-50%, -50%);
+}
+.next-btn .btn{
+    background-color: #FF8C00;
+    color: #fff;
+    padding: 5px 5%;
+}
+.prev-btn .btn{
+    background-color: #FF8C00;
+    color: #fff;
+    padding: 5px 5%;
+}
+.polishform .form-control{
+    border-color: #FF8C00;
+}
+.polish-post .card{
+    border: 0;
+    box-shadow: 0px 0px 10px 0px rgba(212, 212, 212, 0.75);
+    margin: 70px 0;
+  }
+
+  .natts-btn .btn.active{
+    background: linear-gradient(90deg, rgba(255,140,0,1) 14%, rgba(153,84,0,1) 59%);
+    color: #fff;
+    padding: 6px 15%;
+    border-radius: 15px;
+}
+.btn{
+    border: 1px solid #FF8C00;
+    color: #FF8C00;
+    padding: 6px 15%;
+    border-radius: 15px;
+}
+.BGM .btn.active{
+    background: linear-gradient(90deg, rgba(255,140,0,1) 14%, rgba(153,84,0,1) 59%);
+    color: #fff;
+    padding: 6px 15%;
+    border-radius: 15px;
+}
+.nav-pills .nav-link.active{
+    color: #fff;
+    background: linear-gradient(90deg, rgba(255,140,0,1) 14%, rgba(153,84,0,1) 59%);
+  }
+  .nav-pills .nav-link{
+    background-color: #e7e1d95f;
+  }
+  .chip-list-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+  }
+  
+  .chip {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .chip .card {
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 10px;
+    width: 111px;
+    height: 37px;
+    border-color:#FF8C00;
+    transition: transform 0.3s ease;
+    margin: 0;
+    
+  }
+  
+  .chip .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .chip.active .card {
+    background: linear-gradient(90deg, rgba(255,140,0,1) 14%, rgba(153,84,0,1) 59%);
+    color: white;
+  }
+  
+  .chip-list-container::-webkit-scrollbar {
+    /* height: 8px; */
+    width: 0 !important;
+  }

@@ -1,0 +1,174 @@
+<app-nav></app-nav>
+<section class="polish-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card px-3">
+                    <div
+                        class="profile-process my-5 d-flex align-items-center justify-content-between">
+                        <div class="process-img">
+                            <img src="../../../../assets/Img/profile/1.png"
+                                alt />
+                        </div>
+                        <div class="process-img2">
+                            <img src="../../../../assets/Img//profile/21.png" alt>
+                        </div>
+                        <div class="process-img3">
+                            <img src="../../../../../assets/Img/profile/3.png"
+                                alt />
+                        </div>
+                    </div>
+
+                    <div class="polishform">
+                       
+                        <form action>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for
+                                            class="form-label">Piece*</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Enter piece" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for
+                                            class="form-label">Weigth*</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Enter weight" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for class="form-label">Price Per
+                                        Carat*</label>
+                                    <div style="display: flex">
+                                        <div class="mb-3 col-lg-3">
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="₹"
+                                                style="width: 70px; margin-right: 0px" />
+                                        </div>
+                                        <div class="mb-3 col-lg">
+                                            <input
+                                                type="text"
+                                                class="form-control"
+                                                placeholder="From" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-lg-6">
+                                    <label></label>
+                                    <input type="text" class="form-control"
+                                        placeholder="To" />
+                                </div>
+                                <div class="mb-3 col-lg-6">
+                                    <label>BGM</label>
+                                    <div class="BGM mt-2" style="display: flex;">
+                                        <button
+                                            class="btn me-5 active">YES</button>
+                                            <button
+                                            class="btn me-5">NO</button>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-lg-6">
+                                    <label>Natts</label>
+                                    <div class="natts-btn mt-2" style="display: flex;">
+                                        <button
+                                            class="btn me-5 active">YES</button><button
+                                            class="btn me-5">NO</button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for
+                                            class="form-label">Terms</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Enter terms" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for
+                                            class="form-label">Remarks</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Enter Remarks" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for
+                                            class="form-label">Location</label>
+                                        <input
+                                            type="text"
+                                            class="form-control"
+                                            placeholder="Enter Location" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="mb-3">
+                                        <label for class="form-label">Special
+                                            Requirements</label>
+                                        <select class="form-select"
+                                            aria-label="Default select example" style="border-color: #FF8C00;">
+                                            <option selected>Special Requirements</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label>Expiry*</label>
+                                    <div class="chip-list-container"
+                                        (wheel)="onScroll($event)">
+                                        <div class="chip"
+                                            *ngFor="let size of types"
+                                            [class.active]="size.isActive"
+                                            (click)="selectChip(size)">
+                                            <div class="card py-2">
+                                                <div class="db-img text-center">
+                                                    <div class="shap-name">
+                                                        <h6>{{size.Name}}</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6">
+                                    <div class="prev-btn mt-4 mb-3">
+                                        <button class="btn">
+                                            <i class="bi bi-arrow-left"></i>Prev
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="next-btn text-end mt-4">
+                                        <a routerLink="/PolishPostSecond">
+                                            <button class="btn">
+                                                Next
+                                                <i
+                                                    class="bi bi-arrow-right"></i>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
