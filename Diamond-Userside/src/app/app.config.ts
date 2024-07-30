@@ -2,12 +2,13 @@ import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
-import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClient, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { InterceptorTokenService } from './Components/Common/interceptor-token.service';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 // import { InterceptorService } from './Common/interceptor.service';
 import { provideAnimations } from '@angular/platform-browser/animations';
+import { InterceptorService } from './Components/Common/interceptor.service';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -19,9 +20,10 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(),
     provideHttpClient(),
     provideRouter(routes),
+    provideHttpClient(withInterceptorsFromDi()),
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: InterceptorTokenService,
+      useClass: InterceptorService,
       multi: true
     }
     ,
