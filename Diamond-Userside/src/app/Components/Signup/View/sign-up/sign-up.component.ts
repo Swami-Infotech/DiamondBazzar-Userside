@@ -21,7 +21,6 @@ export class SignUpComponent {
   ) {}
 
   ngOnInit(): void {
-    // Implement any initialization logic if needed
   }
 
   OnLogin() {
@@ -32,7 +31,7 @@ export class SignUpComponent {
         } else {
           sessionStorage.setItem('token', resp.data.token);
           console.log('SignUpData>>', resp.data);
-          this.router.navigate(['/home']);
+          this.router.navigate(['/profile']);
           sessionStorage.setItem('userID', resp.data.userID);
           // this.toastr.success(resp.message);
         }

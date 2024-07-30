@@ -27,6 +27,7 @@ import { RoughPostPreviewComponent } from './Components/Rough/RoughPostPreview/V
 import { DemandPostPreview2Component } from './Components/DemandPost/DemandPostPreview2/View/demand-post-preview2/demand-post-preview2.component';
 import { DemandPostComponent } from './Components/DemandPost/DemandPost/View/demand-post/demand-post.component';
 import { SignUpComponent } from './Components/Signup/View/sign-up/sign-up.component';
+import { AuthGuard } from './Components/Common/auth.guard';
 
 export const routes: Routes =  [
   {
@@ -54,11 +55,14 @@ export const routes: Routes =  [
   },
   {
     path:"profile",
-    component:ProfileComponent
+    component:ProfileComponent,
+    canActivate:[AuthGuard]
+
   },
   {
     path:"preference",
-    component:PreferenceComponent
+    component:PreferenceComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:"companydetails",

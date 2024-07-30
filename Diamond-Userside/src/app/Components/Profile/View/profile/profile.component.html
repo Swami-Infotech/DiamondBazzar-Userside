@@ -1,24 +1,24 @@
 <div class="container">
-    <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="profile-title text-center">
-                <h2>Profile</h2>
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="profile-title text-center">
+        <h2>Profile</h2>
+      </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="profile">
+        <div class="card">
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-12">
+              <div class="profile-back">
+                <img src="../../../../assets/Img/login/profile.png" alt />
+              </div>
+              <div class="profile-img pe-5">
+                <img src="../../../../assets/Img/login/userimg.jpeg" alt />
+              </div>
             </div>
-        </div>
-        <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="profile">
-                <div class="card">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-3 col-sm-12">
-                            <div class="profile-back">
-                                <img src="../../../../assets/Img/login/profile.png" alt="">
-                            </div>
-                            <div class="profile-img pe-5">
-                                <img src="../../../../assets/Img/login/userimg.jpeg" alt="">
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-md-9 col-sm-12">
-                            <div class="profile-process my-5 d-flex align-items-center justify-content-between">
+            <div class="col-lg-9 col-md-9 col-sm-12">
+              <!-- <div class="profile-process my-5 d-flex align-items-center justify-content-between">
                                 <div class="process-img">
                                     <img src="../../../../assets/Img/profile/1.png" alt="">
                                 </div>
@@ -28,68 +28,165 @@
                                 <div class="process-img3">
                                     <img src="../../../../assets/Img/profile/3.png" alt="">
                                 </div>
-                            </div>
-                            <div class="profile-form mx-5">
-                                <form action="">
-                                    <div class="row my-5">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <label for="Companyname" class="form-label">Company Name</label>
-                                            <div class="input-container">
-                                                <i class="bi bi-building call-icon"></i>
-                                                <input type="text" id="Companyname" class="form-control" placeholder="Company Name">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <label for="businesscategory" class="form-label">Business Category</label>
-                                            <div class="input-container">
-                                               <img src="../../../../assets/Img/profile/briefcase.png" alt="" class="call-icon" width="22">
-                                                <input type="text" id="businesscategory" class="form-control" placeholder="Business Category">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <label for="Companybio" class="form-label">Company Bio</label>
-                                            <div class="input-container">
-                                                <i class="bi bi-building call-icon"></i>
-                                                <input type="text" id="Companybio" class="form-control" placeholder="Company bio">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <label for="logoupload" class="form-label">Logo Upload</label>
-                                            <div class="input-container">
-                                                <img src="../../../../assets/Img/profile/upload.png" alt="" class="call-icon" width="22">
-                                                <input type="file" id="logoupload" class="form-control" placeholder="upload image">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row my-5">
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <label for="officenumber" class="form-label">Office Number</label>
-                                            <div class="input-container">
-                                                <i class="bi bi-telephone-fill call-icon"></i>
-                                                <input type="number" id="officenumber" class="form-control" placeholder="office number">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 col-sm-12">
-                                            <label for="compnayaddress" class="form-label">Company Address</label>
-                                            <div class="input-container">
-                                                <i class="bi bi-geo-alt-fill call-icon"></i>
-                                                <input type="text" id="compnayaddress" class="form-control" placeholder="Company Address">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="next-btn">
-                                        <a routerLink="/preference">
-                                            <button class="btn px-4">Next</button>
-                                        </a>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                            </div> -->
+              <div class="profile-form mx-5">
+                <form (ngSubmit)="OnChangeDataAdd()">
+                  <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <label for="Profileupload" class="form-label">Profile
+                        Upload</label>
+                      <div class="input-container">
+                        <img
+                          src="../../../../assets/Img/profile/upload.png"
+                          alt
+                          class="call-icon"
+                          width="22" />
+                        <input
+                          type="file"
+                          id="Profileupload"
+                          class="form-control"
+                          (change)="onFileSelectedProfile($event)"
+                          placeholder="Profile image" />
+                      </div>
                     </div>
-                </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                      <label for="Companyname" class="form-label">Company
+                        Name</label>
+                      <div class="input-container">
+                        <i class="bi bi-building call-icon"></i>
+                        <input
+                          type="text"
+                          id="Companyname"
+                          class="form-control"
+                          placeholder="Company Name"
+                          name="companyName"
+                          [(ngModel)]="userProfile.companyName" />
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                      <label for="businesscategory" class="form-label">Business
+                        Category</label>
+                      <div class="input-container">
+                        <select
+                          class="form-select"
+                          aria-label="Default select example"
+                          (change)="onCategoryChange($event)">
+                          <option [value]="null" selected>Open this select
+                            menu</option>
+                          <option *ngFor="let category of BusinessListData"
+                            [value]="category.businessCategoryID">
+                            {{ category.businessCategoryName }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                      <label for="logoupload" class="form-label">Logo
+                        Upload</label>
+                      <div class="input-container">
+                        <img
+                          src="../../../../assets/Img/profile/upload.png"
+                          alt
+                          class="call-icon"
+                          width="22" />
+                        <input
+                          type="file"
+                          id="logoupload"
+                          class="form-control"
+                          placeholder="upload image" 
+                          (change)="onFileSelectedLogo($event)"
+                          />
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                      <label for="officenumber" class="form-label">Office
+                        Number</label>
+                      <div class="input-container">
+                        <i class="bi bi-telephone-fill call-icon"></i>
+                        <input
+                          type="text"
+                          id="companyPhoneNumber"
+                          class="form-control"
+                          placeholder="office number"
+                          name="companyPhoneNumber"
+                          [(ngModel)]="userProfile.companyPhoneNumber" />
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                      <label for="compnayaddress" class="form-label">Company
+                        Address</label>
+                      <div class="input-container">
+                        <i class="bi bi-geo-alt-fill call-icon"></i>
+                        <input
+                          type="text"
+                          id="companyAddress"
+                          class="form-control"
+                          placeholder="Company Address"
+                          name="companyAddress"
+                          [(ngModel)]="userProfile.companyAddress" />
+                      </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                      <label for="businesscategory" class="form-label">Main
+                        Category</label>
+                      <select
+                        class="form-select"
+                        aria-label="Default select example"
+                        (change)="onMainCategoryChange($event)">
+                        <option selected>Open this select menu</option>
+                        <option value="0">Natural</option>
+                        <option value="1">LabGrown</option>
+                        <option value="2">All</option>
+                      </select>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                      <label for="businesscategory" class="form-label">Sub
+                        Category</label>
+                      <select
+                        class="form-select"
+                        aria-label="Default select example"
+                        (change)="onSubCategoryChange($event)">
+                        <option selected>Open this select menu</option>
+                        <option value="0">Rough</option>
+                        <option value="1">Polish</option>
+                        <option value="2">All</option>
+                      </select>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+                      <label for="Companybio" class="form-label">Company
+                        Bio</label>
+                      <div class="input-container">
+                        <i class="bi bi-building call-icon"></i>
+                        <input
+                          type="text"
+                          id="Companybio"
+                          class="form-control"
+                          placeholder="Company bio"
+                          name="companyBio"
+                          [(ngModel)]="userProfile.companyBio" />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- <div class="next-btn">
+                    <a routerLink="/preference">
+                      <button class="btn px-4">Next</button>
+                    </a>
+                  </div> -->
+
+                  <div class="next-btn">
+
+                    <button type="submit" class="btn px-4">Next</button>
+
+                  </div>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
