@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms'; // No CommonModule here
+import { FormsModule } from '@angular/forms'; 
 import { Router, RouterLink } from '@angular/router';
 import { profileModel } from '../../model/Profile';
 import { ProfileService } from '../../service/profile.service';
-import { CommonModule } from '@angular/common'; // Import CommonModule from @angular/common
+import { CommonModule } from '@angular/common'; 
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterLink], // Include CommonModule here
+  imports: [FormsModule, CommonModule, RouterLink], 
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
@@ -46,19 +46,16 @@ export class ProfileComponent implements OnInit {
     const selectElement = event.target as HTMLSelectElement;
     const selectedValue = selectElement.value;
     this.userProfile.businessCategoryID =  Number(selectedValue);
-    console.log('Selected Business Category ID:', this.userProfile.businessCategoryID);
   }
   onMainCategoryChange(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
     const selectedValue = selectElement.value;
     this.userProfile.mainCategory =  Number(selectedValue);
-    console.log('Selected mainCategory ID:', this.userProfile.mainCategory);
   }
   onSubCategoryChange(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
     const selectedValue = selectElement.value;
     this.userProfile.subCategory =  Number(selectedValue);
-    console.log('Selected subCategoryID:', this.userProfile.subCategory);
   }
 
  onFileSelectedProfile(event: Event): void {
@@ -68,9 +65,8 @@ export class ProfileComponent implements OnInit {
     const reader = new FileReader();
 
     reader.onload = (e: any) => {
-      const base64String = e.target.result.split(',')[1]; // Extracting only the base64 part
+      const base64String = e.target.result.split(',')[1]; 
       this.userProfile.profilePhoto = base64String;
-      console.log(base64String);
     };
 
     reader.readAsDataURL(file);
@@ -85,9 +81,7 @@ export class ProfileComponent implements OnInit {
 
       reader.onload = (e: any) => {
         const base64String = e.target.result.split(',')[1];
-        // const base64String = e.target.result;
         this.userProfile.companyLogo=base64String
-        console.log(base64String);
       };
       reader.readAsDataURL(file);
     }

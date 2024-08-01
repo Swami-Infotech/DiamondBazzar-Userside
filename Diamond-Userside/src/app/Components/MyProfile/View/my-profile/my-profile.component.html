@@ -11,13 +11,175 @@
                 <div class="profiless">
                     <div class="card">
                         <div class="profile-user text-center">
-                            <img src="../../../../assets/Img/Calcu/profile.jpeg" alt="profile.jpeg" width="100">
-                          </div>
-                          
-                        <div class="profile-title my-3">
-                            <h3>{{ "Home.Personal Information" | translate }}</h3>
+                            <img src="../../../../assets/Img/Calcu/profile.jpeg"
+                                alt="profile.jpeg" width="100">
                         </div>
-                        <form action="">
+
+                        <div class="profile-title my-3">
+                            <h3>{{ "Home.Personal Information" | translate
+                                }}</h3>
+                        </div>
+                        <form (ngSubmit)="OnChangeDataAdd()">
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mb-3 firstname">
+                                        <label for="firstName"
+                                            class="form-label">{{
+                                            "Home.First Name" | translate
+                                            }}</label>
+                                        <input id="firstName" type="text"
+                                            class="form-control"
+                                            placeholder="Enter your firstname"
+                                            [(ngModel)]="UserProfileData.firstName"
+                                            name="firstName">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mb-3 lastname">
+                                        <label for="lastName"
+                                            class="form-label">{{
+                                            "Home.Last Name" | translate
+                                            }}</label>
+                                        <input id="lastName" type="text"
+                                            class="form-control"
+                                            placeholder="Enter your lastname"
+                                            [(ngModel)]="UserProfileData.lastName"
+                                            name="lastName">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mb-3 number">
+                                        <label for="companyPhoneNumber"
+                                            class="form-label">{{
+                                            "Home.Phone Number" | translate
+                                            }}</label>
+                                        <input id="companyPhoneNumber"
+                                            type="text" class="form-control"
+                                            placeholder="Enter your phonenumber"
+                                            [(ngModel)]="UserProfileData.companyPhoneNumber"
+                                            name="companyPhoneNumber">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mb-3 email">
+                                        <label for="email" class="form-label">{{
+                                            "Home.Email" | translate }}</label>
+                                        <input id="email" type="email"
+                                            class="form-control"
+                                            placeholder="Enter your email"
+                                            [(ngModel)]="UserProfileData.email"
+                                            name="email">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="company-title my-3">
+                                        <h3>{{ "Home.Company Information" |
+                                            translate }}</h3>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mb-3 company">
+                                        <label for="companyName"
+                                            class="form-label">{{
+                                            "Home.Company Name" | translate
+                                            }}</label>
+                                        <input id="companyName" type="text"
+                                            class="form-control"
+                                            placeholder="Enter Company Name"
+                                            [(ngModel)]="UserProfileData.companyName"
+                                            name="companyName">
+                                    </div>
+                                </div>
+                                <!-- <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mb-3 business">
+                                        <label for="businessCategoryID"
+                                            class="form-label">{{
+                                            "Home.Business Category" | translate
+                                            }}</label>
+                                        <select
+                                            class="form-select"
+                                            aria-label="Default select example"
+                                            (change)="onCategoryChange($event)">
+                                            <option [value]="null" selected>Open
+                                                this select
+                                                menu</option>
+                                            <option
+                                                *ngFor="let category of BusinessListData"
+                                                [value]="category.businessCategoryID">
+                                                {{ category.businessCategoryName
+                                                }}
+                                            </option>
+                                        </select>
+                                    </div>
+                                </div> -->
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mb-3 bio">
+                                        <label for="companyBio"
+                                            class="form-label">{{
+                                            "Home.Company Bio" | translate
+                                            }}</label>
+                                        <input id="companyBio" type="text"
+                                            class="form-control"
+                                            placeholder="Enter Company Bio"
+                                            [(ngModel)]="UserProfileData.companyBio"
+                                            name="companyBio">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mb-3 logo">
+                                        <label for="companyLogo"
+                                            class="form-label">{{
+                                            "Home.Logo upload" | translate
+                                            }}</label>
+                                        <img src={{UserProfileData.companyLogo}}
+                                            style="width: 50px;">
+                                        <input id="companyLogo" type="file"
+                                            class="form-control"
+                                            (change)="onFileSelectedLogo($event)"
+                                            placeholder="upload logo here"
+                                            name="companyLogo">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mb-3 logo">
+                                        <label for="companyLogo"
+                                            class="form-label">profilePhoto</label>
+                                        <img
+                                            src={{UserProfileData.profilePhoto}}
+                                            style="width: 50px;">
+                                        <input id="companyLogo" type="file"
+                                            class="form-control"
+                                            (change)="onFileSelectedProfile($event)"
+                                            placeholder="upload logo here"
+                                            name="companyLogo">
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="mb-3 address">
+                                        <label for="companyAddress"
+                                            class="form-label">{{
+                                            "Home.Company Address" | translate
+                                            }}</label>
+                                        <input id="companyAddress" type="text"
+                                            class="form-control"
+                                            placeholder="Enter company address"
+                                            [(ngModel)]="UserProfileData.companyAddress"
+                                            name="companyAddress">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12">
+                                    <div class="sub-btn text-center my-3">
+                                        <button class="btn">{{ "Home.Submit" |
+                                            translate }}</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- <form action="">
                             <div class="row">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mb-3 firstname">
@@ -90,7 +252,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
+                        </form> -->
                     </div>
                 </div>
             </div>
