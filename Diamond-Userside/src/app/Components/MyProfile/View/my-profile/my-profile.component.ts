@@ -16,8 +16,9 @@ import { environment } from '../../../../environments/environment';
   styleUrls: ['./my-profile.component.css']
 })
 export class MyProfileComponent implements OnInit {
-  UserProfileData: any = {}; // Initialize the data object
+  UserProfileData: any = {}; 
   BusinessListData: any[] = [];
+  userdata:any
   constructor(
     private service: MyProfileService,
     private router: Router,
@@ -42,7 +43,10 @@ export class MyProfileComponent implements OnInit {
     this.service.UserProfileBy(id).subscribe(
       (data: any) => {
         console.log(data);
-        this.UserProfileData = data.data;
+        this.UserProfileData = data.data.companyData;
+        this.userdata=data.data.userdata
+
+        console.log("userdata",this.userdata);
       },
       (error: any) => {
         console.error('Error fetching business categories', error);
@@ -51,13 +55,17 @@ export class MyProfileComponent implements OnInit {
   }
 
   OnChangeDataAdd(): void {
+    this.UserProfileData.firstName=this.userdata.firstName
+    this.UserProfileData.lastName=this.userdata.lastName
+    this.UserProfileData.profilePhoto=this.userdata.profilePhoto
+    
     this.service.UpdateUserProfile(this.UserProfileData).subscribe(
       (resp: any) => {
         if (resp.status !== true) {
           // this.toastr.error(resp.message);
         } else {
           console.log('AddCompanyProfile>>', resp.data);
-          this.router.navigate(['/home']);
+          // this.router.navigate(['/home']);
           // this.toastr.success(resp.message);
         }
       },
@@ -73,28 +81,18 @@ export class MyProfileComponent implements OnInit {
     if (input.files && input.files[0]) {
       const file = input.files[0];
       const reader = new FileReader();
-  
       reader.onload = (e: any) => {
         const base64String = e.target.result.split(',')[1]; 
-        this.UserProfileData.profilePhoto = base64String;
+        this.userdata.profilePhoto = base64String;
+        this.UserProfileData.profilePhoto= this.userdata.profilePhoto
       };
   
       reader.readAsDataURL(file);
     }
   }
 
-  // BusinessData(): void {
-  //   this.service.BusinessCategoryList().subscribe(
-  //     (data: any) => {
-  //       // console.log(data);
-  //       this.BusinessListData = data.data;
-  //     },
-  //     (error: any) => {
-  //       console.error('Error fetching business categories', error);
-  //     }
-  //   );
-  // }
-  
+ 
+ 
     onFileSelectedLogo(event: Event): void {
       const input = event.target as HTMLInputElement;
       if (input.files && input.files[0]) {

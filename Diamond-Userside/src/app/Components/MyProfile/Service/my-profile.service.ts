@@ -22,5 +22,3 @@ export class MyProfileService {
     return this._httpClient.get(`${environment.baseURL}Auth/GetAllBusinessCategoryList`);
   }
 }
-
-
