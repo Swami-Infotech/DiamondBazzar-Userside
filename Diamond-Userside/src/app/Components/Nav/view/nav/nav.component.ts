@@ -16,6 +16,7 @@ import { NavService } from '../../Service/nav.service';
 export class NavComponent implements OnInit {
   SupportData = new AddSupportModel();
   SupportTypesData: any[] = [];
+  SubscriptionData: any = {}; 
   
   constructor(
     public translate: TranslateService,
@@ -28,6 +29,7 @@ export class NavComponent implements OnInit {
     const userID = parseInt(sessionStorage.getItem('userID') || '0', 10);
     this.SupportData.userID = userID;
     this.SupportTypes();
+   this. Subscription(userID)
   }
 
   getLanguages(): { code: string, name: string }[] {
@@ -55,6 +57,30 @@ export class NavComponent implements OnInit {
     );
   }
 
+
+  
+  Subscription(id: number): void {
+    this.service.UserSubscription(id).subscribe(
+      (data: any) => {
+        console.log(data);
+        this.SubscriptionData = data.data;
+      },
+      (error: any) => {
+        console.error('Error fetching business categories', error);
+      }
+    );
+  }
+  getPaymentMethod(paymentMode: number): string {
+    switch (paymentMode) {
+      case 1:
+        return 'Online';
+      case 2:
+        return 'Offline';
+      default:
+        return 'Unknown';
+    }
+  }
+  
   onCategoryChange(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
     const selectedValue = selectElement.value;

@@ -385,7 +385,7 @@
                 class="activ d-flex flex-wrap align-items-center justify-content-between"
               >
                 <h4>Activation Date</h4>
-                <h5>07/07/2024</h5>
+                <h5>{{ SubscriptionData.starttime | date:'dd/MM/yyyy' }}</h5>
               </div>
             </div>
           </div>
@@ -395,7 +395,7 @@
                 class="exp d-flex flex-wrap align-items-center justify-content-between"
               >
                 <h4>Expiry Date</h4>
-                <h5>07/08/2024</h5>
+                <h5>{{ SubscriptionData.endtime | date:'dd/MM/yyyy' }}</h5>
               </div>
             </div>
           </div>
@@ -405,7 +405,7 @@
                 class="mod d-flex flex-wrap align-items-center justify-content-between"
               >
                 <h4>Payment Method</h4>
-                <h5>Online</h5>
+                <h5>{{ getPaymentMethod(SubscriptionData.paymentMode) }}</h5>
               </div>
             </div>
           </div>

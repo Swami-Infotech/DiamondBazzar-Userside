@@ -20,4 +20,7 @@ export class NavService {
   GetAllSupportTypes(){
     return this._httpClient.get(`${environment.baseURL}App/GetAllSupportTypes`);
   }
+  UserSubscription(id: number){
+    return this._httpClient.get(`${environment.baseURL}App/GetUserSubscriptionByUserID?userID=${id}`);
+  }
 }
