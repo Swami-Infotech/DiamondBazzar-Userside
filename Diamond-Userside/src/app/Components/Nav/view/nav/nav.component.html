@@ -272,75 +272,43 @@
         ></button>
       </div>
       <div class="modal-body">
-        <form action="">
-          <div class="mb-3 type">
+        <form action="" (ngSubmit)="OnChangeDataAdd()" #supportForm="ngForm">
+          <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
+            <label for="businesscategory" class="form-label">Business Category</label>
             <div class="input-container">
-              <img
-                src="../../../../assets/Img/Calcu/select.png"
-                alt="select.png"
-                class="call-icon"
-                width="20"
-              />
-              <select name="" id="" class="form-select">
-                <option value="">Select Type</option>
+              <select class="form-select" aria-label="Default select example" (change)="onCategoryChange($event)" #categorySelect>
+                <option [value]="null" selected>Open this select menu</option>
+                <option *ngFor="let category of SupportTypesData" [value]="category.supportTypeID">
+                  {{ category.supportType }}
+                </option>
               </select>
             </div>
           </div>
           <div class="mb-3">
             <div class="input-container">
-              <img
-                src="../../../../assets/Img/Calcu/title.png"
-                alt="title.png"
-                width="20"
-                class="call-icon"
-              />
-              <input
-                type="text"
-                id="phoneNumber"
-                class="form-control"
-                placeholder="Phone Number"
-              />
+              <img src="../../../../assets/Img/Calcu/title.png" alt="title.png" width="20" class="call-icon" />
+              <input type="text" id="supportTitle" class="form-control" placeholder="support Title" [(ngModel)]="SupportData.supportTitle" name="supportTitle" #supportTitle="ngModel" required />
             </div>
           </div>
           <div class="mb-3">
             <div class="input-container">
-              <img
-                src="../../../../assets/Img/Calcu/text-file.png"
-                alt="text-file.png"
-                width="20"
-                class="call-icon"
-              />
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                rows="3"
-                placeholder="Description"
-              ></textarea>
+              <img src="../../../../assets/Img/Calcu/text-file.png" alt="text-file.png" width="20" class="call-icon" />
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description" [(ngModel)]="SupportData.supportDescription" name="supportDescription" #supportDescription="ngModel" required></textarea>
             </div>
           </div>
           <div class="mb-3">
             <div class="input-container">
-              <img
-                src="../../../../assets/Img/Calcu/attach.png"
-                alt="attach.png"
-                width="20"
-                class="call-icon"
-              />
-              <input type="file" class="form-control" />
+              <img src="../../../../assets/Img/Calcu/attach.png" alt="attach.png" width="20" class="call-icon" />
+              <input type="file" id="attachement" class="form-control" placeholder="upload image" (change)="onFileSelectedLogo($event)" #fileInput />
             </div>
           </div>
           <div class="mb-3">
             <div class="sub-btn text-center">
-              <button
-                type="button"
-                class="btn bg-dark text-white rounded-5"
-                data-bs-dismiss="modal"
-              >
-                Submit
-              </button>
+              <button type="submit" class="btn bg-dark text-white rounded-5" data-bs-dismiss="modal">Submit</button>
             </div>
           </div>
         </form>
+        
       </div>
       <!-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
