@@ -7,6 +7,8 @@
     "See all": "બધા જુઓ",
     "Piece": "ભાવ",
     "Size": "કદ",
+    "Clarity":"કલેરીટી",
+    "Reset":"રીસેટ",
     "gr": "ગ્રામ",
     "Weight": "વજન",
     "Color": "રંગ",
@@ -51,6 +53,12 @@
     "Office Number": "ઓફિસ નંબર",
     "Company Address": "કંપનીનું સરનામું",
     "Submit": "સબમિટ કરો",
-    "My Profile":"મારી પ્રોફાઈલ"
+    "My Profile":"મારી પ્રોફાઈલ",
+    "name":"પ્રિન્સેસ",
+    "category":"એલડી",
+    "piece":"૪૫૮",
+    "size":"૧",
+    "clarity":"વીવીએસ૨",
+    "color":"એફ"
   }
 }

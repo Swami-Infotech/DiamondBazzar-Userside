@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NavComponent } from '../../../Nav/view/nav/nav.component';
 import { FooterComponent } from '../../../Footer/View/footer/footer.component';
 import { RouterLink } from '@angular/router';
+import { HomeService } from '../../service/home.service';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-home',
@@ -13,16 +15,23 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-  // constructor(public translate: TranslateService) {}
+export class HomeComponent implements OnInit {
 
-  // getLanguages(): string[] {
-  //   return ['en', 'gu'];
-  // }
+  imgurl = environment.imgURL;
+  ngOnInit(): void {
+    this.getallsliders()
+  }
 
-  // onLanguageChange(event: Event) {
-  //   const target = event.target as HTMLSelectElement;
-  //   const lang = target.value;
-  //   this.translate.use(lang);
-  // }
+  constructor(private service:HomeService) {}
+
+  slider:any
+  getallsliders(){
+    this.service.getallslider().subscribe(
+      (resp:any)=>{
+        this.slider = resp.data;
+        console.log("slider>>",resp.data);
+        
+      }
+    )
+  }
 }

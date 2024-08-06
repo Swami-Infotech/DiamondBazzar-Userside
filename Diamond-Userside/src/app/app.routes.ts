@@ -72,7 +72,6 @@ export const routes: Routes =  [
   {
     path:"Productdetils",
     component:ProductDetailsComponent,
-    canActivate:[AuthGuard]
   },
   {
     path:"nav",

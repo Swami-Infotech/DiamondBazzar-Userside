@@ -7,6 +7,7 @@
     "See all": "See all",
     "Piece": "Piece",
     "Size": "Size",
+    "Clarity":"Clarity",
     "gr": "gr",
     "Weight": "Weight",
     "Color": "Color",
@@ -51,6 +52,12 @@
     "Office Number": "Office Number",
     "Company Address": "Company Address",
     "Submit": "Submit",
-    "My Profile":"My Profile"
+    "My Profile":"My Profile",
+    "name":"Princess",
+    "category":"LD",
+    "piece":"458",
+    "size":"1",
+    "clarity":"VVS2",
+    "color":"F"
   }
 }

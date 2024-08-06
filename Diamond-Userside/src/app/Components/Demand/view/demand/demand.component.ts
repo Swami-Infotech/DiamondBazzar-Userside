@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NavComponent } from '../../../Nav/view/nav/nav.component';
 import { FooterComponent } from '../../../Footer/View/footer/footer.component';
 import { Demand } from '../../Modal/Demand';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-demand',
@@ -14,10 +14,12 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './demand.component.css'
 })
 export class DemandComponent implements OnInit {
+
+  constructor(){}
   demands:Demand[] = [
     {
       name: 'Princess',
-      category: 'LD',
+      category: 'SD',
       piece: 458,
       size: 1,
       clarity: 'VVS2',
@@ -26,7 +28,7 @@ export class DemandComponent implements OnInit {
     },
     {
       name: 'Princess',
-      category: 'LD',
+      category: 'SD',
       piece: 458,
       size: 1,
       clarity: 'VVS2',
