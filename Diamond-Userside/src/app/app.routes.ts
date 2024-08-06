@@ -28,6 +28,7 @@ import { DemandPostPreview2Component } from './Components/DemandPost/DemandPostP
 import { DemandPostComponent } from './Components/DemandPost/DemandPost/View/demand-post/demand-post.component';
 import { SignUpComponent } from './Components/Signup/View/sign-up/sign-up.component';
 import { AuthGuard } from './Components/Common/auth.guard';
+import { ProductDetailsComponent } from './Components/Product details/View/product-details/product-details.component';
 
 export const routes: Routes =  [
   {
@@ -67,6 +68,11 @@ export const routes: Routes =  [
   {
     path:"companydetails",
     component:CompanyDetailsComponent
+  },
+  {
+    path:"Productdetils",
+    component:ProductDetailsComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:"nav",

@@ -5,6 +5,7 @@ import { User } from '../../Model/Login';
 // import { ToastrService } from 'ngx-toastr';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -24,15 +25,34 @@ export class LoginComponent {
 
   OnLogin() {
     this.service.LoginData(this.user).subscribe(
-      (resp: any) => {
-        if (resp.status !== true) {
-          // this.toastr.error(resp.message);
+      (response: any) => {
+        if (response.status !== true) {
+          Swal.fire({
+            icon: 'error',
+            title: 'error!',
+            text: response.message,
+            confirmButtonText: 'OK',
+            customClass: {
+                confirmButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          });
         } else {
-          console.log("logindata>>", resp.data.otp);
+          console.log("logindata>>", response.data.otp);
           this.router.navigate(['/otp']);
-          sessionStorage.setItem('id', resp.data.otp);
-          sessionStorage.setItem('authID', resp.data.authOTPID);
-          // this.toastr.success(resp.message);
+          sessionStorage.setItem('id', response.data.otp);
+          sessionStorage.setItem('authID', response.data.authOTPID);
+
+          Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: response.message,
+            confirmButtonText: 'OK',
+            customClass: {
+                confirmButton: 'btn btn-success'
+            },
+            buttonsStyling: false
+          });
         }
       },
       (error: any) => {

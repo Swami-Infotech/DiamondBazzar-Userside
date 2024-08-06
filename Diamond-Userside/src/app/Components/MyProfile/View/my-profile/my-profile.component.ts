@@ -7,6 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MyProfileService } from '../../Service/my-profile.service';
 import { Router } from '@angular/router';
 import { environment } from '../../../../environments/environment';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-my-profile',
@@ -60,13 +61,30 @@ export class MyProfileComponent implements OnInit {
     this.UserProfileData.profilePhoto=this.userdata.profilePhoto
     
     this.service.UpdateUserProfile(this.UserProfileData).subscribe(
-      (resp: any) => {
-        if (resp.status !== true) {
-          // this.toastr.error(resp.message);
+      (response: any) => {
+        if (response.status === true) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: response.message,
+            confirmButtonText: 'OK',
+            customClass: {
+                confirmButton: 'btn btn-success'
+            },
+            buttonsStyling: false
+          });
+          this.router.navigate(['/home']);
         } else {
-          console.log('AddCompanyProfile>>', resp.data);
-          // this.router.navigate(['/home']);
-          // this.toastr.success(resp.message);
+          Swal.fire({
+            icon: 'error',
+            title: 'error!',
+            text: response.message,
+            confirmButtonText: 'OK',
+            customClass: {
+                confirmButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          });
         }
       },
       (error: any) => {

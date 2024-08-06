@@ -3,6 +3,7 @@ import { SignupUser } from '../../model/Signup';
 import { Router, RouterLink } from '@angular/router';
 import { SignUpService } from '../../Service/sign-up.service';
 import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-sign-up',
@@ -25,15 +26,33 @@ export class SignUpComponent {
 
   OnLogin() {
     this.service.SingUpApiData(this.user).subscribe(
-      (resp: any) => {
-        if (resp.status !== true) {
-          // this.toastr.error(resp.message);
+      (response: any) => {
+        if (response.status !== true) {
+          Swal.fire({
+            icon: 'error',
+            title: 'error!',
+            text: response.message,
+            confirmButtonText: 'OK',
+            customClass: {
+                confirmButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          });
         } else {
-          sessionStorage.setItem('token', resp.data.token);
-          console.log('SignUpData>>', resp.data);
+          sessionStorage.setItem('token', response.data.token);
+          console.log('SignUpData>>', response.data);
           this.router.navigate(['/profile']);
-          sessionStorage.setItem('userID', resp.data.userID);
-          // this.toastr.success(resp.message);
+          sessionStorage.setItem('userID', response.data.userID);
+          Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: response.message,
+            confirmButtonText: 'OK',
+            customClass: {
+                confirmButton: 'btn btn-success'
+            },
+            buttonsStyling: false
+          });
         }
       },
       (error: any) => {

@@ -4,6 +4,7 @@ import { Router, RouterLink } from '@angular/router';
 import { profileModel } from '../../model/Profile';
 import { ProfileService } from '../../service/profile.service';
 import { CommonModule } from '@angular/common'; 
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-profile',
@@ -89,12 +90,31 @@ export class ProfileComponent implements OnInit {
 
   OnChangeDataAdd(): void {
     this.service.AddCompanyProfile(this.userProfile).subscribe(
-      (resp: any) => {
-        if (resp.status !== true) {
-          // this.toastr.error(resp.message);
-        } else {
-          console.log('AddCompanyProfile>>', resp.data);
+      (response: any) => {
+        if (response.status === true) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: response.message,
+            confirmButtonText: 'OK',
+            customClass: {
+                confirmButton: 'btn btn-success'
+            },
+            buttonsStyling: false
+          });
           this.router.navigate(['/home']);
+        } else {
+          Swal.fire({
+            icon: 'error',
+            title: 'error!',
+            text: response.message,
+            confirmButtonText: 'OK',
+            customClass: {
+                confirmButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          });
+         
           // this.toastr.success(resp.message);
         }
       },

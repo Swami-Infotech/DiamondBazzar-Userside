@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NavComponent } from '../../../Nav/view/nav/nav.component';
 import { FooterComponent } from '../../../Footer/View/footer/footer.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule, NavComponent, FooterComponent],
+  imports: [CommonModule, FormsModule, TranslateModule, NavComponent, FooterComponent,RouterLink],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })

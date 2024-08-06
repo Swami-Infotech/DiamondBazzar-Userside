@@ -4,6 +4,7 @@ import { OtpService } from '../../Service/otp.service';
 import { Router, RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { FormsModule } from '@angular/forms';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-otp',
@@ -50,16 +51,32 @@ export class OtpComponent {
     }
 
     this.service.VerifyOtp(this.Otp).subscribe(
-      (resp: any) => {
-        if (resp.status === true) {
+      (response: any) => {
+        if (response.status === true) {
           this.router.navigate(['/signup']);
           this.ngOnInit();
-          console.log('dewdew', resp);
-          alert(resp.message);
-          // this.toastr.success(resp.message);
+          console.log('dewdew', response);
+          Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: response.message,
+            confirmButtonText: 'OK',
+            customClass: {
+                confirmButton: 'btn btn-success'
+            },
+            buttonsStyling: false
+          });
         } else {
-          // this.toastr.error(resp.message, 'Error!');
-          alert(`resp.message${Error!}`);
+          Swal.fire({
+            icon: 'error',
+            title: 'error!',
+            text: response.message,
+            confirmButtonText: 'OK',
+            customClass: {
+                confirmButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          });
         }
       },
       (error: any) => {

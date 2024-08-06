@@ -5,6 +5,7 @@ import { Router, RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AddSupportModel } from '../../Model/Nav';
 import { NavService } from '../../Service/nav.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-nav',
@@ -21,7 +22,7 @@ export class NavComponent implements OnInit {
   constructor(
     public translate: TranslateService,
     private service: NavService,
-    private router: Router,
+    private route: Router,
     
   ) {}
 
@@ -89,12 +90,30 @@ export class NavComponent implements OnInit {
 
   OnChangeDataAdd(): void {
     this.service.AddSupport(this.SupportData).subscribe(
-      (resp: any) => {
-        if (resp.status !== true) {
-          // this.toastr.error(resp.message);  // Display error message
+      (response: any) => {
+        if (response.status === true) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Success!',
+            text: response.message,
+            confirmButtonText: 'OK',
+            customClass: {
+                confirmButton: 'btn btn-success'
+            },
+            buttonsStyling: false
+          });
         } else {
-          console.log('AddSupport>>', resp.data);
-          // this.toastr.success(resp.message);  // Display success message
+          Swal.fire({
+            icon: 'error',
+            title: 'error!',
+            text: response.message,
+            confirmButtonText: 'OK',
+            customClass: {
+                confirmButton: 'btn btn-danger'
+            },
+            buttonsStyling: false
+          });
+         
          window.location.reload()
         }
       },
