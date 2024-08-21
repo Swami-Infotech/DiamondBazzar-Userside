@@ -6,6 +6,9 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AddSupportModel } from '../../Model/Nav';
 import { NavService } from '../../Service/nav.service';
 import Swal from 'sweetalert2';
+import { response } from 'express';
+import { HomeService } from '../../../Home/service/home.service';
+declare var $: any;
 
 @Component({
   selector: 'app-nav',
@@ -18,11 +21,18 @@ export class NavComponent implements OnInit {
   SupportData = new AddSupportModel();
   SupportTypesData: any[] = [];
   SubscriptionData: any = {}; 
+  noti:any[] = [];
+  notification:any;
+
+  userid!:number;
+  id: any;
   
   constructor(
     public translate: TranslateService,
     private service: NavService,
     private route: Router,
+    private router: Router,
+    private services:HomeService
     
   ) {}
 
@@ -30,7 +40,10 @@ export class NavComponent implements OnInit {
     const userID = parseInt(sessionStorage.getItem('userID') || '0', 10);
     this.SupportData.userID = userID;
     this.SupportTypes();
-   this. Subscription(userID)
+   this. Subscription(userID);
+   this.getallnoti(userID);
+   this.getID();
+
   }
 
   getLanguages(): { code: string, name: string }[] {
@@ -56,6 +69,19 @@ export class NavComponent implements OnInit {
         console.error('Error fetching business categories', error);
       }
     );
+  }
+
+  getID() {
+    if (typeof sessionStorage !== 'undefined') {
+      this.id = sessionStorage.getItem("userid");
+      this.userid = parseInt(this.id);
+
+    } else {
+
+    }
+
+
+
   }
 
 
@@ -142,5 +168,33 @@ export class NavComponent implements OnInit {
       };
       reader.readAsDataURL(file);
     }
+  }
+
+  getallnoti(id:number) :void {
+    this.service.getallnotification(id).subscribe(
+      (data:any)=>{
+        this.noti = data.data;
+        this.notification  = this.noti
+        console.log(this.noti);
+      }
+    )
+  }
+
+  logout(){
+    sessionStorage.clear();
+    this.router.navigate(['/login']).then(()=>{
+      $("ajax-loading").hide();
+    })
+  }
+
+  dolar:any
+  getdashboard(id:any){
+    sessionStorage.getItem('userID');
+    this.services.getwebdashboard(id).subscribe(
+      (resp:any)=>{
+        this.dolar = resp.data.dollar
+        
+      }
+    )
   }
 }

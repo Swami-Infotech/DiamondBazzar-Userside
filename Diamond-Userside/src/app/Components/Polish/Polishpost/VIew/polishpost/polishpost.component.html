@@ -1,11 +1,13 @@
 
 <app-nav></app-nav>
+
+
 <section class="bar">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-6">
                 <div class="card px-3 my-4">
-                    <div
+                    <!-- <div
                         class="profile-process my-5 d-flex align-items-center justify-content-between">
                         <div class="process-img">
                             <img src="../../../../assets/Img/profile/1.png" alt>
@@ -16,11 +18,23 @@
                         <div class="process-img3">
                             <img src="../../../../assets/Img/profile/3.png" alt>
                         </div>
+                    </div> -->
+                    <div class="pagination-container">
+                    <ul class="pagination">
+                        <li *ngFor="let page of [].constructor(totalpages); let i = index"
+                            [class.active]="isActive(i + 1)"
+                            (click)="setpage(i + 1)">
+                          {{ i + 1 }}
+                        </li>
+                      </ul>
                     </div>
 
                     <!-- shap tab start -->
 
+                    <div [ngSwitch]="selectedDisplayType">
+                       
                     <div class="polish-tab">
+                        <div *ngSwitchCase="DisplayType.SquareCategory">
                         <ul
                             class="nav nav-pills my-5"
                             id="pills-tab" role="tablist">
@@ -49,6 +63,10 @@
                                     Certified(SC)</button>
                             </li>
                         </ul>
+                     </div>
+                     
+                    
+                    </div>
 
                         <div class="tab-content" id="pills-tabContent">
 
@@ -452,9 +470,10 @@
 
                     <div class="sub-btn my-4">
                         <a routerLink="/polishpost1"  routerLinkActive="activebutton"S>
-                            <button class="btn">Next</button>
+                            <button class="btn" (click)="nextpage()">Next</button>
                         </a>
                     </div>
+                
 
                 </div>
             </div>

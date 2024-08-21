@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card px-3">
-                    <div class="profile-process my-5 d-flex align-items-center justify-content-between">
+                    <!-- <div class="profile-process my-5 d-flex align-items-center justify-content-between">
                         <div class="process-img">
                             <img src="../../../../assets/Img/profile/1.png" alt>
                         </div>
@@ -14,7 +14,17 @@
                         <div class="process-img3">
                             <img src="../../../../assets/Img/profile/31.png" alt>
                         </div>
-                    </div>
+                    </div> -->
+
+                    <div class="pagination-container">
+                        <ul class="pagination">
+                            <li *ngFor="let page of [].constructor(totalpages); let i = index"
+                                [class.active]="isActive(i + 1)"
+                                (click)="setpage(i + 1)">
+                              {{ i + 1 }}
+                            </li>
+                          </ul>
+                        </div>
                     <div class="polishform">
                         <div style="display: flex;justify-content: center;" class="mb-5">
                             <h5><b>Preview</b></h5>
@@ -127,8 +137,8 @@
                                 </div>
                                 <div class="col-lg-6">
                                     <div class="prev-btn mt-4 mb-3">
-                                        <a routerLink="/Polishpost1">
-                                        <button class="btn">
+                                        <a routerLink="/polishpost1">
+                                        <button class="btn" (click)="prevpage()">
                                             <i class="bi bi-arrow-left"></i>Prev</button>
                                         </a>
                                     </div>

@@ -47,7 +47,7 @@
           <a
             class="nav-link"
             aria-current="page"
-            routerLink="/home"
+            [routerLink]="['/home',userid]"
             routerLinkActive="activebutton"
             >{{ "Home.Home" | translate }}</a
           >
@@ -71,8 +71,14 @@
             {{ "Home.Calculator" | translate }}</a
           >
         </li>
+        <li class="nav-item pe-3" routerLinkActive="active">
+          <a class="nav-link" routerLink="/AddProduct">
+            {{ "Home.AddProduct" | translate }}</a
+          >
+        </li>
       </ul>
       <div class="icon d-flex flex-wrap align-items-center">
+        <!-- notification dropdown start -->
         <div class="dropdown">
           <button
             class="btn dropdown-toggle"
@@ -82,19 +88,21 @@
           >
             <i class="bi bi-bell-fill"></i>
           </button>
-          <ul class="dropdown-menu">
-            <div class="noti-title px-3">
-              <h6>Today</h6>
+          <ul class="dropdown-menu" >
+            <ng-container *ngFor="let d of notification">
+            <div class="noti-title px-3 my-2">
+              <h6 class="text-dark">{{d.notificationTitle}}</h6
+                >
             </div>
             <div class="notification px-3">
               <div class="noti-iocn d-flex align-item-center">
                 <i class="bi bi-bell-fill"></i>
                 <div class="noti-cont">
-                  <p>Lorem ipsum dolor sit amet -pl adipisicing elit.</p>
-                  <h6>10:20PM</h6>
+                  <p>{{d.notificationMessage}}</p>
+                  <h6>{{d.createdAt | date:'short'}}</h6>
                 </div>
               </div>
-              <div class="noti-iocn d-flex align-item-center">
+              <!-- <div class="noti-iocn d-flex align-item-center">
                 <i class="bi bi-bell-fill"></i>
                 <div class="noti-cont">
                   <p>
@@ -102,15 +110,22 @@
                   </p>
                   <h6>10:20PM</h6>
                 </div>
-              </div>
+              </div> -->
             </div>
+          </ng-container>
           </ul>
         </div>
+        <!-- notification dropdown End -->
+
+        <!-- Wishlist icon start -->
         <a routerLink="/Wishlist">
           <button class="btn">
             <i class="bi bi-heart-fill"></i>
           </button>
         </a>
+        <!-- Wishlist icon end -->
+
+        <!-- profile page link start -->
         <div class="profile">
           <div class="dropdown">
             <button
@@ -218,12 +233,14 @@
                 class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between"
               >
                 <div class="profile-iocn d-flex align-items-center">
+                  <a (click)="logout()" class="d-flex flex-wrap align-items-center">
                   <img
                     src="../../../../assets/Img/slider/logout.png"
                     alt="customer-service"
                     width="40"
                   />
                   <h6 class="ms-3">LogOut</h6>
+                </a>
                 </div>
                 <div class="right-arrow me-3">
                   <img
@@ -237,6 +254,7 @@
             </ul>
           </div>
         </div>
+        <!-- profile page link End -->
       </div>
       <!-- <ul class="d-flex" role="search">
                 <li class="nav-item">

@@ -5,17 +5,15 @@ import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class ProductDetailsService {
 
   constructor(private http:HttpClient) { }
 
   baseurl = environment.baseURL;
 
 
-  
+  getpostdetails(id:number){
+    return this.http.get(this.baseurl + "Post/GetPostDetailsby/" + id)
+   }
 
-
-  getwebdashboard(id:any){
-    return this.http.get(this.baseurl + "Web/GetWebDashboard/" + id)
-  }
 }

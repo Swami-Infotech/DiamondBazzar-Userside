@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from '../../../Nav/view/nav/nav.component';
 import { FooterComponent } from '../../../Footer/View/footer/footer.component';
+import { ActivatedRoute } from '@angular/router';
+import { ProductsService } from '../../../products/service/products.service';
+import { ProductDetailsService } from '../../service/product-details.service';
+import { AttchmentType } from '../../Model/product-details';
 
 @Component({
   selector: 'app-product-details',
@@ -11,15 +15,57 @@ import { FooterComponent } from '../../../Footer/View/footer/footer.component';
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
-export class ProductDetailsComponent {
+export class ProductDetailsComponent implements OnInit {
 
-  mainProductImage: string = '../../../../assets/Img/slider/product1.png';
-  subImages: string[] = [
-    '../../../../assets/Img/slider/product2.png',
-    '../../../../assets/Img/slider/product3.png',
-    '../../../../assets/Img/slider/product4.png'
-  ];
+  post:any;
+  posts: any;
+  user:any;
+  main:any;
+  mains:any;
 
-  changeProductImage(newSrc: string) {
-    this.mainProductImage = newSrc;
-  }}
+  attachments: any;
+  metaDatas:any;
+  userDetails:any;
+  selectedImageURL: string = '';
+  selectedAttachment: any;
+
+  attcah  = AttchmentType;
+
+  ngOnInit(): void {
+    this.route.params.subscribe(params =>{
+      const id = params['id'];
+      this.getalldata(id);
+    })
+  }
+
+  constructor(private service:ProductDetailsService,private route:ActivatedRoute){}
+
+  changeProductImage(attachment: any) {
+    this.selectedImageURL = attachment.postAttachmentURL;
+  }
+
+
+
+  getalldata(id: any) {
+    this.service.getpostdetails(id).subscribe(
+      (resp: any) => {
+        this.mains = [resp.data.postMainData];
+        this.attachments = resp.data.postAttachments;
+        this.metaDatas = resp.data.postMetaDatas;
+        this.userDetails = resp.data.userDetails;
+
+        if (this.attachments.length > 0) {
+          this.selectedAttachment = this.attachments[0];
+          this.selectedImageURL = this.selectedAttachment.postAttachmentURL; 
+        }
+        console.log("Data:", resp.data);
+      }
+    );
+  }
+  
+
+
+
+}
+
+  

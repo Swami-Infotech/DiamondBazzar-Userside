@@ -15,6 +15,8 @@ import Swal from 'sweetalert2';
 export class SignUpComponent {
   user = new SignupUser();
 
+  phoneNumber: string = '';
+
   constructor(
     private service: SignUpService,
     private router: Router,
@@ -22,6 +24,12 @@ export class SignUpComponent {
   ) {}
 
   ngOnInit(): void {
+    const storedPhoneNumber = sessionStorage.getItem('Number');
+    if (storedPhoneNumber) {
+      this.phoneNumber = storedPhoneNumber; 
+      this.user.phoneNumber = storedPhoneNumber; 
+      console.log('Phone Number:', this.phoneNumber);
+    }
   }
 
   OnLogin() {
@@ -42,7 +50,7 @@ export class SignUpComponent {
           sessionStorage.setItem('token', response.data.token);
           console.log('SignUpData>>', response.data);
           this.router.navigate(['/profile']);
-          sessionStorage.setItem('userID', response.data.userID);
+          // sessionStorage.setItem('userID', response.data.userID);
           Swal.fire({
             icon: 'success',
             title: 'Success!',

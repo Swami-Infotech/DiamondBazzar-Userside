@@ -1,18 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 body{
-    font-family: "Calistoga", serif;
+    font-family: "Belleza", sans-serif;
+    font-family: "Roboto", sans-serif;
+
 }
 h1,h2,h3,h4,h5,h6,p{
-    font-family: "Calistoga", serif;
+     font-family: "Roboto", sans-serif;
     font-weight: 100,200,300,400,500,600,700;
+}
+.form-control input{
+    font-family: "Belleza", sans-serif;
+    font-weight: 700;
+}
+label{
+    font-family: "Roboto", sans-serif;
 }
 
 :root{
     --primary-color:#FF8C00;
     --secondary-color:#000;
-    --theme-font:"Calistoga", serif
+    --theme-font:"Roboto", sans-serif;
+    --theme-fonts:""Belleza", sans-serif";
 }
 
 .form-control:focus{

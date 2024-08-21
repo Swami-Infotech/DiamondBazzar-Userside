@@ -24,6 +24,7 @@ export class LoginComponent {
   ) {}
 
   OnLogin() {
+   
     this.service.LoginData(this.user).subscribe(
       (response: any) => {
         if (response.status !== true) {
@@ -42,6 +43,8 @@ export class LoginComponent {
           this.router.navigate(['/otp']);
           sessionStorage.setItem('id', response.data.otp);
           sessionStorage.setItem('authID', response.data.authOTPID);
+          sessionStorage.setItem('Number',response.data.phoneNumber);
+         
 
           Swal.fire({
             icon: 'success',

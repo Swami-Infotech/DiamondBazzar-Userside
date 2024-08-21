@@ -1,18 +1,50 @@
 import { Component } from '@angular/core';
-import { Shap, Size, TextSize } from '../../modal/polishpost';
+import { displayType, Shap, Size, TextSize } from '../../modal/polishpost';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from '../../../../Nav/view/nav/nav.component';
 import { FooterComponent } from '../../../../Footer/View/footer/footer.component';
 import { RouterLink } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 @Component({
   selector: 'app-polishpost',
   standalone: true,
-  imports: [CommonModule, FormsModule,NavComponent,FooterComponent,RouterLink],
+  imports: [CommonModule, FormsModule,NavComponent,FooterComponent,RouterLink,TranslateModule],
   templateUrl: './polishpost.component.html',
   styleUrl: './polishpost.component.css'
 })
 export class PolishpostComponent {
+
+  totalpages = 3;
+
+  currentpage = 1;
+
+  setpage(page:number){
+    this.currentpage = page;
+  }
+
+  nextpage(){
+    if(this.currentpage < this.totalpages){
+      this.currentpage++;
+    }
+  }
+
+  prevpage(){
+    if(this.currentpage > 1){
+      this.currentpage--;
+    }
+  }
+
+  isActive(page: number): boolean{
+    return this.currentpage === page;
+  }
+  DisplayType = displayType;
+  selectedDisplayType: displayType;
+
+
+  constructor(){
+    this.selectedDisplayType = displayType.SquareCategory;
+  }
 
   shaps:Shap[] = [
     {

@@ -1,8 +1,9 @@
 {
   "Home": {
     "LINE": "ngx-translate સાથે હેલો કોણીય!",
-    "RATE": "ભાવ: ₹૮૩.૩૦ ",
-    "Lab Grown": "લેબ ગ્રોન",
+    "dolar": "ભાવ: 'dolar' ",
+    "Lab Grown": "લેબ ગ્રોન પોલીસ",
+    "Lab GrownRough":"લેબ ગ્રોન રફ",
     "Polish": "પોલિશ",
     "See all": "બધા જુઓ",
     "Piece": "ભાવ",
@@ -18,6 +19,7 @@
     "Auction": "હરાજી",
     "Demand": "માંગ",
     "Calculator": "કેલ્ક્યુલેટર",
+    "AddProduct":"પ્રોડકટ એડ",
     "About Us": "અમારા વિશે",
     "Features": "વિશેષતા",
     "screens": "સ્ક્રીન",
@@ -60,5 +62,6 @@
     "size":"૧",
     "clarity":"વીવીએસ૨",
     "color":"એફ"
+    
   }
 }

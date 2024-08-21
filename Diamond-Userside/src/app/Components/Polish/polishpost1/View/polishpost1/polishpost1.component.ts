@@ -13,6 +13,34 @@ import { RouterLink } from '@angular/router';
   styleUrl: './polishpost1.component.css'
 })
 export class Polishpost1Component {
+
+
+  totalpages = 3;
+
+  currentpage = 2;
+
+  setpage(page:number){
+    this.currentpage = page;
+  }
+
+  nextpage(){
+    if(this.currentpage < this.totalpages){
+      this.currentpage++;
+    }
+  }
+
+  prevpage(){
+    if(this.currentpage > 2){
+      this.currentpage--;
+    }
+  }
+
+  isActive(page: number): boolean{
+    return this.currentpage === page;
+  }
+
+
+
   selectedButton: string | null = null;
   selectedButtons: string | null = null;
   selectButton(button: string) {

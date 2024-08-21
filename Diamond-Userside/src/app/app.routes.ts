@@ -29,6 +29,7 @@ import { DemandPostComponent } from './Components/DemandPost/DemandPost/View/dem
 import { SignUpComponent } from './Components/Signup/View/sign-up/sign-up.component';
 import { AuthGuard } from './Components/Common/auth.guard';
 import { ProductDetailsComponent } from './Components/Product details/View/product-details/product-details.component';
+import { AddProductComponent } from './Components/AddProduct/view/add-product/add-product.component';
 
 export const routes: Routes =  [
   {
@@ -70,20 +71,27 @@ export const routes: Routes =  [
     component:CompanyDetailsComponent
   },
   {
-    path:"Productdetils",
+    path:"Productdetils/:id",
     component:ProductDetailsComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:"nav",
-    component:NavComponent
+    component:NavComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:"AddProduct",
+    component:AddProductComponent
   },
   {
     path:"footer",
     component:FooterComponent
   },
   {
-    path:"home",
+    path:"home/:userid",
     component:HomeComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:"auction",

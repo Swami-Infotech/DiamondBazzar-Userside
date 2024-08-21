@@ -1,3 +1,32 @@
+
+  .pagination {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+  }
+  
+  .pagination li {
+    padding: 10px 20px;
+    margin-right: 10px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .pagination li.active {
+    background-color: blue; /* Highlight color for the active page */
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+
+  
+
 .process-img2{
     position: relative;
 }

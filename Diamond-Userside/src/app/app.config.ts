@@ -9,6 +9,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 // import { InterceptorService } from './Common/interceptor.service';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { InterceptorService } from './Components/Common/interceptor.service';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -16,7 +17,7 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({ eventCoalescing: true }),
+    // provideZoneChangeDetection({ eventCoalescing: true }),
     provideClientHydration(),
     provideHttpClient(),
     provideRouter(routes),
@@ -25,8 +26,8 @@ export const appConfig: ApplicationConfig = {
       provide: HTTP_INTERCEPTORS,
       useClass: InterceptorService,
       multi: true
-    }
-    ,
+    },
+    provideAnimations(), provideAnimationsAsync(), provideAnimationsAsync(),
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {

@@ -1,8 +1,9 @@
 {
   "Home": {
     "LINE": "Hello Angular with ngx-translate!",
-    "RATE": "rate:₹ 83.30",
-    "Lab Grown": "Lab Grown",
+    "dolar": "rate:₹ 'dolar'",
+    "Lab Grownpolish": "Lab Grown Polish",
+    "Lab GrownRough":"Lab Grown Rough",
     "Polish": "Polish",
     "See all": "See all",
     "Piece": "Piece",
@@ -17,6 +18,7 @@
     "Auction": "Auction",
     "Demand": "Demand",
     "Calculator": "Calculator",
+    "AddProduct":"AddProduct",
     "About Us": "About Us",
     "Features": "Features",
     "screens": "screens",

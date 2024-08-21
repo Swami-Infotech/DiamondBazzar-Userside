@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div>
+                <h3>Add Product</h3>
+                
+                <div>
+                    <label for="main-category">Main Category</label>
+                    <select id="main-category" [(ngModel)]="selectedMainCategory">
+                      <ng-container *ngFor="let category of mainCategories | keyvalue">
+                        <option *ngIf="category.value !== mainCategories.All" [value]="category.value">
+                          {{ category.key }}
+                        </option>
+                      </ng-container>
+                    </select>
+                  </div>
+                  
+                  <div>
+                    <label for="sub-category">Sub Category</label>
+                    <select id="sub-category" [(ngModel)]="selectedSubCategory">
+                      <ng-container *ngFor="let category of subCategories | keyvalue">
+                        <option *ngIf="category.value !== subCategories.All" [value]="category.value">
+                          {{ category.key }}
+                        </option>
+                      </ng-container>
+                    </select>
+                  </div>
+                  
+              
+                <button (click)="onAddProduct()">Add Product</button>
+              </div>
+              
+        </div>
+    </div>
+</div>

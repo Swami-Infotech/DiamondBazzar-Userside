@@ -2,103 +2,92 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12" id="carousel2">
-            <div class="sub-img">
-                <div class="thumbnails my-3">
-                        <img *ngFor="let image of subImages" [src]="image" alt="Sub Image" (click)="changeProductImage(image)">
-                </div>
-            </div>
+            <!-- Main Image Display -->
             <div class="main-img text-center mt-5">
-                <img [src]="mainProductImage" alt="product-img" width="100%">
+                <ng-container *ngIf="selectedAttachment?.attchmentType === attcah.Image">
+              <img [src]="selectedImageURL" alt="product-img" width="100%">
+              </ng-container>
             </div>
-            <div class="sub-img1">
-                <div class="thumbnails my-3">
-                        <img *ngFor="let image of subImages" [src]="image" alt="Sub Image" (click)="changeProductImage(image)">
-                </div>
+          
+            <!-- Thumbnails or Side Images -->
+            <div class="sub-img">
+              <div class="thumbnails my-3" *ngFor="let attachment of attachments">
+                <img [src]="attachment.postAttachmentURL" alt="" (click)="changeProductImage(attachment)">
+              </div>
             </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="pro mt-5">
+          </div>
+          
+        <ng-container *ngFor="let item of mains">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="pro mt-5">
                 <div class="card px-3">
-                    <div class="products-details">
-                        <div class="price d-flex flex-wrap align-items-center justify-content-between">
-                            <h5>OutSide</h5>
-                            <h6>₹8680.00</h6>
-                        </div>
-                        <div class="live mb-5">
-                            <h5>Live Now</h5>
-                        </div>
-                        <div class="dim d-flex flex-wrap align-items-center justify-content-between">
-                            <h5>Diamond</h5>
-                            <h6>Natural</h6>
-                        </div>
-                        <div class="pieace d-flex flex-wrap align-items-center justify-content-between">
-                            <h5>Piece</h5>
-                            <h6>778</h6>
-                        </div>
-                        <div class="weight d-flex flex-wrap align-items-center justify-content-between">
-                            <h5>Weight</h5>
-                            <h6>46.00</h6>
-                        </div>
-                        <div class="size d-flex flex-wrap align-items-center justify-content-between">
-                            <h5>Size</h5>
-                            <h6>5-6</h6>
-                        </div>
-                        <div class="color d-flex flex-wrap align-items-center justify-content-between">
-                            <h5>Color</h5>
-                            <h6>Cognac</h6>
-                        </div>
-                        <div class="origin d-flex flex-wrap align-items-center justify-content-between">
-                            <h5>Rough Origin</h5>
-                            <h6>BOSTWANA</h6>
-                        </div>
+                  <div class="products-details">
+                    <div class="price d-flex flex-wrap align-items-center justify-content-between">
+                      <h5>{{item.highlightedText}}</h5>
                     </div>
+                    <h3>Live Now</h3>
+                   <ng-container *ngIf="attachments.attchmentType === attcah.Video">
+                    <video [src]="item.attachments.postAttachmentURL" controls class="w-25">
+                       
+                      </video>
+                   </ng-container>
+
+                    <div *ngFor="let metaData of metaDatas">
+                      <div class="piece d-flex flex-wrap align-items-center justify-content-between">
+                        <h6>{{ metaData.categoryName }}</h6>
+                        <p>{{ metaData.metaDataValue }}</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </div>
-            <div class="client mt-4 px-3 mb-5">
+              </div>
+              <div class="client mt-4 px-3 mb-5">
                 <div class="card">
-                    <div class="clients d-flex flex-wrap align-items-center justify-content-between">
-                        <div class="client-details d-flex flex-wrap align-items-center">
-                            <img src="../../../../assets/Img/slider/client.png" alt="client">
-                            <div class="clicet-name ms-4">
-                                <h5>Nikunj Korat</h5>
-                                <p>abc lip</p>
-                            </div>
-                        </div>
-                        <div class="arrow">
-                            <button class="btn">
-                                <i class="bi bi-arrow-right-short fs-2"></i>
-                            </button>
-                        </div>
+                  <div class="clients d-flex flex-wrap align-items-center justify-content-between">
+                    <div class="client-details d-flex flex-wrap align-items-center">
+                      <img src="../../../../assets/Img/slider/client.png" alt="client">
+                      <div class="clicet-name ms-4">
+                        <h5>{{userDetails.userName}}</h5>
+                        <p>{{userDetails.companyName}}</p>
+                      </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="calls mt-5">
-                                <div class="call-btn d-flex flex-wrap align-items-center">
-                                    <button class="btn">
-                                        <i class="bi bi-telephone-fill text-white"></i>
-                                    </button>
-                                    <div class="title">
-                                        <h5 class="text-white">Call</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="message mt-5">
-                                <div class="call-btn d-flex flex-wrap align-items-center">
-                                    <button class="btn">
-                                        <i class="bi bi-send text-white"></i>
-                                    </button>
-                                    <div class="title">
-                                        <h5 class="text-white">Message</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="arrow">
+                      <button class="btn">
+                        <i class="bi bi-arrow-right-short fs-2"></i>
+                      </button>
                     </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="calls mt-5">
+                        <div class="call-btn d-flex flex-wrap align-items-center">
+                          <button class="btn">
+                            <i class="bi bi-telephone-fill text-white"></i>
+                          </button>
+                          <div class="title">
+                            <h5 class="text-white">Call</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="message mt-5">
+                        <div class="call-btn d-flex flex-wrap align-items-center">
+                          <button class="btn">
+                            <i class="bi bi-send text-white"></i>
+                          </button>
+                          <div class="title">
+                            <h5 class="text-white">Message</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
+          </ng-container>
+          
     </div>
 </div>
 

@@ -23,4 +23,8 @@ export class NavService {
   UserSubscription(id: number){
     return this._httpClient.get(`${environment.baseURL}App/GetUserSubscriptionByUserID?userID=${id}`);
   }
+
+  getallnotification(id:number){
+    return this._httpClient.get(`${environment.baseURL}App/GetAllNotification?userID=${id}`);
+  }
 }

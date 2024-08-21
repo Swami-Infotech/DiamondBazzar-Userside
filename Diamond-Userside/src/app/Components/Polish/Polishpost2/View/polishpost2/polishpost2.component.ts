@@ -12,4 +12,28 @@ import { FooterComponent } from '../../../../Footer/View/footer/footer.component
 })
 export class Polishpost2Component {
 
+  totalpages = 3;
+
+  currentpage = 3;
+
+  setpage(page:number){
+    this.currentpage = page;
+  }
+
+  nextpage(){
+    if(this.currentpage < this.totalpages){
+      this.currentpage++;
+    }
+  }
+
+  prevpage(){
+    if(this.currentpage > 3){
+      this.currentpage--;
+    }
+  }
+
+  isActive(page: number): boolean{
+    return this.currentpage === page;
+  }
+
 }

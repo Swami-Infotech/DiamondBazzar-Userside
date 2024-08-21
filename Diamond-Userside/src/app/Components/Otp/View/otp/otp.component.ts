@@ -22,6 +22,7 @@ export class OtpComponent {
   constructor(
     private service: OtpService,
     private router: Router,
+    private route:Router
     // private toastr: ToastrService
   ) {}
 
@@ -37,11 +38,10 @@ export class OtpComponent {
     const otpid = sessionStorage.getItem('authID');
     if (otpid !== null) {
       const numericOtpid = Number(otpid);
-
+  
       if (!isNaN(numericOtpid)) {
         this.Otp.otpid = numericOtpid;
       } else {
-        // this.toastr.error('otpid is not valid', 'Error!');
         alert('otpid is not valid');
         console.error('otpid is not a valid number');
         return;
@@ -49,31 +49,36 @@ export class OtpComponent {
     } else {
       console.error('otpid is null');
     }
-
+  
     this.service.VerifyOtp(this.Otp).subscribe(
       (response: any) => {
-        if (response.status === true) {
-          this.router.navigate(['/signup']);
-          this.ngOnInit();
-          console.log('dewdew', response);
+        if (response.status === true) {  
+          sessionStorage.setItem('userid', response.data.userID);
+          sessionStorage.setItem('token',response.data.token);
+          const userid = response.data.userID;
+          if (response.isSignup) {
+            this.route.navigate(['/signup']);
+          } else {
+            this.route.navigate(['/home',userid]);
+          }
           Swal.fire({
             icon: 'success',
             title: 'Success!',
             text: response.message,
             confirmButtonText: 'OK',
             customClass: {
-                confirmButton: 'btn btn-success'
+              confirmButton: 'btn btn-success'
             },
             buttonsStyling: false
           });
         } else {
           Swal.fire({
             icon: 'error',
-            title: 'error!',
+            title: 'Error!',
             text: response.message,
             confirmButtonText: 'OK',
             customClass: {
-                confirmButton: 'btn btn-danger'
+              confirmButton: 'btn btn-danger'
             },
             buttonsStyling: false
           });
@@ -81,8 +86,8 @@ export class OtpComponent {
       },
       (error: any) => {
         console.error('Error fetching data:', error);
-        // this.toastr.error(error.message);
       }
     );
   }
+  
 }
