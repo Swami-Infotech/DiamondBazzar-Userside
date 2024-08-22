@@ -16,10 +16,22 @@
     align-items: center;
 }
 .live{
-    background: rgba(255, 140, 0, 1);
+    background: linear-gradient(0.25turn ,rgba(255, 140, 0, 1),rgba(153, 84, 0, 1));
     color: #fff;
     text-align: center;
     padding: 5px 0;
+    font-family: var(--theme-fo);
+    font-weight: 500;
+}
+.piece h6{
+    font-family: var(--theme-fonts);
+    font-weight: 500;
+    font-size: 20px;
+}
+.piece p{
+    font-family: var(--theme-fonts);
+    font-weight: 500;
+    font-size: 20px;
 }
 .pro .card{
     border: 0;

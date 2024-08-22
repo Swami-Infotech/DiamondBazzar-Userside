@@ -17,17 +17,18 @@ import { AttchmentType } from '../../Model/product-details';
 })
 export class ProductDetailsComponent implements OnInit {
 
-  post:any;
-  posts: any;
-  user:any;
-  main:any;
+ 
   mains:any;
 
-  attachments: any;
+  attachments: any[] = [];
   metaDatas:any;
   userDetails:any;
   selectedImageURL: string = '';
   selectedAttachment: any;
+  selectedVideoURL : string = '';
+  imageAttachments: any[] = [];
+  videoAttachments: any;
+  
 
   attcah  = AttchmentType;
 
@@ -50,17 +51,28 @@ export class ProductDetailsComponent implements OnInit {
     this.service.getpostdetails(id).subscribe(
       (resp: any) => {
         this.mains = [resp.data.postMainData];
-        this.attachments = resp.data.postAttachments;
+        this.attachments = resp.data.postAttachments || [];
         this.metaDatas = resp.data.postMetaDatas;
         this.userDetails = resp.data.userDetails;
 
-        if (this.attachments.length > 0) {
-          this.selectedAttachment = this.attachments[0];
-          this.selectedImageURL = this.selectedAttachment.postAttachmentURL; 
+        this.imageAttachments = this.attachments.filter(att => att.attchmentType === this.attcah.Image);
+        this.videoAttachments = this.attachments.filter(att => att.attchmentType === this.attcah.Video);
+
+        if (this.imageAttachments.length > 0) {
+          this.selectedImageURL = this.imageAttachments[0].postAttachmentURL;
         }
+        if (this.videoAttachments.length > 0) {
+          this.selectedVideoURL = this.videoAttachments[0].postAttachmentURL;
+        }
+        
+        
         console.log("Data:", resp.data);
       }
     );
+  }
+
+  openVideo(url: string): void {
+    window.open(url, '_blank');
   }
   
 

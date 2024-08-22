@@ -1,75 +1,4 @@
 <app-nav></app-nav>
-<!-- banner start -->
-<!-- <div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-6">
-            <div id="carouselExample" class="carousel slide">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="slider">
-                            <div class="carousel-cont">
-                                <p>{{ getTranslation('BEST_COLLECTION') }}</p>
-                                <h2>{{ getTranslation('RANGE_OF_JEWELRY')}}</h2>
-                                <h5>{{ getTranslation ('NEW_PRICE: ₹18,900')}}</h5>
-                                <button class="btn">Shop Now</button>
-                           </div>
-                        </div>
-                     
-                    </div>
-                    <div class="carousel-item">
-                        <div class="slider2">
-                            <div class="carousel-cont">
-                                <p>Best Collecation</p>
-                                <h2>A Range Of jewelry</h2>
-                                <h5>New Price: ₹18,900</h5>
-                                <button class="btn">Shop Now</button>
-                           </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                       <div class="slider3">
-                        <div class="carousel-cont">
-                            <p>Best Collecation</p>
-                            <h2>A Range Of jewelry</h2>
-                            <h5>New Price: ₹18,900</h5>
-                            <button class="btn">Shop Now</button>
-                       </div>
-                       </div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="poster">
-                <div class="innar">
-                    <div class="banner-cont">
-                        <h2>Happy Ever After</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                            <button class="btn">Shop Now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="poster">
-                <div class="innars">
-                    <div class="banner-cont">
-                        <h2>Wedding Gift</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-                            <button class="btn">Shop Now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-     </div>
- </div> -->
-<!-- banner end -->
 
 <!-- header line start -->
 <div class="head-line">
@@ -98,50 +27,6 @@
 <!-- header line end -->
 
 <!-- banner start -->
-<!-- <div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img
-        src="../../../../assets/Img/slider/slider1.jpeg"
-        class="d-block w-100"
-        alt="..."
-      />
-    </div>
-    <div class="carousel-item">
-      <img
-        src="../../../../assets/Img/slider/slider2.jpeg"
-        class="d-block w-100"
-        alt="..."
-      />
-    </div>
-    <div class="carousel-item">
-      <img
-        src="../../../../assets/Img/slider/slider3.png"
-        class="d-block w-100"
-        alt="..."
-      />
-    </div>
-  </div>
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#carouselExample"
-    data-bs-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#carouselExample"
-    data-bs-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div> -->
-
 <div
   id="carouselExampleSlidesOnly"
   class="carousel slide"
@@ -180,7 +65,7 @@
 </div>
 <!-- banner end -->
 
-<!-- lab grown section start -->
+<!-- lab grown polish section start -->
 <section class="lab">
   <div class="container">
     <div class="row">
@@ -212,9 +97,9 @@
             >
               <h5>{{ "Home.Polish" | translate }}</h5>
               <h6>
-                <a routerLink="/products">
-                  {{ "Home.See all" | translate }}
-                </a>
+                <a (click)="seeAllPosts(0)">
+                    {{ "Home.See all" | translate }}
+                  </a>
               </h6>
             </div>
             <div class="row">
@@ -258,9 +143,10 @@
     </div>
   </div>
 </section>
+<!-- lab grown polish section end -->
 
-
-<section class="lab">
+<!-- lab grown Rough section start -->
+<section class="lab" >
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
@@ -291,7 +177,7 @@
             >
               <h5>{{ "Home.Polish" | translate }}</h5>
               <h6>
-                <a routerLink="/products">
+                <a (click)="seeAllPosts(1)">
                   {{ "Home.See all" | translate }}
                 </a>
               </h6>
@@ -337,10 +223,10 @@
     </div>
   </div>
 </section>
-<!-- lab grown section end -->
+<!-- lab grown Rough section end -->
 
-<!-- natural secation start -->
-<section class="natural">
+<!-- natural polish secation start -->
+<section class="natural" >
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
@@ -369,7 +255,7 @@
               class="lab-product-title d-flex flex-wrap align-items-center justify-content-between"
             >
               <h5>{{ "Home.Polish" | translate }}</h5>
-              <h6>{{ "Home.See all" | translate }}</h6>
+              <h6 (click)="seeAllPosts(2)">{{ "Home.See all" | translate }}</h6>
             </div>
             <!-- natural polish data display start -->
             <div class="row">
@@ -379,21 +265,19 @@
                     <div class="card">
                       <div class="pro-img">
                           <button class="btn"  (click)="viewpostdetails(item.postMainData.postID)">
-                            <img *ngIf="item.postAttachmenturl; else defaultImage"
+                            <img *ngIf="item.postAttachmenturl;"
                             [src]="item.postAttachmenturl"
-                            alt="labpro"
-                            style="width: 282px; height: 282px;"
-                          />
+                            alt=""
+                            style="width: 282px; height: 282px;"/>
                           </button>
-                        <ng-template #defaultImage>
+                        <div>
                           <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
                             <img
                               src="../../../../../assets/Img/logo/DimaondBazzarlogo2.png"
                               alt="default logo"
-                              style="width: 282px; height: 282px;"
-                            />
+                              style="width: 282px; height: 282px;"/>
                           </button>
-                        </ng-template>
+                        </div>
                       </div>
                       <div class="product-details px-4 py-3">
                         <div class="price d-flex flex-wrap align-items-center justify-content-between">
@@ -414,58 +298,69 @@
               </ng-container>
             </div>
             <!-- natural polish data display end -->
-
-            <!--natural rough data display start -->
-            <div class="row">
-              <div class="col-lg-12 col-md-12 col-sm-12">
-                <div
-                  class="rough-title d-flex flex-wrap align-items-center justify-content-between mt-5 mb-3"
-                >
-                  <h5>{{ "Home.Rough" | translate }}</h5>
-
-                  <h6>{{ "Home.See all" | translate }}</h6>
-                </div>
-                <div class="row">
-                  <ng-container *ngFor="let item of naturlrough">
-                    <div class="col-lg-3 col-md-6 col-sm-12">
-                      <div class="lab-product">
-                        <div class="card">
-                          <div class="pro-img">
-                            <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
-                              <img
-                                [src]="item.postAttachmenturl"
-                                alt="labpro"
-                                class="card-img-top"
-                              />
-                            </button>
-                          </div>
-                          <div class="product-details px-4 py-3">
-                            <div class="price d-flex flex-wrap align-items-center justify-content-between">
-                              <h4>SID</h4>
-                              <h5>{{ item.postMainData.highlightedText }}</h5>
-                            </div>
-                            
-                            <div *ngFor="let metaData of item.postMetaDatas.slice(0, 4)">
-                              <div class="piece d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>{{ metaData.categoryName }}</h6>
-                                <p>{{ metaData.metaDataValue }}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </ng-container>
-                </div>
-              </div>
-            </div>
-            <!-- natural rough data display end -->
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- naturla secation end -->
+<!-- naturla polish secation end -->
+
+  <!--natural rough data display start -->
+  <section class="natural" >
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div
+            class="rough-title d-flex flex-wrap align-items-center justify-content-between mt-5 mb-3"
+          >
+            <h5>{{ "Home.Rough" | translate }}</h5>
+    
+            <h6 (click)="seeAllPosts(3)">{{ "Home.See all" | translate }}</h6>
+          </div>
+          <div class="row">
+            <ng-container *ngFor="let item of naturlrough">
+              <div class="col-lg-3 col-md-6 col-sm-12">
+                <div class="lab-product">
+                  <div class="card">
+                    <div class="pro-img">
+                    <button class="btn"  (click)="viewpostdetails(item.postMainData.postID)">
+                      <img *ngIf="item.postAttachmenturl;"
+                      [src]="item.postAttachmenturl"
+                      alt=""
+                      style="width: 282px; height: 282px;"/>
+                    </button>
+                  <div>
+                    <button class="btn" (click )="viewpostdetails(item.postMainData.postID)">
+                      <img
+                        src="../../../../../assets/Img/logo/DimaondBazzarlogo2.png"
+                        alt="default logo"
+                        style="width: 282px; height: 282px;"/>
+                    </button>
+                  </div>
+                </div>
+                    <div class="product-details px-4 py-3">
+                      <div class="price d-flex flex-wrap align-items-center justify-content-between">
+                        <h4>SID</h4>
+                        <h5>{{ item.postMainData.highlightedText }}</h5>
+                      </div>
+                      
+                      <div *ngFor="let metaData of item.postMetaDatas.slice(0, 4)">
+                        <div class="piece d-flex flex-wrap align-items-center justify-content-between">
+                          <h6>{{ metaData.categoryName }}</h6>
+                          <p>{{ metaData.metaDataValue }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- natural rough data display end -->
 
 <app-footer></app-footer>

@@ -4,8 +4,8 @@
         <div class="col-lg-6 col-md-6 col-sm-12" id="carousel2">
             <!-- Main Image Display -->
             <div class="main-img text-center mt-5">
-                <ng-container *ngIf="selectedAttachment?.attchmentType === attcah.Image">
-              <img [src]="selectedImageURL" alt="product-img" width="100%">
+              <ng-container *ngIf="selectedImageURL">
+                <img [src]="selectedImageURL" alt="product-img" width="100%">
               </ng-container>
             </div>
           
@@ -20,18 +20,21 @@
         <ng-container *ngFor="let item of mains">
             <div class="col-lg-6 col-md-6 col-sm-12">
               <div class="pro mt-5">
-                <div class="card px-3">
+                <div class="card mb-3 px-3">
                   <div class="products-details">
                     <div class="price d-flex flex-wrap align-items-center justify-content-between">
                       <h5>{{item.highlightedText}}</h5>
                     </div>
-                    <h3>Live Now</h3>
-                   <ng-container *ngIf="attachments.attchmentType === attcah.Video">
-                    <video [src]="item.attachments.postAttachmentURL" controls class="w-25">
-                       
-                      </video>
-                   </ng-container>
-
+                    
+                    <ng-container *ngIf="selectedVideoURL">
+                      <h3  (click)="openVideo(selectedVideoURL)" class="live">
+                        Live View
+                      </h3>
+                    </ng-container>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="post-details px-3">
                     <div *ngFor="let metaData of metaDatas">
                       <div class="piece d-flex flex-wrap align-items-center justify-content-between">
                         <h6>{{ metaData.categoryName }}</h6>
@@ -62,8 +65,10 @@
                       <div class="calls mt-5">
                         <div class="call-btn d-flex flex-wrap align-items-center">
                           <button class="btn">
+                          <a [href]="'tel:' + userDetails.phoneNumber">
                             <i class="bi bi-telephone-fill text-white"></i>
-                          </button>
+                          </a>
+                        </button>
                           <div class="title">
                             <h5 class="text-white">Call</h5>
                           </div>
@@ -83,6 +88,7 @@
                       </div>
                     </div>
                   </div>
+                  
                 </div>
               </div>
             </div>
