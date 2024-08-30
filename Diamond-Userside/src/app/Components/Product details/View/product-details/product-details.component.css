@@ -15,6 +15,14 @@
     display: flex;
     align-items: center;
 }
+#heart {
+    color: grey;  
+    font-size: 30px;
+  }
+  
+  #heart.red {
+    color: red;
+  }
 .live{
     background: linear-gradient(0.25turn ,rgba(255, 140, 0, 1),rgba(153, 84, 0, 1));
     color: #fff;

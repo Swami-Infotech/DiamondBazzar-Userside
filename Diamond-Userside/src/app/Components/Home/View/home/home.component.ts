@@ -10,6 +10,7 @@ import { environment } from '../../../../environments/environment';
 import { response } from 'express';
 import { log } from 'console';
 import { DiamondCategory, Post, PostTypeSelection, SubDiamondType } from '../../Model/home';
+import { DataService } from '../../service/data.service';
 
 @Component({
   selector: 'app-home',
@@ -26,6 +27,10 @@ export class HomeComponent implements OnInit {
   MDtype = DiamondCategory;
   SuuDtype = SubDiamondType;
   Posttypes = PostTypeSelection;
+
+  public pageNumber: number = 0;
+  public pageSize: number = 10; // Define the page size
+  public totalItems: number = 0;
 
   mainDiamondTypes: { name: string, value: DiamondCategory }[] = [];
   subDiamondTypes: { name: string, value: SubDiamondType }[] = [];
@@ -70,7 +75,7 @@ export class HomeComponent implements OnInit {
       .map(key => ({ name: key, value: enumObj[key] }));
   }
 
-  constructor(private service:HomeService,private route:ActivatedRoute,private translate: TranslateService,private router: Router) {}
+  constructor(private dataservice:DataService,private service:HomeService,private route:ActivatedRoute,private translate: TranslateService,private router: Router) {}
 
   slider:any;
   dolar:any;
@@ -86,7 +91,7 @@ export class HomeComponent implements OnInit {
       (resp:any)=>{
         this.slider = resp.data.sliderData;
         this.dolar = resp.data;
-        this.line = resp.data.headlineData;
+        this.line = this.translate.instant('Home.LINE',{value:resp.data.headlineData});
         this.labgrown = resp.data.labgrownPolish;
         this.labgrownrough = resp.data.labgrownRough;
         this.nautral = resp.data.naturalPolish;
@@ -99,11 +104,13 @@ export class HomeComponent implements OnInit {
   }
 
   viewpostdetails(id: any): void {
+    sessionStorage.setItem('postID', id);
     this.router.navigate(['/Productdetils', id]);
   }
 
 
-  mainss:any
+  mainss:any[] = [];
+  attch:any[] = [];
 
   seeAllPosts(sectionId: number) {
 
@@ -155,27 +162,27 @@ export class HomeComponent implements OnInit {
 
     // Prepare the request body
     const postdata = {
-      postType: postType, // Enum value
-      mainCategory: mainCategory, // Enum value
-      subCategory: subCategory, // Enum value
-      pageNumber: 0, // Fixed value
-      pageSize: 10 // Fixed value
+      postType: postType, 
+      mainCategory: mainCategory, 
+      subCategory: subCategory, 
+      pageNumber: this.pageNumber,
+      pageSize: this.pageSize
     };
 
-    // Call the API service method
     this.service.getpostby(postdata).subscribe(
       (resp: any) => {
-        this.mainss = resp.data; // Handle the response data
+        this.mainss = resp.data;
+        this.totalItems = resp.data.total;
+         this.dataservice.setData(this.mainss);
+         this.router.navigate(['/products']);
         console.log("mainss>>",this.mainss);
         
       },
       (error) => {
-        console.error('Error fetching posts:', error); // Handle errors
+        console.error('Error fetching posts:', error);
       }
     );
-
-    // Optionally navigate with query params or state (if needed)
-    this.router.navigate(['/products'], { queryParams: { section: sectionId } });
+    
   }
 
 

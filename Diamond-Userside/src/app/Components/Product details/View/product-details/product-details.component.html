@@ -24,7 +24,13 @@
                   <div class="products-details">
                     <div class="price d-flex flex-wrap align-items-center justify-content-between">
                       <h5>{{item.highlightedText}}</h5>
+                      <div class="fav">
+                        <button class="btn" (click)="toggleHeart()" >
+                          <i class="bi bi-heart-fill" id="heart" [class.red]="isHeartRed"></i>
+                        </button>
+                      </div>
                     </div>
+                     
                     
                     <ng-container *ngIf="selectedVideoURL">
                       <h3  (click)="openVideo(selectedVideoURL)" class="live">

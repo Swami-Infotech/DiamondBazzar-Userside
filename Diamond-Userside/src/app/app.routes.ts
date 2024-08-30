@@ -107,8 +107,9 @@ export const routes: Routes =  [
     component:ProductsComponent
   },
   {
-    path:"Wishlist",
-    component:WishlistComponent
+    path:"Wishlist/:userid",
+    component:WishlistComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:"Calculator",

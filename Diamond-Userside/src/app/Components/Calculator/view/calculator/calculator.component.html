@@ -12,69 +12,123 @@
                     <div class="card p-3">
                         <form action="">
                             <div class="row">
+                                <!-- total cart start -->
                                 <div class="mb-3 col-lg-12">
                                     <label for="" class="form-label"> {{ "Home.Total Carat Wt" | translate }}</label>
-                                    <input type="text" placeholder="10" class="form-control">
+                                    <input type="number"  [placeholder]="'0'" class="form-control" [(ngModel)]="CartWeight" (ngModelChange)="calculateTotalamount()" id="CartWeight" name="CartWeight">
                                 </div>
+                                <!-- total cart End -->
+
+                                <!-- Price/Cart start -->
                                 <div class="col-lg-6">
                                     <label for="" class="form-label"> {{ "Home.Price / Cart" | translate }}</label>
                                    <div class="price-input d-flex align-item-center">
-                                    <input type="text" placeholder="₹" class="form-control" style="width: 70px; margin-right: 5px;">
-                                    <input type="text" class="form-control">
+                                    <select name="selectedCurrency" id="selectedCurrency" [(ngModel)]="selectedCurrency" class="form-select" (ngModelChange)="updatePlaceholder()">
+                                        <option value="₹">₹</option>
+                                        <option value="$">$</option>
+                                    </select>
+                                    <input type="number" class="form-control" [(ngModel)]="PriceCart" id="PriceCart" name="PriceCart" (ngModelChange)="calculateTotalamount()">
                                    </div>
                                 </div>
+                                <!-- Price/Cart End -->
+
+                                <!-- terms start -->
                                 <div class="col-lg-6">
-                                    <label for="" class="form-label"> {{ "Home.terms" | translate }}%</label>
-                                   <div class="price-input d-flex align-item-center">
-                                    <input type="text" placeholder="__" class="form-control" style="width: 70px; margin-right: 5px;">
-                                    <input type="text" class="form-control">
-                                   </div>
-                                </div>
+                                    <label for="Terms" class="form-label">{{ "Home.terms" | translate }}%</label>
+                                    <div class="price-input d-flex align-items-center">
+                                      <h4 
+                                        style="width: 50px; margin: 0 5px 0 0; border: 1px solid var(--primary-color); text-align: center;" 
+                                        class="form-control"
+                                        (click)="toggleSign()"
+                                      >
+                                        {{ currentSign }}
+                                      </h4>
+                                      <input 
+                                        type="number" 
+                                        class="form-control" 
+                                        [(ngModel)]="Terms" 
+                                        id="Terms"
+                                        name="Terms"
+                                        (ngModelChange)="calculateTotalamount()" 
+                                        min="0" 
+                                        placeholder="0"
+                                      >
+                                    </div>
+                                  </div>
+                                <!-- terms End -->
+
+                                <!-- due days start -->
                                 <div class="col-lg-6">
                                     <div class="my-4">
-                                        <label for="" class="form-label"> {{ "Home.Due Days" | translate }}</label>
-                                    <div class="due-days d-flex align-items-center">
-                                        <input type="text" placeholder="20" class="form-control" style="width: 50px;">
-                                        <div class="payment-date">
-                                            <div class="card border-0">
-                                                <h6>{{ "Home.Payment Date " | translate }}: 25-07-2024</h6>
+                                        <label for="" class="form-label">{{ "Home.Due Days" | translate }}</label>
+                                        <div class="due-days d-flex align-items-center">
+                                            <input 
+                                                type="text" 
+                                                placeholder="0" 
+                                                class="form-control" 
+                                                style="width: 50px;"
+                                                [(ngModel)]="dueDays"
+                                                (ngModelChange)="calculatePaymentDate()"
+                                                name="dueDays"
+                                                id="dueDays" >
+                                            <div class="payment-date">
+                                                <div class="card border-0">
+                                                    <h6>Payment Due: {{ paymentDate | date: 'dd-MM-yyyy' }}</h6>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    </div>
                                 </div>
+                                <!-- due days end -->
+
+                                <!-- convesrsion start -->
                                 <div class="col-lg-6">
                                     <div class="my-4">
                                         <label for="" class="form-label">{{ "Home.Conversion Rate" | translate }}</label>
                                         <div class="rate d-flex align-item-center">
-                                            <input type="text" placeholder="$" style="width: 50px; margin-right: 5px;" class="form-control">
-                                            <input type="text" placeholder="Enter Conversion Rate" class="form-control">
+                                            <h4 style="width: 50px; margin: 0 5px 0 0;border: 1px solid var(--primary-color); text-align: center;" class="form-control">{{inputPlaceholder}}</h4>
+                                            <input type="text" placeholder="Enter Conversion Rate" class="form-control" (ngModelChange)="calculateTotalamount()" [(ngModel)]="Conversionrate" id="Conversionrate" name="Conversionrate" (ngModelChange)="updatePlaceholder()">
                                         </div>
                                     </div>
                                 </div>
+                                <!-- convesrsion end -->
+
+                                <!-- Brokerage start -->
                                 <div class="col-lg-6">
                                     <div class="mb-3">
                                         <label for="" class="form-label">{{ "Home.Brokerage %" | translate }}</label>
-                                        <input type="text" placeholder="2" class="form-control">
+                                        <input type="text" placeholder="2" class="form-control" [(ngModel)]="Brokerage" id="Brokerage" name="Brokerage" (click)="calculateBrokerageAmount()">
                                     </div>
                                 </div>
+                                <!-- Brokerage end -->
+
                                 <div class="col-lg-6">
                                     <div class="display-data">
+                                        <!-- Total amount start -->
                                         <div class="total-amount">
-                                            <div class="card">
-                                                <h6>{{ "Home.Total Amount" | translate }}: ₹4750.00</h6>
+                                            <div class="card" *ngIf="CartWeight !== null && PriceCart !== null && CartWeight > 0 && PriceCart > 0">
+                                                <h6>{{ "Home.Total Amount" | translate }}: {{ finalamount}}</h6>
                                             </div>
                                         </div>
+                                        
+                                          
+                                        <!-- Total amount end -->
+
+                                          <!-- brpkerage amount start -->
                                         <div class="brokerage-amount">
                                             <div class="card">
-                                                <h6>{{ "Home.Brokerage Amount" | translate }}: ₹95.00</h6>
+                                                <h6>{{ brokerageAmount }}</h6>
                                             </div>
                                         </div>
+                                        <!-- brpkerage amount end -->
+
+                                        <!-- net amount start -->
                                         <div class="Total-amount">
                                             <div class="card">
-                                                <h6>{{ "Home.Total Amount" | translate }}: ₹4750.00</h6>
+                                                <h6>{{NetAmount}}</h6>
                                             </div>
                                         </div>
+                                        <!-- net amount end -->
                                     </div>
                                 </div>
     

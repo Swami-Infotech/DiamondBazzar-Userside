@@ -3,10 +3,11 @@ import { NavComponent } from "../../../Nav/view/nav/nav.component";
 import { DiamondCategory, Post, PostTypeSelection, SubDiamondType } from '../../Model/Product';
 import { ProductsService } from '../../service/products.service';
 import { response } from 'express';
-import { log } from 'console';
+import { error, log } from 'console';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { DataService } from '../../../Home/service/data.service';
 
 @Component({
   selector: 'app-products',
@@ -17,97 +18,54 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProductsComponent implements OnInit {
 
-  postdata = new Post();
-
-  mains: any[] = [];
-
-  MDtype = DiamondCategory;
-  SuuDtype = SubDiamondType;
-  Posttypes = PostTypeSelection;
-
-  mainCategory: number | null = null;
-  subCategory: number | null = null;
-  postType: number | null = null;
-  pageNumber: number = 1;
-  pageSize: number = 10;
+  mainss:any[]  = [];
+  public totalItems: number = 0; 
+  public pageNumber: number = 0;
+  public pageSize: number = 10;
 
 
-  DiamondCategory = DiamondCategory;
-  SubDiamondType = SubDiamondType;
-  PostTypeSelection = PostTypeSelection;
 
-  mainDiamondTypes: { name: string, value: DiamondCategory }[] = [];
-  subDiamondTypes: { name: string, value: SubDiamondType }[] = [];
-  postTypeSelections: { name: string, value: PostTypeSelection }[] = [];
-
-  selectedMainDiamondType: DiamondCategory | null = null;
-  selectedSubDiamondType: SubDiamondType | null = null;
-  selectedPostTypeSelection: PostTypeSelection | null = null;
+  constructor(private service:ProductsService,private router: Router,private route:ActivatedRoute,private dataservice:DataService){}
+ 
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      const sectionId = params['section'];
-      this.getallpost(sectionId);
-    });
+    // this.mainss = this.dataservice.getData();
+    // if (this.mainss) {
+    //   console.log("Received data:", this.mainss);
+    // } else {
+    //   console.error("No data received");
+    // }
+    this.getdatas();
   }
 
-  enumToArray(enumObj: any): { name: string, value: any }[] {
-    return Object.keys(enumObj)
-      .filter(key => isNaN(Number(key)))  
-      .map(key => ({ name: key, value: enumObj[key] }));
-  }
-
-  constructor(private service:ProductsService,private router: Router,private route:ActivatedRoute){}
-
-  getallpost(sectionId: number) {
-    // Set the enums based on the sectionId
-    switch (sectionId) {
-      case 0:
-        this.postType = PostTypeSelection.Post;
-        this.mainCategory = DiamondCategory.LabGrown;
-        this.subCategory = SubDiamondType.Polish;
-        break;
-      case 1:
-        this.postType = PostTypeSelection.Post;
-        this.mainCategory = DiamondCategory.LabGrown;
-        this.subCategory = SubDiamondType.Rough;
-        break;
-      case 2:
-        this.postType = PostTypeSelection.Post;
-        this.mainCategory = DiamondCategory.Natural;
-        this.subCategory = SubDiamondType.Polish;
-        break;
-      case 3:
-        this.postType = PostTypeSelection.Post;
-        this.mainCategory = DiamondCategory.Natural;
-        this.subCategory = SubDiamondType.Rough;
-        break;
-      default:
-        console.log('Unknown section');
-        return; // Exit if section ID is unknown
+  getdatas(){
+    this.mainss = this.dataservice.getData();
+    if(this.mainss){
+      console.log("Recivded Data:",this.mainss);
+    } else{
+      console.error("No data recived");
+      
     }
-
-    // Prepare the request body
-    const requestBody = {
-      postType: this.postType,
-      mainCategory: this.mainCategory,
-      subCategory: this.subCategory,
-      pageNumber: this.pageNumber,
-      pageSize: this.pageSize
-    };
-
-    // Call the API service method
-    this.service.getpostby(requestBody).subscribe(
-      (resp: any) => {
-        this.mains = resp.data; // Handle the response data
-        console.log("Fetched data:", this.mains);
-      },
-      (error) => {
-        console.error('Error fetching posts:', error); // Handle errors
-      }
-    );
   }
 
 
+  viewpostdetails(id: any): void {
+    this.router.navigate(['/Productdetils', id]);
+  }
+
+
+  onPageChange(newPage: number): void {
+    if (newPage >= 0 && (newPage * this.pageSize < this.totalItems)) {
+      this.pageNumber = newPage;
+      this.getdatas();
+    }
+  }
+
+  isNextDisabled(): boolean {
+    return this.pageNumber * this.pageSize >= this.totalItems;
+  }
+  
+
+ 
 
 }

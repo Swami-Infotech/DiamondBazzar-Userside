@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="title my-5">
+                <div class="title my-5 text-center">
                     <h3>Natural Polish</h3>
                 </div>
             </div>
@@ -13,47 +13,34 @@
                 <div class="container">
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
-                      <div
-                        class="title d-flex flex-wrap align-items-center justify-content-center"
-                      >
-                        <img
-                          src="../../../../assets/Img/profile/diamond.png"
-                          alt="diamond.png"
-                          class="img-fluid"
-                        />
-                        <!-- <h2>{{ "Home.Lab GrownPolish" | translate }}</h2> -->
-                         <h2>Lab Grown Polish</h2>
-                      </div>
-                    </div>
-                    <div class="col-lg-12 col-md-12 col-sm-12">
                       <div class="grown-banner">
                         <div class="card mt-4 px-5">
-                          <div class="lab-img my-5 text-center">
-                            <!-- <img
-                              src="../../../../assets/Img/slider/lab.png"
-                              alt="labbanner"
-                              class="img-fluid"
-                            /> -->
-                          </div>
                           <div
                             class="lab-product-title d-flex flex-wrap align-items-center justify-content-between"
                           >
-                            <h5> "Home.Polish"</h5>
                           </div>
                           <div class="row">
                             <!-- labgrown polish data start -->
-                            <ng-container *ngFor="let item of mains">
+                            <ng-container *ngFor="let item of mainss">
                               <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="lab-product">
                                   <div class="card">
                                     <div class="pro-img">
-                                      <button class="btn">
-                                        <img
-                                          src="../../../../assets/Img/slider/labpro.png"
-                                          alt="labpro"
-                                          style="width: 282px; height: 282px;"
-                                        />
-                                    </button>
+                                        <button class="btn"  (click)="viewpostdetails(item.postMainData.postID)">
+                                          <img *ngIf="item.postAttachmentURL;else defaultImage"
+                                          [src]="item.postAttachmentURL"
+                                          alt=""
+                                          style="width: 282px; height: 282px;"/>
+                                        </button>
+                                      <div>
+                                        <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
+                                        <ng-template #defaultImage>
+                                          <img src="../../../../../assets/Img/logo/DimaondBazzarlogo2.png"
+                                               alt="Default Image"
+                                               style="width: 282px; height: 282px;" />
+                                        </ng-template>
+                                        </button>
+                                      </div>
                                     </div>
                                     <div class="product-details px-4 py-3">
                                       <div class="price d-flex flex-wrap align-items-center justify-content-between">
@@ -80,320 +67,16 @@
                     </div>
                   </div>
                 </div>
+
+
+                <div class="pagination">
+                    <button (click)="onPageChange(pageNumber - 1)" [disabled]="pageNumber === 0">Previous</button>
+                    <span>Page {{pageNumber + 1}}</span>
+                    <button (click)="onPageChange(pageNumber + 1)" [disabled]="isNextDisabled()">Next</button>
+                  </div>
               </section>
 
-            <!-- <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="lab-product">
-                    <div class="card">
-                        <div class="pro-img">
-                            <a routerLink="/product">
-                            <img src="../../../../assets/Img/slider/labpro.png" alt="labpro"
-                                class="card-img-top">
-                            </a>
-                        </div>
-                        <div class="product-details px-4 py-3">
-                            <div
-                                class="price d-flex flex-wrap align-items-center justify-content-between">
-                                <h4>SID</h4>
-                                <h5>₹8680.00</h5>
-                            </div>
-                            <div
-                                class="pieace d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Piece</h6>
-                                <p>458</p>
-                            </div>
-                            <div
-                                class="size d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Size</h6>
-                                <p>4gr</p>
-                            </div>
-                            <div
-                                class="weigth d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Weigth</h6>
-                                <p>4388.00</p>
-                            </div>
-                            <div
-                                class="color d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Color</h6>
-                                <p>4388.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="lab-product">
-                    <div class="card">
-                        <div class="pro-img">
-                            <a routerLink="/product">
-                            <img src="../../../../assets/Img/slider/labpro.png" alt="labpro"
-                                class="card-img-top">
-                            </a>
-                        </div>
-                        <div class="product-details px-4 py-3">
-                            <div
-                                class="price d-flex flex-wrap align-items-center justify-content-between">
-                                <h4>SID</h4>
-                                <h5>₹8680.00</h5>
-                            </div>
-                            <div
-                                class="pieace d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Piece</h6>
-                                <p>458</p>
-                            </div>
-                            <div
-                                class="size d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Size</h6>
-                                <p>4gr</p>
-                            </div>
-                            <div
-                                class="weigth d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Weigth</h6>
-                                <p>4388.00</p>
-                            </div>
-                            <div
-                                class="color d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Color</h6>
-                                <p>4388.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="lab-product">
-                    <div class="card">
-                        <div class="pro-img">
-                            <a routerLink="/product">
-                            <img src="../../../../assets/Img/slider/labpro.png" alt="labpro"
-                                class="card-img-top">
-                            </a>
-                        </div>
-                        <div class="product-details px-4 py-3">
-                            <div
-                                class="price d-flex flex-wrap align-items-center justify-content-between">
-                                <h4>SID</h4>
-                                <h5>₹8680.00</h5>
-                            </div>
-                            <div
-                                class="pieace d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Piece</h6>
-                                <p>458</p>
-                            </div>
-                            <div
-                                class="size d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Size</h6>
-                                <p>4gr</p>
-                            </div>
-                            <div
-                                class="weigth d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Weigth</h6>
-                                <p>4388.00</p>
-                            </div>
-                            <div
-                                class="color d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Color</h6>
-                                <p>4388.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="lab-product">
-                    <div class="card">
-                        <div class="pro-img">
-                            <a routerLink="/product">
-                            <img src="../../../../assets/Img/slider/labpro.png" alt="labpro"
-                                class="card-img-top">
-                            </a>
-                        </div>
-                        <div class="product-details px-4 py-3">
-                            <div
-                                class="price d-flex flex-wrap align-items-center justify-content-between">
-                                <h4>SID</h4>
-                                <h5>₹8680.00</h5>
-                            </div>
-                            <div
-                                class="pieace d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Piece</h6>
-                                <p>458</p>
-                            </div>
-                            <div
-                                class="size d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Size</h6>
-                                <p>4gr</p>
-                            </div>
-                            <div
-                                class="weigth d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Weigth</h6>
-                                <p>4388.00</p>
-                            </div>
-                            <div
-                                class="color d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Color</h6>
-                                <p>4388.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="lab-product">
-                    <div class="card">
-                        <div class="pro-img">
-                            <a routerLink="/product">
-                            <img src="../../../../assets/Img/slider/labpro.png" alt="labpro"
-                                class="card-img-top">
-                            </a>
-                        </div>
-                        <div class="product-details px-4 py-3">
-                            <div
-                                class="price d-flex flex-wrap align-items-center justify-content-between">
-                                <h4>SID</h4>
-                                <h5>₹8680.00</h5>
-                            </div>
-                            <div
-                                class="pieace d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Piece</h6>
-                                <p>458</p>
-                            </div>
-                            <div
-                                class="size d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Size</h6>
-                                <p>4gr</p>
-                            </div>
-                            <div
-                                class="weigth d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Weigth</h6>
-                                <p>4388.00</p>
-                            </div>
-                            <div
-                                class="color d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Color</h6>
-                                <p>4388.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="lab-product">
-                    <div class="card">
-                        <div class="pro-img">
-                            <a routerLink="/product">
-                            <img src="../../../../assets/Img/slider/labpro.png" alt="labpro"
-                                class="card-img-top">
-                            </a>
-                        </div>
-                        <div class="product-details px-4 py-3">
-                            <div
-                                class="price d-flex flex-wrap align-items-center justify-content-between">
-                                <h4>SID</h4>
-                                <h5>₹8680.00</h5>
-                            </div>
-                            <div
-                                class="pieace d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Piece</h6>
-                                <p>458</p>
-                            </div>
-                            <div
-                                class="size d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Size</h6>
-                                <p>4gr</p>
-                            </div>
-                            <div
-                                class="weigth d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Weigth</h6>
-                                <p>4388.00</p>
-                            </div>
-                            <div
-                                class="color d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Color</h6>
-                                <p>4388.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="lab-product">
-                    <div class="card">
-                        <div class="pro-img">
-                            <a routerLink="/product">
-                            <img src="../../../../assets/Img/slider/labpro.png" alt="labpro"
-                                class="card-img-top">
-                            </a>
-                        </div>
-                        <div class="product-details px-4 py-3">
-                            <div
-                                class="price d-flex flex-wrap align-items-center justify-content-between">
-                                <h4>SID</h4>
-                                <h5>₹8680.00</h5>
-                            </div>
-                            <div
-                                class="pieace d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Piece</h6>
-                                <p>458</p>
-                            </div>
-                            <div
-                                class="size d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Size</h6>
-                                <p>4gr</p>
-                            </div>
-                            <div
-                                class="weigth d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Weigth</h6>
-                                <p>4388.00</p>
-                            </div>
-                            <div
-                                class="color d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Color</h6>
-                                <p>4388.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="lab-product">
-                    <div class="card">
-                        <div class="pro-img">
-                            <a routerLink="/product">
-                            <img src="../../../../assets/Img/slider/labpro.png" alt="labpro"
-                                class="card-img-top">
-                            </a>
-                        </div>
-                        <div class="product-details px-4 py-3">
-                            <div
-                                class="price d-flex flex-wrap align-items-center justify-content-between">
-                                <h4>SID</h4>
-                                <h5>₹8680.00</h5>
-                            </div>
-                            <div
-                                class="pieace d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Piece</h6>
-                                <p>458</p>
-                            </div>
-                            <div
-                                class="size d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Size</h6>
-                                <p>4gr</p>
-                            </div>
-                            <div
-                                class="weigth d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Weigth</h6>
-                                <p>4388.00</p>
-                            </div>
-                            <div
-                                class="color d-flex flex-wrap align-items-center justify-content-between">
-                                <h6>Color</h6>
-                                <p>4388.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+             
         </div>
     </div>
 </section>
