@@ -95,7 +95,6 @@ export class WishlistComponent implements OnInit {
 
 
   viewpostdetails(id: any): void {
-    sessionStorage.setItem('postID', id);
     this.router.navigate(['/Productdetils', id]);
   }
   

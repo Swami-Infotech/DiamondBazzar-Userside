@@ -17,7 +17,7 @@
 }
 
 .pagination li.active {
-  background-color: blue; /* Highlight color for the active page */
+  background-color: blue; 
 }
 
 button {
@@ -97,7 +97,6 @@ button {
   top: 0;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  */
   border-radius: 10px;
   z-index: 1;
   padding: 10px 20px;
@@ -131,7 +130,6 @@ button {
 }
 
 .chip.active .card {
-  /* border-color: #007bff; */
   background: linear-gradient(
     90deg,
     rgba(255, 140, 0, 1) 14%,
@@ -141,18 +139,14 @@ button {
 }
 
 .chip-list-container::-webkit-scrollbar {
-  /* height: 8px; */
   width: 0 !important;
 }
 
 .chip-list-container::-webkit-scrollbar-thumb {
-  /* background: #ccc; */
-  /* border-radius: 4px; */
   width: 0 !important;
 }
 
 .chip-list-container::-webkit-scrollbar-thumb:hover {
-  /* background: #999; */
 }
 
 @media (max-width: 1025px) {
@@ -217,17 +211,7 @@ button {
 }
 
 @media (max-width: 376px) {
-  /* .profile-back img {
-        height: 20vh;
-        width: 100%;
-        position: relative;
-    } */
-  /* .profile-img {
-        position: absolute;
-        top: 7%;
-        left: 55%;
-        transform: translate(-50%, -50%);
-    } */
+
   .card {
     padding: 0 0px 0 0;
   }

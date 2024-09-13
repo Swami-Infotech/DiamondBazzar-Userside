@@ -3,16 +3,9 @@
   <div class="row">
     <div class="col-2">
       <div class="mt-3">
-        <select
-          class="form-select"
-          (change)="onLanguageChange($event)"
-          id="langSelect"
-        >
-          <option
-            *ngFor="let lang of getLanguages()"
-            [value]="lang.code"
-            [selected]="lang.code === translate.currentLang"
-          >
+        <select class="form-select" (change)="onLanguageChange($event)" id="langSelect">
+          <option *ngFor="let lang of getLanguages()" [value]="lang.code"
+            [selected]="lang.code === translate.currentLang">
             {{ lang.name }}
           </option>
         </select>
@@ -21,88 +14,60 @@
   </div>
 </div>
 <nav class="navbar navbar-expand-lg mt-4">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <img
-        src="/assets/Img/logo/DimaondBazzarlogo (1).png"
-        alt="DimaondBazzarlogo"
-        width="100"
-      />
+  <div class="container-fluid">
+    <a class="navbar-brand" [routerLink]="['/home',userid]">
+      <img src="/assets/Img/logo/DimaondBazzarlogo (1).png" alt="DimaondBazzarlogo" width="100" />
     </a>
 
-    <button
-      class="navbar-toggler text-white"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon" style="background-color: #fff"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item pe-3">
-          <a
-            class="nav-link"
-            aria-current="page"
-            [routerLink]="['/home',userid]"
-            routerLinkActive="activebutton"
-            >{{ "Home.Home" | translate }}</a
-          >
+          <a class="nav-link" aria-current="page" [routerLink]="['/home',userid]" routerLinkActive="activebutton">{{
+            "Home.Home" | translate }}</a>
         </li>
         <li class="nav-item pe-3">
-          <a
-            class="nav-link"
-            routerLink="/auction"
-            routerLinkActive="activebutton"
-          >
-            {{ "Home.Auction" | translate }}</a
-          >
+          <a class="nav-link" routerLink="/auction" routerLinkActive="activebutton">
+            {{ "Home.Auction" | translate }}</a>
         </li>
         <li class="nav-item pe-3" routerLinkActive="active">
           <a class="nav-link" routerLink="/Demand">
-            {{ "Home.Demand" | translate }}</a
-          >
+            {{ "Home.Demand" | translate }}</a>
         </li>
         <li class="nav-item pe-3" routerLinkActive="active">
           <a class="nav-link" routerLink="/Calculator">
-            {{ "Home.Calculator" | translate }}</a
-          >
+            {{ "Home.Calculator" | translate }}</a>
         </li>
-        <!-- <li class="nav-item pe-3" routerLinkActive="active">
-          <a class="nav-link" routerLink="/AddProduct">
-            {{ "Home.AddProduct" | translate }}</a
-          >
-        </li> -->
+        <li class="nav-item pe-3" routerLinkActive="active">
+          <a class="nav-link" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal2">
+            Add Post
+          </a>
+        </li>
       </ul>
       <div class="icon d-flex flex-wrap align-items-center">
         <!-- notification dropdown start -->
         <div class="dropdown">
-          <button
-            class="btn dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
+          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="bi bi-bell-fill"></i>
           </button>
-          <ul class="dropdown-menu" >
+          <ul class="dropdown-menu">
             <ng-container *ngFor="let d of notification">
-            <div class="noti-title px-3 my-2">
-              <h6 class="text-dark">{{d.notificationTitle}}</h6
-                >
-            </div>
-            <div class="notification px-3">
-              <div class="noti-iocn d-flex align-item-center">
-                <i class="bi bi-bell-fill"></i>
-                <div class="noti-cont">
-                  <p>{{d.notificationMessage}}</p>
-                  <h6>{{d.createdAt | date:'short'}}</h6>
-                </div>
+              <div class="noti-title px-3 my-2">
+                <h6 class="text-dark">{{d.notificationTitle}}</h6>
               </div>
-              <!-- <div class="noti-iocn d-flex align-item-center">
+              <div class="notification px-3">
+                <div class="noti-iocn d-flex align-item-center">
+                  <i class="bi bi-bell-fill"></i>
+                  <div class="noti-cont">
+                    <p>{{d.notificationMessage}}</p>
+                    <h6>{{d.createdAt | date:'short'}}</h6>
+                  </div>
+                </div>
+                <!-- <div class="noti-iocn d-flex align-item-center">
                 <i class="bi bi-bell-fill"></i>
                 <div class="noti-cont">
                   <p>
@@ -111,8 +76,8 @@
                   <h6>10:20PM</h6>
                 </div>
               </div> -->
-            </div>
-          </ng-container>
+              </div>
+            </ng-container>
           </ul>
         </div>
         <!-- notification dropdown End -->
@@ -128,30 +93,19 @@
         <!-- profile page link start -->
         <div class="profile">
           <div class="dropdown">
-            <button
-              class="btn dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="bi bi-person-fill"></i>
             </button>
             <ul class="dropdown-menu">
               <div class="profile-title px-3">
                 <div class="profile-img d-flex align-items-center">
-                  <img
-                    src="../../../../assets/Img/slider/client.png"
-                    alt="client"
-                    width="50"
-                  />
+                  <img src="../../../../assets/Img/slider/client.png" alt="client" width="50" />
                   <h5 class="ms-3">Cristal Crizzal</h5>
                 </div>
               </div>
 
               <!-- myprofile start -->
-              <div
-                class="profiles mx-2 mt-3 d-flex align-items-center justify-content-between"
-              >
+              <div class="profiles mx-2 mt-3 d-flex align-items-center justify-content-between">
                 <a routerLink="/myprofile">
                   <button class="btn p-0">
                     <div class="profile-iocn d-flex align-items-center">
@@ -161,93 +115,51 @@
                   </button>
                 </a>
                 <div class="right-arrow me-3">
-                  <img
-                    src="../../../../assets/Img/slider/right-arrow.png"
-                    alt="right-arrow"
-                    width="20"
-                  />
+                  <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20" />
                 </div>
               </div>
               <!-- myprofile end -->
 
               <!-- subscription start -->
-              <div
-                class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between"
-              >
+              <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
                 <div class="profile-iocn">
-                  <button
-                    class="btn d-flex flex-wrap align-items-center p-0"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal1"
-                    type="button"
-                  >
-                    <img
-                      src="../../../../assets/Img/slider/subscribe.png"
-                      alt="subscribe"
-                      width="40"
-                    />
+                  <button class="btn d-flex flex-wrap align-items-center p-0" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal1" type="button">
+                    <img src="../../../../assets/Img/slider/subscribe.png" alt="subscribe" width="40" />
                     <h6 class="ms-3">Subscription</h6>
                   </button>
                 </div>
                 <div class="right-arrow me-3">
-                  <img
-                    src="../../../../assets/Img/slider/right-arrow.png"
-                    alt="right-arrow"
-                    width="20"
-                  />
+                  <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20" />
                 </div>
               </div>
               <!-- subscription end -->
 
               <!-- support start -->
-              <div
-                class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between"
-              >
+              <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
                 <div class="profile-iocn">
-                  <button
-                    class="btn d-flex flex-wrap align-items-center p-0"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                    type="button"
-                  >
-                    <img
-                      src="../../../../assets/Img/slider/customer-service.png"
-                      alt="customer-service"
-                      width="40"
-                    />
+                  <button class="btn d-flex flex-wrap align-items-center p-0" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" type="button">
+                    <img src="../../../../assets/Img/slider/customer-service.png" alt="customer-service" width="40" />
                     <h6 class="ms-3">Support</h6>
                   </button>
                 </div>
                 <div class="right-arrow me-3">
-                  <img
-                    src="../../../../assets/Img/slider/right-arrow.png"
-                    alt="right-arrow"
-                    width="20"
-                  />
+                  <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20" />
                 </div>
               </div>
               <!-- support end -->
 
               <!-- logout start -->
-              <div
-                class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between"
-              >
+              <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
                 <div class="profile-iocn d-flex align-items-center">
                   <a (click)="logout()" class="d-flex flex-wrap align-items-center">
-                  <img
-                    src="../../../../assets/Img/slider/logout.png"
-                    alt="customer-service"
-                    width="40"
-                  />
-                  <h6 class="ms-3">LogOut</h6>
-                </a>
+                    <img src="../../../../assets/Img/slider/logout.png" alt="customer-service" width="40" />
+                    <h6 class="ms-3">LogOut</h6>
+                  </a>
                 </div>
                 <div class="right-arrow me-3">
-                  <img
-                    src="../../../../assets/Img/slider/right-arrow.png"
-                    alt="right-arrow"
-                    width="20"
-                  />
+                  <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20" />
                 </div>
               </div>
               <!-- logout end -->
@@ -269,32 +181,22 @@
 <!-- navbar End -->
 
 <!-- support modal start -->
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title text-center fs-5" id="exampleModalLabel">
           Support
         </h1>
-        <button
-          type="button"
-          class="btn-close btn-white"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
+        <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form action="" (ngSubmit)="OnChangeDataAdd()" #supportForm="ngForm">
           <div class="col-lg-6 col-md-6 col-sm-12 mt-3">
             <label for="businesscategory" class="form-label">Business Category</label>
             <div class="input-container">
-              <select class="form-select" aria-label="Default select example" (change)="onCategoryChange($event)" #categorySelect>
+              <select class="form-select" aria-label="Default select example" (change)="onCategoryChange($event)"
+                #categorySelect>
                 <option [value]="null" selected>Open this select menu</option>
                 <option *ngFor="let category of SupportTypesData" [value]="category.supportTypeID">
                   {{ category.supportType }}
@@ -305,19 +207,23 @@
           <div class="mb-3">
             <div class="input-container">
               <img src="../../../../assets/Img/Calcu/title.png" alt="title.png" width="20" class="call-icon" />
-              <input type="text" id="supportTitle" class="form-control" placeholder="support Title" [(ngModel)]="SupportData.supportTitle" name="supportTitle" #supportTitle="ngModel" required />
+              <input type="text" id="supportTitle" class="form-control" placeholder="support Title"
+                [(ngModel)]="SupportData.supportTitle" name="supportTitle" #supportTitle="ngModel" required />
             </div>
           </div>
           <div class="mb-3">
             <div class="input-container">
               <img src="../../../../assets/Img/Calcu/text-file.png" alt="text-file.png" width="20" class="call-icon" />
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description" [(ngModel)]="SupportData.supportDescription" name="supportDescription" #supportDescription="ngModel" required></textarea>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Description"
+                [(ngModel)]="SupportData.supportDescription" name="supportDescription" #supportDescription="ngModel"
+                required></textarea>
             </div>
           </div>
           <div class="mb-3">
             <div class="input-container">
               <img src="../../../../assets/Img/Calcu/attach.png" alt="attach.png" width="20" class="call-icon" />
-              <input type="file" id="attachement" class="form-control" placeholder="upload image" (change)="onFileSelectedLogo($event)" #fileInput />
+              <input type="file" id="attachement" class="form-control" placeholder="upload image"
+                (change)="onFileSelectedLogo($event)" #fileInput />
             </div>
           </div>
           <div class="mb-3">
@@ -326,7 +232,7 @@
             </div>
           </div>
         </form>
-        
+
       </div>
       <!-- <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -339,59 +245,28 @@
 
 <!-- subscripion modal start -->
 <section class="subss">
-  <div
-    class="modal fade"
-    id="exampleModal1"
-    tabindex="-1"
-    aria-labelledby="exampleModalLabel"
-    aria-hidden="true"
-  >
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title text-center fs-5" id="exampleModalLabel">
             Subscription
           </h1>
-          <button
-            type="button"
-            class="btn-close bg-white"
-            data-bs-dismiss="modal"
-            aria-label="Close"
-          ></button>
+          <button type="button" class="btn-close bg-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body background-container">
           <div class="Premium">
-            <div
-              class="sub-img d-flex flex-wrap align-items-center justify-content-center"
-            >
-              <img
-                src="../../../../assets/Img/Calcu/fisrt.png"
-                alt=""
-                width="70"
-              />
+            <div class="sub-img d-flex flex-wrap align-items-center justify-content-center">
+              <img src="../../../../assets/Img/Calcu/fisrt.png" alt="" width="70" />
               <h4>Premium</h4>
-              <img
-                src="../../../../assets/Img/Calcu/second.png"
-                alt=""
-                width="50"
-              />
+              <img src="../../../../assets/Img/Calcu/second.png" alt="" width="50" />
             </div>
           </div>
           <div class="subscription">
-            <div
-              class="sub-img d-flex flex-wrap align-items-center justify-content-center"
-            >
-              <img
-                src="../../../../assets/Img/Calcu/third.png"
-                alt=""
-                width="70"
-              />
+            <div class="sub-img d-flex flex-wrap align-items-center justify-content-center">
+              <img src="../../../../assets/Img/Calcu/third.png" alt="" width="70" />
               <h4>subscription</h4>
-              <img
-                src="../../../../assets/Img/Calcu/four.png"
-                alt=""
-                width="50"
-              />
+              <img src="../../../../assets/Img/Calcu/four.png" alt="" width="50" />
             </div>
           </div>
           <div class="subscri-price text-center">
@@ -399,9 +274,7 @@
           </div>
           <div class="activation">
             <div class="card px-3 py-1">
-              <div
-                class="activ d-flex flex-wrap align-items-center justify-content-between"
-              >
+              <div class="activ d-flex flex-wrap align-items-center justify-content-between">
                 <h4>Activation Date</h4>
                 <h5>{{ SubscriptionData.starttime | date:'dd/MM/yyyy' }}</h5>
               </div>
@@ -409,9 +282,7 @@
           </div>
           <div class="expiry my-3">
             <div class="card px-3 py-1">
-              <div
-                class="exp d-flex flex-wrap align-items-center justify-content-between"
-              >
+              <div class="exp d-flex flex-wrap align-items-center justify-content-between">
                 <h4>Expiry Date</h4>
                 <h5>{{ SubscriptionData.endtime | date:'dd/MM/yyyy' }}</h5>
               </div>
@@ -419,9 +290,7 @@
           </div>
           <div class="payment">
             <div class="card px-3 py-1">
-              <div
-                class="mod d-flex flex-wrap align-items-center justify-content-between"
-              >
+              <div class="mod d-flex flex-wrap align-items-center justify-content-between">
                 <h4>Payment Method</h4>
                 <h5>{{ getPaymentMethod(SubscriptionData.paymentMode) }}</h5>
               </div>
@@ -437,3 +306,65 @@
   </div>
 </section>
 <!-- subscripion modal end -->
+
+
+
+<!-- post modal start -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Main DiamondType Select</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <div id="mainDiamondType">
+              <div *ngFor="let type of mainDiamondTypes" class="text-center">
+                <button class="btn" (click)="onMainDiamondTypeChange(type.value)">{{ type.name }}</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sub-Diamond Type Modal -->
+          <div class="modal fade" tabindex="-1" [ngClass]="{'show': showModal, 'fade': true}"
+            [style.display]="showModal ? 'block' : 'none'" aria-labelledby="subDiamondTypeModal"
+            aria-hidden="!showModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="subDiamondTypeModal">Select Sub Diamond Type</h5>
+                  <button type="button" class="btn-close" (click)="closeModal()"></button>
+                </div>
+                <div class="modal-body">
+                  <div *ngFor="let subType of subDiamondTypes" id="subDiamondTypes" >
+                    <button class="btn" (click)="fetchCategories(subType.value)">
+                      {{ subType.name }}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- Modal backdrop for the overlay effect -->
+          <div *ngIf="showModal" class="modal-backdrop fade show"></div>
+
+
+
+
+
+
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<!-- post modal end -->

@@ -11,6 +11,15 @@
 .thumbnails img{
     border: 1px solid #000;
 }
+.piece{
+    position: relative;
+}
+.dot{
+    position: absolute;
+    left: 55%;
+    top: 6%;
+    transform: translate(-50%);
+}
 #carousel2{
     display: flex;
     align-items: center;
@@ -60,7 +69,10 @@
     border-radius: 15px;
 }
 .title{
-    margin: 2% 25%;
+    padding: 4px 0 0 76px;
+}
+a{
+    text-decoration: none;
 }
 .message{
     background: linear-gradient(rgba(255, 140, 0, 1),rgba(153, 84, 0, 1));

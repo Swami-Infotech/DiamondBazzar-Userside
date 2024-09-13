@@ -61,6 +61,8 @@
     padding: 10px 10%;
     color: #fff;
 }
-.profile-user img{
+.profile-user{
     border-radius: 50%;
+    height: 100px;
+    width: 100px;
 }

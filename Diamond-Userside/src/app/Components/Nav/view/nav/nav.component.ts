@@ -1,13 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { AddSupportModel } from '../../Model/Nav';
+import { AddSupportModel, diamondCategory, diamondSubCategory, PostTypeSelection } from '../../Model/Nav';
 import { NavService } from '../../Service/nav.service';
 import Swal from 'sweetalert2';
 import { response } from 'express';
 import { HomeService } from '../../../Home/service/home.service';
+import { log } from 'node:console';
+import { DataService } from '../../../data.service';
 declare var $: any;
 
 @Component({
@@ -23,16 +25,44 @@ export class NavComponent implements OnInit {
   SubscriptionData: any = {}; 
   noti:any[] = [];
   notification:any;
+  metadata:any[] = []
+
+
+
+  diamondCategory = diamondCategory;
+  diamondSubCategory = diamondSubCategory;
+  posttype = PostTypeSelection
+
+  selectedMainDiamondType: diamondCategory | null = null;
+  selectedSubDiamondType: diamondSubCategory | null = null;
+  selectposttype : PostTypeSelection | null = null
+
+
+  mainDiamondTypes = [
+    { value: diamondCategory.Natural, name: 'Natural' },
+    { value: diamondCategory.LabGrown, name: 'Lab Grown' },
+  ];
+
+
+
+
+  subDiamondTypes: { value: diamondSubCategory, name: string }[] = [];
+
+
 
   userid!:number;
   id: any;
+
+  showModal: boolean = false;
   
   constructor(
     public translate: TranslateService,
     private service: NavService,
     private route: Router,
     private router: Router,
-    private services:HomeService
+    private services:HomeService,
+    private renderer:Renderer2,
+    private dataservice:DataService
     
   ) {}
 
@@ -45,6 +75,96 @@ export class NavComponent implements OnInit {
    this.getID();
 
   }
+
+
+  onMainDiamondTypeChange(selectedMainDiamondType: diamondCategory) {
+    this.selectedMainDiamondType = selectedMainDiamondType;
+    
+    if (selectedMainDiamondType === diamondCategory.Natural) {
+      this.subDiamondTypes = [
+        { value: diamondSubCategory.Rough, name: 'Rough' },
+        { value: diamondSubCategory.Polish, name: 'Polish' },
+      ];
+    } else if (selectedMainDiamondType === diamondCategory.LabGrown) {
+      this.subDiamondTypes = [
+        { value: diamondSubCategory.Rough, name: 'Rough' },
+        { value: diamondSubCategory.Polish, name: 'Polish' },
+      ];
+    }
+  
+    this.showModal = true;
+  }
+
+  onPostTypeSelection(postType: number) {
+    this.selectposttype = postType;
+    // this.fetchCategories();
+  }
+  
+  fetchCategories(selectedSubDiamondType: diamondSubCategory) {
+    const postType = this.selectposttype !== null ? this.selectposttype : PostTypeSelection.Post;
+
+    this.selectedSubDiamondType = selectedSubDiamondType;
+
+  
+    if (this.selectedMainDiamondType !== null && selectedSubDiamondType !== null) {
+      this.service.getcategoriesforpost(this.selectedMainDiamondType, selectedSubDiamondType, postType).subscribe(
+        (response: any) => {
+          if (response.status === true) {
+            // console.log("category",response.data);
+
+            this.metadata = response.data;
+
+            console.log("meata",response.data);
+
+            this.dataservice.setData(this.metadata);
+
+            
+            
+            this.showModal = false;
+            this.removebackdrop();
+            this.enableScrolling();
+  
+            setTimeout(() => {
+              if (this.selectedSubDiamondType === diamondSubCategory.Polish) {
+                this.router.navigate(['/polishpost']);
+              } else if (this.selectedSubDiamondType === diamondSubCategory.Rough) {
+                this.router.navigate(['/RoughPost']);
+              }
+            }, 300); ;
+          } else {
+            console.error('API response status is not true');
+          }
+        },
+        error => {
+          console.error('API call error:', error);
+        }
+      );
+    } else {
+      console.error('Missing main or sub diamond type');
+    }
+  }
+  
+
+  removebackdrop() {
+    const backdrops = document.getElementsByClassName('modal-backdrop');
+    Array.from(backdrops).forEach((backdrop) => {
+      if (backdrop && backdrop.parentNode === document.body) {
+        document.body.removeChild(backdrop);  
+      }
+    });
+  }
+
+  enableScrolling(){
+    document.body.style.overflow = '';
+    document.body.classList.remove('modal-open')
+  }
+
+  closeModal() {
+    this.showModal = false;
+  }
+
+
+
 
   getLanguages(): { code: string, name: string }[] {
     return [

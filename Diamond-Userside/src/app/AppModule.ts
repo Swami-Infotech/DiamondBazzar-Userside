@@ -10,7 +10,8 @@ export function HttpLoaderFactory(http: HttpClient) {
 }
 
 @NgModule({
-  declarations: [],
+  declarations: [
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,

@@ -1,6 +1,6 @@
 .navbar{
     background-color: #000;
-    margin: 0 40px;
+    margin: 0 5%;
     border-radius: 15px;
 }
 .navbar-collapse {
@@ -45,7 +45,7 @@ ul li a{
 }
 .profile .dropdown-menu {
     top: 135%;
-    left: -80px !important;
+    left: -103px !important;
     margin-top: var(--bs-dropdown-spacer);
     width: 245px;
 }
@@ -197,15 +197,41 @@ ul li a{
 .mod h5{
     font-size: 19px;
 }
+.dropdown .dropdown-toggle{
+    padding: 0 0 0 0;
+}
+.profile{
+    padding: 0 0 0 12px;
+}
+
+#mainDiamondType .btn{
+    border: 1px solid #FF8C00;
+    margin: 4px 0;
+}
+#subDiamondTypes .btn{
+    border: 1px solid #FF8C00;
+    margin: 4px 0;
+}
 
 
 
 /* medai query start */
-@media  (max-width: 768px) {
+@media  (max-width: 425px) {
     .navbar-collapse {
         flex-basis: 100% !important;
         flex-grow: 0 !important;
         align-items: center;
+    }
+    .navbar{
+        background-color: #000;
+        margin: 0 0 0px;
+        border-radius: 15px;
+    }
+    .dropdown .btn{
+        padding: 0 0 0 0;
+    }
+    .profile{
+        padding: 0 0 0 12px;
     }
 }
 /* medai query end */

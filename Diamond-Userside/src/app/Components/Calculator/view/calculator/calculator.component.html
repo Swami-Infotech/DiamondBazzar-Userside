@@ -107,7 +107,7 @@
                                         <!-- Total amount start -->
                                         <div class="total-amount">
                                             <div class="card" *ngIf="CartWeight !== null && PriceCart !== null && CartWeight > 0 && PriceCart > 0">
-                                                <h6>{{ "Home.Total Amount" | translate }}: {{ finalamount}}</h6>
+                                                <h6>{{ "Home.Total Amount" | translate }}:{{ selectedCurrency }} {{ finalamount}}</h6>
                                             </div>
                                         </div>
                                         

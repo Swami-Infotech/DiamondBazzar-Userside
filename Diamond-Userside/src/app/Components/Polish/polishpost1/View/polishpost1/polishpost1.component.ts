@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { NavComponent } from '../../../../Nav/view/nav/nav.component';
 import { FooterComponent } from '../../../../Footer/View/footer/footer.component';
 import { RouterLink } from '@angular/router';
+import { PostspecialComponent } from '../../../Postspecial/view/postspecial/postspecial.component';
 
 @Component({
   selector: 'app-polishpost1',
   standalone: true,
-  imports: [CommonModule, FormsModule,NavComponent,FooterComponent,RouterLink],
+  imports: [CommonModule, FormsModule,NavComponent,FooterComponent,RouterLink,PostspecialComponent],
   templateUrl: './polishpost1.component.html',
   styleUrl: './polishpost1.component.css'
 })

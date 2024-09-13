@@ -19,4 +19,6 @@ export class ProfileService {
   BusinessCategoryList(){
     return this._httpClient.get(`${environment.baseURL}Auth/GetAllBusinessCategoryList`);
   }
+
+  
 }

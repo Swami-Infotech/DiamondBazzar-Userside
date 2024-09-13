@@ -24,7 +24,7 @@ export class CalculatorComponent {
   dueDays:number | null = null;
   paymentDate:Date = new Date();
   currentSign: string = '-';
-  Terms:number = 0;
+  Terms:number | null = null;
   Conversionrate :number | null = null;
   Brokerage:number | null = null;
   brokerageAmount:string = '0.00';

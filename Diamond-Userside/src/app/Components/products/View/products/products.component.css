@@ -21,6 +21,15 @@
 .price h5{
     color: #FF8C00;
 }
+.piece{
+    position: relative;
+}
+.dot{
+    position: absolute;
+    left: 55%;
+    top: 6%;
+    transform: translate(-50%);
+}
 .lab-product .card{
     background-color: #FAFAFA;
     box-shadow: none;

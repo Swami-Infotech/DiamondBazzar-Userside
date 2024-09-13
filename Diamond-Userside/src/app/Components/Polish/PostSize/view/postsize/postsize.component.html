@@ -1,0 +1,82 @@
+<div class="polish-size my-5">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+            <div class="shap-title">
+                <h6>Size*</h6>
+            </div>
+        </div>
+    </div>
+    <ul
+        class="nav nav-pills"
+        id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active"
+                id="pills-Generals-tab" data-bs-toggle="pill"
+                data-bs-target="#pills-Generals"
+                type="button" role="tab"
+                aria-controls="pills-Generals"
+                aria-selected="true">General</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-Sieves-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-Sieves" type="button"
+                role="tab" aria-controls="pills-Sieves"
+                aria-selected="false">Sieves</button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-Pointer-tab"
+                data-bs-toggle="pill"
+                data-bs-target="#pills-Pointer"
+                type="button" role="tab"
+                aria-controls="pills-Pointer"
+                aria-selected="false">Pointer</button>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="pills-tabContent">
+
+        <!-- General tab start -->
+        <div class="tab-pane fade show active"
+            id="pills-Generals" role="tabpanel"
+            aria-labelledby="pills-Generals-tab"
+            tabindex="0">
+            <div class="db-shap my-3">
+                <div class="row">
+                  <!-- postsize.component.html -->
+<!-- <div class="chip-list-container" (wheel)="onScroll($event)">
+    <div class="chip" *ngFor="let size of metadata" [class.active]="size.isActive" (click)="selectChip(size)">
+      <div class="card py-2">
+        <div *ngIf="metadata.length > 0">
+          <div [ngSwitch]="displayType">
+            <div *ngSwitchCase="CategoryDisplayStyle.SelectionListHorizontal" class="polish-tab">
+              <ul class="nav nav-pills my-5" id="pills-tab" role="tablist">
+                <li *ngFor="let tab of size.tabs; let i = index" class="nav-item" role="presentation">
+                  <h6>{{ tab.metaDataTitle }}</h6>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div *ngFor="let tab of size.tabs; let i = index"
+                     [id]="'pills-content-' + i"
+                     class="tab-pane fade"
+                     [ngClass]="{'show active': i === 0}"
+                     role="tabpanel"
+                     [attr.aria-labelledby]="'pills-tab-' + i">
+                  <p>{{ tab.metaDataTitle }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  
+                      
+                </div>
+            </div>
+        </div>
+        <!-- natural tab end -->
+
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div *ngIf="metadata!.length > 0">
+  <div *ngFor="let item of metadata">
+    <div [ngSwitch]="displayType">
+      <div *ngSwitchCase="CategoryDisplayStyle.DiamondType" class="polish-tab">
+        <ul class="nav nav-pills my-5" id="pills-tab" role="tablist">
+          <li *ngFor="let tab of item.tabs; let i = index" class="nav-item" role="presentation">
+            <button class="nav-link"
+                    [ngClass]="{'active': i === 0}"
+                    [id]="'pills-tab-' + i"
+                    data-bs-toggle="pill"
+                    [attr.data-bs-target]="'#pills-content-' + i"
+                    type="button"
+                    role="tab"
+                    [attr.aria-controls]="'pills-content-' + i"
+                    [attr.aria-selected]="i === 0">
+              {{ tab.metaDataTitle }}
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+          <div *ngFor="let tab of item.tabs; let i = index"
+               [id]="'pills-content-' + i"
+               class="tab-pane fade"
+               [ngClass]="{'show active': i === 0}"
+               role="tabpanel"
+               [attr.aria-labelledby]="'pills-tab-' + i">
+            <p>{{ tab.content }}</p>
+          </div>
+        </div>
+      </div>
+      <!-- Add other cases for different display types -->
+    </div>
+  </div>
+</div>

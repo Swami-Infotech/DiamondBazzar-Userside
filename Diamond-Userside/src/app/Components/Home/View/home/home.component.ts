@@ -11,11 +11,13 @@ import { response } from 'express';
 import { log } from 'console';
 import { DiamondCategory, Post, PostTypeSelection, SubDiamondType } from '../../Model/home';
 import { DataService } from '../../service/data.service';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslateModule, NavComponent, FooterComponent,RouterLink],
+  imports: [CommonModule, FormsModule, TranslateModule, NavComponent, FooterComponent,RouterLink,CarouselModule ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -91,7 +93,7 @@ export class HomeComponent implements OnInit {
       (resp:any)=>{
         this.slider = resp.data.sliderData;
         this.dolar = resp.data;
-        this.line = this.translate.instant('Home.LINE',{value:resp.data.headlineData});
+        this.line = resp.data.headlineData;
         this.labgrown = resp.data.labgrownPolish;
         this.labgrownrough = resp.data.labgrownRough;
         this.nautral = resp.data.naturalPolish;
@@ -104,8 +106,9 @@ export class HomeComponent implements OnInit {
   }
 
   viewpostdetails(id: any): void {
-    sessionStorage.setItem('postID', id);
+    // localStorage.setItem('postID', id);
     this.router.navigate(['/Productdetils', id]);
+    
   }
 
 
@@ -183,6 +186,35 @@ export class HomeComponent implements OnInit {
       }
     );
     
+  }
+
+
+
+  customOptions3: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 600,
+    autoplay: true,
+    autoplayTimeout: 3500,
+    navText: ['&#8249', '&#8250;'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 1
+      },
+      760: {
+        items: 1
+      },
+      1000: {
+        items: 1
+      }
+    },
+    nav: false
   }
 
 

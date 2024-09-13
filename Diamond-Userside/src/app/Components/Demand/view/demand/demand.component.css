@@ -24,12 +24,31 @@
     box-shadow: 0px 3px 8px 1px rgba(234, 234, 234, 0.75);
 }
 .price h4{
-    color: var(--primary-color);
     font-weight: 500;
     font-size: 20px;
 }
 .price h5{
-    color: var(--primary-color);
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 200px;
+}
+.price h5 {
+    margin-right: 10px;
+    width: 50%; 
+  }
+.price{
+    position: relative;
+}
+.dot{
+    position: absolute;
+    left: 34%;
+    top: 20%;
+    transform: translate(-50%);
+}
+.price h4,h5{
+    font-family: var(--theme-fonts);
+}
+.price h5{
     font-size: 19px;
 }
 .pro-img{

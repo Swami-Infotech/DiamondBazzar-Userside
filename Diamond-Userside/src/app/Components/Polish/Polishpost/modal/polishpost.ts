@@ -3,9 +3,12 @@ export class Shap{
     Name!:string;
     isActive!:boolean
 }
+export class size{
+    color!:string;
+    isActive!:boolean 
+}
 export class Size{
     Number!:number;
-    color!:string;
     cla!:string;
     Colors!:string;
     facny!:string

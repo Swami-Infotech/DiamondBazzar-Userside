@@ -94,5 +94,11 @@
     .login-card {
         width: 70%;
     }
+    .login-cont h5{
+        font-size: 16px;
+    }
+    .login-btn .btn{
+        font-size: 14px;
+    }
 }
 /* medai quary End */

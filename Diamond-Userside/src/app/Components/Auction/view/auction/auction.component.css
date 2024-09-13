@@ -2,12 +2,12 @@
     /* background-image: url(../../../../../assets/Img/Auction/Group1.png); */
     background-image: url(../../../../../assets/Img/Auction/Group1.png);
     background-size: cover;
-    height: 40vw;
+    height: 35vw;
     position: relative;
 }
 .auc-cont{
     position: absolute;
-    bottom: -12%;
+    bottom: -14%;
     left: 30%;
     transform: translate(-50%, -50%);
 }

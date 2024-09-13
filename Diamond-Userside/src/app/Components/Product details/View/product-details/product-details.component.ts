@@ -83,39 +83,30 @@ export class ProductDetailsComponent implements OnInit {
   }
 
 
-  toggleHeart() {
+  toggleHeart(postID: any) {
     const userid = sessionStorage.getItem('userid');
+    
     if (!userid) {
       console.error('User ID not found in session storage');
       return;
     }
   
     const userID = parseInt(userid, 10);
+    
     if (isNaN(userID)) {
+      console.error('Invalid user ID');
       return;
     }
   
-    const postid = sessionStorage.getItem('postID');
-    if (!postid) {
-      console.error('Post ID not found in session storage');
-      return;
-    }
-  
-    const postID = parseInt(postid, 10);
-    if (isNaN(postID)) {
-      return;
-    }
-  
-    this.favs.userID = userID;
-    this.favs.postID = postID;
+    this.favs = {
+      userID: userID,
+      postID: postID
+    };
   
     if (this.isHeartRed) {
-      // If the heart is red, it means the post is already a favorite
-      // So, remove it from favorites
       this.service.addfavourite(this.favs).subscribe(
         (response: any) => {
           if (response.status === true) {
-            this.heartService.setHeartStatus(false);
             this.isHeartRed = false;
             Swal.fire({
               icon: 'success',
@@ -142,12 +133,9 @@ export class ProductDetailsComponent implements OnInit {
         }
       );
     } else {
-      // If the heart is not red, it means the post is not a favorite yet
-      // So, add it to favorites
       this.service.addfavourite(this.favs).subscribe(
         (response: any) => {
           if (response.status === true) {
-            this.heartService.setHeartStatus(true);
             this.isHeartRed = true;
             Swal.fire({
               icon: 'success',
@@ -175,6 +163,12 @@ export class ProductDetailsComponent implements OnInit {
       );
     }
   }
+  
+
+
+
+
+  
   
 
   initializeHeartColor() {

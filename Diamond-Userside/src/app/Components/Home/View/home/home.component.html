@@ -5,15 +5,8 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12">
-        <div
-          class="line d-flex flex-wrap align-items-center my-3 justify-content-between"
-        >
-          <marquee
-            behavior="scroll"
-            direction="left"
-            class="py-3"
-            style="width: 70%"
-          >
+        <div class="line d-flex flex-wrap align-items-center my-3 justify-content-between">
+          <marquee behavior="scroll" direction="left" class="py-3" style="width: 70%">
             <ng-container *ngFor="let d of line">
               {{ d.headlineText }} | &nbsp;
             </ng-container>
@@ -27,41 +20,18 @@
 <!-- header line end -->
 
 <!-- banner start -->
-<div
-  id="carouselExampleSlidesOnly"
-  class="carousel slide"
-  data-bs-ride="carousel"
->
-  <div class="carousel-inner" data-interval="3000">
-    <div class="carousel-item active" *ngFor="let mQ of slider">
-      <ng-container *ngIf="mQ.isActive == true">
-        <img
-          [src]="mQ.sliderImage"
-          class="w-100"
-          alt="Carousel Image"
-          style="height: 800px"
-        />
-      </ng-container>
-    </div>
-  </div>
-  <button
-    class="carousel-control-prev"
-    type="button"
-    data-bs-target="#carouselExampleSlidesOnly"
-    data-bs-slide="prev"
-  >
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button
-    class="carousel-control-next"
-    type="button"
-    data-bs-target="#carouselExampleSlidesOnly"
-    data-bs-slide="next"
-  >
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+<div class="module-slider">
+  <owl-carousel-o [options]="customOptions3">
+    <ng-template carouselSlide *ngFor="let mQ of slider">
+      <!-- <div class="col-md-12"> -->
+      <div class="slider-img text-center">
+        <ng-container *ngIf="mQ.isActive == true">
+          <img [src]="mQ.sliderImage" class="w-100" alt="Carousel Image">
+        </ng-container>
+      </div>
+      <!-- </div> -->
+    </ng-template>
+  </owl-carousel-o>
 </div>
 <!-- banner end -->
 
@@ -70,16 +40,10 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
-        <div
-          class="title d-flex flex-wrap align-items-center justify-content-center"
-        >
-          <img
-            src="../../../../assets/Img/profile/diamond.png"
-            alt="diamond.png"
-            class="img-fluid"
-          />
+        <div class="title d-flex flex-wrap align-items-center justify-content-center">
+          <img src="../../../../assets/Img/profile/diamond.png" alt="diamond.png" class="img-fluid" />
           <!-- <h2>{{ "Home.Lab GrownPolish" | translate }}</h2> -->
-           <h2>Lab Grown Polish</h2>
+          <h2>Lab Grown Polish</h2>
         </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
@@ -92,41 +56,38 @@
                 class="img-fluid"
               /> -->
             </div>
-            <div
-              class="lab-product-title d-flex flex-wrap align-items-center justify-content-between"
-            >
+            <div class="lab-product-title d-flex flex-wrap align-items-center justify-content-between">
               <h5>{{ "Home.Polish" | translate }}</h5>
               <h6>
-                <a (click)="seeAllPosts(0)">
-                    {{ "Home.See all" | translate }}
-                  </a>
+                <a href="#" (click)="seeAllPosts(0)" class="pe-auto">
+                  {{ "Home.See all" | translate }}
+                </a>
               </h6>
             </div>
             <div class="row">
               <!-- labgrown polish data start -->
               <ng-container *ngFor="let item of labgrown">
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                  <div class="lab-product">
+                  <div class="lab-product my-3">
                     <div class="card">
                       <div class="pro-img">
                         <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
-                          <img
-                            src="../../../../assets/Img/slider/labpro.png"
-                            alt="labpro"
-                            style="width: 282px; height: 282px;"
-                          />
-                      </button>
+                          <img src="../../../../assets/Img/slider/labpro.png" alt="labpro" />
+                        </button>
                       </div>
                       <div class="product-details px-4 py-3">
                         <div class="price d-flex flex-wrap align-items-center justify-content-between">
                           <h4>SID</h4>
                           <h5>{{ item.postMainData.highlightedText }}</h5>
                         </div>
-                        
-                        <div *ngFor="let metaData of item.postMetaDatas.slice(0, 4)">
+
+                        <div *ngFor="let metaData of item.postMetaDatas">
                           <div class="piece d-flex flex-wrap align-items-center justify-content-between">
                             <h6>{{ metaData.categoryName }}</h6>
                             <p>{{ metaData.metaDataValue }}</p>
+                            <div class="dot">
+                              <h5>:</h5>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -134,8 +95,7 @@
                   </div>
                 </div>
               </ng-container>
-              
-            <!-- labgrown polish data end -->
+              <!-- labgrown polish data end -->
             </div>
           </div>
         </div>
@@ -146,38 +106,30 @@
 <!-- lab grown polish section end -->
 
 <!-- lab grown Rough section start -->
-<section class="lab" >
+<section class="lab">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
-        <div
-          class="title d-flex flex-wrap align-items-center justify-content-center"
-        >
+        <div class="title d-flex flex-wrap align-items-center justify-content-center">
           <!-- <img
             src="../../../../assets/Img/profile/diamond.png"
             alt="diamond.png"
             class="img-fluid"
           /> -->
           <!-- <h2>{{ "Home.Lab GrownRough" | translate }}</h2> -->
-           <h2>Lab Grown Rough</h2>
+          <h2>Lab Grown Rough</h2>
         </div>
       </div>
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="grown-banner">
           <div class="card mt-4 px-5">
             <div class="lab-img my-5 text-center">
-              <img
-                src="../../../../assets/Img/slider/lab.png"
-                alt="labbanner"
-                class="img-fluid"
-              />
+              <img src="../../../../assets/Img/slider/lab.png" alt="labbanner" class="img-fluid" />
             </div>
-            <div
-              class="lab-product-title d-flex flex-wrap align-items-center justify-content-between"
-            >
+            <div class="lab-product-title d-flex flex-wrap align-items-center justify-content-between">
               <h5>{{ "Home.Polish" | translate }}</h5>
               <h6>
-                <a (click)="seeAllPosts(1)">
+                <a href="#" (click)="seeAllPosts(1)" class="pe-auto">
                   {{ "Home.See all" | translate }}
                 </a>
               </h6>
@@ -186,27 +138,26 @@
               <!-- labgrown polish data start -->
               <ng-container *ngFor="let item of labgrown">
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                  <div class="lab-product">
+                  <div class="lab-product my-3">
                     <div class="card">
                       <div class="pro-img">
                         <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
-                          <img
-                            src="../../../../assets/Img/slider/labpro.png"
-                            alt="labpro"
-                            style="width: 282px; height: 282px;"
-                          />
-                      </button>
+                          <img src="../../../../assets/Img/slider/labpro.png" alt="labpro" />
+                        </button>
                       </div>
                       <div class="product-details px-4 py-3">
                         <div class="price d-flex flex-wrap align-items-center justify-content-between">
                           <h4>SID</h4>
                           <h5>{{ item.postMainData.highlightedText }}</h5>
                         </div>
-                        
+
                         <div *ngFor="let metaData of item.postMetaDatas.slice(0, 4)">
                           <div class="piece d-flex flex-wrap align-items-center justify-content-between">
                             <h6>{{ metaData.categoryName }}</h6>
                             <p>{{ metaData.metaDataValue }}</p>
+                            <div class="dot">
+                              <h5>:</h5>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -214,8 +165,8 @@
                   </div>
                 </div>
               </ng-container>
-              
-            <!-- labgrown polish data end -->
+
+              <!-- labgrown polish data end -->
             </div>
           </div>
         </div>
@@ -226,18 +177,12 @@
 <!-- lab grown Rough section end -->
 
 <!-- natural polish secation start -->
-<section class="natural" >
+<section class="natural">
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
-        <div
-          class="title d-flex flex-wrap align-items-center justify-content-center"
-        >
-          <img
-            src="../../../../assets/Img/profile/diamond.png"
-            alt="diamond.png"
-            class="img-fluid"
-          />
+        <div class="title d-flex flex-wrap align-items-center justify-content-center">
+          <img src="../../../../assets/Img/profile/diamond.png" alt="diamond.png" class="img-fluid" />
           <h2>{{ "Home.Natural" | translate }}</h2>
         </div>
       </div>
@@ -245,49 +190,43 @@
         <div class="grown-banner">
           <div class="card mt-4 px-5">
             <div class="lab-img my-5 text-center">
-              <img
-                src="../../../../assets/Img/slider/natural.png"
-                alt="natural.png"
-                class="img-fluid"
-              />
+              <img src="../../../../assets/Img/slider/natural.png" alt="natural.png" class="img-fluid" />
             </div>
-            <div
-              class="lab-product-title d-flex flex-wrap align-items-center justify-content-between"
-            >
+            <div class="lab-product-title d-flex flex-wrap align-items-center justify-content-between">
               <h5>{{ "Home.Polish" | translate }}</h5>
-              <h6 (click)="seeAllPosts(2)">{{ "Home.See all" | translate }}</h6>
+              <h6 (click)="seeAllPosts(2)"><a href="" class="pe-auto">{{ "Home.See all" | translate }}</a></h6>
             </div>
             <!-- natural polish data display start -->
             <div class="row">
               <ng-container container *ngFor="let item of nautral">
                 <div class="col-lg-3 col-md-6 col-sm-12">
-                  <div class="lab-product">
+                  <div class="lab-product my-3">
                     <div class="card">
                       <div class="pro-img">
-                          <button class="btn"  (click)="viewpostdetails(item.postMainData.postID)">
-                            <img *ngIf="item.postAttachmenturl;else defaultImage"
-                            [src]="item.postAttachmenturl"
-                            alt=""
-                            style="width: 282px; height: 282px;"/>
-                          </button>
-                          <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
+                        <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
+                          <img *ngIf="item.postAttachmenturl;else defaultImage" [src]="item.postAttachmenturl" alt="" />
+                        </button>
+                        <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
                           <ng-template #defaultImage>
-                            <img src="../../../../../assets/Img/logo/DimaondBazzarlogo2.png"
-                                 alt="Default Image"
-                                 style="width: 200px; height: 200px;" />
+                            <img src="../../../../../assets/Img/logo/DimaondBazzarlogo2.png" alt="Default Image"
+                              style="width: 200px; height: 200px;" />
                           </ng-template>
-                          </button>
+                        </button>
                       </div>
-                      <div class="product-details px-4 py-3">
+                      <div class="product-details px-2 py-3">
                         <div class="price d-flex flex-wrap align-items-center justify-content-between">
                           <h4>SID</h4>
                           <h5>{{ item.postMainData.highlightedText }}</h5>
                         </div>
-                        
-                        <div *ngFor="let metaData of item.postMetaDatas">
+
+                        <div *ngFor="let metaData of item.postMetaDatas;let i = index">
                           <div class="piece d-flex flex-wrap align-items-center justify-content-between">
                             <h6>{{ metaData.categoryName }}</h6>
-                            <p>{{ metaData.metaDataValue }}</p>
+                            <h4 *ngIf="i %2 === 0">{{ metaData.metaDataValue }}</h4>
+                            <h4 *ngIf="i %2 !== 0">{{ metaData.metaDataValue }}</h4>
+                            <div class="dots">
+                              <h5>:</h5>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -305,61 +244,57 @@
 </section>
 <!-- naturla polish secation end -->
 
-  <!--natural rough data display start -->
-  <section class="natural" >
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12">
-          <div
-            class="rough-title d-flex flex-wrap align-items-center justify-content-between mt-5 mb-3"
-          >
-            <h5>{{ "Home.Rough" | translate }}</h5>
-    
-            <h6 (click)="seeAllPosts(3)">{{ "Home.See all" | translate }}</h6>
-          </div>
-          <div class="row">
-            <ng-container *ngFor="let item of naturlrough">
-              <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="lab-product">
-                  <div class="card">
-                    <div class="pro-img">
-                    <button class="btn"  (click)="viewpostdetails(item.postMainData.postID)">
-                      <img *ngIf="item.postAttachmenturl;"
-                      [src]="item.postAttachmenturl"
-                      alt=""
-                      style="width: 282px; height: 282px;"/>
+<!--natural rough data display start -->
+<section class="natural">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="rough-title d-flex flex-wrap align-items-center justify-content-between mt-5 mb-3">
+          <h5>{{ "Home.Rough" | translate }}</h5>
+
+          <h6 (click)="seeAllPosts(3)"><a href="" class="pe-auto">{{ "Home.See all" | translate }}</a></h6>
+        </div>
+        <div class="row">
+          <ng-container *ngFor="let item of naturlrough">
+            <div class="col-lg-3 col-md-6 col-sm-12">
+              <div class="lab-product my-3">
+                <div class="card">
+                  <div class="pro-img">
+                    <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
+                      <img *ngIf="item.postAttachmenturl;" [src]="item.postAttachmenturl" alt="" />
                     </button>
-                  <div>
-                    <button class="btn" (click )="viewpostdetails(item.postMainData.postID)">
-                      <img
-                        src="../../../../../assets/Img/logo/DimaondBazzarlogo2.png"
-                        alt="default logo"
-                        style="width: 282px; height: 282px;"/>
-                    </button>
+                    <div>
+                      <button class="btn" (click )="viewpostdetails(item.postMainData.postID)">
+                        <img src="../../../../../assets/Img/logo/DimaondBazzarlogo2.png" alt="default logo"
+                          style="width: 282px; height: 282px;" />
+                      </button>
+                    </div>
                   </div>
-                </div>
-                    <div class="product-details px-4 py-3">
-                      <div class="price d-flex flex-wrap align-items-center justify-content-between">
-                        <h4>SID</h4>
-                        <h5>{{ item.postMainData.highlightedText }}</h5>
-                      </div>
-                      
-                      <div *ngFor="let metaData of item.postMetaDatas.slice(0, 4)">
-                        <div class="piece d-flex flex-wrap align-items-center justify-content-between">
-                          <h6>{{ metaData.categoryName }}</h6>
-                          <p>{{ metaData.metaDataValue }}</p>
+                  <div class="product-details px-4 py-3">
+                    <div class="price d-flex flex-wrap align-items-center justify-content-between">
+                      <h4>SID</h4>
+                      <h5>{{ item.postMainData.highlightedText }}</h5>
+                    </div>
+
+                    <div *ngFor="let metaData of item.postMetaDatas.slice(0, 4)">
+                      <div class="piece d-flex flex-wrap align-items-center justify-content-between">
+                        <h6>{{ metaData.categoryName }}</h6>
+                        <p>{{ metaData.metaDataValue }}</p>
+                        <div class="dot">
+                          <h5>:</h5>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </ng-container>
-          </div>
+            </div>
+          </ng-container>
         </div>
       </div>
     </div>
-  </section>
-  <!-- natural rough data display end -->
+  </div>
+</section>
+<!-- natural rough data display end -->
 
 <app-footer></app-footer>

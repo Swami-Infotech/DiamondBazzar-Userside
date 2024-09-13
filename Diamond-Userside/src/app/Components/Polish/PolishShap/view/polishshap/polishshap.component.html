@@ -1,0 +1,32 @@
+<div class="tab-pane fade show active"
+id="pills-rough" role="tabpanel"
+aria-labelledby="pills-rough-tab" tabindex="0">
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="shap-title">
+            <h6>Shape*</h6>
+        </div>
+    </div>
+</div>
+<div class="db-shap my-4">
+    <div class="row">
+
+        <div class="chip-list-container"
+        (wheel)="onScroll($event)">
+        <div class="chip"
+            *ngFor="let shap of shaps"
+            [class.active]="shap.isActive"
+            (click)="selectChip(shap)">
+            <div class="db-img text-center">
+                <img [src]="shap.imageUrl"
+                    [alt]="shap.Name"
+                    class="w-50">
+                <div class="shap-name mt-5">
+                    <h6>{{shap.Name}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</div>

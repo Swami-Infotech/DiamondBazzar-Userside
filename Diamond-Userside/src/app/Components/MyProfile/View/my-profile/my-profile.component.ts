@@ -27,7 +27,7 @@ export class MyProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const userID = parseInt(sessionStorage.getItem('userID') || '0', 10);
+    const userID = parseInt(sessionStorage.getItem('userid') || '0', 10);
     this.UserProfileBy(userID); // Corrected method call
     // this.BusinessData()
   }

@@ -8,23 +8,35 @@ import { environment } from '../../../environments/environment';
 })
 export class NavService {
 
+  baseurl = environment.baseURL;
  
   activatedRoute: any;
   // apiUrl = environment.baseURL
-  constructor(private _httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   AddSupport(data: any): Observable<any> {
     const url = `${environment.baseURL}App/AddSupport`;
-    return this._httpClient.post<any>(url, data);
+    return this.http.post<any>(url, data);
   }
   GetAllSupportTypes(){
-    return this._httpClient.get(`${environment.baseURL}App/GetAllSupportTypes`);
+    return this.http.get(`${environment.baseURL}App/GetAllSupportTypes`);
   }
   UserSubscription(id: number){
-    return this._httpClient.get(`${environment.baseURL}App/GetUserSubscriptionByUserID?userID=${id}`);
+    return this.http.get(`${environment.baseURL}App/GetUserSubscriptionByUserID?userID=${id}`);
   }
 
   getallnotification(id:number){
-    return this._httpClient.get(`${environment.baseURL}App/GetAllNotification?userID=${id}`);
+    return this.http.get(`${environment.baseURL}App/GetAllNotification?userID=${id}`);
   }
+
+  getcategoriesforpost(mainDiamondType: number, subDiamondType: number, postTypeSelection: number): Observable<any> {
+    const url = `${this.baseurl}post/GetCategoriesforPost`;
+    const body = {
+      diamondCategory: mainDiamondType,
+      diamondSubCategory: subDiamondType,
+      postType: postTypeSelection
+    };
+    return this.http.post<any>(url, body);
+  }
+  
 }

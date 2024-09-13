@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from '../../../../Nav/view/nav/nav.component';
 import { FooterComponent } from '../../../../Footer/View/footer/footer.component';
+import { PostspecialComponent } from '../../../Postspecial/view/postspecial/postspecial.component';
 @Component({
   selector: 'app-polishpost2',
   standalone: true,

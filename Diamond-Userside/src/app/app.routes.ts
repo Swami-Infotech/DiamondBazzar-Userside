@@ -30,6 +30,11 @@ import { SignUpComponent } from './Components/Signup/View/sign-up/sign-up.compon
 import { AuthGuard } from './Components/Common/auth.guard';
 import { ProductDetailsComponent } from './Components/Product details/View/product-details/product-details.component';
 import { AddProductComponent } from './Components/AddProduct/view/add-product/add-product.component';
+import { PolishtypeComponent } from './Components/Polish/PolishType/view/polishtype/polishtype.component';
+import { PolishshapComponent } from './Components/Polish/PolishShap/view/polishshap/polishshap.component';
+import { PostcolorComponent } from './Components/Polish/postcolor/view/postcolor/postcolor.component';
+import { PostsizeComponent } from './Components/Polish/PostSize/view/postsize/postsize.component';
+import { PostspecialComponent } from './Components/Polish/Postspecial/view/postspecial/postspecial.component';
 
 export const routes: Routes =  [
   {
@@ -130,6 +135,22 @@ export const routes: Routes =  [
   {
     path:"polishpost1",
     component:Polishpost1Component
+  },
+  {
+    path:"polishtype",
+    component:PolishtypeComponent
+  },
+  {
+    path:"polishshap",
+    component:PolishshapComponent
+  },
+  {
+    path:"postcolor",
+    component:PostcolorComponent
+  },
+  {
+    path:"postspecial",
+    component:PostspecialComponent
   },
   {
     path:"PolishPostSecond",

@@ -19,7 +19,7 @@ import { DataService } from '../../../Home/service/data.service';
 export class ProductsComponent implements OnInit {
 
   mainss:any[]  = [];
-  public totalItems: number = 0; 
+   public totalItems: number = 0; 
   public pageNumber: number = 0;
   public pageSize: number = 10;
 

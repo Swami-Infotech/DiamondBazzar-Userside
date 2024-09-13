@@ -40,9 +40,15 @@
     margin: 15px 0;
     background-color: rgba(230, 229, 229, 0.319);
 }
-.pro-img img{
+/* .pro-img img{
     position: relative;
-}
+} */
+ .pro-img img{
+    width: 99%;
+ }
+ .product-click img{
+    cursor: pointer;
+ }
 .wishlist-icon{
     position: absolute;
     top: 51%;
@@ -52,4 +58,42 @@
 .wishlist-icon i{
     color: var(--primary-color);
     font-size: 40px;
+}
+.price{
+    position: relative;
+}
+.dot{
+    position: absolute;
+    left: 46%;
+    top: -3%;
+    transform: translate(-50%);
+}
+
+.price h4{
+    font-family: var(--theme-fonts);
+    font-size: 18px;
+}
+.price h6{
+    font-family: var(--theme-fonts);
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 200px;
+    margin-right: 10px;
+    width: 50%; 
+}
+.price h5{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 200px;
+}
+.price h5 {
+    margin-right: 10px;
+    width: 50%; 
+    font-family: var(--theme-fonts);
+  }
+  .dots{
+    position: absolute;
+    left: 34%;
+    top: 20%;
+    transform: translate(-50%);
 }
