@@ -29,14 +29,15 @@ export class NavService {
     return this.http.get(`${environment.baseURL}App/GetAllNotification?userID=${id}`);
   }
 
-  getcategoriesforpost(mainDiamondType: number, subDiamondType: number, postTypeSelection: number): Observable<any> {
-    const url = `${this.baseurl}post/GetCategoriesforPost`;
-    const body = {
-      diamondCategory: mainDiamondType,
-      diamondSubCategory: subDiamondType,
-      postType: postTypeSelection
-    };
-    return this.http.post<any>(url, body);
+ 
+
+  getcategoriesforpost(mainDiamondType: number, subDiamondType: number, postTypeSelection: number) {
+    return this.http.post(
+      `${environment.baseURL}Post/GetCategoriesforPost?diamondCategory=${mainDiamondType}&diamondSubCategory=${subDiamondType}&postType=${postTypeSelection}`, 
+      {}
+    );
   }
   
+  
 }
+ 
