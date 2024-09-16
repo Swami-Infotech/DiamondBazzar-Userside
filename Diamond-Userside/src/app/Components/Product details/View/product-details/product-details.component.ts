@@ -23,6 +23,8 @@ export class ProductDetailsComponent implements OnInit {
   mains:any;
   isHeartRed!: boolean;
 
+  ByDefaultHeart:any;
+
   favs = new Fav();
 
 
@@ -43,6 +45,8 @@ export class ProductDetailsComponent implements OnInit {
     this.route.params.subscribe(params =>{
       const id = params['id'];
       this.getalldata(id);
+
+      
     })
   }
 
@@ -55,7 +59,10 @@ export class ProductDetailsComponent implements OnInit {
 
 
   getalldata(id: any) {
-    this.service.getpostdetails(id).subscribe(
+
+    var userID = Number(sessionStorage.getItem('userid'))
+
+    this.service.getpostdetails(id,userID).subscribe(
       (resp: any) => {
         this.mains = [resp.data.postMainData];
         this.attachments = resp.data.postAttachments || [];
@@ -73,7 +80,12 @@ export class ProductDetailsComponent implements OnInit {
         }
         
         
-        console.log("Data:", resp.data);
+        console.log("Post is :", resp.data);
+
+        this.ByDefaultHeart = resp.data.isFavourite;
+        this.isHeartRed = this.ByDefaultHeart;
+
+        console.log('bydeault', this.ByDefaultHeart);
       }
     );
   }
@@ -91,7 +103,7 @@ export class ProductDetailsComponent implements OnInit {
       return;
     }
   
-    const userID = parseInt(userid, 10);
+    const userID = Number(userid);
     
     if (isNaN(userID)) {
       console.error('Invalid user ID');

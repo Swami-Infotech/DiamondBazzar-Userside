@@ -13,8 +13,13 @@ export class ProductDetailsService {
   baseurl = environment.baseURL;
 
 
-  getpostdetails(id:number){
-    return this.http.get(this.baseurl + "Post/GetPostDetailsby/" + id)
+  // getpostdetails(id:number,){
+  //   return this.http.get(this.baseurl + "Post/GetPostDetailsby/" + id)
+  //  }
+
+  
+  getpostdetails(postID:number ,UserID:number){
+    return this.http.get(`${this.baseurl}` + "Post/GetPostDetailsby/" +  postID+ "?UserID=" + UserID )
    }
 
    addfavourite(data:any){

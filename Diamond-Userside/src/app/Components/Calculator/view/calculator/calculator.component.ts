@@ -114,6 +114,18 @@ export class CalculatorComponent {
 }
 
   
+resetForm(): void {
+  this.CartWeight = null;
+  this.PriceCart = null;
+  this.Conversionrate = null;
+  this.Terms = null;
+  this.Brokerage = null;
+  this.finalamount = 0;
+  this.brokerageAmount = 'Brokerage Amount : ₹0.00';
+  this.NetAmount = 'Net Amount : ₹0.00';
+  this.paymentDate = new Date();
+}
+
   
   
   

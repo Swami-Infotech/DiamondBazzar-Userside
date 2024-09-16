@@ -122,7 +122,8 @@ export const routes: Routes =  [
   },
   {
     path:"Demand",
-    component:DemandComponent
+    component:DemandComponent,
+    canActivate:[AuthGuard]
   },
   {
     path:"myprofile",

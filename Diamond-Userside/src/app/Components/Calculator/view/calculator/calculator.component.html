@@ -17,7 +17,7 @@
                                     <label for="" class="form-label"> {{ "Home.Total Carat Wt" | translate }}</label>
                                     <input type="number"  [placeholder]="'0'" class="form-control" [(ngModel)]="CartWeight" (ngModelChange)="calculateTotalamount()" id="CartWeight" name="CartWeight">
                                 </div>
-                                <!-- total cart End -->
+                                <!-- total cart End --> 
 
                                 <!-- Price/Cart start -->
                                 <div class="col-lg-6">
@@ -134,7 +134,7 @@
     
                                 <div class="col-lg-12">
                                     <div class="rest-btn text-center mt-5">
-                                        <button class="btn">{{ "Home.reset" | translate }}</button>
+                                        <button (click)="resetForm()" class="btn">{{ "Home.reset" | translate }}</button>
                                     </div>
                                 </div>
                             </div>
