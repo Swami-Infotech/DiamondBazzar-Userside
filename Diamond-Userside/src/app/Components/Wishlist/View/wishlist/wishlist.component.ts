@@ -54,16 +54,7 @@ export class WishlistComponent implements OnInit {
       (response: any) => {
         if (response.status === true) {
           this.favPosts = response.data;
-          Swal.fire({
-            icon: 'success',
-            title: 'Added to Favorites',
-            text: response.message,
-            confirmButtonText: 'OK',
-            customClass: {
-              confirmButton: 'btn btn-success',
-            },
-            buttonsStyling: false,
-          });
+           
         } else {
           Swal.fire({
             icon: 'error',
@@ -78,7 +69,7 @@ export class WishlistComponent implements OnInit {
         }
       },
       (error) => {
-        console.error('API Error:', error); // Error handling log
+        console.error('API Error:', error);  
         Swal.fire({
           icon: 'error',
           title: 'API Error',

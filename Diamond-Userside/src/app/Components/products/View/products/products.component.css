@@ -1,7 +1,5 @@
 /* lab grown start */
-.lab{
-    margin: 70px 0;
-}
+ 
 .title{
     position: relative;
 }
@@ -21,15 +19,40 @@
 .price h5{
     color: #FF8C00;
 }
+
+.disp-text {  
+        white-space: normal;    /* Allows text to wrap automatically */
+        word-wrap: break-word;  /* Break long words that exceed the container width */
+        overflow-wrap: break-word; /* Support for breaking long words */
+        width: 100%;            /* Make sure the h5 element takes the full width of its container */
+      }
+      .piece p{
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 200px; 
+            align-items: baseline;
+    
+    }
+    .piece p {
+        margin-right: 10px;
+        width: 50%; 
+      }
+
+      .piece h6 {
+        margin-top: 3px;
+    }
+
+    .dot {
+        position: absolute;
+        left: 41%;
+        top: -2%;
+        transform: translate(-50%);
+    }
+
 .piece{
     position: relative;
 }
-.dot{
-    position: absolute;
-    left: 55%;
-    top: 6%;
-    transform: translate(-50%);
-}
+
 .lab-product .card{
     background-color: #FAFAFA;
     box-shadow: none;

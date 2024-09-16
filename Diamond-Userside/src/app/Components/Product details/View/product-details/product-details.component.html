@@ -1,7 +1,8 @@
 <app-nav></app-nav>
 <div class="container">
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12" id="carousel2">
+        <div class="col-lg-6 col-md-6 col-sm-12" id="carousel2" style="
+          display: flex; flex-direction: column;">
             <!-- Main Image Display -->
             <div class="main-img text-center mt-5">
               <ng-container *ngIf="selectedImageURL">
@@ -10,9 +11,12 @@
             </div>
           
             <!-- Thumbnails or Side Images -->
-            <div class="sub-img">
+            <div class="sub-img" style="display: flex;">
               <div class="thumbnails my-3" *ngFor="let attachment of attachments">
-                <img [src]="attachment.postAttachmentURL" alt="" (click)="changeProductImage(attachment)">
+                <div *ngIf="attachment.attchmentType == 0" >
+                <img style="height: 100px; width: 100px;" [src]="attachment.postAttachmentURL" alt="" (click)="changeProductImage(attachment)">
+
+                </div>
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@
     border-radius: 15px;
 }
 .navbar-collapse {
-    flex-basis: 50% !important;
+    flex-basis: auto !important;
     flex-grow: 0 !important;
     align-items: center;
 }
@@ -45,9 +45,17 @@ ul li a{
 }
 .profile .dropdown-menu {
     top: 135%;
-    left: -103px !important;
+    left: -140px !important;
     margin-top: var(--bs-dropdown-spacer);
     width: 245px;
+}
+
+.hov-blue { 
+    color: black;
+}
+
+.profiles :hover { 
+    color: blue;
 }
 .noti-iocn i{
     background-color: #fff;

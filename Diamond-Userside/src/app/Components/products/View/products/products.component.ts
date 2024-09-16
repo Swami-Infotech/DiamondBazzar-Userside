@@ -24,27 +24,46 @@ export class ProductsComponent implements OnInit {
   public pageSize: number = 10;
 
 
+  MC : any;
+  SC : any;
 
   constructor(private service:ProductsService,private router: Router,private route:ActivatedRoute,private dataservice:DataService){}
  
 
   ngOnInit(): void {
-    // this.mainss = this.dataservice.getData();
-    // if (this.mainss) {
-    //   console.log("Received data:", this.mainss);
-    // } else {
-    //   console.error("No data received");
-    // }
+    
     this.getdatas();
+
+    this.FetchHeading();
+  }
+
+
+  FetchHeading(){
+    this.MC = Number(localStorage.getItem('mainCategorySA'));
+    this.SC = Number(localStorage.getItem('subCategorySA'));
+
+    if(this.MC == 0){
+        this.MC = 'Natural'
+    }
+    else{
+      this.MC = 'Lab Grown'
+    }
+
+    if(this.SC == 0){
+      this.SC = 'Rough'
+    }
+    else{
+      this.SC = 'Polish'
+    }
+ 
   }
 
   getdatas(){
     this.mainss = this.dataservice.getData();
     if(this.mainss){
-      console.log("Recivded Data:",this.mainss);
+      console.log("Recivded Data aignains:",this.mainss);
     } else{
       console.error("No data recived");
-      
     }
   }
 
@@ -60,6 +79,7 @@ export class ProductsComponent implements OnInit {
       this.getdatas();
     }
   }
+
 
   isNextDisabled(): boolean {
     return this.pageNumber * this.pageSize >= this.totalItems;

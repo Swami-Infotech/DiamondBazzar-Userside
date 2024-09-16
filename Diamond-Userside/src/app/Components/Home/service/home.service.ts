@@ -16,7 +16,7 @@ export class HomeService {
 
 
   
-  getpostby(data: any): Observable<any>{
+  getpostby(data: any) {
     return this.http.post(this.baseurl + "Post/GetPostsby",data);
   }
 

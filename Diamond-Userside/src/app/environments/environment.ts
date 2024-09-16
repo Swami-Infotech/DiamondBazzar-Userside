@@ -3,13 +3,18 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-    production: false,
-    baseURL:"http://49.12.69.171:8720/",
-   imgURL:"http://49.12.69.171:8720",
+   production: false,
+  //  baseURL:"http://49.12.69.171:8720/",
+  //  imgURL:"http://49.12.69.171:8720",
+
+  baseURL : "https://api.diamondbazzar.in/",
+  imgURL : "https://api.diamondbazzar.in"
 
   };
 
-/*
+
+
+/* 
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
  *

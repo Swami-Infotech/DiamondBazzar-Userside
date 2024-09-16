@@ -13,6 +13,7 @@ import { DiamondCategory, Post, PostTypeSelection, SubDiamondType } from '../../
 import { DataService } from '../../service/data.service';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { stringify } from 'querystring';
 
 @Component({
   selector: 'app-home',
@@ -95,16 +96,16 @@ export class HomeComponent implements OnInit {
         this.dolar = resp.data;
         this.line = resp.data.headlineData;
         this.labgrown = resp.data.labgrownPolish;
+        
         this.labgrownrough = resp.data.labgrownRough;
         this.nautral = resp.data.naturalPolish;
-        this.naturlrough = resp.data.naturalRough;
-        
-       
+        this.naturlrough = resp.data.naturalRough; 
+        console.log("Natural Rough Data : ",this.naturlrough);
         
       }
     )
   }
-
+ 
   viewpostdetails(id: any): void {
     // localStorage.setItem('postID', id);
     this.router.navigate(['/Productdetils', id]);
@@ -120,7 +121,7 @@ export class HomeComponent implements OnInit {
     var postType : PostTypeSelection;
     var mainCategory : DiamondCategory;
     var subCategory : SubDiamondType;
-
+ 
 
     // Initialize enums based on sectionId
     switch (sectionId) {
@@ -154,16 +155,14 @@ export class HomeComponent implements OnInit {
         break;
       default:
         console.log('Unknown section');
-        return; // Exit if section ID is unknown
+        return;  
     }
-
-    // Verify that the enums are not undefined
+ 
     if (postType === undefined || mainCategory === undefined || subCategory === undefined) {
       console.error('Enum values are undefined');
       return;
     }
-
-    // Prepare the request body
+ 
     const postdata = {
       postType: postType, 
       mainCategory: mainCategory, 
@@ -174,12 +173,26 @@ export class HomeComponent implements OnInit {
 
     this.service.getpostby(postdata).subscribe(
       (resp: any) => {
+
+        // binding category and subcategory in localstorage
+
+        var MC = String(postdata.mainCategory);
+        var SC = String(postdata.subCategory);
+
+        localStorage.setItem('mainCategorySA',MC);
+        localStorage.setItem('subCategorySA',SC);
+
+        console.log("Main Category :",localStorage.getItem('mainCategorySA'));
+        console.log("Sub Category :",localStorage.getItem('subCategorySA'));
+        
+ 
+
         this.mainss = resp.data;
         this.totalItems = resp.data.total;
          this.dataservice.setData(this.mainss);
          this.router.navigate(['/products']);
-        console.log("mainss>>",this.mainss);
-        
+        console.log("function called");
+    
       },
       (error) => {
         console.error('Error fetching posts:', error);
