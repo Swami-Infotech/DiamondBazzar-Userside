@@ -14,20 +14,21 @@
                             <div class="row">
                                 <!-- total cart start -->
                                 <div class="mb-3 col-lg-12">
-                                    <label for="" class="form-label"> {{ "Home.Total Carat Wt" | translate }}</label>
+                                    <label for="" class="form-label"> {{ "Total Carat Weight" | translate }}</label>
                                     <input type="number"  [placeholder]="'0'" class="form-control" [(ngModel)]="CartWeight" (ngModelChange)="calculateTotalamount()" id="CartWeight" name="CartWeight">
                                 </div>
                                 <!-- total cart End --> 
 
                                 <!-- Price/Cart start -->
                                 <div class="col-lg-6">
-                                    <label for="" class="form-label"> {{ "Home.Price / Cart" | translate }}</label>
+                                    <label for="" class="form-label"> {{ "Price / Carat" | translate }}</label>
                                    <div class="price-input d-flex align-item-center">
                                     <select name="selectedCurrency" id="selectedCurrency" [(ngModel)]="selectedCurrency" class="form-select" (ngModelChange)="updatePlaceholder()">
                                         <option value="₹">₹</option>
                                         <option value="$">$</option>
-                                    </select>
-                                    <input type="number" class="form-control" [(ngModel)]="PriceCart" id="PriceCart" name="PriceCart" (ngModelChange)="calculateTotalamount()">
+                                      </select>
+                                      
+                                    <input type="number" placeholder="0" class="form-control" [(ngModel)]="PriceCart" id="PriceCart" name="PriceCart" (ngModelChange)="calculateTotalamount()">
                                    </div>
                                 </div>
                                 <!-- Price/Cart End -->
@@ -87,7 +88,7 @@
                                         <label for="" class="form-label">{{ "Home.Conversion Rate" | translate }}</label>
                                         <div class="rate d-flex align-item-center">
                                             <h4 style="width: 50px; margin: 0 5px 0 0;border: 1px solid var(--primary-color); text-align: center;" class="form-control">{{inputPlaceholder}}</h4>
-                                            <input type="text" placeholder="Enter Conversion Rate" class="form-control" (ngModelChange)="calculateTotalamount()" [(ngModel)]="Conversionrate" id="Conversionrate" name="Conversionrate" (ngModelChange)="updatePlaceholder()">
+                                            <input type="text" placeholder="0" class="form-control" (ngModelChange)="calculateTotalamount()" [(ngModel)]="Conversionrate" id="Conversionrate" name="Conversionrate" (ngModelChange)="updatePlaceholder()">
                                         </div>
                                     </div>
                                 </div>
@@ -97,42 +98,43 @@
                                 <div class="col-lg-6">
                                     <div class="mb-3">
                                         <label for="" class="form-label">{{ "Home.Brokerage %" | translate }}</label>
-                                        <input type="text" placeholder="2" class="form-control" [(ngModel)]="Brokerage" id="Brokerage" name="Brokerage" (click)="calculateBrokerageAmount()">
+                                        <input type="text" placeholder="0" class="form-control" [(ngModel)]="Brokerage" id="Brokerage" name="Brokerage" (ngModelChange)="calculateBrokerageAmount()">
                                     </div>
                                 </div>
                                 <!-- Brokerage end -->
 
                                 <div class="col-lg-6">
                                     <div class="display-data">
-                                        <!-- Total amount start -->
                                         <div class="total-amount">
-                                            <div class="card" *ngIf="CartWeight !== null && PriceCart !== null && CartWeight > 0 && PriceCart > 0">
-                                                <h6>{{ "Home.Total Amount" | translate }}:{{ selectedCurrency }} {{ finalamount}}</h6>
+                                            <div class="card">
+                                                <h6>{{ "Home.Total Amount" | translate }}: {{ OPcurrency }} {{ finalamount }}</h6>
                                             </div>
                                         </div>
-                                        
-                                          
-                                        <!-- Total amount end -->
-
-                                          <!-- brpkerage amount start -->
                                         <div class="brokerage-amount">
                                             <div class="card">
-                                                <h6>{{ brokerageAmount }}</h6>
+                                                <h6>{{ "brokerageAmount" | translate }}:{{OPcurrency}} {{ brokerageAmount }} </h6>
+                                                <!-- <h6>{{ brokerageAmount }}</h6> -->
                                             </div>
                                         </div>
-                                        <!-- brpkerage amount end -->
-
-                                        <!-- net amount start -->
                                         <div class="Total-amount">
                                             <div class="card">
-                                                <h6>{{NetAmount}}</h6>
+                                                <h6>{{ "NetAmount" | translate }}:{{OPcurrency}} {{ NetAmount }} </h6>
+                                                <!-- <h6>{{ NetAmount }}</h6> -->
                                             </div>
                                         </div>
                                         <!-- net amount end -->
                                     </div>
                                 </div>
+
+                               
+
+                                <div class="col-lg-6">
+                                    <div class="rest-btn text-center mt-5">
+                                        <button  type="submit" (click)="Share()"  class="btn">Share</button>
+                                    </div>
+                                </div>
     
-                                <div class="col-lg-12">
+                                <div class="col-lg-6">
                                     <div class="rest-btn text-center mt-5">
                                         <button (click)="resetForm()" class="btn">{{ "Home.reset" | translate }}</button>
                                     </div>
