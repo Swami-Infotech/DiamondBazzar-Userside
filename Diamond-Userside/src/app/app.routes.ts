@@ -35,6 +35,13 @@ import { PolishshapComponent } from './Components/Polish/PolishShap/view/polishs
 import { PostcolorComponent } from './Components/Polish/postcolor/view/postcolor/postcolor.component';
 import { PostsizeComponent } from './Components/Polish/PostSize/view/postsize/postsize.component';
 import { PostspecialComponent } from './Components/Polish/Postspecial/view/postspecial/postspecial.component';
+import { AddPostComponent } from './Components/add-post/add-post.component';
+import { MyDiamondComponent } from './Components/my-diamond/my-diamond.component';
+import { MyDemandComponent } from './Components/my-demand/my-demand.component';
+import { LandingPageComponent } from './Components/landing-page/landing-page.component';
+import { TermsComponent } from './Components/terms/terms/terms.component';
+import { PrivacyComponent } from './Components/privacy/privacy/privacy.component';
+
 
 export const routes: Routes =  [
   {
@@ -43,11 +50,20 @@ export const routes: Routes =  [
     children:[
       {
         path:"",
-        redirectTo:"/login",
+        redirectTo:"/landingPage",
         pathMatch: 'full'
       }
     ]
-  },
+  },{
+      path:"landingPage",
+      component: LandingPageComponent
+  },{
+      path:"Terms",
+      component: TermsComponent
+  },{
+    path:"PrivacyPolicy",
+    component: PrivacyComponent
+},
   {
     path:"login",
     component:LoginComponent
@@ -89,6 +105,16 @@ export const routes: Routes =  [
     path:"AddProduct",
     component:AddProductComponent
   },
+  {  
+    path:"AddPost",
+    component:AddPostComponent
+  },{
+    path:"MyDiamond",
+    component:MyDiamondComponent
+  },  {
+    path:"MyDemand",
+    component:MyDemandComponent
+  },  
   {
     path:"footer",
     component:FooterComponent

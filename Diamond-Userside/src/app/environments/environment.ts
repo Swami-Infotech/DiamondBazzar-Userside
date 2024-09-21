@@ -4,11 +4,20 @@
 
 export const environment = {
    production: false,
-  //  baseURL:"http://49.12.69.171:8720/",
-  //  imgURL:"http://49.12.69.171:8720",
 
-  baseURL : "https://api.diamondbazzar.in/",
-  imgURL : "https://api.diamondbazzar.in"
+   //dummy
+   baseURL:"http://49.12.69.171:8720/",
+   imgURL:"http://49.12.69.171:8720",
+
+
+   //dummy UAT
+  //  baseURL:"https://uat.diamondbazzar.in/",
+  //  imgURL:"https://uat.diamondbazzar.in"
+
+
+  // live
+  // baseURL : "https://api.diamondbazzar.in/",
+  // imgURL : "https://api.diamondbazzar.in"
 
   };
 

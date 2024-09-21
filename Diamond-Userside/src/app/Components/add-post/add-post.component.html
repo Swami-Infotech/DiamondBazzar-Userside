@@ -1,0 +1,8 @@
+<p>You Have Selected : {{MainCatDISP}} {{SubCatDISP}} {{PostTypeDISP}}</p>
+
+<button (click)="ExportCategoriesToExcel()">DOWNLOAD</button>
+
+<input type="file" (change)="onFileChange($event)">
+<button (click)="AddPostsWithMetadataFromExcel()">UPLOAD</button>
+
+<p>{{MSG}}</p>

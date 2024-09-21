@@ -4,9 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { NavComponent } from '../../../Nav/view/nav/nav.component';
 import { FooterComponent } from '../../../Footer/View/footer/footer.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { log } from 'console';
+import Swal from 'sweetalert2';
+
+
 
 @Component({
-  selector: 'app-calculator',
+  selector: 'app-calculator',  
   standalone: true,
   imports: [CommonModule, FormsModule, NavComponent, FooterComponent, TranslateModule],
   templateUrl: './calculator.component.html',
@@ -40,9 +44,35 @@ isConversionRateSet: boolean = false;
 
 
 
-  Share(){
-
+  CopyToClickboard() {
+    const CopyOBJ = `
+  Diamond Calculation
+  
+  Total Carat Weight: ${this.CartWeight || 'N/A'}
+  Price/Carat: ${this.selectedCurrency}${this.PriceCart || 'N/A'}
+  Terms: ${this.currentSign} ${this.Terms ? this.Terms + '%' : 'N/A'}
+  Due Date: ${this.dueDays || 'N/A'}
+  Payment Date: ${this.paymentDate ? this.paymentDate.toLocaleDateString() : 'N/A'}
+  Conversion Rate: ${this.selectedCurrency}${this.Conversionrate || 'N/A'}
+  Total Amount: ${this.OPcurrency}${this.finalamount}
+  Brokerage: ${this.OPcurrency}${this.Brokerage ? this.Brokerage + '%' : 'N/A'}
+  Net Amount:${this.OPcurrency}${this.NetAmount || 'N/A'}
+  
+  Data provided by Diamond Bazzar Web.`;
+  
+    navigator.clipboard.writeText(CopyOBJ)
+      .then(() => {
+        Swal.fire({
+          title: 'Copied To Clipboard',
+          confirmButtonText: 'ok'
+        })
+      })
+      .catch(err => {
+        console.error('Failed to copy:', err);
+      });
   }
+  
+  
 
 
 

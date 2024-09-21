@@ -42,13 +42,92 @@
           <a class="nav-link" routerLink="/Calculator">
             {{ "Home.Calculator" | translate }}</a>
         </li>
-        <!-- <li class="nav-item pe-3" routerLinkActive="active">
-          <a class="nav-link" type="button"  data-bs-toggle="modal" data-bs-target="#exampleModal2">
-            Add Post
-          </a>
-        </li> -->
+     
       </ul>
       <div class="icon d-flex flex-wrap align-items-center">
+
+
+        <div class="profile">
+          <div class="dropdown">
+            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+               
+                <img class="nav-diamond" src="../../../../../assets/Img/Auction/diam.png" width="50px" alt="">
+              
+            </button>
+            <ul class="dropdown-menu">
+
+
+              <!-- subscription start -->
+              <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
+                <div class="profile-iocnBB">
+                  <button class="btn d-flex flex-wrap align-items-center p-0" data-bs-toggle="modal" data-bs-target="#exampleModal2" type="button">
+                    <img src="../../../../../assets/Img/Calcu/Mask group (3).svg" alt="subscribe" width="40" />
+                    <h6 class="ms-3 m-0">Add Post</h6>
+                  </button>
+                </div>
+              </div>
+              <!-- subscription end -->
+
+              <!-- My Diamond -->
+              <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
+                <div class="profile-iocnBB">
+                  <button
+                  data-bs-toggle="modal" data-bs-target="#DiamonadModal"
+                  class="btn d-flex flex-wrap align-items-center p-0" type="button">
+                    <img src="../../../../../assets/Img/Calcu/Mask group (2).svg" alt="subscribe" width="40" />
+                    <h6 class="ms-3 m-0">My Diamond</h6>
+                  </button>
+                </div>
+              </div>
+              <!-- My diamond -->
+               
+              <!-- My Demand -->
+              <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
+                <div class="profile-iocnBB">
+                  <button
+                    routerLink='/MyDemand'
+                  class="btn d-flex flex-wrap align-items-center p-0" type="button">
+                    <img src="../../../../../assets/Img/Calcu/Mask group.svg" alt="subscribe" width="40" />
+                    <h6 class="ms-3 m-0">My Demand</h6>
+                  </button>
+                </div>
+              </div>
+              <!-- My demand -->
+
+              <!-- support start -->
+              <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
+                <div class="profile-iocn">
+                  <button class="btn d-flex flex-wrap align-items-center p-0" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal" type="button">
+                    <img src="../../../../assets/Img/slider/customer-service.png" alt="customer-service" width="40" />
+                    <h6 class="ms-3 m-0">Support</h6>
+                  </button>
+                </div>
+                <div class="right-arrow me-3">
+                  <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20" />
+                </div>
+              </div>
+              <!-- support end -->
+
+              <!-- logout start -->
+              <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
+                <div class="profile-iocn d-flex align-items-center">
+                  <a style="color: black; cursor: pointer;" (click)="logout()"
+                    class="d-flex flex-wrap align-items-center">
+                    <img src="../../../../assets/Img/slider/logout.png" alt="customer-service" width="40" />
+                    <h6 class="ms-3 m-0">LogOut</h6>
+                  </a>
+                </div>
+                <div class="right-arrow me-3">
+                  <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20" />
+                </div>
+              </div>
+              <!-- logout end -->
+            </ul>
+          </div>
+        </div>
+
+
         <!-- notification dropdown start -->
         <div class="dropdown">
           <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -110,7 +189,7 @@
                   <button class="btn p-0">
                     <div class="profile-iocn d-flex align-items-center">
                       <i class="bi bi-person-fill"></i>
-                      <h6 class="hov-bluems-3 m-0"  >My Profile</h6>
+                      <h6 class="hov-bluems-3 m-0">My Profile</h6>
                     </div>
                   </button>
                 </a>
@@ -153,7 +232,8 @@
               <!-- logout start -->
               <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
                 <div class="profile-iocn d-flex align-items-center">
-                  <a style="color: black; cursor: pointer;" (click)="logout()" class="d-flex flex-wrap align-items-center">
+                  <a style="color: black; cursor: pointer;" (click)="logout()"
+                    class="d-flex flex-wrap align-items-center">
                     <img src="../../../../assets/Img/slider/logout.png" alt="customer-service" width="40" />
                     <h6 class="ms-3 m-0">LogOut</h6>
                   </a>
@@ -338,7 +418,7 @@
                   <button type="button" class="btn-close" (click)="closeModal()"></button>
                 </div>
                 <div class="modal-body">
-                  <div *ngFor="let subType of subDiamondTypes" id="subDiamondTypes" >
+                  <div *ngFor="let subType of subDiamondTypes" id="subDiamondTypes">
                     <button class="btn" (click)="fetchCategories(subType.value)">
                       {{ subType.name }}
                     </button>
@@ -368,3 +448,30 @@
   </div>
 </div>
 <!-- post modal end -->
+
+
+<!--My Diamond -->
+
+<div class="modal fade" id="DiamonadModal" tabindex="-1" aria-labelledby="DiamonadModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Main DiamondType Select</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <div id="mainDiamondType">
+              <div *ngFor="let type of mainDiamondTypes" class="text-center">
+                <button class="btn" (click)="MYDiamond(type.value)">{{ type.name }}</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--My Diamond -->

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, Renderer2 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router, RouterLink } from '@angular/router';
+import { RedirectCommand, Router, RouterLink } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AddSupportModel, diamondCategory, diamondSubCategory, PostTypeSelection } from '../../Model/Nav';
 import { NavService } from '../../Service/nav.service';
@@ -10,6 +10,7 @@ import { response } from 'express';
 import { HomeService } from '../../../Home/service/home.service';
 import { log } from 'node:console';
 import { DataService } from '../../../data.service';
+import { ColdObservable } from 'rxjs/internal/testing/ColdObservable';
 declare var $: any;
 
 @Component({
@@ -44,6 +45,7 @@ export class NavComponent implements OnInit {
   ];
 
 
+ 
 
 
   subDiamondTypes: { value: diamondSubCategory, name: string }[] = [];
@@ -54,6 +56,7 @@ export class NavComponent implements OnInit {
   id: any;
 
   showModal: boolean = false;
+  showMyDiamondModal: boolean = false;
   
   constructor(
     public translate: TranslateService,
@@ -76,6 +79,32 @@ export class NavComponent implements OnInit {
 
   }
 
+  onPostTypeSelection(postType: number) {
+    this.selectposttype = postType;
+    // this.fetchCategories();
+  }
+
+  
+
+  MYDiamond(selectedMainDiamondType:diamondCategory){
+
+    var diamondCategoryforMD = String(selectedMainDiamondType)
+    sessionStorage.setItem('DiamondCatageryforMD',diamondCategoryforMD)
+
+    console.log("DiamondCatageryforMD",sessionStorage.getItem('DiamondCatageryforMD'));
+
+
+    if(diamondCategoryforMD != null){
+      this.showMyDiamondModal = false;
+      this.router.navigate(['/MyDiamond']);
+      
+    } 
+
+  this.removebackdrop();
+            this.enableScrolling();
+    
+  }
+
 
   onMainDiamondTypeChange(selectedMainDiamondType: diamondCategory) {
     this.selectedMainDiamondType = selectedMainDiamondType;
@@ -91,14 +120,22 @@ export class NavComponent implements OnInit {
         { value: diamondSubCategory.Polish, name: 'Polish' },
       ];
     }
+
+    if(selectedMainDiamondType != null) {
+        
+      const SMDT = String(this.selectedMainDiamondType);
+      sessionStorage.setItem('MainDiamondType',SMDT);
+
+      console.log("Main Diamond Type :",sessionStorage.getItem('MainDiamondType'));
+    } 
+    else { 
+      console.log("Main type not set in sessionstorage.")
+    }
   
     this.showModal = true;
   }
 
-  onPostTypeSelection(postType: number) {
-    this.selectposttype = postType;
-    // this.fetchCategories();
-  }
+
   
   fetchCategories(selectedSubDiamondType: diamondSubCategory) {
     const postType = this.selectposttype !== null ? this.selectposttype : PostTypeSelection.Post;
@@ -116,21 +153,29 @@ export class NavComponent implements OnInit {
 
             console.log("meata",response.data);
 
-            this.dataservice.setData(this.metadata);
+            this.dataservice.setData(this.metadata);  
 
+            if(selectedSubDiamondType != null) {
+        
+              const SSDT = String(this.selectedSubDiamondType);
+              sessionStorage.setItem('SubDiamondType',SSDT);
+         
+              console.log("Sub Diamond Type",sessionStorage.getItem('SubDiamondType'));
+            } 
+            else { 
+              console.log("sub type not set in sessionstorage.")
+            }
             
             
             this.showModal = false;
             this.removebackdrop();
             this.enableScrolling();
   
-            setTimeout(() => {
-              if (this.selectedSubDiamondType === diamondSubCategory.Polish) {
-                this.router.navigate(['/polishpost']);
-              } else if (this.selectedSubDiamondType === diamondSubCategory.Rough) {
-                this.router.navigate(['/RoughPost']);
-              }
-            }, 300); ;
+             
+              if (this.selectedSubDiamondType != null) {
+                this.router.navigate(['/AddPost']);
+              }  
+           
           } else {
             console.error('API response status is not true');
           }
