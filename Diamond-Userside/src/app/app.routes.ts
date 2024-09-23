@@ -50,11 +50,12 @@ export const routes: Routes =  [
     children:[
       {
         path:"",
-        redirectTo:"/login",
+        redirectTo:"/landingPage",
         pathMatch: 'full'
       }
     ]
-  },{
+  },
+  {
       path:"landingPage",
       component: LandingPageComponent
   },{
