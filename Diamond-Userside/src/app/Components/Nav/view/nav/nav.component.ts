@@ -105,6 +105,24 @@ export class NavComponent implements OnInit {
     
   }
 
+  exampleModalAD(selectedMainDiamondType:diamondCategory){
+
+    var diamondCatAD = String(selectedMainDiamondType)
+    sessionStorage.setItem('DiamondCatAD',diamondCatAD)
+
+    console.log("DiamondCatAD",sessionStorage.getItem('DiamondCatAD'));
+
+
+    if(diamondCatAD != null){
+      this.showMyDiamondModal = false;
+      this.router.navigate(['/AddDemand']);
+      
+    } 
+
+  this.removebackdrop();
+            this.enableScrolling();
+    
+  }
 
   onMainDiamondTypeChange(selectedMainDiamondType: diamondCategory) {
     this.selectedMainDiamondType = selectedMainDiamondType;

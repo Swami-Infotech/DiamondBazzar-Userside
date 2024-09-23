@@ -6,8 +6,8 @@ export const environment = {
    production: false,
 
    //dummy
-   baseURL:"http://49.12.69.171:8720/",
-   imgURL:"http://49.12.69.171:8720",
+  //  baseURL:"http://49.12.69.171:8720/",
+  //  imgURL:"http://49.12.69.171:8720",
 
 
    //dummy UAT
@@ -16,8 +16,8 @@ export const environment = {
 
 
   // live
-  // baseURL : "https://api.diamondbazzar.in/",
-  // imgURL : "https://api.diamondbazzar.in"
+  baseURL : "https://api.diamondbazzar.in/",
+  imgURL : "https://api.diamondbazzar.in"
 
   };
 

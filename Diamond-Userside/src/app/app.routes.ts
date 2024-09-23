@@ -41,6 +41,7 @@ import { MyDemandComponent } from './Components/my-demand/my-demand.component';
 import { LandingPageComponent } from './Components/landing-page/landing-page.component';
 import { TermsComponent } from './Components/terms/terms/terms.component';
 import { PrivacyComponent } from './Components/privacy/privacy/privacy.component';
+import { AddDemandComponent } from './Components/add-demand/add-demand.component';
 
 
 export const routes: Routes =  [
@@ -112,7 +113,10 @@ export const routes: Routes =  [
   },{
     path:"MyDiamond",
     component:MyDiamondComponent
-  },  {
+  }, {  
+    path:"AddDemand",
+    component:AddDemandComponent
+  }, {
     path:"MyDemand",
     component:MyDemandComponent
   },  

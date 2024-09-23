@@ -62,7 +62,7 @@
                 <div class="profile-iocnBB">
                   <button class="btn d-flex flex-wrap align-items-center p-0" data-bs-toggle="modal" data-bs-target="#exampleModal2" type="button">
                     <img src="../../../../../assets/Img/Calcu/Mask group (3).svg" alt="subscribe" width="40" />
-                    <h6 class="ms-3 m-0">Add Post</h6>
+                    <h6 class="ms-3 m-0">Add Diamond</h6>
                   </button>
                 </div>
               </div>
@@ -80,7 +80,17 @@
                 </div>
               </div>
               <!-- My diamond -->
-               
+             
+              <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
+                <div class="profile-iocnBB">
+                  <button class="btn d-flex flex-wrap align-items-center p-0" data-bs-toggle="modal" data-bs-target="#exampleModalAD" type="button">
+                    <img src="../../../../../assets/Img/Calcu/Mask group (1).svg" alt="subscribe" width="40" />
+                    <h6 class="ms-3 m-0">Add Demand</h6>
+                  </button>
+                </div>
+              </div>
+
+                
               <!-- My Demand -->
               <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
                 <div class="profile-iocnBB">
@@ -94,35 +104,8 @@
               </div>
               <!-- My demand -->
 
-              <!-- support start -->
-              <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
-                <div class="profile-iocn">
-                  <button class="btn d-flex flex-wrap align-items-center p-0" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal" type="button">
-                    <img src="../../../../assets/Img/slider/customer-service.png" alt="customer-service" width="40" />
-                    <h6 class="ms-3 m-0">Support</h6>
-                  </button>
-                </div>
-                <div class="right-arrow me-3">
-                  <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20" />
-                </div>
-              </div>
-              <!-- support end -->
 
-              <!-- logout start -->
-              <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
-                <div class="profile-iocn d-flex align-items-center">
-                  <a style="color: black; cursor: pointer;" (click)="logout()"
-                    class="d-flex flex-wrap align-items-center">
-                    <img src="../../../../assets/Img/slider/logout.png" alt="customer-service" width="40" />
-                    <h6 class="ms-3 m-0">LogOut</h6>
-                  </a>
-                </div>
-                <div class="right-arrow me-3">
-                  <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20" />
-                </div>
-              </div>
-              <!-- logout end -->
+ 
             </ul>
           </div>
         </div>
@@ -314,10 +297,7 @@
         </form>
 
       </div>
-      <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
+ 
     </div>
   </div>
 </div>
@@ -377,10 +357,7 @@
             </div>
           </div>
         </div>
-        <!-- <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div> -->
+     
       </div>
     </div>
   </div>
@@ -414,7 +391,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="subDiamondTypeModal">Select Sub Diamond Type</h5>
+                  <h5 class="modal-title" id="subDiamondTypeModal">Diamond Sub-Type Selection</h5>
                   <button type="button" class="btn-close" (click)="closeModal()"></button>
                 </div>
                 <div class="modal-body">
@@ -440,10 +417,7 @@
         </form>
 
       </div>
-      <div class="modal-footer">
-        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button> -->
-      </div>
+
     </div>
   </div>
 </div>
@@ -456,7 +430,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Main DiamondType Select</h1>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Diamond Type Selection</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -475,3 +449,25 @@
 </div>
 
 <!--My Diamond -->
+
+<div class="modal fade" id="exampleModalAD" tabindex="-1" aria-labelledby="exampleModalAD" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Main DiamondType Select</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <div id="mainDiamondType">
+              <div *ngFor="let type of mainDiamondTypes" class="text-center">
+                <button class="btn" (click)="exampleModalAD(type.value)">{{ type.name }}</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
