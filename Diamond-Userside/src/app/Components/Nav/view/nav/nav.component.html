@@ -251,7 +251,7 @@
         <h1 class="modal-title text-center fs-5" id="exampleModalLabel">
           Support
         </h1>
-        <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!-- <button type="button" class="btn-close btn-white" data-bs-dismiss="modal" aria-label="Close"></button> -->
       </div>
       <div class="modal-body">
         <form action="" (ngSubmit)="OnChangeDataAdd()" #supportForm="ngForm">
@@ -371,12 +371,12 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Main DiamondType Select</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Diamond Type Selection</h1>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
       </div>
       <div class="modal-body">
         <form>
-          <div class="mb-3">
+          <div>
             <div id="mainDiamondType">
               <div *ngFor="let type of mainDiamondTypes" class="text-center">
                 <button class="btn" (click)="onMainDiamondTypeChange(type.value)">{{ type.name }}</button>
@@ -392,11 +392,11 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="subDiamondTypeModal">Diamond Sub-Type Selection</h5>
-                  <button type="button" class="btn-close" (click)="closeModal()"></button>
+                  <button type="button"  class="btn-close" (click)="closeModal()"></button>
                 </div>
                 <div class="modal-body">
-                  <div *ngFor="let subType of subDiamondTypes" id="subDiamondTypes">
-                    <button class="btn" (click)="fetchCategories(subType.value)">
+                  <div *ngFor="let subType of subDiamondTypes"  class="text-center" id="subDiamondTypes">
+                    <button class="btn"(click)="fetchCategories(subType.value)">
                       {{ subType.name }}
                     </button>
                   </div>
@@ -431,11 +431,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Diamond Type Selection</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
       </div>
       <div class="modal-body">
         <form>
-          <div class="mb-3">
+          <div>
             <div id="mainDiamondType">
               <div *ngFor="let type of mainDiamondTypes" class="text-center">
                 <button class="btn" (click)="MYDiamond(type.value)">{{ type.name }}</button>
@@ -454,12 +454,12 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Main DiamondType Select</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Diamond Type Selection</h1>
+        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
       </div>
       <div class="modal-body">
         <form>
-          <div class="mb-3">
+          <div>
             <div id="mainDiamondType">
               <div *ngFor="let type of mainDiamondTypes" class="text-center">
                 <button class="btn" (click)="exampleModalAD(type.value)">{{ type.name }}</button>

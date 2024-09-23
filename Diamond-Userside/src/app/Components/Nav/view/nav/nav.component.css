@@ -1,44 +1,52 @@
-.navbar{
+.navbar {
     background-color: #000;
     margin: 0 5%;
     border-radius: 15px;
 }
+
 .navbar-collapse {
     flex-basis: auto !important;
     flex-grow: 0 !important;
     align-items: center;
 }
-.icon .btn i{
+
+.icon .btn i {
     color: #FF8C00;
     background-color: #fff;
     border-radius: 50%;
     padding: 8px 10px;
 }
-a{
+
+a {
     text-decoration: none;
 }
-ul li{
+
+ul li {
     list-style: none;
 }
-ul li a{
+
+ul li a {
     color: #fff;
 }
 
-.nav-link:hover, .nav-link.active {
+.nav-link:hover,
+.nav-link.active {
     transition: all 0.2s ease;
     border-bottom: 2px solid #FF8C00;
     color: #FF8C00 !important;
-  }
-  .active a{
+}
+
+.active a {
     color: #FF8C00 !important;
     border-bottom: 2px solid #FF8C00;
-  }
-  a:active{
+}
+
+a:active {
     color: #FF8C00;
 }
 
-.nav-diamond { 
-    
+.nav-diamond {
+
     width: 57px;
     padding-top: 11px;
 
@@ -50,6 +58,7 @@ ul li a{
     margin-top: var(--bs-dropdown-spacer);
     width: 289px;
 }
+
 .profile .dropdown-menu {
     top: 135%;
     left: -140px !important;
@@ -57,46 +66,53 @@ ul li a{
     width: 245px;
 }
 
-.hov-blue { 
+.hov-blue {
     color: black;
 }
 
-.profiles :hover { 
+.profiles :hover {
     color: blue;
 }
-.noti-iocn i{
+
+.noti-iocn i {
     background-color: #fff;
-    box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 3px 8px -1px rgba(0, 0, 0, 0.75);
     height: 50px;
     border-radius: 50%;
     text-align: center;
     padding: 13px 16px;
     margin: 0 10px;
 }
-.noti-cont p{
+
+.noti-cont p {
     font-size: 15px;
     margin: 0;
 }
-.noti-cont h6{
+
+.noti-cont h6 {
     font-size: 16px;
     color: var(--primary-color);
 }
-.noti-iocn{
+
+.noti-iocn {
     position: relative;
     padding: 10px 0;
 }
-.noti-iocn::before{
+
+.noti-iocn::before {
     position: absolute;
     content: "";
     width: 100%;
     border: 1px solid var(--primary-color);
     bottom: 0;
 }
-.profile-title{
+
+.profile-title {
     position: relative;
     padding: 15px 0;
 }
-.profile-title::before{
+
+.profile-title::before {
     position: absolute;
     content: "";
     bottom: 0;
@@ -104,7 +120,7 @@ ul li a{
     border: 1px solid var(--primary-color);
 }
 
-.profiles .profile-iocn i{
+.profiles .profile-iocn i {
     background: linear-gradient(90deg, rgba(255, 140, 0, 1) 14%, rgba(153, 84, 0, 1) 59%);
     border-radius: 50%;
     padding: 4px 10px;
@@ -112,32 +128,34 @@ ul li a{
     font-size: 22px;
 }
 
-.profiles .profile-iocnBB{
- background-color: white;
+.profiles .profile-iocnBB {
+    background-color: white;
     border-radius: 50%;
     padding: 4px 10px;
     color: #fff;
     font-size: 22px;
 }
 
-.profile-iocn img{
+.profile-iocn img {
     background: linear-gradient(90deg, rgba(255, 140, 0, 1) 14%, rgba(153, 84, 0, 1) 59%);
     border-radius: 50%;
     padding: 7px 7px;
     color: #fff;
     font-size: 22px;
 }
-.profiles{
+
+.profiles {
     background-color: #fff;
-    box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.45);
+    box-shadow: 0px 3px 8px -1px rgba(0, 0, 0, 0.45);
     border-radius: 20px;
 }
 
 
-.modal-header{
+.modal-header {
     background: linear-gradient(90deg, rgba(255, 140, 0, 1) 14%, rgba(153, 84, 0, 1) 59%);
     color: #fff;
     text-align: center;
+    justify-content: center;
 }
 
 .input-container {
@@ -156,16 +174,19 @@ ul li a{
 
 .input-container .form-control {
     padding-left: 40px;
-    border:1px solid #FF8C00;
+    border: 1px solid #FF8C00;
 }
-.input-container .form-select{
+
+.input-container .form-select {
     padding-left: 40px;
-    border:1px solid #FF8C00;
+    border: 1px solid #FF8C00;
 }
-.sub-btn .btn{
+
+.sub-btn .btn {
     padding: 2% 15%;
 }
-.background-container{
+
+.background-container {
     /* background-image: url(../../../../assets/Img/Calcu/Rectangle1815.png); */
     background-image: url(../../../../../assets/Img/Calcu/Rectangle1815.png);
     background-size: cover;
@@ -173,89 +194,124 @@ ul li a{
     opacity: 100%;
 
 }
-.background-container::before{
+
+.background-container::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(241, 241, 241, 0.8); /* Overlay color with transparency */
+    background: rgba(241, 241, 241, 0.8);
+    /* Overlay color with transparency */
     z-index: 1;
 }
-.background-container > * {
+
+.background-container>* {
     position: relative;
     z-index: 2;
 }
 
-.subscri-price h4{
+.subscri-price h4 {
     color: #FF8C00;
 }
-.activation .card{
+
+.activation .card {
     border: 1px solid var(--primary-color);
     background-color: transparent;
 }
-.expiry .card{
+
+.expiry .card {
     border: 1px solid var(--primary-color);
     background-color: transparent;
 }
-.payment .card{
+
+.payment .card {
     border: 1px solid var(--primary-color);
     background-color: transparent;
 }
-.activ h4{
+
+.activ h4 {
     font-size: 20px;
 }
-.activ h5{
+
+.activ h5 {
     font-size: 19px;
 }
-.exp h4{
+
+.exp h4 {
     font-size: 20px;
 }
-.exp h5{
+
+.exp h5 {
     font-size: 19px;
 }
-.mod h4{
+
+.mod h4 {
     font-size: 20px;
 }
-.mod h5{
+
+.mod h5 {
     font-size: 19px;
 }
-.dropdown .dropdown-toggle{
+
+.dropdown .dropdown-toggle {
     padding: 0 0 0 0;
 }
-.profile{
+
+.profile {
     padding: 0 0 0 12px;
 }
 
-#mainDiamondType .btn{
+#mainDiamondType .btn {
     border: 1px solid #FF8C00;
     margin: 4px 0;
 }
-#subDiamondTypes .btn{
+
+#subDiamondTypes .btn {
     border: 1px solid #FF8C00;
-    margin: 4px 0;
+    margin: 11px 0;
+}
+ 
+
+.modal-content {
+    width: 25vw;
+}
+
+.modal-content .btn {
+
+    width: 150px;
+
+}
+
+.modal-dialog {
+    display: flex;
+    justify-content: center;
 }
 
 
 
 /* medai query start */
-@media  (max-width: 425px) {
+@media (max-width: 425px) {
     .navbar-collapse {
         flex-basis: 100% !important;
         flex-grow: 0 !important;
         align-items: center;
     }
-    .navbar{
+
+    .navbar {
         background-color: #000;
         margin: 0 0 0px;
         border-radius: 15px;
     }
-    .dropdown .btn{
+
+    .dropdown .btn {
         padding: 0 0 0 0;
     }
-    .profile{
+
+    .profile {
         padding: 0 0 0 12px;
     }
 }
+
 /* medai query end */
