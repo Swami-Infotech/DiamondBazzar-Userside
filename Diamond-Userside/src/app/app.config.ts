@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
@@ -7,9 +7,10 @@ import { InterceptorTokenService } from './Components/Common/interceptor-token.s
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 // import { InterceptorService } from './Common/interceptor.service';
-import { provideAnimations } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule, provideAnimations } from '@angular/platform-browser/animations';
 import { InterceptorService } from './Components/Common/interceptor.service';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { ToastrModule } from 'ngx-toastr';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -27,6 +28,14 @@ export const appConfig: ApplicationConfig = {
       useClass: InterceptorService,
       multi: true
     },
+    importProvidersFrom(
+      BrowserAnimationsModule, // Required for animations
+      ToastrModule.forRoot({
+        timeOut: 3000, // Time in milliseconds
+        positionClass: 'toast-top-right', // Toast position
+        preventDuplicates: true, // Prevent duplicate messages
+      })
+    ),
     provideAnimations(), provideAnimationsAsync(), provideAnimationsAsync(),
     TranslateModule.forRoot({
       defaultLanguage: 'en',

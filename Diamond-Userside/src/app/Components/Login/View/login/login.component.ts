@@ -2,15 +2,16 @@ import { Component } from '@angular/core';
 import { LoginService } from '../../Service/login.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { User } from '../../Model/Login';
-// import { ToastrService } from 'ngx-toastr';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { ToastrNotificationService } from '../../../Common/toastr-notification.service';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink,ToastrModule ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -20,7 +21,7 @@ export class LoginComponent {
   constructor(
     private service: LoginService, 
     private router: Router, 
-    // private toastr: ToastrService
+    private toastr: ToastrNotificationService
   ) {}
 
   OnLogin() {
@@ -28,16 +29,7 @@ export class LoginComponent {
     this.service.LoginData(this.user).subscribe(
       (response: any) => {
         if (response.status !== true) {
-          Swal.fire({
-            icon: 'error',
-            title: 'error!',
-            text: response.message,
-            confirmButtonText: 'OK',
-            customClass: {
-                confirmButton: 'btn btn-danger'
-            },
-            buttonsStyling: false
-          });
+         this.toastr.showError(response.message)
         } else {
           console.log("logindata>>", response.data.otp);
           this.router.navigate(['/otp']);
@@ -46,20 +38,11 @@ export class LoginComponent {
           sessionStorage.setItem('Number',response.data.phoneNumber);
          
 
-          Swal.fire({
-            icon: 'success',
-            title: 'Success!',
-            text: response.message,
-            confirmButtonText: 'OK',
-            customClass: {
-                confirmButton: 'btn btn-success'
-            },
-            buttonsStyling: false
-          });
+          this.toastr.showSuccess('response.message')
         }
       },
       (error: any) => {
-        // this.toastr.error(error.message);
+        this.toastr.showError(error.message);
       }
     );
   }
