@@ -51,15 +51,22 @@ export const routes: Routes =  [
     children:[
       {
         path:"",
-        redirectTo:"/landingPage",
+        redirectTo:"/landing",
         pathMatch: 'full'
       }
     ]
   },
+
   {
-      path:"landingPage",
+    path: "",
+    redirectTo: "/landing",
+    pathMatch: "full",
+  },
+  {
+      path:"landing",
       component: LandingPageComponent
-  },{
+  },
+  {
       path:"Terms",
       component: TermsComponent
   },{
@@ -207,5 +214,5 @@ export const routes: Routes =  [
   {
     path:"DemandPost",
     component:DemandPostComponent
-  }
+  },
 ];

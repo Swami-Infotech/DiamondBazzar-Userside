@@ -1,43 +1,9 @@
 <!-- header start -->
-<!-- <nav class="navbar navbar-expand-lg">
-    <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="../../../../assets/Img/logo/DimaondBazzarlogo (1).png" alt="DimaondBazzarlogo" width="100">
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item mx-4">
-                    <a class="nav-link text-white" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Features</a>
-                </li>
-                <li class="nav-item mx-4">
-                    <a class="nav-link text-white" href="#">Screens</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Testimonial</a>
-                </li>
 
-            </ul>
-            <div class="start">
-                <button class="btn text-white border">Get Started</button>
-            </div>
-        </div>
-    </div>
-</nav> -->
 <nav class="p-3">
     <div class="container">
         <div class="navbar navbar-expand-lg justify-content-between">
             <div class="navbar-brand">
-                <!-- <img src="../../../../assets/Image/logo/DimaondBazzarlogo (1).png" alt="" class="img-fluid" -->
                 <img src="../../../assets/Image/logo/DimaondBazzarlogo (1).png" alt="" class="img-fluid"
                     style="width:150px">
             </div>
@@ -54,8 +20,10 @@
                     <li><a href="#" class="nav-link text-white pt-2">Screens</a></li>
                     <li><a href="#" class="nav-link text-white pt-2">Testimonial</a></li>
                 </ul>
-                <div class="start">
-                    <button RouterLink="/" class="btn text-white border">Login</button>
+                <div ngSkipHydration>
+                     <button class="btn">
+                        <a style="color: #fff; text-decoration: none;" routerLink="/login">Login</a>
+                     </button>
                 </div>
             </div>
         </div>

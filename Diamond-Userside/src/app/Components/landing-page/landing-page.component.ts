@@ -1,15 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute, Route, Router, RouterLink } from '@angular/router';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-landing-page',
   standalone: true,
-  imports: [CarouselModule,FormsModule,],
+  imports: [CarouselModule,FormsModule,CommonModule,RouterLink],
   templateUrl: './landing-page.component.html',
   styleUrl: './landing-page.component.css'
 })
 export class LandingPageComponent {
+
+
+  constructor(private route:ActivatedRoute,private router: Router){}
 
 
   customOptions: OwlOptions = {
@@ -36,6 +41,15 @@ export class LandingPageComponent {
       }
     },
     nav: true
+  }
+
+
+  // loginpage(){
+  //   this.router.navigate(['/login']);
+  // }
+
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
   
 }
