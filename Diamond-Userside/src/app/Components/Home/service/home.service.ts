@@ -21,6 +21,6 @@ export class HomeService {
   }
 
   getwebdashboard(id:any){
-    return this.http.get(this.baseurl + "Web/GetWebDashboard/" + id)
+    return this.http.get(this.baseurl + "Web/GetAppDashboardV2/" + id)
   }
 }

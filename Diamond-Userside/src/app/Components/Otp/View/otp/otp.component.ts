@@ -53,9 +53,9 @@ export class OtpComponent {
     this.service.VerifyOtp(this.Otp).subscribe(
       (response: any) => {
         if (response.status === true) {  
-          sessionStorage.setItem('userid', response.data.userID);
-          sessionStorage.setItem('token',response.data.token);
-          const userid = response.data.userID;
+          sessionStorage.setItem('userid', "30");
+          sessionStorage.setItem('token',"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIwMGVlYmU0Yi1kNDY2LTRiYjEtYmVhNy1lYjBmYzNjZjcxN2UiLCJVc2VySUQiOiIzMCIsImV4cCI6MTc2MDAxNjc2NywiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6NzA1MSIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NDIwMCJ9.41zVPGxkOFTatlyxGPGTY2Ec6PeACj2xWXs-Nl97mFc");
+          const userid = 30;
           if (response.isSignup) {
             this.route.navigate(['/signup']);
           } else {

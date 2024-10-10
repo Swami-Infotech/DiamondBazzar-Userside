@@ -32,10 +32,10 @@ export class LoginComponent {
          this.toastr.showError(response.message)
         } else {
           console.log("logindata>>", response.data.otp);
-          this.router.navigate(['/otp']);
-          sessionStorage.setItem('id', response.data.otp);
-          sessionStorage.setItem('authID', response.data.authOTPID);
-          sessionStorage.setItem('Number',response.data.phoneNumber);
+          sessionStorage.setItem('userid',response.data.userID);
+          sessionStorage.setItem('token',response.data.token);
+          const userid = response.data.userID;
+          this.router.navigate(['/home',userid]);
          
 
           this.toastr.showSuccess('response.message')

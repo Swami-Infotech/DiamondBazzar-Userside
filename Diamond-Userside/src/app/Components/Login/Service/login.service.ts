@@ -13,7 +13,7 @@ export class LoginService {
   constructor(private _httpClient: HttpClient) { }
 
   LoginData(data: any): Observable<any> {
-    const url = `${environment.baseURL}Auth/AuthOTP`;
+    const url = `${environment.baseURL}Auth/Login`;
     return this._httpClient.post<any>(url, data);
   }
 }

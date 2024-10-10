@@ -51,7 +51,7 @@ export const routes: Routes =  [
     children:[
       {
         path:"",
-        redirectTo:"/landing",
+        redirectTo:"/login",
         pathMatch: 'full'
       }
     ]
