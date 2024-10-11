@@ -67,3 +67,20 @@
     z-index: 1; 
     padding: 10px 20px; 
   }
+
+  .nodatafound { 
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 50%;;
+}
+
+
+  .erorrmsg {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }

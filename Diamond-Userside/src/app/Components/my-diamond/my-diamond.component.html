@@ -1,106 +1,104 @@
 <app-nav></app-nav>
 <section class="demand-tab">
     <div class="container">
-    
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12">
-                <ul class="nav nav-pills my-5" id="pills-tab" role="tablist"> 
-
+                <!-- Update Buttons to change mainCategory instead of subCategory -->
+                <ul class="nav nav-pills my-5" id="pills-tab" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="pills-rough-tab" data-bs-toggle="pill"  [ngClass]="{'active':subCategory === DiamondSubCategory.Rough}"
-
-                            data-bs-target="#pills-rough" type="button" role="tab" aria-controls="pills-rough" (click)="onCategoryChange(DiamondSubCategory.Rough)"
-                            aria-selected="true">Rough</button>
+                        <button class="nav-link" 
+                            id="pills-natural-tab" 
+                            [ngClass]="{'active': mainCategory === DiamondCategory.Natural}"
+                            data-bs-target="#pills-natural" 
+                            type="button" 
+                            role="tab" 
+                            aria-controls="pills-natural" 
+                            (click)="onCategoryChange(DiamondCategory.Natural)"
+                            aria-selected="false">
+                            Natural
+                        </button>
                     </li>
 
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="pills-polish-tab" data-bs-toggle="pill" [ngClass]="{'active':subCategory === DiamondSubCategory.Polish}"
-                            data-bs-target="#pills-polish" type="button" role="tab" aria-controls="pills-polish" (click)="onCategoryChange(DiamondSubCategory.Polish)"
-                            aria-selected="false">Polish</button>
-                    </li>
-                    
+                      <button class="nav-link" 
+                          id="pills-labGrown-tab" 
+                          [ngClass]="{'active': mainCategory === DiamondCategory.LabGrown}"
+                          data-bs-target="#pills-labGrown" 
+                          type="button" 
+                          role="tab" 
+                          aria-controls="pills-labGrown" 
+                          (click)="onCategoryChange(DiamondCategory.LabGrown)"
+                          aria-selected="true">
+                          Lab Grown
+                      </button>
+                  </li>
                 </ul>
-                <div class="tab-content" id="pills-tabContent">
-                    <!-- naturla tab start -->
-                    <div class="tab-pane fade show active" id="pills-rough" role="tabpanel"
-                        aria-labelledby="pills-rough-tab" tabindex="0">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let product of MyDiamonds">
-                                <div class="lab-product">
-                                  <div class="card">
-                                    <div class="pro-img">
-                                      <button class="btn" (click)="viewpostdetails(product.postMainData.postID)">
-                                      <a>
-                                        <img [src]="product.postAttachmenturl" [alt]="product.name" class="card-img-top">
-                                      </a>
-                                      </button> 
-                                    </div>
-                                    <div class="product-details px-4 py-3" *ngFor="let metaData of product.postMetaDatas.slice(0, 4);let i = index">
-                                      <div class="price d-flex flex-wrap align-items-center justify-content-between">
-                                        <h4> {{ metaData.categoryName }}</h4>
-                                        <h5 > {{ metaData.metaDataValue}}</h5>
-                                        <div class="dot">
-                                          <h5>:</h5>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                    <!-- natural tab end -->
-                     <!-- lab grown tab start -->
-                    <div class="tab-pane fade show" id="pills-polish" role="tabpanel" aria-labelledby="pills-polish-tab"
-                        tabindex="0">
-                        <div class="row">
-                            <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let product of MyDiamonds">
-                                <div class="lab-product">
-                                  <div class="card">
-                                    <button class="btn" (click)="viewpostdetails(product.postMainData.postID)">
-                                    <div class="pro-img">
-                                        <img [src]="product.postAttachmenturl" [alt]="product.name" class="card-img-top">
-                                    </div>
-                                  </button>
-                                    <div class="product-details px-4 py-3" *ngFor="let metaData of product.postMetaDatas.slice(0, 4);let i = index">
-                                      <div class="price d-flex flex-wrap align-items-center justify-content-between">
-                                        <h4>  {{ metaData.categoryName }}</h4>
-                                        <h5 *ngIf="i % 2 === 0"> {{ metaData.metaDataValue}}</h5>
-                                        <h5 *ngIf="i % 2 !== 0"> {{ metaData.metaDataValue}}</h5>
-                                        <div class="dot">
-                                          <h5>:</h5>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                        </div>
-                    </div>
-                <!-- lab grown tab end -->
 
-                <!-- <div class="col-lg-12">
-                  <div class="text-center my-3">
-                    <button (click)="onPageChange(pageNumber - 1)" [disabled]="pageNumber === 0">Previous</button>
-                    <span>Page {{pageNumber + 1}}</span>
-                    <button (click)="onPageChange(pageNumber + 1)" [disabled]="isNextButtonDisabled()"
-                    
-                    
-                    >Next</button>
-                  </div>
-                </div> -->
-               
+                <!-- Tab content for Lab Grown and Natural -->
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-labGrown" role="tabpanel" aria-labelledby="pills-labGrown-tab" tabindex="0">
+                        <div class="row errmsg">
+                           
+                                <div class="row">
+                                    <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let product of MyDiamonds">
+                                        <div class="lab-product">
+                                            <div class="card">
+                                                <div class="pro-img">
+                                                    <button class="btn" (click)="viewpostdetails(product.postMainData.postID)">
+                                                        <a>
+                                                            <img [src]="product.postAttachmenturl" [alt]="product.name" class="card-img-top">
+                                                        </a>
+                                                    </button>
+                                                </div>
+                                                <div class="product-details px-4 py-3" *ngFor="let metaData of product.postMetaDatas.slice(0, 4); let i = index">
+                                                    <div class="price d-flex flex-wrap align-items-center justify-content-between">
+                                                        <h4>{{ metaData.categoryName }}</h4>
+                                                        <h5>{{ metaData.metaDataValue }}</h5>
+                                                        <div class="dot">
+                                                            <h5>:</h5>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="nodatafound" *ngIf="MyDiamonds.length < 1">
+                                    <h4>No Diamonds Found!</h4>
+                                </div>
+                          
+                        </div>
+                    </div>
+
+                    <!-- Similar code block for Natural diamonds -->
+                    <div class="tab-pane fade" id="pills-natural" role="tabpanel" aria-labelledby="pills-natural-tab" tabindex="0">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let product of MyDiamonds">
+                                <div class="lab-product">
+                                    <div class="card">
+                                        <button class="btn" (click)="viewpostdetails(product.postMainData.postID)">
+                                            <div class="pro-img">
+                                                <img [src]="product.postAttachmenturl" [alt]="product.name" class="card-img-top">
+                                            </div>
+                                        </button>
+                                        <div class="product-details px-4 py-3" *ngFor="let metaData of product.postMetaDatas.slice(0, 4);let i = index">
+                                            <div class="price d-flex flex-wrap align-items-center justify-content-between">
+                                                <h4>{{ metaData.categoryName }}</h4>
+                                                <h5>{{ metaData.metaDataValue }}</h5>
+                                                <div class="dot">
+                                                    <h5>:</h5>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
 </section>
 <app-footer></app-footer>
-
-
-
-
-
-
-

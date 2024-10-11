@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class MyDiamondService {
 
   constructor(private http:HttpClient) { }
-
+ 
   baseurl = environment.baseURL;
    
   getpostby(data: any): Observable<any>{

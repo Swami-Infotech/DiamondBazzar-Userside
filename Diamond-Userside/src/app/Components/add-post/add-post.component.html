@@ -1,8 +1,51 @@
-<p>You Have Selected : {{MainCatDISP}} {{SubCatDISP}} {{PostTypeDISP}}</p>
+<app-nav></app-nav>
 
-<button (click)="ExportCategoriesToExcel()">DOWNLOAD</button>
 
-<input type="file" (change)="onFileChange($event)">
-<button (click)="AddPostsWithMetadataFromExcel()">UPLOAD</button>
+<div class="content">
 
-<p>{{MSG}}</p>
+    <div class="container mt-5">
+        <!-- Selected Categories and Post Types -->
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="lead">
+              You Have Selected: <strong>{{ MainCatDISP }}</strong> <strong>{{ PostTypeDISP }}</strong>
+            </p>
+          </div>
+        </div>
+      
+        <!-- Download Button -->
+        <div class="row mb-3">
+          <div class="col-md-12 text-center">
+           
+          </div>
+        </div>
+      
+        <!-- File Upload Section -->
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-3 text-center">
+                <button class="btn btn-primary btn-lg" (click)="ExportCategoriesToExcel()">
+                    <i class="bi bi-download"></i> DOWNLOAD
+                  </button>
+              </div>
+            <div class="col-md-6 text-center">
+            <input type="file" class="form-control-file" (change)="onFileChange($event)" id="fileInput">
+          </div>
+          <div class="col-md-3 text-center">
+            <button class="btn btn-success btn-lg" (click)="AddPostsWithMetadataFromExcel()">
+              <i class="bi bi-upload"></i> UPLOAD
+            </button>
+          </div>
+        </div>
+      
+        <!-- Message Display -->
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p class="alert alert-info mt-3" *ngIf="MSG">{{ MSG }}</p>
+          </div>
+        </div>
+      </div>
+    
+    
+
+</div>
+          <app-footer></app-footer>

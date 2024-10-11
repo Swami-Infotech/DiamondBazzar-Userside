@@ -4,11 +4,11 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="title mt-3">
-          <h2>Favorites</h2>
+          <h2 style="font-weight: bold;">favourites</h2>
         </div>
       </div>
       <div class="col-lg-12">
-        <ul class="nav nav-pills my-5" id="pills-tab" role="tablist">
+        <!-- <ul class="nav nav-pills my-5" id="pills-tab" role="tablist">
           <li class="nav-item" role="presentation">
             <button class="nav-link active" id="pills-rough-tab" data-bs-toggle="pill"
               [ngClass]="{'active':mainCategory === Posttype.Post}" data-bs-target="#pills-rough" type="button"
@@ -21,7 +21,7 @@
               role="tab" aria-controls="pills-polish" (click)="onCategoryChange(Posttype.Demand)"
               aria-selected="false">Demand</button>
           </li>
-        </ul>
+        </ul> -->
 
         <div class="tab-content" id="pills-tabContent">
           <!-- Post tab start -->
@@ -56,8 +56,8 @@
               </div>
             </div>
             <ng-template #noData>
-              <div class="text-center">
-                <h3>No Found Favourite Post</h3>
+              <div class="nodatafound">
+                <h3>No Favourite Diamond Found!</h3>
               </div>
             </ng-template>
           </div>

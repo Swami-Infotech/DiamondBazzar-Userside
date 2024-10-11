@@ -2,11 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { deflate } from 'zlib';
 import { AddPostService } from './Service/add-post.service';
 import { log } from 'console';
+import { CommonModule } from '@angular/common';
+import { NavComponent } from "../Nav/view/nav/nav.component";
+import { FooterComponent } from "../Footer/View/footer/footer.component";
 
 @Component({
   selector: 'app-add-post',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, NavComponent, FooterComponent],
   templateUrl: './add-post.component.html',
   styleUrl: './add-post.component.css'
 })

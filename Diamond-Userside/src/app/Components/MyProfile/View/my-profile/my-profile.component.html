@@ -71,14 +71,16 @@
                                     <div class="mb-3 logo">
                                         <label for="companyLogo"
                                             class="form-label">Profile Photo</label>
-                                        <img
-                                            src={{userdata.profilePhoto}}
-                                            class="profile-user ms-3 mb-2">
+                                       
                                         <input id="companyLogo" type="file"
                                             class="form-control"
                                             (change)="onFileSelectedProfile($event)"
                                             placeholder="upload logo here"
                                             name="companyLogo">
+
+                                            <img
+                                            src={{userdata.profilePhoto}}
+                                            class="profile-user mt-4 ms-3 mb-2">
                                     </div>
                                 </div>
                                 <div class="col-lg-12 col-md-12 col-sm-12">
@@ -140,15 +142,16 @@
                                     <div class="mb-3 logo">
                                         <label for="companyLogo"
                                             class="form-label">{{
-                                            "Home.Logo upload" | translate
+                                            "Profile Photo" | translate
                                             }}</label>
-                                        <img src={{UserProfileData.companyLogo}}
-                                        class="profile-user ms-3 mb-2">
-                                        <input id="companyLogo" type="file"
+                                            <input id="companyLogo" type="file"
                                             class="form-control"
                                             (change)="onFileSelectedLogo($event)"
                                             placeholder="upload logo here"
                                             name="companyLogo">
+                                        <img src={{UserProfileData.companyLogo}}
+                                        class="mt-3 profile-user ms-3 mb-2">
+                                        
                                     </div>
                                 </div>
 

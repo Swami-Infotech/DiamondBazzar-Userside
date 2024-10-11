@@ -4,33 +4,48 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Calistoga&display=swap');
 
-body{
-    font-family: "Belleza", sans-serif;
-    font-family: "Roboto", sans-serif;
-    font-family: "Calistoga", serif;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+body {
+    /* font-family: "Belleza", sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-family: "Calistoga", serif; */
+
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
 }
-h1,h2,h3,h4,h5,h6,p{
-     font-family: "Roboto", sans-serif;
-    font-weight: 100,200,300,400,500,600,700;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 100, 200, 300, 400, 500, 600, 700;
 }
-.form-control input{
-    font-family: "Belleza", sans-serif;
+
+.form-control input {
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
 }
-label{
-    font-family: "Roboto", sans-serif;
+
+label {
+    font-family: "Montserrat", sans-serif;
 }
 
-:root{
-    --primary-color:#FF8C00;
-    --secondary-color:#000;
-    --theme-font:"Roboto", sans-serif;
-    --theme-fonts:"Belleza", sans-serif;
-    --theme-fo:"Calistoga", serif;
+:root {
+    --primary-color: #FF8C00;
+    --secondary-color: #000;
+    --theme-font: "Roboto", sans-serif;
+    --theme-fonts: "Belleza", sans-serif;
+    --theme-fo: "Calistoga", serif;
 }
 
-.form-control:focus{
-    border:1px solid #FF8C00;
-    
+.form-control:focus {
+    border: 1px solid #FF8C00;
+
 }

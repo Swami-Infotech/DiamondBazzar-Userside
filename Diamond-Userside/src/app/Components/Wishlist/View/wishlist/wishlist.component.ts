@@ -6,7 +6,8 @@ import { FooterComponent } from '../../../Footer/View/footer/footer.component';
 import { WishlistService } from '../../service/wishlist.service';
 import { PostTypeSelection } from '../../Model/wishlist';
 import { ActivatedRoute, Router } from '@angular/router';
-import Swal from 'sweetalert2';
+import { ToastrNotificationService } from '../../../Common/toastr-notification.service';
+
 
 @Component({
   selector: 'app-wishlist',
@@ -35,7 +36,7 @@ export class WishlistComponent implements OnInit {
     });
   }
 
-  constructor(private service:WishlistService,private route:ActivatedRoute,private router: Router){}
+  constructor(private service:WishlistService,private toastr : ToastrNotificationService,private route:ActivatedRoute,private router: Router){}
 
   getData() {
     const userid = sessionStorage.getItem('userid');
@@ -52,34 +53,13 @@ export class WishlistComponent implements OnInit {
   
     this.service.getFavPostsby(userID, this.mainCategory).subscribe(
       (response: any) => {
-        if (response.status === true) {
-          this.favPosts = response.data;
+      
+          this.favPosts = response.data || [];
            
-        } else {
-          Swal.fire({
-            icon: 'error',
-            title: 'Error',
-            text: response.message,
-            confirmButtonText: 'OK',
-            customClass: {
-              confirmButton: 'btn btn-danger',
-            },
-            buttonsStyling: false,
-          });
-        }
       },
       (error) => {
         console.error('API Error:', error);  
-        Swal.fire({
-          icon: 'error',
-          title: 'API Error',
-          text: 'There was an error with the API request.',
-          confirmButtonText: 'OK',
-          customClass: {
-            confirmButton: 'btn btn-danger',
-          },
-          buttonsStyling: false,
-        });
+         this.toastr.showError(error);
       }
     );
   }

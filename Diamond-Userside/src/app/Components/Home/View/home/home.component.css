@@ -1,3 +1,12 @@
+    .card1  {
+    border: 0;
+    box-shadow: 6px 7px 7px 0px rgba(26, 26, 26, 0.45) !important;
+}
+
+
+grown-banner { 
+    background-color: rgb(234, 234, 234);
+}
 
 .line i{
     background-color: #FF8C00;
@@ -128,10 +137,30 @@ ul li{
 .pro-img .btn{
     padding: 0 0;
 }
-.pro-img .btn img{
+
+.pro-img .btn {
     width: 100%;
-    height: 282px;
-}
+    height: 250px;             /* Fixed height for the container */
+    position: relative;
+    overflow: hidden;          /* Ensure no overflow */
+    display: flex;             /* Center image both vertically and horizontally */
+    justify-content: center;   
+    align-items: center; 
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* Maintain aspect ratio and cover the container */
+    object-position: center;   /* Center the image within the container */
+  
+    /* Ensure smaller images stretch */
+    min-width: 100%;           
+    min-height: 100%;          
+  }
+  
+  
+
 /* lab grown end */
 /* @media (max-width:426px) {
     .pro-img img{

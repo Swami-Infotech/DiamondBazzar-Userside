@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { NavComponent } from '../../../Nav/view/nav/nav.component';
 import { FooterComponent } from '../../../Footer/View/footer/footer.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { log } from 'console';
 import Swal from 'sweetalert2';
 
+import { ToastrNotificationService } from '../../../Common/toastr-notification.service';
 
 
 @Component({
@@ -38,7 +38,8 @@ export class CalculatorComponent {
   
 isConversionRateSet: boolean = false;
 
-  constructor() {
+  constructor(private toaster : ToastrNotificationService) {
+    
     this.calculatePaymentDate();
   }
 
@@ -61,15 +62,9 @@ isConversionRateSet: boolean = false;
   Data provided by Diamond Bazzar Web.`;
   
     navigator.clipboard.writeText(CopyOBJ)
-      .then(() => {
-        Swal.fire({
-          title: 'Copied To Clipboard',
-          confirmButtonText: 'ok'
-        })
-      })
-      .catch(err => {
-        console.error('Failed to copy:', err);
-      });
+      
+       this.toaster.showSuccess("Copied To Clipboard")
+      
   }
   
   
