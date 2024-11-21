@@ -12,7 +12,6 @@ export enum diamondCategory{
 }
 export enum diamondSubCategory{
     Rough = 0 ,
-    Polish = 1,
 }
 
 export enum PostTypeSelection{

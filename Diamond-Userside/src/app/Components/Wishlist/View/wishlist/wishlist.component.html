@@ -28,18 +28,20 @@
           <div class="tab-pane fade show active" id="pills-rough" role="tabpanel" aria-labelledby="pills-rough-tab"
             tabindex="0">
             <div class="row" *ngIf="favPosts?.length > 0; else noData">
-              <div class="col-lg-3 col-md-6 col-sm-12" *ngFor="let product of favPosts">
+              <div class="col-lg-6 col-md-6 col-sm-12 my-3" *ngFor="let product of favPosts">
+                <div class="card">
                 <div class="lab-product">
-                  <div class="card">
-                    <div class="pro-img">
-                      <div class="product-click" (click)="viewpostdetails(product.postMainData.postID)">
-                          <!-- Ensure product.postAttachmenturl and product.name exist -->
-                          <img [src]="product.postAttachmenturl" [alt]="product.name || 'Product Image'"
-                            >
+                  <div class="row">
+                    <div class="col-lg-5">
+                      <div class="pro-img">
+                        <div class="product-click" (click)="viewpostdetails(product.postMainData.postID)">
+                            <img [src]="product.postAttachmenturl" [alt]="product.name || 'Product Image'"
+                            style="width: 220px; height: 220px;" >
+                        </div>
                       </div>
                     </div>
-                    <!-- Check if product.postMetaDatas exists and is an array -->
-                    <div class="product-details px-4 py-3"
+                    <div class="col-lg-7">
+                      <div class="product-details px-4 py-3"
                       *ngIf="product.postMainData && product.postMetaDatas.length > 0">
                       <div class="price d-flex flex-wrap align-items-center justify-content-between"
                         *ngFor="let metaData of product.postMetaDatas;let i = index">
@@ -51,10 +53,14 @@
                         </div>
                       </div>
                     </div>
+                    </div>
                   </div>
                 </div>
               </div>
+              </div>
             </div>
+
+
             <ng-template #noData>
               <div class="nodatafound">
                 <h3>No Favourite Diamond Found!</h3>

@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="login-img">
@@ -31,8 +31,6 @@
                                     [(ngModel)]="Otp.otp" #otp="ngModel"
                                     name="otp" required>
                             </div>
-                            <!-- <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
-                            <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div> -->
                         </form>
                         <div class="login-btn text-center">
                             <button class="btn"
@@ -50,4 +48,115 @@
         </div>
 
     </div>
-</div>
+</div> -->
+
+
+
+<section class="login-section">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-lg-6">
+               <div class="login-img">
+                
+               </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6">
+                <!-- <div class="login-form">
+                    <form #ForgetForm="ngForm" name="ForgetForm">
+                        <div class="title">
+                            <h2 class="mb-5">Verify OTP</h2>
+                        </div>
+                             <div data-mdb-input-init class="floating-form mb-4" style="width: 80%; margin: 0 auto;">
+                                <input type="text" id="phoneNumber" class="form-control text-center"
+                                    placeholder=" "
+                                    [(ngModel)]="Otp.otp" #otp="ngModel"
+                                    name="Verify Otp" required>
+                                <label class="form-label" for="phonenumber">Otp Verify</label>
+                            </div>
+                
+                    </form>
+                    <div class="otp-container text-center">
+                       
+                        <div class="verify-btn">
+                            <button class="btn text-white px-5" (click)="OnOtp()">Verify OTP</button>
+                        </div>
+                    </div>
+                    
+                  
+            </div> -->
+        
+            <div class="login-form">
+                <form #ForgetForm="ngForm" name="ForgetForm">
+                  <div class="title text-center">
+                    <h2 class="mb-5">Verify OTP</h2>
+                  </div>
+                  <div class="otp-container text-center">
+                    <!-- Input boxes for each OTP digit -->
+                    <input
+                      id="otp-input-0"
+                      type="text"
+                      maxlength="1"
+                      [(ngModel)]="otpInputs[0]"
+                      name="otp0"
+                      (input)="moveToNext(0, $event)"
+                      class="form-control text-center"
+                      style="width: 7%; margin: 10px 9px; border-radius: 15px; padding: 14px 15px;"
+                      required
+                    />
+                    <input
+                      id="otp-input-1"
+                      type="text"
+                      maxlength="1"
+                      [(ngModel)]="otpInputs[1]"
+                      name="otp1"
+                      (input)="moveToNext(1, $event)"
+                      class="form-control text-center"
+                      style="width: 7%; margin: 10px 9px; border-radius: 15px; padding: 14px 15px;"
+                      required
+                    />
+                    <input
+                      id="otp-input-2"
+                      type="text"
+                      maxlength="1"
+                      [(ngModel)]="otpInputs[2]"
+                      name="otp2"
+                      (input)="moveToNext(2, $event)"
+                      class="form-control text-center"
+                      style="width: 7%; margin: 10px 9px; border-radius: 15px; padding: 14px 15px;"
+                      required
+                    />
+                    <input
+                      id="otp-input-3"
+                      type="text"
+                      maxlength="1"
+                      [(ngModel)]="otpInputs[3]"
+                      name="otp3"
+                      (input)="moveToNext(3, $event)"
+                      class="form-control text-center"
+                      style="width: 7%; margin: 10px 9px; border-radius: 15px; padding: 14px 15px;"
+                      required
+                    />
+                  </div>
+                  <div class="verify-btn mt-3 text-center">
+                    <button
+                      class="btn text-white"
+                      type="button"
+                      (click)="OnOtp()"
+                    >
+                      Verify OTP
+                    </button>
+                  </div>
+                </form>
+              </div>
+              
+        </div>
+    </div>
+    </div>
+</section>
+
+
+
+
+
+

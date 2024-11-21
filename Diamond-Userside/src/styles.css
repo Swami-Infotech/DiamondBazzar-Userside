@@ -43,6 +43,7 @@ label {
     --theme-font: "Roboto", sans-serif;
     --theme-fonts: "Belleza", sans-serif;
     --theme-fo: "Calistoga", serif;
+    --fonts:"Montserrat", sans-serif
 }
 
 .form-control:focus {

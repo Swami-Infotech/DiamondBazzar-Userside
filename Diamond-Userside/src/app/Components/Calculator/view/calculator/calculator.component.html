@@ -14,31 +14,38 @@
                             <div class="row">
                                 <!-- total cart start -->
                                 <div class="mb-3 col-lg-12">
-                                    <label for="" class="form-label"> {{ "Total Carat Weight" | translate }}</label>
-                                    <input type="number"  [placeholder]="'0'" class="form-control" [(ngModel)]="CartWeight" (ngModelChange)="calculateTotalamount()" id="CartWeight" name="CartWeight">
+                                    <div class="floating-form">
+                                        <input type="number"  [placeholder]="'0'" class="form-control form-control-lg" [(ngModel)]="CartWeight" (ngModelChange)="calculateTotalamount()" id="CartWeight" name="CartWeight">
+                                        <label for="" class="form-label"> {{ "Total Carat Weight" | translate }}</label>
+                                </div>
                                 </div>
                                 <!-- total cart End --> 
 
                                 <!-- Price/Cart start -->
                                 <div class="col-lg-6">
-                                    <label for="" class="form-label"> {{ "Price / Carat" | translate }}</label>
-                                   <div class="price-input d-flex align-item-center">
+                                    
+                                   <div class="price-input d-flex align-item-center floating-form mt-2">
                                     <select name="selectedCurrency" id="selectedCurrency" [(ngModel)]="selectedCurrency" class="form-select" (ngModelChange)="updatePlaceholder()">
                                         <option value="₹">₹</option>
                                         <option value="$">$</option>
                                       </select>
+                                      <input type="number" style="border-radius:0px 10px 10px 0px;
+                                    border-left: 0px;" placeholder="0" class="form-control form-control-lg" [(ngModel)]="PriceCart" id="PriceCart" name="PriceCart" (ngModelChange)="calculateTotalamount()">
+                                      <label for="" class="form-label"> {{ "Price / Carat" | translate }}</label>
                                       
-                                    <input type="number" placeholder="0" class="form-control" [(ngModel)]="PriceCart" id="PriceCart" name="PriceCart" (ngModelChange)="calculateTotalamount()">
+                                  
+                                    
                                    </div>
                                 </div>
                                 <!-- Price/Cart End -->
 
                                 <!-- terms start -->
                                 <div class="col-lg-6">
-                                    <label for="Terms" class="form-label">{{ "Home.terms" | translate }}%</label>
-                                    <div class="price-input d-flex align-items-center">
+                                   
+                                    <div class="price-input d-flex align-items-center floating-form mt-2">
                                       <h4 
-                                        style="width: 50px; margin: 0 5px 0 0; border: 1px solid var(--primary-color); text-align: center;" 
+                                        style="width: 50px; margin: 0 5px 0 0; border: 1px solid var(--primary-color); text-align: center;border-radius:0px -1px 10px 0px;
+                                    border-right: 0px;" 
                                         class="form-control"
                                         (click)="toggleSign()"
                                       >
@@ -53,7 +60,10 @@
                                         (ngModelChange)="calculateTotalamount()" 
                                         min="0" 
                                         placeholder="0"
+                                        style="border-radius:0px 10px 10px 0px;
+                                    border-left: 0px;"
                                       >
+                                      <label for="Terms" class="form-label">{{ "Home.terms" | translate }}%</label>
                                     </div>
                                   </div>
                                 <!-- terms End -->
@@ -61,19 +71,21 @@
                                 <!-- due days start -->
                                 <div class="col-lg-6">
                                     <div class="my-4">
-                                        <label for="" class="form-label">{{ "Home.Due Days" | translate }}</label>
-                                        <div class="due-days d-flex align-items-center">
+                                       
+                                        <div class="due-days d-flex align-items-center floating-form">
                                             <input 
                                                 type="text" 
                                                 placeholder="0" 
-                                                class="form-control" 
-                                                style="width: 50px;"
+                                                class="form-control form-control-lg" 
+                                                style="width: 50px;border-right: 0;margin-top: 5px;"
                                                 [(ngModel)]="dueDays"
                                                 (ngModelChange)="calculatePaymentDate()"
                                                 name="dueDays"
-                                                id="dueDays" >
-                                            <div class="payment-date">
-                                                <div class="card border-0">
+                                                id="dueDays"
+                                                 >
+                                                 <label for="" class="form-label">{{ "Home.Due Days" | translate }}</label>
+                                            <div class="payment-date" style="border: 1px solid #FF8C00; border-left: 0px;margin-top: 5px; padding-top: 5px; border-radius: 0 8px 8px 0px;">
+                                                <div class="card border-0" style="box-shadow: 0;">
                                                     <h6>Payment Due: {{ paymentDate | date: 'dd-MM-yyyy' }}</h6>
                                                 </div>
                                             </div>
@@ -85,41 +97,54 @@
                                 <!-- convesrsion start -->
                                 <div class="col-lg-6">
                                     <div class="my-4">
-                                        <label for="" class="form-label">{{ "Home.Conversion Rate" | translate }}</label>
-                                        <div class="rate d-flex align-item-center">
-                                            <h4 style="width: 50px; margin: 0 5px 0 0;border: 1px solid var(--primary-color); text-align: center;" class="form-control">{{inputPlaceholder}}</h4>
-                                            <input type="text" placeholder="0" class="form-control" (ngModelChange)="calculateTotalamount()" [(ngModel)]="Conversionrate" id="Conversionrate" name="Conversionrate" (ngModelChange)="updatePlaceholder()">
+                                        <div class="rate d-flex align-item-center floating-form">
+                                            <h4 style="width: 50px; margin: 5px 5px 0 0;border: 1px solid var(--primary-color); text-align: center; border-right: 0; border-radius: 3px 0px 0px 3px;" class="form-control">{{inputPlaceholder}}</h4>
+                                            <input type="text" placeholder="0" class="form-control form-control-lg" (ngModelChange)="calculateTotalamount()" [(ngModel)]="Conversionrate" id="Conversionrate" name="Conversionrate" (ngModelChange)="updatePlaceholder()"
+                                            style="border-radius:0px 10px 10px 0px;border-left: 0px;">
+                                            <label for="" class="form-label">{{ "Home.Conversion Rate" | translate }}</label>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- convesrsion end -->
 
+                                <!-- total amount start -->
+                                 <div class="col-lg-12">
+                                    <div class="display-data">
+                                        <div class="total-amount">
+                                            <div class="card my-2" style="border:1px solid #FF8C00;display: flex;flex-direction: row;align-items: center;justify-content: space-between;">
+                                                <h6>{{ "Home.Total Amount" | translate }} </h6>
+                                                <span>:</span>
+                                                <h6>{{ OPcurrency }} {{ finalamount }}</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                 </div>
+                                <!-- total amount end -->
+
                                 <!-- Brokerage start -->
-                                <div class="col-lg-6">
-                                    <div class="mb-3">
-                                        <label for="" class="form-label">{{ "Home.Brokerage %" | translate }}</label>
+                                <div class="col-lg-12">
+                                    <div class="my-4 floating-form">
                                         <input type="text" placeholder="0" class="form-control" [(ngModel)]="Brokerage" id="Brokerage" name="Brokerage" (ngModelChange)="calculateBrokerageAmount()">
+                                        <label for="" class="form-label">{{ "Home.Brokerage %" | translate }}</label>
                                     </div>
                                 </div>
                                 <!-- Brokerage end -->
 
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <div class="display-data">
-                                        <div class="total-amount">
-                                            <div class="card">
-                                                <h6>{{ "Home.Total Amount" | translate }}: {{ OPcurrency }} {{ finalamount }}</h6>
-                                            </div>
-                                        </div>
+                                       
                                         <div class="brokerage-amount">
-                                            <div class="card">
-                                                <h6>{{ "brokerageAmount" | translate }}:{{OPcurrency}} {{ brokerageAmount }} </h6>
-                                                <!-- <h6>{{ brokerageAmount }}</h6> -->
+                                            <div class="card py-2" style="border:1px solid #FF8C00;display: flex;flex-direction: row;align-items: center;justify-content: space-between;">
+                                                <h6>{{ "brokerageAmount" | translate }} </h6>
+                                                <span>:</span>
+                                                <h6>{{OPcurrency}} {{ brokerageAmount }}</h6>
                                             </div>
                                         </div>
                                         <div class="Total-amount">
-                                            <div class="card">
-                                                <h6>{{ "NetAmount" | translate }}:{{OPcurrency}} {{ NetAmount }} </h6>
-                                                <!-- <h6>{{ NetAmount }}</h6> -->
+                                            <div class="card py-2" style="border:1px solid #FF8C00;display: flex;flex-direction: row;align-items: center;justify-content: space-between;">
+                                                <h6>{{ "NetAmount" | translate }} </h6>
+                                                <span>:</span>
+                                                <h6>{{OPcurrency}} {{ NetAmount }}</h6>
                                             </div>
                                         </div>
                                         <!-- net amount end -->
@@ -128,14 +153,14 @@
 
                                
 
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <div class="rest-btn text-center mt-5">
                                         <button  type="submit" (click)="CopyToClickboard()"  class="btn">Copy To Clipboard</button>
                                     </div>
                                 </div>
     
-                                <div class="col-lg-6">
-                                    <div class="rest-btn text-center mt-5">
+                                <div class="col-lg-12">
+                                    <div class="rests-btn text-center mt-3">
                                         <button (click)="resetForm()" class="btn">{{ "Home.reset" | translate }}</button>
                                     </div>
                                 </div>

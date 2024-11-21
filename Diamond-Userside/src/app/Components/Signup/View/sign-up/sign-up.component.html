@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12">
             <div class="login-img">
@@ -74,4 +74,115 @@
         </div>
 
     </div>
-</div>
+</div> -->
+
+
+
+<section class="login-section">
+    <div class="container-fluid">
+        <div class="row ">
+            <div class="col-md-6 col-lg-6">
+               <div class="login-img">
+                
+               </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6">
+                <div class="login-form">
+                    <div class="title">
+                        <h2>Sign Up</h2>
+                    </div>
+                    <form action>
+                       
+                        <div class="input-container mb-3 floating-form" style="width: 90%; margin: 0 auto;">
+                            <input type="text" id="firstName"
+                                class="form-control form-control-lg"
+                                placeholder=" " name="First Name" autocomplete="off"
+                                [(ngModel)]="user.firstName"
+                                 #firstName="ngModel"
+                                required>
+                                <label for="firstname">First Name</label>
+                        </div>
+                       
+                        <div class="input-container mb-3 floating-form" style="width: 90%; margin: 0 auto;">
+                            <input type="text" id="lastName"
+                                class="form-control form-control-lg"
+                                placeholder=" " 
+                                [(ngModel)]="user.lastName" name="Last Name"
+                                #lastName="ngModel" required>
+                                <label for="lastname">Last Name</label>
+                        </div>
+                       
+                        <div class="input-container mb-3 floating-form" style="width: 90%; margin: 0 auto;">
+                            <input type="text"
+                                   id="phoneNumber"
+                                   class="form-control form-control-lg"
+                                   placeholder=" "
+                                   [(ngModel)]="user.phoneNumber"
+                                   name="phone Number"
+                                   #phoneNumber="ngModel"
+                                   required>
+                                   <label for="phoneNumber">Phone Number</label>
+                          </div>
+                        
+                        <div class="input-container mb-3 floating-form" style="width: 90%; margin: 0 auto;">
+                            <input type="email" id="email"
+                                class="form-control form-control-lg"
+                                placeholder=" "
+                                [(ngModel)]="user.email" name="Email"
+                                #email="ngModel" required>
+                                <label for="email">Email</label>
+                        </div>
+
+                        <div class="input-container mb-3 floating-form" style="width: 90%; margin: 0 auto;">
+                            <input type="number" id="phonenumber"
+                                class="form-control form-control-lg"
+                                placeholder=" "
+                                [(ngModel)]="user.phoneNumber" name="Phone Number"
+                                #phoneNumber="ngModel" required>
+                                <label for="phonenumber">phone Number</label>
+                        </div>
+
+                        <div class="input-container mb-3 floating-form" style="width: 90%; margin: 0 auto;">
+                            <input [type]="isPasswordVisible ? 'text' : 'password'" id="password"
+                                class="form-control form-control-lg"
+                                placeholder=" "
+                                [(ngModel)]="user.password" name="password"
+                                #password="ngModel" required>
+                                <label for="password">Password</label>
+                                <div class="eye-icon">
+                                    <button class="btn" (click)="togglePassword()">
+                                        <i class="bi bi-eye-fill" [ngClass]="isPasswordVisible ? 'bi-eye-slash-fill' : 'bi-eye-fill'"></i>
+                                    </button>
+                                </div>
+                        </div>
+                        <div data-mdb-input-init class="floating-form mb-3" style="width: 90%; margin: 0 auto;">
+                            <input [type]="isConfirmPasswordVisible  ? 'text' : 'password'"  id="confirm-password" class="form-control form-control-lg"
+                            placeholder=" "    [(ngModel)]="confirmPassword"  name="confirmPassword" required />
+                            <label class="form-label" for="password">Confirm Password</label>
+                            <div class="eye-icon">
+                                <button class="btn" (click)="toggleConfirmPasswordVisibility()">
+                                    <i class="bi bi-eye-fill" [ngClass]="isConfirmPasswordVisible  ? 'bi-eye-slash-fill' : 'bi-eye-fill'"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="sign-btn">
+                            <button class="btn">Sign Up</button>
+                        </div>
+                        <div class="account text-center mt-3">
+                            <p>Alrerady have and 
+                                Account?</p>
+                        </div>
+                        <div class="signup-btn">
+                            <button class="btn">
+                                <a class="text-dark"  routerLink="/login">Log In</a>
+                            </button>
+                         </div>
+                    </form>
+                </div>
+                  
+            </div>
+        </div>
+    </div>
+</section>

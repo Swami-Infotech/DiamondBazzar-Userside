@@ -1,55 +1,55 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12">
-             <div class="login-img">
-                <!-- <img src="/assets/Img/login/banner.png" alt=""> -->
-  <img src="../../../../../assets/Img/login/banner.png" alt="login">
+<section class="login-section">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-lg-6">
+               <div class="login-img">
+                
+               </div>
             </div>
-        </div>
-        <div class="col-lg-6 col-md-6 col-sm-12">
-            <div class="login-svg">
-                <img src="../../../../assets/Img/login/img.png" alt="">
-            </div>
-        </div>
-        <div class="col-lg-12 col-md-12 col-sm-12">
-            <div class="login-card" >
-                <div class="card">
-                     <div class="login-logo text-center pt-4">
-                         <!-- <img src="../../../../assets/Img/logo/DimaondBazzarlogo.png" alt="" width="80"> -->
-                         <img src="../../../../assets/Img/logo/DimaondBazzarlogo.png" alt="" width="80">
+
+            <div class="col-md-6 col-lg-6">
+                <div class="login-form">
+                    <form>
+                        <div class="title">
+                            <h2 class="mb-5">Log In</h2>
+                        </div>
+                            <div data-mdb-input-init class="floating-form mb-4" style="width: 80%; margin: 0 auto;">
+                                <input type="phonenumber" id="phonenumber" class="form-control form-control-lg email-input"
+                                placeholder=" "  autocomplete="off" name="Phone Number" [(ngModel)]="user.phoneNumber" name="phoneNumber" #phoneNumber="ngModel" required />
+                                <label class="form-label" for="phonenumber">Phone Number</label>
+                            </div>
+
+
+                            <div data-mdb-input-init class="floating-form mb-3" style="width: 80%; margin: 0 auto;">
+                                <input type="password" id="password" class="form-control form-control-lg"
+                                placeholder=" " [(ngModel)]="user.password" name="password" #password="ngModel" required />
+                                <label class="form-label" for="password">Password</label>
+                            </div>
+                            <div class="forget-pass text-end">
+                                <h6 routerLink="/forgetpass">Forget Password?</h6>
+                            </div>
+                
+                    </form>
+                    <div class="login-btn">
+                           <button class="btn text-center text-white" type="submit" (click)="OnLogin()">Log In</button>
                      </div>
-                     <div class="login-title text-center py-4">
-                         <h2>Login</h2>
-                     </div>
-                     <div class="login-form">
-                         <form action="">
-                             <label for="phoneNumber" class="my-2">Phone Number</label>
-                             <div class="input-container">
-                                 <i class="bi bi-telephone-fill call-icon"></i>
-                                 <input type="text" id="phoneNumber" class="form-control" placeholder="Enter Your Number" [(ngModel)]="user.phoneNumber" name="phoneNumber" #phoneNumber="ngModel" required>
-                             </div>
-                             <label for="password" class="my-2">Password</label>
-                             <div class="input-container">
-                                 <i class="bi bi-telephone-fill call-icon"></i>
-                                 <input type="password" id="password" class="form-control" placeholder="Enter Your Password" [(ngModel)]="user.password" name="password" #password="ngModel" required>
-                             </div>
-                         </form>
-                         <div>
-                                <button class="btn login-btn text-center text-white" type="submit" (click)="OnLogin()">Login</button>
-                                <!-- <button class="btn" type="submit">Continue</button> -->
-                         </div>
-                         <div class="text-center">
-                            <button class="btn btn-success">
-                                <a class="text-white" routerLink="/signup">Signup</a>
+                     <div class="signup">
+                        <p>Don't have an Account?</p>
+                        <div class="signup-btn">
+                            <button class="btn">
+                                <a class="text-dark"  routerLink="/signup">Signup</a>
                             </button>
                          </div>
-                         <div class="login-cont text-center py-4">
-                             <h5>By Continuing you are agreeing to our</h5>
-                             <h6>Terms and Conditions</h6>
-                         </div>
                      </div>
+                   
                 </div>
-             </div>
+                  
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+
+
+
+

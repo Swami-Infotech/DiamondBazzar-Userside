@@ -4,11 +4,13 @@ import { Router, RouterLink } from '@angular/router';
 import { SignUpService } from '../../Service/sign-up.service';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { ToastrNotificationService } from '../../../Common/toastr-notification.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sign-up',
   standalone: true,
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink,CommonModule],
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css',
 })
@@ -16,11 +18,14 @@ export class SignUpComponent {
   user = new SignupUser();
 
   phoneNumber: string = '';
+  isPasswordVisible: boolean = false;
+  confirmPassword:string = '';
+  isConfirmPasswordVisible :boolean = false;
 
   constructor(
     private service: SignUpService,
     private router: Router,
-    // private toastr: ToastrService
+    private toastr: ToastrNotificationService
   ) {}
 
   ngOnInit(): void {
@@ -33,6 +38,10 @@ export class SignUpComponent {
   }
 
   OnLogin() {
+    if(this.user.password !== this.confirmPassword){
+      this.toastr.showError('Password Not Maych');
+      return;
+    }
     this.service.SingUpApiData(this.user).subscribe(
       (response: any) => {
         if (response.status !== true) {
@@ -68,5 +77,12 @@ export class SignUpComponent {
         // this.toastr.error(error.message);
       }
     );
+  }
+
+  toggleConfirmPasswordVisibility(){
+    this.isConfirmPasswordVisible = !this.isConfirmPasswordVisible;
+  }
+  togglePassword(){
+    this.isPasswordVisible = !this.isPasswordVisible;
   }
 }

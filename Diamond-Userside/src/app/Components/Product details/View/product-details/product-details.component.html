@@ -1,115 +1,156 @@
 <app-nav></app-nav>
 <div class="container">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12" id="carousel2" style="
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12" id="carousel2" style="
           display: flex; flex-direction: column;">
-            <!-- Main Image Display -->
-            <div class="main-img text-center mt-5">
-              <ng-container *ngIf="selectedImageURL">
-                <img [src]="selectedImageURL" alt="product-img" width="100%">
+
+            <div id="carouselExample" class="carousel slide">
+              <div class="carousel-inner">
+                <div 
+                class="carousel-item" 
+                *ngFor="let d of attachments; let i = index" 
+                [ngClass]="{'active': i === 0}">
+                <img  [src]="d.postAttachmentURL" class="d-block w-100" alt="...">
+              </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+
+    </div>
+
+    <ng-container *ngFor="let item of mains">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="pro mt-5">
+          <div class="card mb-3">
+            <div class="products-details">
+              <div class="price d-flex flex-wrap align-items-center justify-content-between">
+                <h5>{{item.highlightedText}}</h5>
+                <div class="fav">
+                  <button class="btn" (click)="toggleHeart(item.postID)">
+                    <i class="bi bi-heart-fill" id="heart" [class.red]="isHeartRed"></i>
+                  </button>
+                </div>
+              </div>
+
+
+              <ng-container *ngIf="selectedVideoURL">
+                <h3 (click)="openVideo(selectedVideoURL)" class="live">
+                  Live View
+                </h3>
               </ng-container>
             </div>
-          
-            <!-- Thumbnails or Side Images -->
-            <div class="sub-img" style="display: flex;">
-              <div class="thumbnails my-3" *ngFor="let attachment of attachments">
-                <div *ngIf="attachment.attchmentType == 0" >
-                <img style="height: 100px; width: 100px;" [src]="attachment.postAttachmentURL" alt="" (click)="changeProductImage(attachment)">
-
+          </div>
+          <div class="card">
+            <div class="post-details px-3">
+              <div *ngFor="let metaData of metaDatas">
+                <div class="piece d-flex flex-wrap align-items-center justify-content-between">
+                  <h6>{{ metaData.categoryName }}</h6>
+                  <p>{{ metaData.metaDataValue }}</p>
+                  <div class="dot">
+                    <h5>:</h5>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-          
-        <ng-container *ngFor="let item of mains">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-              <div class="pro mt-5">
-                <div class="card mb-3 px-3">
-                  <div class="products-details">
-                    <div class="price d-flex flex-wrap align-items-center justify-content-between">
-                      <h5>{{item.highlightedText}}</h5>
-                      <div class="fav">
-                        <button class="btn" (click)="toggleHeart(item.postID)" >
-                          <i class="bi bi-heart-fill" id="heart" [class.red]="isHeartRed"></i>
-                        </button>
-                      </div>
+        </div>
+        
+      </div>
+
+
+   
+
+      <div class="col-lg-12">
+        <div class="client">
+          <div class="client-details d-flex align-items-center justify-content-between">
+            <div class="client-img">
+              <img src="../../../../assets/Img/slider/client.png" alt="client">
+            </div>
+            <div class="client-name d-flex flex-wrap align-items-center">
+              <form action="">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="input-container floating-form">
+                      <input
+                        type="text"
+                        id="username"
+                        class="form-control"
+                        placeholder=" "
+                        name="username"
+                        [(ngModel)]="userDetails.userName" />
+                        <label for="username" class="form-label">User
+                          Name</label>
                     </div>
-                     
-                    
-                    <ng-container *ngIf="selectedVideoURL">
-                      <h3  (click)="openVideo(selectedVideoURL)" class="live">
-                        Live View
-                      </h3>
-                    </ng-container>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="input-container floating-form">
+                      <input
+                        type="text"
+                        id="companyname"
+                        class="form-control"
+                        placeholder=" "
+                        name="companyname"
+                        [(ngModel)]="userDetails.companyName" />
+                        <label for="companyname" class="form-label">Company
+                          Name</label>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="input-container floating-form mt-5">
+                      <input
+                        type="text"
+                        id="address"
+                        class="form-control"
+                        placeholder=" "
+                        name="address"
+                        [(ngModel)]="userDetails.address" />
+                        <label for="address" class="form-label">Address
+                          </label>
+                    </div>
                   </div>
                 </div>
-                <div class="card">
-                  <div class="post-details px-3">
-                    <div *ngFor="let metaData of metaDatas">
-                      <div class="piece d-flex flex-wrap align-items-center justify-content-between">
-                        <h6>{{ metaData.categoryName }}</h6>
-                        <p>{{ metaData.metaDataValue }}</p>
-                        <div class="dot">
-                          <h5>:</h5>
-                        </div>
-                      </div>
+              </form>
+            </div>
+            <div class="chat-icon">
+              <div class="calls mt-5">
+                <div class="call-btn d-flex flex-wrap align-items-center">
+                  <button class="btn">
+                    <a [href]="'tel:' + userDetails.phoneNumber">
+                      <i class="bi bi-telephone-fill text-white"></i>
+                    </a>
+                  </button>
+                  <a [href]="'tel:' + userDetails.phoneNumber">
+                    <div class="title">
+                      <h5 class="text-white">Call</h5>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
-              <div class="client mt-4 px-3 mb-5">
-                <div class="card">
-                  <div class="clients d-flex flex-wrap align-items-center justify-content-between">
-                    <div class="client-details d-flex flex-wrap align-items-center">
-                      <img src="../../../../assets/Img/slider/client.png" alt="client">
-                      <div class="clicet-name ms-4">
-                        <h5>{{userDetails.userName}}</h5>
-                        <p>{{userDetails.companyName}}</p>
-                      </div>
-                    </div>
-                    <div class="arrow">
-                      <button class="btn">
-                        <i class="bi bi-arrow-right-short fs-2"></i>
-                      </button>
-                    </div>
+              <div class="message my-5">
+                <div class="call-btn d-flex flex-wrap align-items-center">
+                  <button class="btn">
+                    <i class="bi bi-send text-white"></i>
+                  </button>
+                  <div class="titles">
+                    <h5 class="text-white">Message</h5>
                   </div>
-                  <div class="row">
-                    <div class="col-lg-6">
-                      <div class="calls mt-5">
-                        <div class="call-btn d-flex flex-wrap align-items-center">
-                          <button class="btn">
-                          <a [href]="'tel:' + userDetails.phoneNumber">
-                            <i class="bi bi-telephone-fill text-white"></i>
-                          </a>
-                        </button>
-                        <a [href]="'tel:' + userDetails.phoneNumber">
-                          <div class="title">
-                            <h5 class="text-white">Call</h5>
-                          </div>
-                        </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="col-lg-6">
-                      <div class="message mt-5">
-                        <div class="call-btn d-flex flex-wrap align-items-center">
-                          <button class="btn">
-                            <i class="bi bi-send text-white"></i>
-                          </button>
-                          <div class="title">
-                            <h5 class="text-white">Message</h5>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  
                 </div>
               </div>
             </div>
-          </ng-container>
-          
-    </div>
+          </div>
+        </div>
+      </div>
+
+    </ng-container>
+
+  </div>
 </div>
 
 <app-footer></app-footer>

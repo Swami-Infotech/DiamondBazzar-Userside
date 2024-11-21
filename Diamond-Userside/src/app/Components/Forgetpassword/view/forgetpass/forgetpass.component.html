@@ -1,0 +1,40 @@
+<section class="login-section">
+    <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-lg-6">
+               <div class="login-img">
+                
+               </div>
+            </div>
+
+            <div class="col-md-6 col-lg-6">
+                <div class="login-form">
+                    <form>
+                        <div class="title">
+                            <h2 class="mb-5">Forget password</h2>
+                        </div>
+                            <div data-mdb-input-init class="floating-form mb-4" style="width: 80%; margin: 0 auto;">
+                                <input type="phonenumber" id="phonenumber" class="form-control form-control-lg email-input"
+                                placeholder=" "  autocomplete="off" name="Phone Number" [(ngModel)]="pass.phoneNumber" name="phoneNumber" #phoneNumber="ngModel" required />
+                                <label class="form-label" for="phonenumber">Phone Number</label>
+                            </div>
+                
+                    </form>
+                    <div class="login-btn">
+                           <button class="btn text-center text-white" type="submit" (click)="forgetpass()">Verify</button>
+                     </div>
+                     <div class="signup">
+                        <p>You'll Receve an OTP on your WhatsApp</p>
+                     </div>
+                   
+                </div>
+                  
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+

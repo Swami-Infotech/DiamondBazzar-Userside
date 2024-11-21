@@ -130,12 +130,10 @@ export class NavComponent implements OnInit {
     if (selectedMainDiamondType === diamondCategory.Natural) {
       this.subDiamondTypes = [
         { value: diamondSubCategory.Rough, name: 'Rough' },
-        { value: diamondSubCategory.Polish, name: 'Polish' },
       ];
     } else if (selectedMainDiamondType === diamondCategory.LabGrown) {
       this.subDiamondTypes = [
         { value: diamondSubCategory.Rough, name: 'Rough' },
-        { value: diamondSubCategory.Polish, name: 'Polish' },
       ];
     }
 

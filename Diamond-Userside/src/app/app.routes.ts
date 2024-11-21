@@ -42,6 +42,8 @@ import { LandingPageComponent } from './Components/landing-page/landing-page.com
 import { TermsComponent } from './Components/terms/terms/terms.component';
 import { PrivacyComponent } from './Components/privacy/privacy/privacy.component';
 import { AddDemandComponent } from './Components/add-demand/add-demand.component';
+import { ForgetpassComponent } from './Components/Forgetpassword/view/forgetpass/forgetpass.component';
+import { ResetpassComponent } from './Components/Reset pass/view/resetpass/resetpass.component';
 
 
 export const routes: Routes =  [
@@ -86,10 +88,17 @@ export const routes: Routes =  [
     component:SignUpComponent
   },
   {
+    path:"forgetpass",
+    component:ForgetpassComponent
+  },
+  {
+    path:"resetpass",
+    component:ResetpassComponent
+  },
+  {
     path:"profile",
     component:ProfileComponent,
     canActivate:[AuthGuard]
-
   },
   {
     path:"preference",

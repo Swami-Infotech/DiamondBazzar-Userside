@@ -9,16 +9,19 @@ import { ProductDetailsService } from '../../service/product-details.service';
 import { AttchmentType, Fav } from '../../Model/product-details';
 import Swal from 'sweetalert2';
 import { HeartService } from '../../service/heart.service';
+import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [CommonModule, FormsModule,NavComponent,FooterComponent],
+  imports: [CommonModule, FormsModule,NavComponent,FooterComponent,CarouselModule],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
 export class ProductDetailsComponent implements OnInit {
 
+  imgurl = environment.imgURL;
  
   mains:any;
   isHeartRed!: boolean;
@@ -52,9 +55,7 @@ export class ProductDetailsComponent implements OnInit {
 
   constructor(private service:ProductDetailsService,private route:ActivatedRoute,private heartService: HeartService){}
 
-  changeProductImage(attachment: any) {
-    this.selectedImageURL = attachment.postAttachmentURL;
-  }
+
 
 
 
@@ -66,6 +67,7 @@ export class ProductDetailsComponent implements OnInit {
       (resp: any) => {
         this.mains = [resp.data.postMainData];
         this.attachments = resp.data.postAttachments || [];
+        console.log("Attachments:", this.attachments);
         this.metaDatas = resp.data.postMetaDatas;
         this.userDetails = resp.data.userDetails;
 
@@ -186,6 +188,35 @@ export class ProductDetailsComponent implements OnInit {
   initializeHeartColor() {
     this.isHeartRed = this.heartService.getHeartStatus();
   }
+
+
+  customOptions3: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 600,
+    autoplay: true,
+    autoplayTimeout: 3500,
+    navText: ['&#8249', '&#8250;'],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 1
+      },
+      760: {
+        items: 1
+      },
+      1000: {
+        items: 1
+      }
+    },
+    nav: false
+  }
+
   
 
 

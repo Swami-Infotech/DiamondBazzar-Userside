@@ -1,5 +1,5 @@
 <app-nav></app-nav>
-<section class="myprofile">
+<!-- <section class="myprofile">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-6">
@@ -102,28 +102,7 @@
                                             name="companyName">
                                     </div>
                                 </div>
-                                <!-- <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mb-3 business">
-                                        <label for="businessCategoryID"
-                                            class="form-label">{{
-                                            "Home.Business Category" | translate
-                                            }}</label>
-                                        <select
-                                            class="form-select"
-                                            aria-label="Default select example"
-                                            (change)="onCategoryChange($event)">
-                                            <option [value]="null" selected>Open
-                                                this select
-                                                menu</option>
-                                            <option
-                                                *ngFor="let category of BusinessListData"
-                                                [value]="category.businessCategoryID">
-                                                {{ category.businessCategoryName
-                                                }}
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div> -->
+                               
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mb-3 bio">
                                         <label for="companyBio"
@@ -154,9 +133,6 @@
                                         
                                     </div>
                                 </div>
-
-                               
-
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <div class="mb-3 address">
                                         <label for="companyAddress"
@@ -178,84 +154,162 @@
                                 </div>
                             </div>
                         </form>
-
-                        <!-- <form action="">
-                            <div class="row">
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mb-3 firstname">
-                                        <label for="" class="form-label">{{ "Home.First Name" | translate }}</label>
-                                        <input type="text" class="form-control" placeholder="Enter your firstname">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mb-3 lastname">
-                                        <label for="" class="form-label">{{ "Home.Last Name" | translate }}</label>
-                                        <input type="text" class="form-control" placeholder="Enter your lastname">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mb-3 number">
-                                        <label for="" class="form-label">{{ "Home.Phone Number" | translate }}</label>
-                                        <input type="text" class="form-control" placeholder="Enter your phonenumber">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mb-3 email">
-                                        <label for="" class="form-label">{{ "Home.Email" | translate }}</label>
-                                        <input type="email" class="form-control" placeholder="Enter you email">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <div class="company-title my-3">
-                                        <h3>{{ "Home.Company Information" | translate }}</h3>
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mb-3 company">
-                                        <label for="" class="form-label">{{ "Home.Company Name" | translate }}</label>
-                                        <input type="text" class="form-control" placeholder="Enter Company Name">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mb-3 business">
-                                        <label for="" class="form-label">{{ "Home.Business Category" | translate }}</label>
-                                        <input type="text" class="form-control" placeholder="Enter business category">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mb-3 bio">
-                                        <label for="" class="form-label">{{ "Home.Company Bio" | translate }}</label>
-                                        <input type="text" class="form-control" placeholder="Enter Company Bio">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mb-3 logo">
-                                        <label for="" class="form-label">{{ "Home.Logo upload" | translate }}</label>
-                                        <input type="file" class="form-control" placeholder="upload logo here">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mb-3 office">
-                                        <label for="" class="form-label">{{ "Home.Office Number" | translate }}</label>
-                                        <input type="number" class="form-control" placeholder="Enter office number">
-                                    </div>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                    <div class="mb-3 address">
-                                        <label for="" class="form-label">{{ "Home.Company Address" | translate }}</label>
-                                        <input type="text" class="form-control" placeholder="Enter company address">
-                                    </div>
-                                </div>
-                                <div class="col-lg-12 col-md-12 col-sm-12">
-                                    <div class="sub-btn text-center my-3">
-                                        <button class="btn">{{ "Home.Submit" | translate }}</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form> -->
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section> -->
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title my-3">
+                    <h2>Profile</h2>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="personal-details mx-3">
+                    <div class="personal-title">
+                        <h4>Personal Information</h4>
+                    </div>
+                    <div class="person-img">
+                        <img
+                        src={{userdata.profilePhoto}}
+                        class="profile-user mt-4 ms-3 mb-2">
+                    </div>
+                    <form (ngSubmit)="OnChangeDataAdd()">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="mb-3 firstname floating-form">
+                                    <input id="firstName" type="text"
+                                        class="form-control form-control-lg"
+                                        placeholder=" "
+                                        [(ngModel)]="userdata.firstName"
+                                        name="firstName">
+                                        <label for="firstName"
+                                        class="form-label">{{
+                                        "Home.First Name" | translate
+                                        }}</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="mb-3 lastname floating-form">
+                                    <input id="lastName" type="text"
+                                        class="form-control form-control-lg"
+                                        placeholder=" "
+                                        [(ngModel)]="userdata.lastName"
+                                        name="lastName">
+                                        <label for="lastName"
+                                        class="form-label">{{
+                                        "Home.Last Name" | translate
+                                        }}</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="mb-3 number floating-form">
+                                    <input id="companyPhoneNumber"
+                                        type="text" class="form-control form-control-lg"
+                                        placeholder=" "
+                                        [(ngModel)]="userdata.phoneNumber"
+                                        name="companyPhoneNumber">
+                                        <label for="companyPhoneNumber"
+                                        class="form-label">{{
+                                        "Home.Phone Number" | translate
+                                        }}</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="mb-3 email floating-form">
+                                    <input id="email" type="email"
+                                        class="form-control form-control-lg"
+                                        placeholder=" "
+                                        [(ngModel)]="userdata.email"
+                                        name="email">
+                                        <label for="email" class="form-label">{{
+                                            "Home.Email" | translate }}</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12">
+                            <div class="company-details my-5">
+                                <div class="company-title">
+                                    <h4>Company Information</h4>
+                                </div>
+                                <div class="company-img">
+                                    <img src={{UserProfileData.companyLogo}}
+                                    class="mt-3 profile-user ms-3 mb-2">
+                                </div>
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <div class="mb-3 company floating-form">
+                                                <input id="companyName" type="text"
+                                                    class="form-control form-control-lg"
+                                                    placeholder=" "
+                                                    [(ngModel)]="UserProfileData.companyName"
+                                                    name="companyName">
+                                                    <label for="companyName"
+                                                    class="form-label">{{
+                                                    "Home.Company Name" | translate
+                                                    }}</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="mb-3 bio floating-form">
+                                                <input id="companyBio" type="text"
+                                                    class="form-control form-control-lg"
+                                                    placeholder=" "
+                                                    [(ngModel)]="UserProfileData.companyBio"
+                                                    name="companyBio">
+                                                    <label for="companyBio"
+                                                    class="form-label">{{
+                                                    "Home.Company Bio" | translate
+                                                    }}</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="mb-3 bio floating-form">
+                                                <input id="companyPhoneNumber" type="text"
+                                                    class="form-control form-control-lg"
+                                                    placeholder=" "
+                                                    [(ngModel)]="UserProfileData.companyPhoneNumber"
+                                                    name="companyPhoneNumber">
+                                                    <label for="companyPhoneNumber"
+                                                    class="form-label">{{
+                                                    "Company PhoneNumber " | translate
+                                                    }}</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="mb-3 bio floating-form">
+                                                <input id="companyAddress" type="text"
+                                                    class="form-control form-control-lg"
+                                                    placeholder=" "
+                                                    [(ngModel)]="UserProfileData.companyAddress"
+                                                    name="companyAddress">
+                                                    <label for="companyAddress"
+                                                    class="form-label">{{
+                                                    "Company Address " | translate
+                                                    }}</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="sub-btn">
+                                <button class="btn">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+           
+            
         </div>
     </div>
 </section>

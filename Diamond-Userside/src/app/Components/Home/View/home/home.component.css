@@ -59,34 +59,30 @@ grown-banner {
 
 
 /* lab grown start */
+.rough{
+    margin: 70px 0;
+}
 .lab{
     margin: 70px 0;
 }
-.title{
-    position: relative;
+.rough .card{
+    border: 1px solid #000;
 }
-.title::after{
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50% , -50%);
-    width: 15%;
-    border: 2px solid #FF8C00;
+.lab-title h2{
+    font-family: var(--fonts);
+    font-size: 32px;
+    font-weight: 600;
 }
 .grown-banner .card{
     border: 0;
     box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.45);
 }
 .price h5{
-    color: #FF8C00;
+    color: rgba(176, 176, 176, 1);
 }
-.lab-product .card{
+.labgrown .card{
     background-color: #FAFAFA;
-    /* box-shadow: none; */
-    /* border: 2px solid #FF8C00;
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px; */
+    border: 1px solid #000;
 }
  
 .dots{
@@ -106,10 +102,15 @@ grown-banner {
 .piece p {
     margin-right: 10px;
     width: 40%; 
+    font-family: var(--fonts);
+    font-weight: 600;
   }
 
   .piece h6 {
     margin-top: 3px;
+    color: rgba(255, 140, 0, 1);
+    font-family: var(--fonts);
+    font-weight: 600;
 }
 
 .dot {
