@@ -141,3 +141,14 @@
   .sub-btn{
     text-align: end;
   }
+  .person-img {
+    position: relative;
+  }
+  .edit-btn{
+    position: absolute;
+    bottom: 0;
+    left: 7%;
+  }
+  .company-img{
+    position: relative;
+  }

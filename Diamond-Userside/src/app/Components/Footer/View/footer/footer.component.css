@@ -1,7 +1,7 @@
 /* footer start */
 .footer{
     /* background-image: url(../../../../assets/Img/slider/footer.png); */
-    background-image: url(../../../../../assets/Img/slider/footer.png);
+    background:#000;
     background-size: cover;
     background-position: center center;
     position: relative;
@@ -10,9 +10,13 @@
 .overlay {
     position: relative;
 }
+.footer-logo p{
+    font-family: var(--theme-fonts);
+}
 
 ul li{
     list-style: none;
+    font-family: var(--theme-fonts);
 }
 
 .footer::before {
@@ -27,6 +31,11 @@ ul li{
 }
 .main-link h4{
     color: #FF8C00;
+    font-family: var(--theme-fonts);
+}
+.download-title h4{
+    color: #FF8C00;
+    font-family: var(--theme-fonts);
 }
 .copy{
     position: relative;

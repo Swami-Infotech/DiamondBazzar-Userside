@@ -124,7 +124,7 @@
                                 <!-- Brokerage start -->
                                 <div class="col-lg-12">
                                     <div class="my-4 floating-form">
-                                        <input type="text" placeholder="0" class="form-control" [(ngModel)]="Brokerage" id="Brokerage" name="Brokerage" (ngModelChange)="calculateBrokerageAmount()">
+                                        <input type="text" placeholder="0" class="form-control form-control-lg" [(ngModel)]="Brokerage" id="Brokerage" name="Brokerage" (ngModelChange)="calculateBrokerageAmount()">
                                         <label for="" class="form-label">{{ "Home.Brokerage %" | translate }}</label>
                                     </div>
                                 </div>
@@ -135,14 +135,14 @@
                                        
                                         <div class="brokerage-amount">
                                             <div class="card py-2" style="border:1px solid #FF8C00;display: flex;flex-direction: row;align-items: center;justify-content: space-between;">
-                                                <h6>{{ "brokerageAmount" | translate }} </h6>
+                                                <h6 class="pt-1">{{ "BrokerageAmount" | translate }} </h6>
                                                 <span>:</span>
                                                 <h6>{{OPcurrency}} {{ brokerageAmount }}</h6>
                                             </div>
                                         </div>
                                         <div class="Total-amount">
                                             <div class="card py-2" style="border:1px solid #FF8C00;display: flex;flex-direction: row;align-items: center;justify-content: space-between;">
-                                                <h6>{{ "NetAmount" | translate }} </h6>
+                                                <h6 class="pt-1">{{ "NetAmount" | translate }} </h6>
                                                 <span>:</span>
                                                 <h6>{{OPcurrency}} {{ NetAmount }}</h6>
                                             </div>

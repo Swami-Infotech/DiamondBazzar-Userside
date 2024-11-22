@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
   selectedCategorys: DiamondCategory = DiamondCategory.Natural;
 
 
-  selectedSubCategory: SubDiamondType = SubDiamondType.Polish;
+  // selectedSubCategory: SubDiamondType = SubDiamondType.Polish;
   selectedSubCategorys: SubDiamondType = SubDiamondType.Rough;
   selectedposttype : PostTypeSelection = PostTypeSelection.Post;
 
@@ -88,6 +88,8 @@ export class HomeComponent implements OnInit {
   nautral:any;
   naturlrough:any
 
+  
+  
   getdashboard(id:any){
     sessionStorage.getItem('userid');
     this.service.getwebdashboard(id).subscribe(
@@ -126,12 +128,12 @@ export class HomeComponent implements OnInit {
     // Initialize enums based on sectionId
     switch (sectionId) {
       case 0:
-        // Lab Grown Polish
-        postType = PostTypeSelection.Post;
-        mainCategory = DiamondCategory.LabGrown;
-        subCategory = SubDiamondType.Polish;
-        console.log('Lab Grown Polish');
-        break;
+        // // Lab Grown Polish
+        // postType = PostTypeSelection.Post;
+        // mainCategory = DiamondCategory.LabGrown;
+        // subCategory = SubDiamondType.Polish;
+        // console.log('Lab Grown Polish');
+        // break;
       case 1:
         // Lab Grown Rough
         postType = PostTypeSelection.Post;
@@ -140,12 +142,12 @@ export class HomeComponent implements OnInit {
         console.log('Lab Grown Rough');
         break;
       case 2:
-        // Natural Polish
-        postType = PostTypeSelection.Post;
-        mainCategory = DiamondCategory.Natural;
-        subCategory = SubDiamondType.Polish;
-        console.log('Natural Polish');
-        break;
+        // // Natural Polish
+        // postType = PostTypeSelection.Post;
+        // mainCategory = DiamondCategory.Natural;
+        // subCategory = SubDiamondType.Polish;
+        // console.log('Natural Polish');
+        // break;
       case 3:
         // Natural Rough
         postType = PostTypeSelection.Post;

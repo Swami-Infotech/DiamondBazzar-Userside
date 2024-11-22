@@ -165,6 +165,31 @@ height: calc(100% - 73px);
     text-align: center;
   }
 
+  #otp-input-0{
+    width: 7%; 
+    margin: 10px 9px; 
+    border-radius: 15px; 
+    padding: 14px 15px;
+  }
+  #otp-input-1{
+    width: 7%;
+     margin: 10px 9px;
+      border-radius: 15px; 
+      padding: 14px 15px;
+  }
+  #otp-input-2{
+    width: 7%;
+    margin: 10px 9px;
+     border-radius: 15px; 
+     padding: 14px 15px;
+  }
+  #otp-input-3{
+    width: 7%;
+    margin: 10px 9px;
+     border-radius: 15px; 
+     padding: 14px 15px;
+  }
+
 
   
   .helper-text {
@@ -172,6 +197,93 @@ height: calc(100% - 73px);
     color: #555;
     margin-top: 10px;
   }
+
+  @media (max-width:1024px) {
+    .login-img {
+      background-image: url(../../../../../assets/NewImage/login/Login.png);
+      background-size: cover;
+      height: 100vh;
+      width: 90vh;
+  }
+    #otp-input-0 {
+      width: 13%;
+      margin: 10px 9px;
+      border-radius: 11px;
+      padding: 13px 13px;
+  }
+    #otp-input-1 {
+      width: 13%;
+      margin: 10px 9px;
+      border-radius: 11px;
+      padding: 13px 13px;
+  }
+    #otp-input-2 {
+      width: 13%;
+      margin: 10px 9px;
+      border-radius: 11px;
+      padding: 13px 13px;
+    }
+    #otp-input-3 {
+      width: 13%;
+      margin: 10px 9px;
+      border-radius: 11px;
+      padding: 13px 13px;
+    }
+  }
+
+  @media (max-width:768px) {
+    .login-img {
+        background-image: url(../../../../../assets/NewImage/login/Login.png);
+        background-size: cover;
+        height: 100vh;
+        width: 66vh;
+    }
+    .signup-btn:after {
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #000;
+        left: 108%;
+        top: 50%;
+        position: absolute;
+    }
+    .login-btn {
+        background-color: #000;
+        width: 50%;
+        margin: 25px 27%;
+        padding: 5px 0;
+        border-radius: 50px;
+        text-align: center;
+    }
+    .signup p {
+        margin: 0 5%;
+        font-weight: 600;
+    }
+    #otp-input-0 {
+      width: 13%;
+      margin: 10px 9px;
+      border-radius: 11px;
+      padding: 13px 13px;
+  }
+    #otp-input-1 {
+      width: 13%;
+      margin: 10px 9px;
+      border-radius: 11px;
+      padding: 13px 13px;
+  }
+    #otp-input-2 {
+      width: 13%;
+      margin: 10px 9px;
+      border-radius: 11px;
+      padding: 13px 13px;
+    }
+    #otp-input-3 {
+      width: 13%;
+      margin: 10px 9px;
+      border-radius: 11px;
+      padding: 13px 13px;
+    }
+}
 
 @media (max-width: 450px) {
 .h-custom {

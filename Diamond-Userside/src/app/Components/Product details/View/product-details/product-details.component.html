@@ -10,7 +10,7 @@
                 class="carousel-item" 
                 *ngFor="let d of attachments; let i = index" 
                 [ngClass]="{'active': i === 0}">
-                <img  [src]="d.postAttachmentURL" class="d-block w-100" alt="...">
+                <img  [src]="d.postAttachmentURL" class="d-block" alt="...">
               </div>
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -79,6 +79,7 @@
                   <div class="col-lg-6">
                     <div class="input-container floating-form">
                       <input
+                      readonly
                         type="text"
                         id="username"
                         class="form-control"
@@ -92,6 +93,7 @@
                   <div class="col-lg-6">
                     <div class="input-container floating-form">
                       <input
+                      readonly
                         type="text"
                         id="companyname"
                         class="form-control"
@@ -105,6 +107,7 @@
                   <div class="col-lg-12">
                     <div class="input-container floating-form mt-5">
                       <input
+                      readonly
                         type="text"
                         id="address"
                         class="form-control"
@@ -136,10 +139,10 @@
               <div class="message my-5">
                 <div class="call-btn d-flex flex-wrap align-items-center">
                   <button class="btn">
-                    <i class="bi bi-send text-white"></i>
+                    <i class="bi bi-whatsapp text-white"></i>
                   </button>
                   <div class="titles">
-                    <h5 class="text-white">Message</h5>
+                    <h5 class="text-white">Whatsapp</h5>
                   </div>
                 </div>
               </div>

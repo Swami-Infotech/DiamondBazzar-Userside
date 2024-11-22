@@ -13,7 +13,6 @@ export enum DiamondCategory{
 }
 export enum SubDiamondType{
     Rough = 0, // BD 1
-    Polish = 1,
     All = 2
 }
 

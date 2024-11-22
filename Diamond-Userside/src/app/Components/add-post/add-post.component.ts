@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { deflate } from 'zlib';
 import { AddPostService } from './Service/add-post.service';
-import { log } from 'console';
+import { error, log } from 'console';
 import { CommonModule } from '@angular/common';
 import { NavComponent } from "../Nav/view/nav/nav.component";
 import { FooterComponent } from "../Footer/View/footer/footer.component";
+import { FileType } from './modal/addpost';
+import { response } from 'express';
+import { ToastrNotificationService } from '../Common/toastr-notification.service';
 
 @Component({
   selector: 'app-add-post',
@@ -22,10 +25,46 @@ export class AddPostComponent implements OnInit {
   SubCatDISP!: any;
   PostTypeDISP!: any;
 
-  constructor(private service : AddPostService){}
+
+
+  selectedFile: File | null = null;
+
+  message: string = '';
+
+  imagePreview: string | null = null;
+
+  
+
+
+
+  constructor(private service : AddPostService,private toast:ToastrNotificationService){}
 
   ngOnInit(): void {
     this.FetchType();
+  }
+
+  currentPage: number = 1;  
+  totalPages: number = 3;   
+  pages: number[] = [1, 2, 3]; 
+
+  selectPage(page: number): void {
+    if (page <= this.totalPages && page !== this.currentPage) {
+      this.currentPage = page;
+    }
+  }
+
+  // Method to go to the next page
+  nextPage(): void {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+      
+    }
+  }
+
+  prePage(){
+    if(this.currentPage > 1){
+      this.currentPage--;
+    }
   }
  
   FetchType(){
@@ -68,6 +107,9 @@ export class AddPostComponent implements OnInit {
    }
 
   }
+
+
+
 
 
   ExportLink :any = '';
@@ -120,4 +162,39 @@ export class AddPostComponent implements OnInit {
     }
     }
 
+
+    onFileSelected(event: any): void {
+      this.selectedFile = event.target.files[0]; // Get the first file selected
+  
+      if (this.selectedFile) {
+        this.message = ''; // Clear any previous messages
+      }
+    }
+
+    file:any;
+
+
+    uploadFile(){
+     if(this.selectedFile){
+      const file = this.selectedFile;
+      const formData = new FormData();
+      formData.append('formfile',file);
+
+      const fileType = FileType.PostAttachment;
+
+      this.service.Uploadmedia(formData,fileType).subscribe(
+        (response:any) =>{
+          if(response.status === true){
+            this.imagePreview = response.data
+          }else{
+            
+          }
+        },
+        (error) =>{
+          console.error("uoloda media error",error);
+        }
+      )
+     }
+      }
+ 
 }

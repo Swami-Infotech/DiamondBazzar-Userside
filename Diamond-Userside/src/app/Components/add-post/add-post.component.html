@@ -4,13 +4,100 @@
 <div class="content">
 
     <div class="container mt-5">
+      <div class="col-md-12">
+        <p class="lead">
+           <strong>{{ MainCatDISP }}</strong> <strong>{{ PostTypeDISP }}</strong>
+        </p>
+      </div>
+      <div class="col-lg-12 col-md-12 col-sm-6">
+        <div class="page-number d-flex align-items-center justify-content-between">
+          <div class="page1" *ngFor="let page of pages">
+            <h5 (click)="selectPage(page)" [ngClass]="{'active': currentPage === page}">{{ page }}</h5>
+          </div>
+        </div>
+        
+
+        <div class="page-content">
+          <div *ngIf="currentPage === 1">
+            <div class="row">
+              <div class="col-lg-5">
+                <div class="download-img">
+                  <img src="../../../assets/NewImage/login/Download-amico 1.png" class="img-fluid" alt="">
+                </div>
+              </div>
+              <div class="col-lg-7">
+                  <div class="download-btn">
+                    <button class="btn btn-lg" (click)="ExportCategoriesToExcel()">
+                      <i class="bi bi-download"></i> DOWNLOAD
+                    </button>
+                    <div class="content">
+                      <h4>Note:</h4>
+                      <li>Click On Download to Download The Excel File.</li>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="currentPage === 2">
+            <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-6">
+                <div class="uploda-content text-center my-5">
+                  <h4>Upload Image</h4>
+                  <li>Upload Image And Get A Link</li>
+                </div>
+                <div class="upload-btn text-center">
+                  <input type="file" (change)="onFileSelected($event)" accept="image/*"  #fileInput>
+                  <button class="btn btn-success btn-lg" (click)="uploadFile()">
+                    <i class="bi bi-upload"></i> UPLOAD
+                  </button>
+                </div>
+
+                <div class="card" *ngIf="imagePreview" style="width: 20%; margin: 15px auto;">
+                    <img [src]="imagePreview" alt="Selected Image" class="card-img-top" />
+                </div>
+              </div>
+            </div>
+           
+          </div>
+          <div *ngIf="currentPage === 3">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="upload-img">
+                  <img src="../../../assets/NewImage/login/Video upload-pana 1.png" alt="" class="img-fluid">
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 col-md-12">
+                <div class="file-input text-center">
+                  <input type="file" class="form-control-file" (change)="onFileChange($event)" id="fileInput">
+                  <button class="btn btn-success btn-lg" (click)="AddPostsWithMetadataFromExcel()">
+                    <i class="bi bi-upload"></i> UPLOAD
+                  </button>
+                </div>
+                <div class="uploda-cont mt-5">
+                  <h4>Note:</h4>
+                  <li>Select An Excel File Only To Upload</li>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="pre-btn">
+              <button class="btn btn-success px-5 text-white" (click)="prePage()" *ngIf="currentPage > 1">Previous</button>
+            </div>
+          </div>
+
+          <div class="next-btn text-end">
+            <button class="btn btn-success px-5" (click)="nextPage()" [disabled]="currentPage === totalPages">Next</button>
+          </div>
+        </div>
+
+
+
+      </div>
         <!-- Selected Categories and Post Types -->
         <div class="row">
-          <div class="col-md-12 text-center">
-            <p class="lead">
-              You Have Selected: <strong>{{ MainCatDISP }}</strong> <strong>{{ PostTypeDISP }}</strong>
-            </p>
-          </div>
+          
         </div>
       
         <!-- Download Button -->
@@ -23,17 +110,13 @@
         <!-- File Upload Section -->
         <div class="row justify-content-center mb-3">
             <div class="col-md-3 text-center">
-                <button class="btn btn-primary btn-lg" (click)="ExportCategoriesToExcel()">
-                    <i class="bi bi-download"></i> DOWNLOAD
-                  </button>
+               
               </div>
             <div class="col-md-6 text-center">
-            <input type="file" class="form-control-file" (change)="onFileChange($event)" id="fileInput">
+           
           </div>
           <div class="col-md-3 text-center">
-            <button class="btn btn-success btn-lg" (click)="AddPostsWithMetadataFromExcel()">
-              <i class="bi bi-upload"></i> UPLOAD
-            </button>
+           
           </div>
         </div>
       

@@ -12,6 +12,6 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './footer.component.css'
 })
 export class FooterComponent {
-  
+  userid!:number;
 
 }

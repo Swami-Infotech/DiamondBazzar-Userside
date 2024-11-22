@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-12">
                 <div class="footer-logo my-5">
-                    <img src="../../../../assets/Img/logo/DimaondBazzarlogo (1).png" alt="DimaondBazzarlogo" width="150">
+                    <img src="../../../../../assets/NewImage/login/DimaondBazzarlogo.png" alt="DimaondBazzarlogo" width="150">
                     <p class="text-white my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed quisquam officiis asperiores.</p>
                 </div>
             </div>
@@ -17,16 +17,25 @@
                     <div class="link-list">
                         <ul class="navbar-nav  mb-2 mb-lg-0">
                             <li class="text-white nav-item">
-                                <a class="nav-link" href="#">{{ "Home.Home" | translate }}</a>
+                                <a class="nav-link" aria-current="page" routerLinkActive="activebutton">{{
+                                    "Home.Home" | translate }}</a>
                             </li>
                             <li class="text-white nav-item">
-                                <a class="nav-link" href="#">{{ "Home.About Us" | translate }}</a> 
+                                <a class="nav-link" routerLink="/auction" routerLinkActive="activebutton">
+                                    {{ "Home.Auction" | translate }}</a>
                             </li>
                             <li class="text-white nav-item">
-                                <a class="nav-link" href="#">{{ "Home.Features" | translate }}</a>
+                                <a class="nav-link"   data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                                    Add Diamond</a>
                             </li>
                             <li class="text-white nav-item">
-                                <a class="nav-link" href="#">{{ "Home.screens" | translate }}</a></li>
+                                <a class="nav-link" routerLink="/MyDiamond" >
+                                    My Diamond</a>
+                            </li>
+                            <li class="text-white nav-item">
+                                <a class="nav-link" routerLink="/Calculator">
+                                    {{ "Home.Calculator" | translate }}</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -56,7 +65,10 @@
                
             </div>
             <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="socail mt-5 d-flex">
+                <div class="download-title mt-5">
+                    <h4>Download App</h4>
+                </div>
+                <div class="socail">
                     <a href="">
                         <button class="btn">
                             <img src="../../../../assets/Img/slider/google pay.png" class="img-fluid" alt="google pay">

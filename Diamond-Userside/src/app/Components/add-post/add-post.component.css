@@ -14,3 +14,65 @@
 .content { 
      margin: 50px 0px;
 }
+
+.page1{
+  background-color: rgba(255, 140, 0, 1);
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+.page1 h5{
+  text-align: center;
+  margin: 10px;
+  color: #fff;
+  font-size: 26px;
+}
+
+.page-number .active {
+  background-color: rgba(255, 140, 0, 1);
+  color: white;
+}
+
+.page-number h5:not(.active) {
+  background-color: rgba(255, 140, 0, 1);
+  color: #fff;
+  opacity: 50%;
+}
+
+.page-number .page1, .page-number .page2, .page-number .page3 {
+  display: inline-block;
+}
+.download-btn .btn{
+  background-color: black;
+  color: #fff;
+  padding: 10px 35px;
+  border-radius: 50px;
+  margin-top: 15%;
+}
+.content h4{
+  font-family: var(--fonts);
+  font-weight: 800;
+}
+.content li{
+  font-family: var(--fonts);
+  font-weight: 700;
+  font-size: 20px;
+}
+.lead {
+  font-family: var(--fonts);
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.file-input{
+  margin-top: 25%;
+}
+.uploda-cont h4{
+  font-family: var(--fonts);
+  font-weight: 800;
+}
+.uploda-cont li{
+  font-family: var(--fonts);
+  font-size: 20px;
+  font-weight: 700;
+}

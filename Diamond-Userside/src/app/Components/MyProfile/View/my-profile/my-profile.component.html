@@ -179,6 +179,12 @@
                         <img
                         src={{userdata.profilePhoto}}
                         class="profile-user mt-4 ms-3 mb-2">
+
+                        <div class="edit-btn">
+                            <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#updateperson">
+                                <i class="bi bi-pencil-square fs-5"></i>
+                              </button>
+                        </div>
                     </div>
                     <form (ngSubmit)="OnChangeDataAdd()">
                         <div class="row">
@@ -242,6 +248,11 @@
                                 <div class="company-img">
                                     <img src={{UserProfileData.companyLogo}}
                                     class="mt-3 profile-user ms-3 mb-2">
+                                    <div class="edit-btn">
+                                        <button class="btn" type="button" data-bs-toggle="modal" data-bs-target="#updatecompany">
+                                            <i class="bi bi-pencil-square fs-5"></i>
+                                          </button>
+                                    </div>
                                 </div>
                                     <div class="row">
                                         <div class="col-lg-4">
@@ -307,6 +318,59 @@
                     </form>
                 </div>
             </div>
+
+
+
+            <!-- updateimage modal start -->
+            <div class="modal fade" id="updateperson" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">Update PersonImage</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+                            <label for="">Update Image</label>
+                            <input type="file" [(ngModel)]="userdata.profilePhoto" (change)="onFileSelectedProfile($event)">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" (click) ="OnChangeDataAdd()" data-bs-dismiss="modal">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <!-- updateimage modal end -->
+
+
+                   <!-- updatecompimage modal start -->
+                   <div class="modal fade" id="updatecompany" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h1 class="modal-title fs-5" id="exampleModalLabel">Update Company Image</h1>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="mb-3">
+                                <label for="">Update Image</label>
+                                <input type="file" [(ngModel)]="userdata.profilePhoto" (change)=" onFileSelectedLogo($event)">
+                            </div>
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary" (click) ="OnChangeDataAdd()" data-bs-dismiss="modal">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <!-- updatecompimage modal end -->
 
            
             

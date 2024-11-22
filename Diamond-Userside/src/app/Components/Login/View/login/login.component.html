@@ -21,9 +21,14 @@
 
 
                             <div data-mdb-input-init class="floating-form mb-3" style="width: 80%; margin: 0 auto;">
-                                <input type="password" id="password" class="form-control form-control-lg"
+                                <input [type]="isPasswordVisible ? 'text' : 'password'" id="password" class="form-control form-control-lg"
                                 placeholder=" " [(ngModel)]="user.password" name="password" #password="ngModel" required />
                                 <label class="form-label" for="password">Password</label>
+                                <div class="eye-icon">
+                                    <button class="btn" (click)="togglePassword()">
+                                        <i class="bi bi-eye-fill" [ngClass]="isPasswordVisible ? 'bi-eye-slash-fill' : 'bi-eye-fill'"></i>
+                                    </button>
+                                </div>
                             </div>
                             <div class="forget-pass text-end">
                                 <h6 routerLink="/forgetpass">Forget Password?</h6>

@@ -3,11 +3,15 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 
 import { HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/internal/Observable';
+import { FileType } from '../modal/addpost';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddPostService {
+
+
 
   constructor(private http : HttpClient) { }
 
@@ -35,6 +39,11 @@ export class AddPostService {
   //   return this.http.post(`${this.baseURL}Post/AddPostsWithMetadataFromExcel?UserID=${UserID}&DiamondCategory=${DiamondCategory}&SubCategory=${SubCategory}&PostType=${PostType}`,data);
     
   // }
+
+  Uploadmedia(data: FormData, fileType: FileType): Observable<any> {
+    return this.http.post(`${this.baseURL}App/UploadMediaV2?fileType=${fileType}`, data);
+  }
+  
 }
 
 

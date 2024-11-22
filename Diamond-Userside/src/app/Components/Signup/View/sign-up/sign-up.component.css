@@ -119,10 +119,105 @@ height: calc(100% - 73px);
     font-weight: 500;
 }
 
+@media (max-width:1440px) {
+  .login-form {
+    margin: 0px 0;
+}
+.login-img {
+  background-image: url(../../../../../assets/NewImage/login/Login.png);
+  background-size: cover;
+  height: 115vh;
+  width: 86vh;
+}
+}
 
+@media (max-width:1024px) {
+  .login-img {
+    background-image: url(../../../../../assets/NewImage/login/Login.png);
+    background-size: cover;
+    height: 112vh;
+    width: 86vh;
+}
+.login-form {
+  margin: -20px 0;
+}
+.signup-btn:before {
+  content: "";
+  width: 30%;
+  height: 2px;
+  background: #000;
+  right: 58%;
+  top: 50%;
+  position: absolute;
+}
+.signup-btn:after {
+  content: "";
+  width: 34%;
+  height: 2px;
+  background: #000;
+  left: 58%;
+  top: 50%;
+  position: absolute;
+}
+.sign-btn .btn {
+  background-color: #000;
+  color: #fff;
+  padding: 1% 9%;
+  width: 45%;
+  margin: 10px 0 0 30%;
+  border-radius: 50px;
+  font-size: 22px;
+}
+}
 
+@media (max-width:768px) {
+  .login-img {
+      background-image: url(../../../../../assets/NewImage/login/Login.png);
+      background-size: cover;
+      height: 100vh;
+      width: 66vh;
+  }
+  .signup-btn:before {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #000;
+    right: 60%;
+    top: 50%;
+    position: absolute;
+}
+  .signup-btn:after {
+    content: "";
+    width: 31%;
+    height: 2px;
+    background: #000;
+    left: 60%;
+    top: 50%;
+    position: absolute;
+}
+.sign-btn .btn {
+  background-color: #000;
+  color: #fff;
+  padding: 1% 7%;
+  width: 45%;
+  margin: 10px 0 0 30%;
+  border-radius: 50px;
+  font-size: 22px;
+}
+.title h2 {
+  font-weight: 700;
+  font-size: 34px;
+  margin: 5% 6%;
+}
+.login-form {
+  margin: -22px 0;
+}
+}
 @media (max-width: 450px) {
 .h-custom {
 height: 100%;
+}
+.login-form {
+  margin: 15px 0;
 }
 }

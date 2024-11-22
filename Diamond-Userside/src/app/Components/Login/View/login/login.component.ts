@@ -7,22 +7,29 @@ import { Router, RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { ToastrNotificationService } from '../../../Common/toastr-notification.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, RouterLink,ToastrModule ],
+  imports: [FormsModule, RouterLink,ToastrModule,CommonModule ],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
   user = new User();
+  isPasswordVisible: boolean = false;
 
   constructor(
     private service: LoginService, 
     private router: Router, 
     private toastr: ToastrNotificationService
   ) {}
+
+
+  togglePassword(){
+    this.isPasswordVisible = !this.isPasswordVisible;
+  }
 
   OnLogin() {
    
@@ -38,7 +45,7 @@ export class LoginComponent {
           this.router.navigate(['/home',userid]);
          
 
-          this.toastr.showSuccess('response.message')
+          this.toastr.showSuccess(response.message);
         }
       },
       (error: any) => {
