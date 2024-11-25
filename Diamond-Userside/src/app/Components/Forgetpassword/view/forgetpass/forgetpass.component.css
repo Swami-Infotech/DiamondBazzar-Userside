@@ -182,6 +182,13 @@ height: 100%;
     font-size: 31px;
     margin: 0 5%;
 }
+.login-img {
+    background-image: url(../../../../../assets/NewImage/login/Login.png);
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+}
+
 }
 
 

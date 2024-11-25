@@ -220,4 +220,10 @@ height: 100%;
 .login-form {
   margin: 15px 0;
 }
+.login-img {
+  background-image: url(../../../../../assets/NewImage/login/Login.png);
+  background-size: cover;
+  height: 70vh;
+  width: 100%;
+}
 }

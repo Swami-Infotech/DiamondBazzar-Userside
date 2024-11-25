@@ -1,61 +1,58 @@
 <app-nav></app-nav>
 <section class="products">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="title my-5 text-center">
-                    <h3>{{MC }} {{SC}} </h3> 
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="title my-5 text-center">
+          <h3>{{MC }} {{SC}} </h3>
+        </div>
+      </div>
+
+
+      <section class="lab">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+              <div class="grown-banner">
+                <div class="lab-product-title d-flex flex-wrap align-items-center justify-content-between">
                 </div>
-            </div>
-
-
-            <section class="lab">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12">
-                      <div class="grown-banner">
-                        <div class="mt-4 px-5">
-                          <div
-                            class="lab-product-title d-flex flex-wrap align-items-center justify-content-between"
-                          >
-                          </div>
+                <div class="row">
+                  <!-- labgrown polish data start -->
+                  <ng-container *ngFor="let item of mainss">
+                    <div class="col-lg-6">
+                      <div class="card">
+                        <div class="lab-product py-2">
                           <div class="row">
-                            <!-- labgrown polish data start -->
-                            <ng-container *ngFor="let item of mainss">
-                              <div class="col-lg-6">
-                                <div class="card">
-                                  <div class="lab-product py-2">
-                                    <div class="row">
-                                      <div class="col-lg-5">
-                                        <div class="lab-img">
-                                          <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
-                                            <img [src]="item.postAttachmenturl" alt="labpro" style="width: 220px; height: 220px;" />
-                                          </button>
-                                        </div>
-                                      </div>
-                                      <div class="col-lg-7">
-                                        <div class="lab-details">
-                                          <div class="price">
-                                                   
-                                            <h5>{{ item.postMainData.highlightedText }}</h5>
-                                          </div>
-                              
-                                          <div *ngFor="let metaData of item.postMetaDatas">
-                                            <div class="piece d-flex flex-wrap justify-content-between">
-                                              <h6>{{ metaData.categoryName }}</h6>
-                                              <p class="meta-data-value" >{{ metaData.metaDataValue }}</p>
-                                              <div class="dot">
-                                                <h5>:</h5>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
+                            <div class="col-lg-5">
+                              <div class="lab-imgs">
+                                <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
+                                  <img [src]="item.postAttachmenturl" alt="labpro"/>
+                                </button>
+                              </div>
+                            </div>
+                            <div class="col-lg-7">
+                              <div class="lab-details">
+                                <div class="price">
+
+                                  <h5>{{ item.postMainData.highlightedText }}</h5>
+                                </div>
+
+                                <div *ngFor="let metaData of item.postMetaDatas">
+                                  <div class="piece d-flex flex-wrap justify-content-between">
+                                    <h6>{{ metaData.categoryName }}</h6>
+                                    <p class="meta-data-value">{{ metaData.metaDataValue }}</p>
+                                    <div class="dot">
+                                      <h5>:</h5>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                              <!-- <div class="col-lg-3 col-md-6 col-sm-12">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- <div class="col-lg-3 col-md-6 col-sm-12">
                                 <div class="lab-product"> 
                                   <div class="card">
                                     <div class="pro-img">
@@ -85,27 +82,26 @@
                                   </div>
                                 </div>
                               </div> -->
-                            </ng-container>
-                            
-                          <!-- labgrown polish data end -->
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  </ng-container>
+
+                  <!-- labgrown polish data end -->
                 </div>
-
-
-                <div class="pagination">
-                    <button (click)="onPageChange(pageNumber - 1)" [disabled]="pageNumber === 0">Previous</button>
-                    <span>Page {{pageNumber + 1}}</span>
-                    <button (click)="onPageChange(pageNumber + 1)" [disabled]="isNextDisabled()">Next</button>
-                  </div>
-              </section>
-
-             
+              </div>
+            </div>
+          </div>
         </div>
+
+
+        <div class="pagination">
+          <button (click)="onPageChange(pageNumber - 1)" [disabled]="pageNumber === 0">Previous</button>
+          <span>Page {{pageNumber + 1}}</span>
+          <button (click)="onPageChange(pageNumber + 1)" [disabled]="isNextDisabled()">Next</button>
+        </div>
+      </section>
+
+
     </div>
+  </div>
 </section>
 
 <!-- <app-footer></app-footer> -->

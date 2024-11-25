@@ -190,7 +190,7 @@ export class ProductDetailsComponent implements OnInit {
   }
 
 
-  customOptions3: OwlOptions = {
+  customeOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
     touchDrag: true,

@@ -295,6 +295,7 @@ a:active {
         align-items: center;
     }
 
+
     .navbar {
         background-color: #000;
         margin: 0 0 0px;
@@ -307,6 +308,10 @@ a:active {
 
     .profile {
         padding: 0 0 0 12px;
+    }
+
+    .modal-content {
+        width: 100vw;
     }
 }
 

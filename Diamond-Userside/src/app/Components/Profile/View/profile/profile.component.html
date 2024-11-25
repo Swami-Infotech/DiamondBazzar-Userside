@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
       <div class="profile-title text-center">
@@ -18,17 +18,6 @@
               </div>
             </div>
             <div class="col-lg-9 col-md-9 col-sm-12">
-              <!-- <div class="profile-process my-5 d-flex align-items-center justify-content-between">
-                                <div class="process-img">
-                                    <img src="../../../../assets/Img/profile/1.png" alt="">
-                                </div>
-                                <div class="process-img2">
-                                    <img src="../../../../assets/Img/profile/2.png" alt="">
-                                </div>
-                                <div class="process-img3">
-                                    <img src="../../../../assets/Img/profile/3.png" alt="">
-                                </div>
-                            </div> -->
               <div class="profile-form mx-5">
                 <form (ngSubmit)="OnChangeDataAdd()">
                   <div class="row">
@@ -176,11 +165,6 @@
                       </div>
                     </div>
                   </div>
-                  <!-- <div class="next-btn">
-                    <a routerLink="/preference">
-                      <button class="btn px-4">Next</button>
-                    </a>
-                  </div> -->
 
                   <div class="next-btn">
 
@@ -195,4 +179,152 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
+
+
+
+
+
+<section class="login-section">
+  <div class="container-fluid">
+      <div class="row d-flex justify-content-center">
+          <div class="col-md-6 col-lg-6">
+             <div class="login-img">
+              
+             </div>
+          </div>
+
+          <div class="col-md-6 col-lg-6">
+              <div class="login-form">
+                  <form>
+                      <div class="title">
+                          <h2 class="mb-5">Profile</h2>
+                      </div>
+                          <div data-mdb-input-init class="floating-form mb-4" style="width: 80%; margin: 0 auto;">
+                            <input
+                            type="file"
+                            id="Profileupload"
+                            class="form-control form-control-lg"
+                            (change)="onFileSelectedProfile($event)"
+                            placeholder="Profile image" />
+                              <label class="form-label" for="phonenumber">Profile
+                                Upload</label>
+                          </div>
+
+
+                          <div data-mdb-input-init class="floating-form mb-3" style="width: 80%; margin: 0 auto;">
+                            <input
+                            type="text"
+                            id="Companyname"
+                            class="form-control form-control-lg"
+                            placeholder=" "
+                            name="companyName"
+                            [(ngModel)]="userProfile.companyName" />
+                              <label class="form-label" for="companyname">Company Name</label>
+                          </div>
+
+                          <div class="floating-form my-3" style="width: 80%; margin: 0 auto;">
+                           
+                            <div class="input-container">
+                              <select
+                                class="form-select form-select-lg"
+                                aria-label="Default select example"
+                                (change)="onCategoryChange($event)">
+                                <option [value]="null" selected>Open this select
+                                  menu</option>
+                                <option *ngFor="let category of BusinessListData"
+                                  [value]="category.businessCategoryID">
+                                  {{ category.businessCategoryName }}
+                                </option>
+                              </select>
+                              <label for="businesscategory" class="form-label">Business
+                                Category</label>
+                            </div>
+                          </div>
+
+                          <div class="floating-form my-3" style="width: 80%; margin: 0 auto;">
+                            <div class="input-container">
+                              <input
+                                type="text"
+                                id="Companybio"
+                                class="form-control form-control-lg"
+                                placeholder="Company bio"
+                                name="companyBio"
+                                [(ngModel)]="userProfile.companyBio" />
+                                <label for="Companybio" class="form-label">Company
+                                  Bio</label>
+                            </div>
+                          </div>
+
+                          <div data-mdb-input-init class="floating-form my-3" style="width: 80%; margin: 0 auto;">
+                            <input
+                          type="file"
+                          id="logoupload"
+                          class="form-control form-control-lg"
+                          placeholder="upload image" 
+                          (change)="onFileSelectedLogo($event)"
+                          />
+                              <label class="form-label" for="companyname">upload Logo</label>
+                          </div>
+
+                          <div data-mdb-input-init class="floating-form my-3" style="width: 80%; margin: 0 auto;">
+                            <input
+                            type="text"
+                            id="officenumber"
+                            class="form-control form-control-lg"
+                            placeholder=" "
+                            name="offiecenunmber"
+                            [(ngModel)]="userProfile.companyPhoneNumber" />
+                              <label class="form-label" for="offiecenunmber">Office Number</label>
+                          </div>
+
+                          <div data-mdb-input-init class="floating-form my-3" style="width: 80%; margin: 0 auto;">
+                            <input
+                            type="text"
+                            id="companyaddress"
+                            class="form-control form-control-lg"
+                            placeholder=" "
+                            name="companyaddress"
+                            [(ngModel)]="userProfile.companyAddress" />
+                              <label class="form-label" for="companyAddress">Comopany Address</label>
+                          </div>
+
+
+                          <div class="para">
+                            <h4>Company Parameters Preference</h4>
+                          </div>
+
+                          <div class="floating-form my-3" style="width: 80%; margin: 0 auto;">
+                           
+                            <select
+                              class="form-select form-select-lg"
+                              aria-label="Default select example"
+                              (change)="onMainCategoryChange($event)">
+                              <option selected>Open this select menu</option>
+                              <option value="0">Natural</option>
+                              <option value="1">LabGrown</option>
+                              <option value="2">All</option>
+                            </select>
+                            <label for="businesscategory" class="form-label">Main
+                              Category</label>
+                          </div>
+                  </form>
+                  <div class="col-lg-12">
+                    <div class="next-btn text-center">
+                      <button type="submit" class="btn btn-success px-5 py-2 me-3" (click)="OnChangeDataAdd()">Submit</button>
+                    </div>
+                  </div>
+                 
+                   
+                 
+              </div>
+                
+          </div>
+      </div>
+  </div>
+</section>
+
+
+
+
+

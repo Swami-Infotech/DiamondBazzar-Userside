@@ -135,15 +135,6 @@
                         </div>
 
                         <div class="input-container mb-3 floating-form" style="width: 90%; margin: 0 auto;">
-                            <input type="number" id="phonenumber"
-                                class="form-control form-control-lg"
-                                placeholder=" "
-                                [(ngModel)]="user.phoneNumber" name="Phone Number"
-                                #phoneNumber="ngModel" required>
-                                <label for="phonenumber">phone Number</label>
-                        </div>
-
-                        <div class="input-container mb-3 floating-form" style="width: 90%; margin: 0 auto;">
                             <input [type]="isPasswordVisible ? 'text' : 'password'" id="password"
                                 class="form-control form-control-lg"
                                 placeholder=" "
@@ -168,7 +159,7 @@
                         </div>
 
                         <div class="sign-btn">
-                            <button class="btn">Sign Up</button>
+                            <button class="btn" (click)="OnLogin()">Sign Up</button>
                         </div>
                         <div class="account text-center mt-3">
                             <p>Alrerady have and 

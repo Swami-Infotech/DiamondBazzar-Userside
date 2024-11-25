@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12">
         <div class="title mt-3">
-          <h2 style="font-weight: bold;">favourites</h2>
+          <h2 style="font-weight: bold;">Favourites</h2>
         </div>
       </div>
       <div class="col-lg-12">
@@ -35,12 +35,11 @@
                     <div class="col-lg-5">
                       <div class="pro-img">
                         <div class="product-click" (click)="viewpostdetails(product.postMainData.postID)">
-                            <img [src]="product.postAttachmenturl" [alt]="product.name || 'Product Image'"
-                            style="width: 220px; height: 220px;" >
+                            <img [src]="product.postAttachmenturl" [alt]="product.name || 'Product Image'">
                         </div>
                       </div>
                     </div>
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 col-md-7 col-sm-12">
                       <div class="product-details px-4 py-3"
                       *ngIf="product.postMainData && product.postMetaDatas.length > 0">
                       <div class="price d-flex flex-wrap align-items-center justify-content-between"

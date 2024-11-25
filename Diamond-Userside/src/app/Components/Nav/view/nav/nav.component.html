@@ -30,7 +30,7 @@
           <a class="nav-link" aria-current="page" [routerLink]="['/home',userid]" routerLinkActive="activebutton">{{
             "Home.Home" | translate }}</a>
         </li>
-        <li class="nav-item pe-3">
+        <li class="nav-item pe-3" routerLinkActive="active">
           <a class="nav-link" routerLink="/auction" routerLinkActive="activebutton">
             {{ "Home.Auction" | translate }}</a>
         </li>
@@ -49,40 +49,6 @@
      
       </ul>
       <div class="icon d-flex flex-wrap align-items-center">
-
-
-        <!-- notification dropdown start -->
-        <div class="dropdown">
-          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <i class="bi bi-bell-fill"></i>
-          </button>
-          <ul class="dropdown-menu">
-            <ng-container *ngFor="let d of notification">
-              <div class="noti-title px-3 my-2">
-                <h6 class="text-dark">{{d.notificationTitle}}</h6>
-              </div>
-              <div class="notification px-3">
-                <div class="noti-iocn d-flex align-item-center">
-                  <i class="bi bi-bell-fill"></i>
-                  <div class="noti-cont">
-                    <p>{{d.notificationMessage}}</p>
-                    <h6>{{d.createdAt | date:'short'}}</h6>
-                  </div>
-                </div>
-                <!-- <div class="noti-iocn d-flex align-item-center">
-                <i class="bi bi-bell-fill"></i>
-                <div class="noti-cont">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  </p>
-                  <h6>10:20PM</h6>
-                </div>
-              </div> -->
-              </div>
-            </ng-container>
-          </ul>
-        </div>
-        <!-- notification dropdown End -->
 
         <!-- Wishlist icon start -->
         <a [routerLink]="['/Wishlist',userid]">
@@ -125,10 +91,10 @@
               <!-- subscription start -->
               <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
                 <div class="profile-iocn">
-                  <button class="btn d-flex flex-wrap align-items-center p-0" data-bs-toggle="modal"
-                    data-bs-target="#exampleModal1" type="button">
+                  <button class="btn d-flex flex-wrap align-items-center p-0"  type="button" data-bs-toggle="modal"
+                  data-bs-target="#notification">
                     <img src="../../../../../assets/NewImage/login/sub.png" alt="subscribe" width="40" />
-                    <h6 class="ms-3 m-0">Subscription</h6>
+                    <h6 class="ms-3 m-0">Notification</h6>
                   </button>
                 </div>
                 <div class="right-arrow me-3">
@@ -151,6 +117,22 @@
                 </div>
               </div>
               <!-- support end -->
+
+               <!-- terms start -->
+               <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
+                <div class="profile-iocn">
+                  <a href="https://diamondbazzar.in/terms" target="_blank">
+                  <button class="btn d-flex flex-wrap align-items-center p-0"  type="button">
+                    <img src="../../../../../assets/NewImage/login/terms.png" alt="customer-service" width="40" />
+                    <h6 class="ms-3 m-0">Terms</h6>
+                  </button>
+                </a>
+                </div>
+                <div class="right-arrow me-3">
+                  <img src="../../../../assets/Img/slider/right-arrow.png" alt="right-arrow" width="20" />
+                </div>
+              </div>
+              <!-- terms end -->
 
               <!-- logout start -->
               <div class="profiles mt-3 mx-2 d-flex align-items-center justify-content-between">
@@ -244,7 +226,7 @@
 <!-- support modal end -->
 
 <!-- subscripion modal start -->
-<section class="subss">
+<!-- <section class="subss">
   <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -301,66 +283,114 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- subscripion modal end -->
+
+
+<!-- notification modal start -->
+<div class="modal fade" id="notification" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Notification</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ng-container *ngFor="let d of notification">
+          <div class="noti-title px-3 my-2">
+            <h6 class="text-dark">{{d.notificationTitle}}</h6>
+          </div>
+          <div class="notification px-3">
+            <div class="noti-iocn d-flex align-item-center">
+              <i class="bi bi-bell-fill"></i>
+              <div class="noti-cont">
+                <p>{{d.notificationMessage}}</p>
+                <h6>{{d.createdAt | date:'short'}}</h6>
+              </div>
+            </div>
+            <!-- <div class="noti-iocn d-flex align-item-center">
+            <i class="bi bi-bell-fill"></i>
+            <div class="noti-cont">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              </p>
+              <h6>10:20PM</h6>
+            </div>
+          </div> -->
+          </div>
+        </ng-container>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- notification modal end -->
 
 
 
 <!-- post modal start -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Diamond Type Selection</h1>
-        <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-      </div>
-      <div class="modal-body">
-        <form>
-          <div>
-            <div id="mainDiamondType">
-              <div *ngFor="let type of mainDiamondTypes" class="text-center">
-                <button class="btn" (click)="onMainDiamondTypeChange(type.value)">{{ type.name }}</button>
-              </div>
-            </div>
+ <div class="row">
+  <div class="col-lg-12 col-md-12 col-sm-6">
+    <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Diamond Type Selection</h1>
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
-
-          <!-- Sub-Diamond Type Modal -->
-          <div class="modal fade" tabindex="-1" [ngClass]="{'show': showModal, 'fade': true}"
-            [style.display]="showModal ? 'block' : 'none'" aria-labelledby="subDiamondTypeModal"
-            aria-hidden="!showModal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="subDiamondTypeModal">Diamond Sub-Type Selection</h5>
-                  <button type="button"  class="btn-close" (click)="closeModal()"></button>
-                </div>
-                <div class="modal-body">
-                  <div *ngFor="let subType of subDiamondTypes"  class="text-center" id="subDiamondTypes">
-                    <button class="btn"(click)="fetchCategories(subType.value)">
-                      {{ subType.name }}
-                    </button>
+          <div class="modal-body">
+            <form>
+              <div>
+                <div id="mainDiamondType">
+                  <div *ngFor="let type of mainDiamondTypes" class="text-center">
+                    <button class="btn" (click)="onMainDiamondTypeChange(type.value)">{{ type.name }}</button>
                   </div>
                 </div>
               </div>
-            </div>
+    
+              <!-- Sub-Diamond Type Modal -->
+              <div class="modal fade" tabindex="-1" [ngClass]="{'show': showModal, 'fade': true}"
+                [style.display]="showModal ? 'block' : 'none'" aria-labelledby="subDiamondTypeModal"
+                aria-hidden="!showModal">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="subDiamondTypeModal">Diamond Sub-Type Selection</h5>
+                      <button type="button"  class="btn-close" (click)="closeModal()"></button>
+                    </div>
+                    <div class="modal-body">
+                      <div *ngFor="let subType of subDiamondTypes"  class="text-center" id="subDiamondTypes">
+                        <button class="btn"(click)="fetchCategories(subType.value)">
+                          {{ subType.name }}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+    
+    
+              <!-- Modal backdrop for the overlay effect -->
+              <div *ngIf="showModal" class="modal-backdrop fade show"></div>
+    
+    
+    
+    
+    
+    
+            </form>
+    
           </div>
-
-
-          <!-- Modal backdrop for the overlay effect -->
-          <div *ngIf="showModal" class="modal-backdrop fade show"></div>
-
-
-
-
-
-
-        </form>
-
+    
+        </div>
       </div>
-
     </div>
   </div>
-</div>
+ </div>
+
 <!-- post modal end -->
 
 

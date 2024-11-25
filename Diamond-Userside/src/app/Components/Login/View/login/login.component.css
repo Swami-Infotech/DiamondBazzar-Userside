@@ -191,6 +191,12 @@ height: calc(100% - 73px);
 .h-custom {
 height: 100%;
 }
+.login-img {
+    background-image: url(../../../../../assets/NewImage/login/Login.png);
+    background-size: cover;
+    height: 70vh;
+    width: 100%;
+}
 }
 
 

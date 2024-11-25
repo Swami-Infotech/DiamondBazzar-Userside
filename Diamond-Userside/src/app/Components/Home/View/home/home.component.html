@@ -26,7 +26,7 @@
       <!-- <div class="col-md-12"> -->
       <div class="slider-img text-center">
         <ng-container *ngIf="mQ.isActive == true">
-          <img [src]="mQ.sliderImage" class="w-100" alt="Carousel Image" style="height: 800px;">
+          <img [src]="mQ.sliderImage" class="w-100" alt="Carousel Image">
         </ng-container>
       </div>
       <!-- </div> -->
@@ -53,7 +53,7 @@
               <div class="col-lg-5">
                 <div class="lab-img">
                   <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
-                    <img [src]="item.postAttachmenturl" alt="labpro" style="width: 220px; height: 220px;" />
+                    <img [src]="item.postAttachmenturl" alt="labpro" />
                   </button>
                 </div>
               </div>
@@ -80,7 +80,7 @@
         </div>
       </div>
       <div class="col-lg-12">
-        <h6 style="cursor: pointer;" class="text-end" >
+        <h6 style="cursor: pointer;" class="text-end mt-4" >
           <a (click)="seeAllPosts(1)" class="pe-auto"> 
             {{ "Home.See all" | translate }}
           </a>
@@ -221,12 +221,12 @@
       <ng-container *ngFor="let item of naturlrough">
       <div class="col-lg-6">
         <div class="card">
-          <div class="lab-product py-2">
+          <div class="lab-product mt-4 py-2">
             <div class="row">
               <div class="col-lg-5">
-                <div class="lab-img">
+                <div class="lab-imgs">
                   <button class="btn" (click)="viewpostdetails(item.postMainData.postID)">
-                    <img [src]="item.postAttachmenturl" alt="labpro" style="width: 220px; height: 220px;" />
+                    <img [src]="item.postAttachmenturl" alt="labpro" />
                   </button>
                 </div>
               </div>

@@ -59,7 +59,7 @@ export class SignUpComponent {
           sessionStorage.setItem('token', response.data.token);
           console.log('SignUpData>>', response.data);
           this.router.navigate(['/profile']);
-          // sessionStorage.setItem('userID', response.data.userID);
+          sessionStorage.setItem('userID', response.data.userID);
           Swal.fire({
             icon: 'success',
             title: 'Success!',
