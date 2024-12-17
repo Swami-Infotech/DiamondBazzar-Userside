@@ -1,0 +1,153 @@
+<app-nav></app-nav>
+
+
+
+<section class="bid">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title mb-4">
+                    <h2>Bids</h2>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="bids-img mb-3">
+                    <img src="../../../../assets/Img/Auctoin/bids.png" alt="" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card p-3">
+                    <div class="bids-perview">
+                        <h3>Rough Diamond</h3>
+                        <h5 class="my-3">Bid Start Price: <span class="ms-1">₹50,000</span></h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quos aut porro odio cupiditate
+                            quisquam officiis quia accusantium hic similique repellendus voluptatem vel distinctio non
+                            consectetur ex aspernatur! Harum, obcaecati!</p>
+                    </div>
+                </div>
+                <div class="card my-3 p-2">
+                    <div class="bids-no d-flex flex-wrap align-items-center justify-content-between">
+                        <h4>No.of Bids</h4>
+                        <h5>24
+                            <button class="btn p-0">(View)</button>
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="card my-3 p-2">
+                    <div class="bids-no d-flex flex-wrap align-items-center justify-content-between">
+                        <h4>Your Mix.Bid</h4>
+                        <h5>₹1,50,000</h5>
+                    </div>
+                </div>
+
+                <div class="card my-3 p-2">
+                    <div class="bid-no d-flex flex-wrap align-items-center justify-content-between">
+                        <h4>Current Bid</h4>
+                        <h5>₹1,50,000</h5>
+                    </div>
+                </div>
+
+
+                <div class="counter">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="decrement">
+                                <button class="btn">
+                                    <i class="bi bi-dash"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="bid-cont text-center">
+                                <h5>Place Bid</h5>
+                                <h4>₹1,50,100.00</h4>
+                                <h6 class="mt-4">Increase By ₹100</h6>
+                                <div class="line">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4">
+                            <div class="increment text-end mt-4">
+                                <button class="btn">
+                                    <i class="bi bi-plus"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="auto text-center">
+                    <h6>Bid Will Place automatically with increment of ₹100 upto</h6>
+                </div>
+
+
+               <div class="price my-5">
+                <form action="">
+                    <div class="mb-3 floating-form">
+                        <input type="text" class="form-control form-control-lg">
+                        <label for="" class="form-label">Enter Max.Bid</label>
+                    </div>
+                </form>
+               </div>
+
+               <div class="confirm-bid text-center mb-3">
+                    <button class="btn" (click)="openmodalss()">Confirm Place Bid</button>
+               </div>   
+
+
+
+             
+
+               <div class="time text-center">
+                    <h5>Ends 3h : 15m : 50s</h5>
+               </div>
+
+
+
+            </div>
+
+
+              
+                 <!-- successfully bid modal start -->
+        <div 
+        class="modal fade" 
+        id="timeSlotModal" 
+        tabindex="-1" 
+        role="dialog" 
+        aria-labelledby="modalLabel" 
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+               <div class="sucess">
+                <h3>Successfully</h3>
+               </div>
+               <div class="success-img text-center"  jmn>
+                <img src="../../../../assets/Img/Auctoin/Mask group.png" alt="" class="img-fluid">
+
+                <h6 class="w-100 mx-auto my-4 fs-3">Your bid has been placed successfully.
+                    Check your notifications at the end of
+                    the auction to see if you won.</h6>
+               </div>
+               <div class="sucess-btn btn-dark text-center my-3 ">
+                <button class="btn btn-dark px-5 py-2" (click)="onInspectClick()">Inspect the Diamond</button>
+               </div>
+               <div class="see-btn text-center">
+                <button class="btn">See Other Auctions</button>
+               </div>
+
+
+            </div>
+          </div>
+        </div>
+    </div>
+        <!-- successfully bid modal end -->
+
+        </div>
+    </div>
+</section>
+
+
+<app-footer></app-footer>

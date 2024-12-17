@@ -1,0 +1,151 @@
+.bid .card{
+    border: 1px solid #000;
+}
+.bids-perview h3{
+    color: var(--primary-color);
+    font-size: 24px;
+    font-family: var(--fonts);
+    font-weight: 700;
+}
+.bids-perview h5{
+    font-size: 18px;
+    font-family: var(--fonts);
+    font-weight: 500;
+}
+.bids-perview span{
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-size: 20px;
+    font-weight:500;
+}
+.bids-no h4{
+    font-family: var(--fonts);
+    font-size: 20px;
+    font-weight: 600;
+}
+.bids-no .btn{
+    color: var(--primary-color);
+    font-weight: 600;
+    cursor: pointer;
+}
+.bid-no h5{
+    color: var(--primary-color);
+    font-size: 22px;
+    font-weight: 800;
+}
+.bid-no h4{
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--fonts);
+
+}
+.decrement{
+    margin-top: 30px;
+}
+
+.decrement .btn{
+    background: linear-gradient(rgba(255, 140, 0, 1),rgba(153, 84, 0, 1));
+    color: #fff;
+    padding: 9%;
+}
+.decrement .btn i{
+    font-size: 24px;
+    font-weight: 800;
+}
+.increment{
+    margin-top: 30px;
+}
+.increment .btn{
+    background: linear-gradient(rgba(255, 140, 0, 1),rgba(153, 84, 0, 1));
+    color: #fff;
+    padding: 9%;
+}
+.increment .btn i{
+    font-size: 24px;
+    font-weight: 800;
+}
+.bid-cont{
+    position: relative;
+}
+.line{
+    position: absolute;
+    top: 73%;
+    left: -50%;
+    border: 1px solid rgba(255, 140, 0, 1);
+    width: 200%;
+    margin: 0 auto;
+}
+.auto h6{
+    font-size: 18px;
+    font-family: var(--fonts);
+    font-weight: 600;
+    margin: 30px;
+
+}
+
+.floating-form {
+    position: relative;
+  }
+  .floating-form .form-control {
+    background: transparent;
+    position: relative;
+    z-index: 50;
+  }
+  .floating-form .form-control:focus, .floating-form .form-control:active, .floating-form .form-control:valid {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  .floating-form .form-control:focus + label, .floating-form .form-control:active + label, .floating-form .form-control:valid + label {
+    transform: translateY(-40%);
+    top: -2px;
+    z-index: 100;
+    font-size: 18px;
+  }
+  .floating-form label {
+    padding-left: 5px;
+    padding-right: 5px;
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    z-index: 1;
+    font-size: 18px;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+    background: #fff;
+    color: #000;
+    font-weight: 500;
+  }
+  .floating-form textarea + label {
+    top: 1.275rem;
+  }
+  .floating-form input{
+    font-size: 17px;
+  }
+
+  .confirm-bid .btn{
+    background-color: #000;
+    color: #fff;
+    font-size: 22px;
+    font-family: var(--fonts);
+    padding: 10px 30%;
+    border-radius: 50px;
+  }
+  .time h5{
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-weight: 700;
+  }
+  .bids-perview h5{
+    font-family: var(--fonts);
+    font-weight: 600;
+  }
+  .bids-perview p{
+    font-family: var(--fonts);
+    font-weight: 500;
+  }
+  .sucess h3{
+    font-size: 24px;
+    font-family: var(--fonts);
+    font-weight: 700;
+    text-align: center;
+  }

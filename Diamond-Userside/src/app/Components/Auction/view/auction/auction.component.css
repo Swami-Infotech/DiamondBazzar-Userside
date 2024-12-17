@@ -1,154 +1,87 @@
-.auction{
-    /* background-image: url(../../../../../assets/Img/Auction/Group1.png); */
-    background-image: url(../../../../../assets/Img/Auction/Group1.png);
-    background-size: cover;
-    height: 35vw;
+.auction .card{
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+.title h2{
+    font-family: var(--fonts);
+    font-weight: 700;
+}
+.piece{
     position: relative;
 }
-.auc-cont{
+.dot{
     position: absolute;
-    bottom: -14%;
-    left: 30%;
-    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
-.auc-cont h2{
-    font-size: 100px;
+.size{
+    position: relative;
 }
-.auc-diam{
-    position: absolute;
-    top: 66%;
-    right: 4%;
-    transform: translate(-50%, -50%);
+.auctoin-details h5{
+    color: rgba(147, 145, 145, 1);
+    font-family: var(--fonts);
+    font-weight: 600;
+    font-size: 24px;
 }
-.auc-small{
-    position: absolute;
-    top: 79%;
-    right: 10%;
-    transform: translate(-50%, -50%);
+.auctoin-details h6{
+    color: rgba(147, 145, 145, 1);
+    font-family: var(--fonts);
+    font-weight: 600;
+    font-size: 24px;
 }
-
-/* media query start */
-@media (max-width:1025px) {
-    .auction{
-        background-image: url(../../../../../assets/Img/Auction/Group1.png);
-        background-size: cover;
-        height: 54vw;
-        position: relative;
-    }
-    .auc-cont{
-        position: absolute;
-        bottom: 14%;
-        left: 27%;
-        transform: translate(-50%, -50%);
-
-    }
-    .auc-cont h2{
-        font-size: 62px;
-    }
-    .auc-cont h5{
-        font-size: 15px;
-    }
-    .auc-diam{
-        position: absolute;
-        top: 50%;
-        right: 7%;
-        transform: translate(-50%, -50%);
-    }
-    .auc-diam img{
-        width: 200px;
-    }
-    .auc-small{
-        position: absolute;
-        top: 58%;
-        right: 12%;
-        transform: translate(-50%, -50%);
-    }
-    .auc-small img{
-        width: 100px;
-    }
+.piece h5{
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-size: 22px;
+    font-weight: 600;
 }
-@media (max-width:769px) {
-    .auction{
-        /* background-image: url(../../../../assets/Img/Auction/Group1.png); */
-        background-image: url(../../../../../assets/Img/Auction/Group1.png);
-
-        background-size: cover;
-        height: 54vw;
-        position: relative;
-    }
-    .auc-cont{
-        position: absolute;
-        bottom: 10%;
-        left: 32%;
-        transform: translate(-50%, -50%);
-
-    }
-    .auc-cont h2{
-        font-size: 50px;
-    }
-    .auc-cont h5{
-        font-size: 15px;
-    }
-    .auc-diam{
-        position: absolute;
-        top: 46%;
-        right: -2%;
-        transform: translate(-50%, -50%);
-    }
-    .auc-diam img{
-        width: 200px;
-    }
-    .auc-small{
-        position: absolute;
-        top: 57%;
-        right: 6%;
-        transform: translate(-50%, -50%);
-    }
-    .auc-small img{
-        width: 100px;
-    }
+.piece h6{
+    font-size: 22px;
+    font-family: var(--fonts);
+    font-weight: 600;
 }
-
-@media (max-width:426px) {
-    .auction{
-        /* background-image: url(../../../../assets/Img/Auction/Group1.png); */
-        background-image: url(../../../../../assets/Img/Auction/Group1.png);
-
-        background-size: cover;
-        height: 54vw;
-        position: relative;
-    }
-    .auc-cont{
-        position: absolute;
-        bottom: 0%;
-        left: 36%;
-        transform: translate(-50%, -50%);
-
-    }
-    .auc-cont h2{
-        font-size: 32px;
-    }
-    .auc-cont h5{
-        font-size: 10px;
-    }
-    .auc-diam{
-        position: absolute;
-        top: 48%;
-        right: -3%;
-        transform: translate(-50%, -50%);
-    }
-    .auc-diam img{
-        width: 129px;
-    }
-    .auc-small{
-        position: absolute;
-        top: 61%;
-        right: 7%;
-        transform: translate(-50%, -50%);
-
-    }
-    .auc-small img{
-        width: 65px;
-    }
+.size h5{
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-size: 22px;
+    font-weight: 600;
 }
-/* media query end */
+.size h6{
+    font-size: 22px;
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.weight h5{
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-size: 22px;
+    font-weight: 600;
+}
+.weight h6{
+    font-size: 22px;
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.color h5{
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-size: 22px;
+    font-weight: 600;
+}
+.color h6{
+    font-size: 22px;
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.price h5{
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-size: 22px;
+    font-weight: 600;
+}
+.price h6{
+    font-size: 22px;
+    font-family: var(--fonts);
+    font-weight: 600;
+}

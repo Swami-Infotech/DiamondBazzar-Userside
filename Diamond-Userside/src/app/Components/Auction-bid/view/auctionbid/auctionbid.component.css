@@ -1,0 +1,177 @@
+.bid .card{
+    border: 2px solid #000;
+    border-radius: 10px;
+
+}
+.bid-name h5{
+    font-size: 25px;
+    font-family: var(--fonts);
+    font-weight: 600;
+    color:rgba(103, 101, 101, 1)
+}
+
+.dot{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.type h5{
+    font-size: 24px;
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.type h6{
+    font-family: var(--fonts);
+    color: #000;
+    font-weight: 600;
+    font-size: 24px;
+}
+.piece h5{
+    font-size: 24px;
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.piece h6{
+    font-family: var(--fonts);
+    color: #000;
+    font-weight: 600;
+    font-size: 24px;
+}
+.weight h5{
+    font-size: 24px;
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.weight h6{
+    font-family: var(--fonts);
+    color: #000;
+    font-weight: 600;
+    font-size: 24px;
+}
+.size h5{
+    font-size: 24px;
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.size h6{
+    font-family: var(--fonts);
+    color: #000;
+    font-weight: 600;
+    font-size: 24px;
+}
+.color h5{
+    font-size: 24px;
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.color h6{
+    font-family: var(--fonts);
+    color: #000;
+    font-weight: 600;
+    font-size: 24px;
+}
+.origin h5{
+    font-size: 24px;
+    color: var(--primary-color);
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.origin h6{
+    font-family: var(--fonts);
+    color: #000;
+    font-weight: 600;
+    font-size: 24px;
+}
+
+
+
+.floating-form {
+    position: relative;
+  }
+  .floating-form .form-control {
+    background: transparent;
+    position: relative;
+    z-index: 50;
+  }
+  .floating-form .form-control:focus, .floating-form .form-control:active, .floating-form .form-control:valid {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+  .floating-form .form-control:focus + label, .floating-form .form-control:active + label, .floating-form .form-control:valid + label {
+    transform: translateY(-40%);
+    top: -2px;
+    z-index: 100;
+    font-size: 18px;
+  }
+  .floating-form label {
+    padding-left: 5px;
+    padding-right: 5px;
+    position: absolute;
+    top: 50%;
+    left: 0.75rem;
+    z-index: 1;
+    font-size: 18px;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+    background: #fff;
+    color: #000;
+    font-weight: 500;
+  }
+  .floating-form textarea + label {
+    top: 1.275rem;
+  }
+  .floating-form input{
+    font-size: 17px;
+  }
+
+
+  .chip-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 15px;
+    font-size: 14px;
+  }
+  
+  .chip .remove-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  
+  .chip .remove-btn:hover {
+    color: #ffdddd;
+  }
+  .inspection-date .btn{
+    background-color: #000;
+    color: #fff;
+    padding: 15px 40px;
+
+  }
+  .date-color {
+    color: var(--primary-color);
+    font-weight: 500;
+    font-size: 22px;
+    border: 1px solid #000;
+  }
+  

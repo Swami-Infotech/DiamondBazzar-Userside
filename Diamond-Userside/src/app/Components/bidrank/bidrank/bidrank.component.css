@@ -1,0 +1,111 @@
+.card{
+    border: 2px solid #000;
+}
+.title h2{
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.bid-price h5{
+    font-family: var(--fonts);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+.bid-price h6{
+    color: rgba(103, 101, 101, 1);
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.bid-date h5{
+    font-family: var(--fonts);
+    font-weight: 600;
+    color: var(--primary-color);
+}
+.bid-date h6{
+    color: rgba(103, 101, 101, 1);
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+
+.piece h5{
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.piece h6{
+    font-family: var(--fonts);
+    font-weight: 500;
+    color: rgba(103, 101, 101, 1);
+}
+.size h5{
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.size h6{
+    font-family: var(--fonts);
+    font-weight: 500;
+    color: rgba(103, 101, 101, 1);
+}
+.weight h5{
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.weight h6{
+    font-family: var(--fonts);
+    font-weight: 500;
+    color: rgba(103, 101, 101, 1);
+}
+.color h5{
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.color h6{
+    font-family: var(--fonts);
+    font-weight: 500;
+    color: rgba(103, 101, 101, 1);
+}
+.diamond-name h3{
+    font-family: var(--fonts);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+.diamond-name h5{
+    font-family: var(--fonts);
+    font-weight: 600;
+}
+.compnay-des h6{
+    font-family: var(--fonts);
+    font-weight: 700;
+    color: #000;
+}
+.bidder-logo img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+}
+.bidder-price h5{
+    background: linear-gradient(rgba(255, 140, 0, 1),rgba(153, 84, 0, 1));
+    padding: 15px;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+}
+.bidders .title h3{
+    font-family: var(--fonts);
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 24px;
+}
+
+.bidders-name h4{
+    font-family: var(--fonts);
+    font-weight: 700;
+}
+.place-btn .btn{
+    background-color: #000;
+    width: 100%;
+    color: #fff;
+    padding: 4px 0;
+    font-size: 25px;
+    border-radius: 20px;
+    font-family: var(--fonts);
+    font-weight: 700;
+}

@@ -44,6 +44,10 @@ import { PrivacyComponent } from './Components/privacy/privacy/privacy.component
 import { AddDemandComponent } from './Components/add-demand/add-demand.component';
 import { ForgetpassComponent } from './Components/Forgetpassword/view/forgetpass/forgetpass.component';
 import { ResetpassComponent } from './Components/Reset pass/view/resetpass/resetpass.component';
+import { AuctionbidComponent } from './Components/Auction-bid/view/auctionbid/auctionbid.component';
+import { BidsperviewComponent } from './Components/BidsPerview/bidsperview/bidsperview.component';
+import { BidrankComponent } from './Components/bidrank/bidrank/bidrank.component';
+import { BidrankperviweComponent } from './Components/Bidrankperview/bidrankperviwe/bidrankperviwe.component';
 
 
 export const routes: Routes =  [
@@ -224,4 +228,24 @@ export const routes: Routes =  [
     path:"DemandPost",
     component:DemandPostComponent
   },
+  {
+    path:"auctionbid",
+    component:AuctionbidComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:"bidspreview",
+    component:BidsperviewComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:"bidrank",
+    component:BidrankComponent,
+    canActivate:[AuthGuard]
+  },
+  {
+    path:"bidrankperview",
+    component:BidrankperviweComponent,
+    canActivate:[AuthGuard]
+  }
 ];
