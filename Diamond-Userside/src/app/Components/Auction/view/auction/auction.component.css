@@ -9,6 +9,32 @@
 .piece{
     position: relative;
 }
+.nav{
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.nav-item .nav-link{
+    background-color: #fff;
+    box-shadow: 0px 3px 8px -1px rgba(0,0,0,0.75);
+    margin: 30px 30px;
+    padding: 10px 20px;
+    color: var(--primary-color);
+    font-size: 20px;
+    width: 200px;
+    font-weight: 600;
+}
+.nav-pills .nav-link.active{
+    color: #fff;
+    background: linear-gradient(90deg, rgba(255,140,0,1) 14%, rgba(153,84,0,1) 59%);
+  }
+
+
+  .client-img { 
+    width: 100px;
+    height: 100px;
+  }
+  
 .dot{
     position: absolute;
     top: 50%;

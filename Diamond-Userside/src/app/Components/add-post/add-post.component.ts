@@ -28,9 +28,7 @@ export class AddPostComponent implements OnInit {
 
 
   selectedFile: File | null = null;
-
   message: string = '';
-
   imagePreview: string | null = null;
 
   
@@ -143,24 +141,79 @@ export class AddPostComponent implements OnInit {
   }
 
 
+  base64String:any; 
+  fileChangeEvent(fileInput: any) {
+    if (fileInput.target.files && fileInput.target.files[0]) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.base64String =  e.target.result.split(',')[1];
+          console.log(this.base64String);
+          
+      };
+      reader.readAsDataURL(fileInput.target.files[0]);
+    }
+  }
+  
+
+
+
+
 
   MSG:string = '';
 
-  AddPostsWithMetadataFromExcel() { 
+  AddPostsWithMetadataFromExcel() {
+    // Ensure the file is base64-encoded and available
+    this.EXLfile = this.base64String;
+  
+    if (this.EXLfile) {
+      // Retrieve userID from session storage
+      const userID = Number(sessionStorage.getItem('userid'));
+  
+      if (this.MainCat === null || this.SubCat === null || this.PostType === null || 
+        this.MainCat === undefined || this.SubCat === undefined || this.PostType === undefined) {
+      this.MSG = "Please fill in all required fields!";
+      return;
+    }
+    
+  
+      // Create request body
 
-    if(this.EXLfile != null) {
-      var  userID = Number(sessionStorage.getItem('userid'));
+      
+      const reqbody = {
+        userID: userID,
+        diamondCategory: this.MainCat,
+        subCategory: this.SubCat,
+        postType: this.PostType,
+        excelFile: this.EXLfile,
+      };
+  
+      // const reqbody = {
+      //   userID: 1,
+      //   diamondCategory: 1,
+      //   subCategory: 1,
+      //   postType: 1,
+      //   excelFile: "this.EXLfile,"
+      // };
 
-      this.service.AddPostsWithMetadataFromExcel(userID,this.MainCat,this.SubCat,this.PostType,this.EXLfile).subscribe(
-        (resp:any)=>{
+
+      // Call the API and handle the response
+      this.service.excelAPI(reqbody).subscribe(
+        (resp: any) => {
           this.MSG = resp.message;
-          console.log(resp.message);
+          console.log('Response:', resp.message);
+  
+          // Optional: Handle success (e.g., refresh the view, clear form)
+        },
+        (error) => {
+          console.error('Error:', error);
+          this.MSG = "Failed to upload Excel file. Please try again.";
         }
-      )
-    }  else {
-      this.MSG = "Please select a file!";
+      );
+    } else {
+      this.MSG = "Please select a valid file!";
     }
-    }
+  }
+  
 
 
     onFileSelected(event: any): void {

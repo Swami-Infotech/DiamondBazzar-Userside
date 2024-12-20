@@ -229,14 +229,13 @@ export const routes: Routes =  [
     component:DemandPostComponent
   },
   {
-    path:"auctionbid",
+    path:"auctionbid/:id",
     component:AuctionbidComponent,
     canActivate:[AuthGuard]
   },
   {
     path:"bidspreview",
-    component:BidsperviewComponent,
-    canActivate:[AuthGuard]
+    component:BidsperviewComponent 
   },
   {
     path:"bidrank",

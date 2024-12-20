@@ -12,7 +12,7 @@ export const environment = {
 
    //dummy UAT
   //  baseURL:"https://uat.diamondbazzar.in/",
-  //  imgURL:"https://uat.diamondbazzar.in"
+  //  imgURL:"https://uat.diamondbazzar.in"    
 
 
   // live

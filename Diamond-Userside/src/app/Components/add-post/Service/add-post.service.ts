@@ -20,19 +20,16 @@ export class AddPostService {
   ExportCategoriesToExcel(diamondCategory:number, diamondSubCategory:number, postType:number){
     return this.http.post(`${this.baseURL}Post/ExportCategoriesToExcel?diamondCategory=${diamondCategory}&diamondSubCategory=${diamondSubCategory}&postType=${postType}`,{})
   }
+    
 
-  AddPostsWithMetadataFromExcel(UserID: number, DiamondCategory: number, SubCategory: number, PostType: number, data: any) {
+  excelAPI(data:any){ 
     const headers = new HttpHeaders({
-      'Accept': 'application/json', 
+      'Content-Type': 'application/json',
     });
-  
-    const options = {
-      headers: headers,
-      withCredentials: true  
-    };
-  
-    return this.http.post(`${this.baseURL}Post/AddPostsWithMetadataFromExcel?UserID=${UserID}&DiamondCategory=${DiamondCategory}&SubCategory=${SubCategory}&PostType=${PostType}`, data, options);
+    return this.http.post(this.baseURL + 'Post/AddPostsWithMetadataFromExcel',data, { headers });
   }
+  
+ 
  
   // AddPostsWithMetadataFromExcel(UserID:number,DiamondCategory:number,SubCategory:number,PostType:number,data: any){
      

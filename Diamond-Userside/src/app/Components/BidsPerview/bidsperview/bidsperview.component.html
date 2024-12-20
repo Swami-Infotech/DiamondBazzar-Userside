@@ -20,7 +20,8 @@
                     <div class="bids-perview">
                         <h3>Rough Diamond</h3>
                         <h5 class="my-3">Bid Start Price: <span class="ms-1">₹50,000</span></h5>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quos aut porro odio cupiditate
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, quos aut porro odio
+                            cupiditate
                             quisquam officiis quia accusantium hic similique repellendus voluptatem vel distinctio non
                             consectetur ex aspernatur! Harum, obcaecati!</p>
                     </div>
@@ -82,68 +83,63 @@
                 </div>
 
 
-               <div class="price my-5">
-                <form action="">
-                    <div class="mb-3 floating-form">
-                        <input type="text" class="form-control form-control-lg">
-                        <label for="" class="form-label">Enter Max.Bid</label>
-                    </div>
-                </form>
-               </div>
+                <div class="price my-5">
+                    <form action="">
+                        <div class="mb-3 floating-form">
+                            <input type="text" class="form-control form-control-lg">
+                            <label for="" class="form-label">Enter Max.Bid</label>
+                        </div>
+                    </form>
+                </div>
 
-               <div class="confirm-bid text-center mb-3">
-                    <button class="btn" (click)="openmodalss()">Confirm Place Bid</button>
-               </div>   
+                <div class="confirm-bid text-center mb-3">
+                    <button class="btn">Confirm Place Bid</button>
+                </div>
 
 
 
-             
 
-               <div class="time text-center">
+
+                <div class="time text-center">
                     <h5>Ends 3h : 15m : 50s</h5>
-               </div>
+                </div>
 
 
 
             </div>
 
 
-              
-                 <!-- successfully bid modal start -->
-        <div 
-        class="modal fade" 
-        id="timeSlotModal" 
-        tabindex="-1" 
-        role="dialog" 
-        aria-labelledby="modalLabel" 
-        aria-hidden="true"
-      >
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-body">
-               <div class="sucess">
-                <h3>Successfully</h3>
-               </div>
-               <div class="success-img text-center"  jmn>
-                <img src="../../../../assets/Img/Auctoin/Mask group.png" alt="" class="img-fluid">
 
-                <h6 class="w-100 mx-auto my-4 fs-3">Your bid has been placed successfully.
-                    Check your notifications at the end of
-                    the auction to see if you won.</h6>
-               </div>
-               <div class="sucess-btn btn-dark text-center my-3 ">
-                <button class="btn btn-dark px-5 py-2" (click)="onInspectClick()">Inspect the Diamond</button>
-               </div>
-               <div class="see-btn text-center">
-                <button class="btn">See Other Auctions</button>
-               </div>
+            <!-- successfully bid modal start -->
+            <div class="modal fade" id="timeSlotModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="sucess">
+                                <h3>Successfully</h3>
+                            </div>
+                            <div class="success-img text-center" jmn>
+                                <img src="../../../../assets/Img/Auctoin/Mask group.png" alt="" class="img-fluid">
+
+                                <h6 class="w-100 mx-auto my-4 fs-3">Your bid has been placed successfully.
+                                    Check your notifications at the end of
+                                    the auction to see if you won.</h6>
+                            </div>
+                            <div class="sucess-btn btn-dark text-center my-3 ">
+                                <button class="btn btn-dark px-5 py-2" (click)="onInspectClick()">Inspect the
+                                    Diamond</button>
+                            </div>
+                            <div class="see-btn text-center">
+                                <button class="btn">See Other Auctions</button>
+                            </div>
 
 
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-    </div>
-        <!-- successfully bid modal end -->
+            <!-- successfully bid modal end -->
 
         </div>
     </div>
